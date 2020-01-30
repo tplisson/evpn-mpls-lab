@@ -1,0 +1,14 @@
+{# ###### SPINE / LEAF MXs ##### #}
+
+delete interfaces {{ ae_name }} unit {{ evi10.id }}
+delete interfaces irb unit {{ evi10.id }} 
+delete routing-instances vlan{{ evi10.id }}
+delete routing-instances vrf{{ evi10.id }} 
+
+{% if "L-DC" in host_name %}
+delete policy-options policy-statement PL-DEFAULT-NH-VGA-{{evi10.id}}-v4 
+delete policy-options policy-statement PL-DEFAULT-NH-VGA-{{evi10.id}}-v6 
+{% else %}
+delete policy-options policy-statement PL-NH-VGA-{{evi10.id}}-v4 
+delete policy-options policy-statement PL-NH-VGA-{{evi10.id}}-v6 
+{% endif %}

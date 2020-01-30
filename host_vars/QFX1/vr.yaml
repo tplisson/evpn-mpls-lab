@@ -1,0 +1,59 @@
+---
+host_name: QFX1
+fxp0: 192.168.200.29
+local_asn: 65111
+local_ip: 111
+intf_name: ae40
+intf_desc: L-DC2-1A/B
+
+evi10:
+  id: 10
+  ipv4_subnet: 10.10.1
+  ipv4_mask: 24
+  ipv6_subnet: 101
+  ipv6_mask: 64
+
+evi20:
+  id: 20
+  ipv4_subnet: 10.20.1
+  ipv4_mask: 24
+  ipv6_subnet: 201
+  ipv6_mask: 64
+  
+evi30:
+  id: 30
+  evi: 300
+  ipv4_subnet: 10.30.0
+  ipv4_mask: 24
+
+evpn1001:
+  description: L-DC2-1A/B
+  intf: ae40
+  local_ip: 111
+  local_asn: 65111
+evpn1002:
+  description: L-DC2-1A/B
+  intf: ae40
+  local_ip: 111
+  local_asn: 65111
+transit:
+  description: L-DC2-1A/B
+  intf: ae40
+  local_ip: 111
+test1:
+  description: L-DC2-1A/B
+  intf: ae40
+  local_ip: 111
+evpn1:
+  - interface: ae40
+    ae_members:
+    - xe-0/0/0:0
+    name: L-DC1-1A
+    vlan: 1000
+    peer_asn: 64514
+    local_ipv4: 100.0.0.3/24
+    virtual_ipv4: 100.0.0.20
+    peer_ipv4: 100.0.0.102
+    local_ipv6: 1000::3/64
+    virtual_ipv6: 1000::20
+    peer_ipv6: 1000::102

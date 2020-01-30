@@ -1,0 +1,35 @@
+---
+host_name: SRX-ANS-3
+intf_name: reth2
+intf_desc: S-DC1/2
+local_asn: 65100
+local_ip: 100
+
+evi10:
+  id: 10
+  ipv4_subnet: 10.10.0
+  ipv4_mask: 24
+  ipv6_subnet: 100
+  ipv6_mask: 64
+
+evi20:
+  id: 20
+  ipv4_subnet: 10.20.0
+  ipv4_mask: 24
+  ipv6_subnet: 200
+  ipv6_mask: 64
+
+evpn1001:
+  description: S-DC2-1/2
+  intf: reth2
+  local_ip: 100
+  local_asn: 65100
+evpn1002:
+  description: S-DC2-1/2
+  intf: reth2
+  local_ip: 100
+  local_asn: 65100
+transit:
+  description: S-DC1-1/2
+  intf: reth2
+  local_ip: 100

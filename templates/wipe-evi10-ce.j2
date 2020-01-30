@@ -1,0 +1,11 @@
+
+{# ###### CE DEVICES ##### #}
+
+delete interfaces {{ intf_name }} unit {{ evi10.id }}
+delete routing-instances vr{{ evi10.id }} 
+
+{% if host_name == "SRX-ANS-3" %}
+delete security zones security-zone vr{{ evi10.id }}
+delete security policies from-zone vr{{ evi10.id }} to-zone vr{{ evi10.id }}
+{% endif %}
+

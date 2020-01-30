@@ -1,0 +1,5 @@
+{% for interface in transit.interfaces %}
+delete interfaces {{ interface.ae_name }}.{{ transit.id }}
+delete routing-instances transit
+{# delete routing-instances vlan{{ transit.id }} #}
+{% endfor %}

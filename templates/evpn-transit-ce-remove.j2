@@ -1,0 +1,3 @@
+delete interfaces {{ intf_name }}.{{ transit.id }}
+delete routing-instances dvt interface {{ intf_name }}.{{ transit.id }}
+delete protocols lldp interface {{ transit.intf_name }}

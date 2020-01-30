@@ -1,0 +1,41 @@
+groups {
+    replace: GR-CORE-ISIS {
+        protocols {
+            isis {
+                backup-spf-options {
+                    use-post-convergence-lfa;
+                    use-source-packet-routing;
+                }
+                level 1 disable;
+                level 2 {
+                    authentication-key-chain KC-ISIS-AUTH;
+                    wide-metrics-only;
+                }
+                interface <ae*> {
+                    lsp-interval 5;
+                    point-to-point;
+                    level 2 {
+                        hello-authentication-key-chain KC-ISIS-AUTH;
+                        post-convergence-lfa;
+                    }
+                }
+                overload {
+                    timeout 300;
+                    advertise-high-metrics;
+                }
+                reference-bandwidth 1000g;
+                lsp-lifetime 65535;
+                spf-options {
+                    delay 50;
+                    holddown 2000;
+                    rapid-runs 5;
+                }
+            }
+        }
+    }
+}
+protocols {
+    isis {
+        apply-groups GR-CORE-ISIS;
+    }
+}

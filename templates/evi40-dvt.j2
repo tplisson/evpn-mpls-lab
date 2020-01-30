@@ -1,0 +1,38 @@
+{# ###### SPINE / LEAF MXs ##### #}
+
+interfaces {
+{% for ae in ae_name %}
+{% for member in ae_members %}
+    replace: {{ae.member}} {
+        apply-groups GR-EDGE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad {{ae_name}};
+        }
+    }
+    {{ae}} {
+        apply-groups GR-EDGE-INTF-L2;
+        description "{{host_name}} ---- {{ae.description}}";
+        aggregated-ether-options {
+            lacp {
+                replace: system-id {{sys_id}};
+            }
+        }
+        replace: unit {{evi40.id}} {
+            vlan-id {{evi40.id}};
+        }
+    }
+}
+routing-instances {
+    replace: vlan{{evi40.id}} {
+        instance-type evpn;
+        vlan-id {{evi40.id}};
+        interface {{ae}}.{{evi40.id}};
+    }
+}
+protocols {
+    lldp {
+        interface {{ae_name}};
+    }
+}
+{% endfor %}
+{% endfor %}

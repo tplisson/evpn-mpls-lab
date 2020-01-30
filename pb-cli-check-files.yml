@@ -1,0 +1,26 @@
+---
+  - name: Checking for Junos images under /var/tmp/
+    hosts: DVT
+    roles:
+     - Juniper.junos
+    connection: local
+    gather_facts: no
+    vars:
+      credentials:
+        host: "{{ inventory_hostname }}"
+        user: "root"
+        passwd: "{{ ansible_ssh_pass }}"
+  
+    tasks:
+
+    - name: Checking for Junos images under /var/tmp/  
+      juniper_junos_command:
+        command:
+          - 'file list  re0:/var/tmp/junos-vmhost*'
+          - 'file list  re1:/var/tmp/junos-vmhost*'
+      register: response
+      
+    - name: Print the output.
+      debug:
+        var: response
+  

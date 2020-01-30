@@ -1,0 +1,126 @@
+
+{# ###### CE DEVICES ##### #}
+
+policy-options {
+    replace: policy-statement STATIC {
+        term static {
+            from protocol static;
+            then accept;
+        }
+    }
+}
+interfaces {
+    {{ intf_name }} {
+        replace: unit {{ evi20.id }} {
+            vlan-id {{ evi20.id }};
+            family inet {
+                address {{ evi20.ipv4_subnet }}.{{local_ip}}/{{evi20.ipv4_mask}};
+            }
+            family inet6 {
+                address {{ evi20.ipv6_subnet }}::{{local_ip}}/{{evi20.ipv6_mask}};
+            }
+        }
+    }
+}
+routing-instances {
+{% if host_name == "SRX-ANS-3" %}
+    vr {
+{% endif %}
+        instance-type virtual-router;
+        replace: interface {{ intf_name }}.{{ evi20.id }};
+        routing-options {
+{% if host_name == "SRX-ANS-3" %}
+            rib vr.inet6.0 {
+                static {
+                   route ::/0 reject;
+                }
+            }
+            static {
+                route 0.0.0.0/0 reject;
+            }
+{% endif %}
+            autonomous-system {{ local_asn }};
+        }
+        protocols {
+            bgp {
+                replace: group {{ evi20.id }}-v4 {
+                    export STATIC;
+                    peer-as 64514;
+{% if host_name == "SRX-ANS-3" %}
+                    neighbor {{ evi20.ipv4_subnet }}.2;
+                    neighbor {{ evi20.ipv4_subnet }}.3;
+                    neighbor {{ evi20.ipv4_subnet }}.4;
+                    neighbor {{ evi20.ipv4_subnet }}.5;
+{% endif %}
+{% if host_name == "QFX1" %}
+                    neighbor {{ evi20.ipv4_subnet }}.11;
+                    neighbor {{ evi20.ipv4_subnet }}.12;
+{% endif %}
+{% if host_name == "QFX2" %}
+                    neighbor {{ evi20.ipv4_subnet }}.21;
+                    neighbor {{ evi20.ipv4_subnet }}.22;
+{% endif %}
+                }
+                replace: group {{ evi20.id }}-v6 {
+                    export STATIC;
+                    peer-as 64514;
+{% if host_name == "SRX-ANS-3" %}
+                    neighbor {{ evi20.ipv6_subnet }}::2;
+                    neighbor {{ evi20.ipv6_subnet }}::3;
+                    neighbor {{ evi20.ipv6_subnet }}::4;
+                    neighbor {{ evi20.ipv6_subnet }}::5;
+{% endif %}
+{% if host_name == "QFX1" %}
+                    neighbor {{ evi20.ipv6_subnet }}::11;
+                    neighbor {{ evi20.ipv6_subnet }}::12;
+{% endif %}
+{% if host_name == "QFX2" %}
+                    neighbor {{ evi20.ipv6_subnet }}::21;
+                    neighbor {{ evi20.ipv6_subnet }}::22;
+{% endif %}
+                }
+            }
+        }
+    }
+}
+
+{# ###### ONLY ON SRX ##### #}
+
+{% if host_name == "SRX-ANS-3" %}
+security {
+    zones {
+        security-zone vr {
+            host-inbound-traffic {
+                system-services {
+                    all;
+                }
+                protocols {
+                    all;
+                }
+            }
+            interfaces {
+                reth2.{{ evi20.id }};
+            }
+        }
+    }
+    policies {
+        from-zone vr to-zone vr {
+            policy permit-all {
+                match {
+                    source-address any;
+                    destination-address any;
+                    application any;
+                }
+                then {
+                    permit;
+                    log {
+                        session-init;
+                        session-close;
+                    }
+                }
+            }
+        }
+    }
+}
+{% endif %}
+

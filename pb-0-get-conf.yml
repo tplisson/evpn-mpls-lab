@@ -1,0 +1,48 @@
+---
+  - name: Create Directories
+    hosts: localhost
+    gather_facts: no
+
+    tasks:
+
+    - name: Create directories      
+      vars:
+        test_dir: "testcase/0.Baseline"
+      file: 
+        path: "{{playbook_dir}}/{{item}}" 
+        state: directory
+      with_items:
+        - "{{test_dir}}"
+
+  - name: "{{testcase}}"
+    hosts: [ DVT, CE ]
+    roles:
+     - Juniper.junos
+    connection: local
+    gather_facts: no
+    vars:
+      testcase: "Baseline Configuration"
+      test_dir: "testcase/0.Baseline"
+      credentials:
+        host: "{{ inventory_hostname }}"
+        user: "{{ ansible_ssh_user }}"
+        passwd: "{{ ansible_ssh_pass }}"
+  
+    tasks:
+
+    - name: Retrieving the {{testcase}} in regular curly braces format
+      juniper_junos_config:
+        retrieve: 'committed'
+        diff: true
+        check: false
+        commit: false
+        dest_dir: "{{playbook_dir}}/{{test_dir}}"
+
+    - name: Retrieving the {{testcase}} in 'set' format
+      juniper_junos_config:
+        retrieve: 'committed'
+        diff: true
+        check: false
+        commit: false
+        format: 'set'
+        dest_dir: "{{playbook_dir}}/{{test_dir}}"

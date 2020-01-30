@@ -1,0 +1,96 @@
+---
+  - name: 1- Create Directories
+    hosts: localhost
+    gather_facts: no
+  
+    tasks:
+  
+    - name: Create directories
+      file: 
+        path: "{{playbook_dir}}/{{ item }}" 
+        state: directory
+      with_items: 
+       - config
+       - diff
+      
+  - name: 2- SPINE & LEAF MX routers
+    hosts: DVT
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    vars:
+      config: wipe-evi30
+      credentials:
+        host: "{{ inventory_hostname }}"
+        user: "{{ ansible_ssh_user }}"
+        passwd: "{{ ansible_ssh_pass }}"
+  
+    tasks:
+  
+    - name: Building {{config|upper}} configurations for SPINE & LEAF MX routers
+      vars:
+        config: wipe-evi30
+        junos_jinja_template: "{{playbook_dir}}/templates/{{config}}-dvt.j2"
+      template: 
+        src: "{{junos_jinja_template}}"
+        dest: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.set"
+      register: dvt
+  
+    - name: Install Generated {{config|upper}} Configurations
+      #when: dvt.changed
+      juniper_junos_config:
+        config_mode: 'private'
+        load: 'set'
+        src: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.set"
+        comment: "Deploying {{config|upper}} configuration"
+        diff: yes
+        diffs_file: "{{playbook_dir}}/diff/{{ inventory_hostname }}.{{config}}.log"
+      register: response
+    
+    - name: Print the config changes.
+      debug:
+        var: response.diff_lines
+  
+  - name: 3- CE Devices
+    hosts: CE
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    vars:
+      config: wipe-evi30
+      credentials:
+        host: "{{ inventory_hostname }}"
+        user: "{{ ansible_ssh_user }}"
+        passwd: "{{ ansible_ssh_pass }}"
+  
+    tasks:
+  
+    - name: Building {{config|upper}} configurations for CE Devices
+      vars:
+        config: wipe-evi30
+        junos_jinja_template: "{{playbook_dir}}/templates/{{config}}-ce.j2"
+      template: 
+        src: "{{junos_jinja_template}}"
+        dest: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.set"
+      register: ce
+    
+    - name: Install Generated {{config|upper}} Configurations
+      #when: ce.changed
+      juniper_junos_config:
+        config_mode: 'private'
+        load: 'set'
+        src: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.set"
+        comment: "Deploying {{config|upper}} configuration"
+        diff: yes
+        diffs_file: "{{playbook_dir}}/diff/{{ inventory_hostname }}.{{config}}.log"
+      register: response
+  
+    - name: Print the config changes.
+      debug:
+        var: response.diff_lines
+    
+  
+  
+  

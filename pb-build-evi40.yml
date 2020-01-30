@@ -1,0 +1,25 @@
+---
+  - name: 2- SPINE & LEAF MX routers
+    hosts: L-DC1-1A
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    vars:
+      config: evi40
+      credentials:
+        host: "{{ inventory_hostname }}"
+        user: "{{ ansible_ssh_user }}"
+        passwd: "{{ ansible_ssh_pass }}"
+  
+    tasks:
+  
+    - name: Building {{config|upper}} configurations for SPINE & LEAF MX routers
+      vars:
+        config: evi40
+        junos_jinja_template: "{{playbook_dir}}/templates/{{config}}-dvt.j2"
+      template: 
+        src: "{{junos_jinja_template}}"
+        dest: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.conf"
+      register: dvt
+  

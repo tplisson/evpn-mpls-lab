@@ -1,0 +1,96 @@
+{# ###### SPINE / LEAF MXs ##### #}
+
+groups {
+    GR-EDGE-INTF-LAG-MEMBER {
+        interfaces {
+            <*> {
+                hold-time up 2000 down 0;
+                optics-options {
+                    alarm low-light-alarm {
+                        syslog;
+                    }
+                    warning low-light-warning {
+                        syslog;
+                    }
+                }
+            }
+        }
+    }
+    replace: GR-EDGE-INTF-L2 {
+        interfaces {
+            <ae*> {
+                flexible-vlan-tagging;
+                encapsulation flexible-ethernet-services;
+                mtu 9000;
+                aggregated-ether-options {
+                    minimum-links 1;
+                    lacp {
+                        active;
+                        periodic fast;
+                        accept-data;
+                        hold-time up 2;
+                    }
+                }
+                unit <*> {
+                    encapsulation vlan-bridge;
+                    esi {
+                        auto-derive {
+                            lacp;
+                        }
+                        all-active;
+                    }
+                }
+            }
+        }
+    }
+}
+interfaces {
+{% for ae_member in ae_members %}
+    replace: {{ae_member}} {
+        apply-groups GR-EDGE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad {{ae_name}};
+        }
+    }
+{% endfor %}
+    {{ae_name}} {
+        apply-groups GR-EDGE-INTF-L2;
+        description "{{host_name}} ---- {{description}}";
+        aggregated-ether-options {
+            lacp {
+                replace: system-id {{sys_id}};
+            }
+        }
+        replace: unit {{evi30.id}} {
+            vlan-id {{evi30.id}};
+        }
+    }
+}
+routing-instances {
+    replace: vlan{{evi30.id}} {
+        instance-type evpn;
+        vlan-id {{evi30.id}};
+        interface {{ae_name}}.{{evi30.id}};
+        routing-interface irb.{{evi30.id}};
+        route-distinguisher {{loopback}}:{{evi30.evi}};
+        vrf-target target:64514:{{evi30.evi}};
+        protocols {
+            evpn {
+                default-gateway no-gateway-community;
+            }
+            igmp-snooping {
+                proxy;
+            }
+            mld-snooping {
+                proxy {
+                    source-address fe80::{{evi30.id}}:{{local_ip}};
+                }
+            }
+        }
+    }
+}
+protocols {
+    lldp {
+        interface {{ae_name}};
+    }
+}

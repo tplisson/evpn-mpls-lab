@@ -1,0 +1,19 @@
+
+{# ###### CE DEVICES ##### #}
+
+interfaces {
+    {{ intf_name }} {
+        replace: unit {{ evi30.id }} {
+            vlan-id {{ evi30.id }};
+            family inet {
+                address {{ evi30.ipv4_subnet }}.{{local_ip}}/{{evi30.ipv4_mask}};
+            }
+        }
+    }
+}
+routing-instances {
+    vr{{ evi30.id }} {
+        instance-type virtual-router;
+        replace: interface {{ intf_name }}.{{ evi30.id }};
+    }
+}

@@ -1,0 +1,556 @@
+groups {
+    replace: GR-CORE-INTF-L3 {
+        interfaces {
+            <ae*> {
+                traps;
+                mtu 16000;
+                aggregated-ether-options {
+                    bfd-liveness-detection {
+                        minimum-interval 50;
+                        multiplier 3;
+                        no-adaptation;
+                    }
+                    minimum-links 1;
+                    lacp {
+                        active;
+                        accept-data;
+                        hold-time up 2;
+                        periodic slow;
+                    }
+                }
+                unit 0 {
+                    traps;
+                    family iso;
+                    family mpls {
+                        maximum-labels 16;
+                    }
+                }
+            }
+        }
+    }
+     replace: GR-CORE-INTF-LAG-MEMBER {
+        interfaces {
+            <*> {
+                hold-time up 2000 down 0;
+                optics-options {
+                    alarm low-light-alarm {
+                        syslog;
+                    }
+                    warning low-light-warning {
+                        syslog;
+                    }
+                }
+            }
+        }
+    }
+    replace: GR-EDGE-INTF-LAG-MEMBER {
+        interfaces {
+            <*> {
+                hold-time up 2000 down 0;
+                optics-options {
+                    alarm low-light-alarm {
+                        syslog;
+                    }
+                    warning low-light-warning {
+                        syslog;
+                    }
+                }
+            }
+        }
+    }
+    replace: GR-EDGE-INTF-L2 {
+        interfaces {
+            <ae*> {
+                flexible-vlan-tagging;
+                encapsulation flexible-ethernet-services;
+                mtu 9000;
+                aggregated-ether-options {
+                    minimum-links 1;
+                    lacp {
+                        active;
+                        periodic fast;
+                        accept-data;
+                        hold-time up 2;
+                    }
+                }
+                unit <*> {
+                    encapsulation vlan-bridge;
+                    esi {
+                        auto-derive {
+                            lacp;
+                        }
+                        all-active;
+                    }
+                }
+            }
+        }
+    }
+    replace: GR-CORE-ISIS {
+        protocols {
+            isis {
+                backup-spf-options {
+                    use-post-convergence-lfa maximum-backup-paths 2;
+                    use-source-packet-routing;
+                }
+                level 1 disable;
+                level 2 {
+                    authentication-key-chain KC-ISIS-AUTH;
+                    wide-metrics-only;
+                }
+                interface <ae*> {
+                    lsp-interval 5;
+                    point-to-point;
+                    level 2 {
+                        hello-authentication-key-chain KC-ISIS-AUTH;
+                        post-convergence-lfa node-protection cost 16777214;
+                    }
+                }
+                overload {
+                    timeout 300;
+                    advertise-high-metrics;
+                }
+                reference-bandwidth 1000g;
+                lsp-lifetime 65535;
+                spf-options {
+                    delay 50;
+                    holddown 2000;
+                    rapid-runs 5;
+                }
+            }
+        }
+    }
+}
+chassis {
+    inactive: craft-lockout;
+    dump-on-panic;
+    redundancy {
+        routing-engine 0 master;
+        routing-engine 1 backup;
+        failover {
+            on-loss-of-keepalives;
+            on-re-to-fpc-stale;
+            on-disk-failure;
+            on-loss-of-vm-host-connection;
+        }
+        graceful-switchover;
+    }
+    routing-engine { 
+        on-disk-failure disk-failure-action reboot;
+    }
+    aggregated-devices {
+        ethernet {
+            device-count 32;
+        }
+    }
+    mic-aware-power-management;
+}
+system {
+    login {
+        message "************************************************************************\n************************************************************************\n** *                                                                * **\n** *                                                                * **\n** *                            WARNING                             * **\n** *                                                                * **\n** *              You have accessed a private network.              * **\n** *      You are required to have personal authorisation from      * **\n** *    the system administrator before you use this device and     * **\n** *      you are strictly limited to the use set out in that       * **\n** *                     written authorisation.                     * **\n** *    Unauthorised access or use of this device is prohibited.    * **\n** *                                                                * **\n** *    Unauthorised access or misuse of a computer constitutes     * **\n** *       an offence under the Computer Misuse Act of 1990.        * **\n** *                                                                * **\n** *                                                                * **\n************************************************************************\n************************************************************************\n";
+    }
+    arp {
+        passive-learning;
+        purging;
+        gratuitous-arp-on-ifup;
+    }
+    switchover-on-routing-crash;
+    no-redirects;
+    no-redirects-ipv6;
+    no-ping-record-route;
+    no-ping-time-stamp;
+    dump-on-panic;
+    internet-options {
+        icmpv4-rate-limit packet-rate 3000 bucket-size 3;
+        path-mtu-discovery;
+        no-source-quench;
+        no-tcp-reset drop-all-tcp;
+        tcp-reset-syn-acknowledge;
+        tcp-drop-synfin-set;
+    }
+    commit {
+        fast-synchronize;
+        synchronize;
+        persist-groups-inheritance;
+    }
+    inactive: configuration-database {
+        extend-size;
+    }
+    processes {
+        routing enable failover other-routing-engine;
+    }
+    login {
+        idle-timeout 5;
+    }
+}
+interfaces {
+{% for neighbor in neighbors %}
+{% for ae_member in neighbor.ae_members %}
+    replace: {{ ae_member }} {
+        apply-groups GR-CORE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad {{ neighbor.interface }};
+        }
+    }
+    replace: {{ neighbor.interface }} {
+        apply-groups GR-CORE-INTF-L3;
+        description "{{ host_name }} ---- {{ neighbor.name }}";
+        aggregated-ether-options {
+            bfd-liveness-detection {
+                neighbor {{ neighbor.peer_ip }};
+                local-address {{ neighbor.local_ip }};
+            }
+        }
+        unit 0 {
+            family inet {
+                address {{ neighbor.local_ip }}/31;
+            }
+        }
+    }
+{% endfor %}
+{% endfor %}
+}
+replace: protocols {
+    bgp {
+        log-updown;
+        path-selection external-router-id;
+        precision-timers;
+        tcp-mss 4096;
+        group BG-IBGP-LEAF {
+            type internal;
+            local-address {{ loopback }};
+            family inet-vpn {
+                unicast;
+            }
+            family inet6-vpn {
+                unicast;
+            }
+            family evpn {
+                signaling;
+            }
+            authentication-algorithm aes-128-cmac-96;
+            authentication-key-chain KC-BGP-AUTH;
+            multipath;
+            bfd-liveness-detection {
+                minimum-interval 300;
+                multiplier 3;
+                no-adaptation;
+            }
+{% for neighbor in neighbors %}
+{% if neighbor.type == "leaf" %}
+            neighbor {{ neighbor.peer_loopback }} {
+                description {{ neighbor.name }};
+            }
+{% endif %}
+{% endfor %}
+        }
+    }
+    mpls {
+        ipv6-tunneling;
+{% for neighbor in neighbors %}
+        interface {{ neighbor.interface }}.0;
+{% endfor %}
+    }
+    replace: isis {
+        apply-groups GR-CORE-ISIS;
+        source-packet-routing {
+            srgb start-label 900000 index-range 100000;
+            node-segment {
+                ipv4-index {{ spring_ipv4_index }};
+            }
+        }
+{% for neighbor in neighbors %}
+        interface {{ neighbor.interface }}.0;
+{% endfor %}
+        interface lo0.0 {
+            passive;
+        }
+    }
+    lldp {
+        management-address {{ fxp0 }}; 
+        ptopo-configuration-trap-interval 60; 
+        lldp-configuration-notification-interval 60; 
+        port-id-subtype interface-name;
+        interface all {
+            disable;
+        }
+{% for neighbor in neighbors %}
+{% for ae_member in neighbor.ae_members %}
+        interface {{ ae_member }};
+{% endfor %}
+{% endfor %}
+    }
+    replace: layer2-control {
+        nonstop-bridging;
+    }
+}
+replace: routing-options {
+    nonstop-routing;
+    route-distinguisher-id {{ loopback }};
+    router-id {{ loopback }};
+    autonomous-system {{ local_asn }};
+    forwarding-table {
+        export PL-LOAD-BALANCE;
+        chained-composite-next-hop {
+            ingress {
+                evpn;
+                l3vpn extended-space;
+            }
+        }
+    }
+}
+policy-options {
+    replace: policy-statement PL-LOAD-BALANCE {
+        term LB {
+            then {
+                load-balance per-packet;
+            }
+        }
+    }
+}
+security {
+    authentication-key-chains {
+        key-chain KC-BGP-AUTH {
+            key 1 {
+                secret "$9$G1jkPpu1IhrtuWL7NbwP5TzFn"; ## SECRET-DATA
+                start-time "2020-1-1.00:00:00 +0100";
+            }
+        }
+        key-chain KC-ISIS-AUTH {
+            key 1 {
+                algorithm hmac-sha-1;
+                options isis-enhanced;
+                secret "$9$7adwgmPQznC.PO1EhrlgoaZGD"; ## SECRET-DATA
+                start-time "2020-1-1.00:00:00 +0100";
+            }
+        }
+    }
+}
+class-of-service {
+    classifiers {
+        dscp voo-dscp {
+            forwarding-class best-effort {
+                loss-priority low code-points be;
+                loss-priority high code-points [ cs1 af11 af12 af13 ];
+            }
+            forwarding-class business-critical {
+                loss-priority low code-points [ cs2 af21 af22 af23 ];
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-points [ cs3 af31 af32 af33 ];
+                loss-priority high code-points [ cs4 af41 af42 af43 ];
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-points [ ef cs5 ];
+            }
+            forwarding-class network-control {
+                loss-priority low code-points cs6;
+                loss-priority high code-points cs7;
+            }
+        }
+        dscp-ipv6 voo-dscp-ipv6 {
+            forwarding-class best-effort {
+                loss-priority low code-points be;
+                loss-priority high code-points [ cs1 af11 af12 af13 ];
+            }
+            forwarding-class business-critical {
+                loss-priority low code-points [ cs2 af21 af22 af23 ];
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-points [ cs3 af31 af32 af33 ];
+                loss-priority high code-points [ cs4 af41 af42 af43 ];
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-points [ ef cs5 ];
+            }
+            forwarding-class network-control {
+                loss-priority low code-points cs6;
+                loss-priority high code-points cs7;
+            }
+        }
+        exp voo-exp {
+            forwarding-class best-effort {
+                loss-priority low code-points 000;
+                loss-priority high code-points 001;
+            }
+            forwarding-class business-critical {
+                loss-priority low code-points 010;
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-points 011;
+                loss-priority high code-points 100;
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-points 101;
+            }
+            forwarding-class network-control {
+                loss-priority low code-points 110;
+                loss-priority high code-points 111;
+            }
+        }
+        ieee-802.1 voo-802.1p {
+            forwarding-class best-effort {
+                loss-priority low code-points 000;
+                loss-priority high code-points 001;
+            }
+            forwarding-class business-critical {
+                loss-priority low code-points 010;
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-points 011;
+                loss-priority high code-points 100;
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-points 101;
+            }
+            forwarding-class network-control {
+                loss-priority low code-points 110;
+                loss-priority high code-points 111;
+            }
+        }
+    }
+    drop-profiles {
+        dp-be-high {
+            interpolate {
+                fill-level [ 75 100 ];
+                drop-probability [ 0 100 ];
+            }
+        }
+    }
+    forwarding-classes {
+        class best-effort queue-num 0;
+        class business-critical queue-num 4;
+        class assured-forwarding queue-num 2;
+        class expedited-forwarding queue-num 1;
+        class network-control queue-num 3;
+    }
+    interfaces {
+        et-* {
+            scheduler-map smap-high-bw;
+            unit * {
+                classifiers {
+                    dscp voo-dscp;
+                    dscp-ipv6 voo-dscp-ipv6;
+                    exp voo-exp;
+                    ieee-802.1 voo-802.1p;
+                }
+            }
+        }
+        ge-* {
+            scheduler-map smap-high-bw;
+            unit * {
+                classifiers {
+                    dscp voo-dscp;
+                    dscp-ipv6 voo-dscp-ipv6;
+                    exp voo-exp;
+                    ieee-802.1 voo-802.1p;
+                }
+            }
+        }
+        xe-* {
+            scheduler-map smap-high-bw;
+            unit * {
+                classifiers {
+                    dscp voo-dscp;
+                    dscp-ipv6 voo-dscp-ipv6;
+                    exp voo-exp;
+                    ieee-802.1 voo-802.1p;
+                }
+            }
+        }
+        ae* {
+            scheduler-map smap-high-bw;
+            unit * {
+                classifiers {
+                    dscp voo-dscp;
+                    dscp-ipv6 voo-dscp-ipv6;
+                    exp voo-exp;
+                    ieee-802.1 voo-802.1p;
+                }
+            }
+        }
+    }
+    rewrite-rules {
+        exp voo-exp {
+            forwarding-class best-effort {
+                loss-priority low code-point 000;
+                loss-priority high code-point 001;
+            }
+            forwarding-class business-critical {
+                loss-priority low code-point 010;
+                loss-priority high code-point 010;
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-point 011;
+                loss-priority high code-point 100;
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-point 101;
+                loss-priority high code-point 101;
+            }
+            forwarding-class network-control {
+                loss-priority low code-point 110;
+                loss-priority high code-point 111;
+            }
+        }
+        ieee-802.1 voo-802.1p {
+            forwarding-class best-effort {
+                loss-priority low code-point 000;
+                loss-priority high code-point 001;
+            }
+            forwarding-class business-critical {
+                loss-priority low code-point 010;
+                loss-priority high code-point 010;
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-point 011;
+                loss-priority high code-point 100;
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-point 101;
+                loss-priority high code-point 101;
+            }
+            forwarding-class network-control {
+                loss-priority low code-point 110;
+                loss-priority high code-point 111;
+            }
+        }
+    }
+    scheduler-maps {
+        smap-high-bw {
+            forwarding-class best-effort scheduler sched-high-bw-be;
+            forwarding-class assured-forwarding scheduler sched-high-bw-af;
+            forwarding-class business-critical scheduler sched-high-bw-bc;
+            forwarding-class expedited-forwarding scheduler sched-high-bw-ef;
+            forwarding-class network-control scheduler sched-high-bw-nc;
+        }
+    }
+    schedulers {
+        sched-high-bw-be {
+            transmit-rate percent 50;
+            buffer-size percent 65;
+            priority low;
+            drop-profile-map loss-priority high protocol any drop-profile dp-be-high;
+        }
+        sched-high-bw-bc {
+            transmit-rate percent 25;
+            buffer-size percent 15;
+            priority medium-low;
+        }
+        sched-high-bw-af {
+            transmit-rate percent 15;
+            buffer-size percent 10;
+            priority high;
+        }
+        sched-high-bw-ef {
+            shaping-rate percent 5;
+            buffer-size percent 5;
+            priority strict-high;
+        }
+        sched-high-bw-nc {
+            transmit-rate percent 5;
+            shaping-rate percent 15;
+            buffer-size percent 5;
+            priority high;
+        }
+    }
+}

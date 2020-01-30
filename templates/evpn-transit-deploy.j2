@@ -1,0 +1,89 @@
+groups {
+    GR-EDGE-INTF-LAG-MEMBER {
+        interfaces {
+            <*> {
+                hold-time up 2000 down 0;
+                optics-options {
+                    alarm low-light-alarm {
+                        syslog;
+                    }
+                    warning low-light-warning {
+                        syslog;
+                    }
+                }
+            }
+        }
+    }
+    GR-EDGE-INTF-L2 {
+        interfaces {
+            <ae*> {
+                flexible-vlan-tagging;
+                encapsulation flexible-ethernet-services;
+                mtu 9000;
+                aggregated-ether-options {
+                    minimum-links 1;
+                    lacp {
+                        active;
+                        periodic fast;
+                        accept-data;
+                        hold-time up 2;
+                    }
+                }
+                unit <*> {
+                    encapsulation vlan-bridge;
+                    family bridge;
+                }
+            }
+        }
+    }
+}
+interfaces {
+{% for ae_member in ae_members %}
+    replace: {{ ae_member }} {
+        apply-groups GR-EDGE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad {{ ae_name }};
+        }
+    }
+{% endfor %}
+    {{ ae_name }} {
+        apply-groups GR-EDGE-INTF-L2;
+        description "{{ host_name }} ---- {{ description }}";
+        esi {
+            {{ esi }};
+            all-active;
+            df-election-type {
+                preference {
+                    value {{ pref }};
+                }
+            }
+        }
+        aggregated-ether-options {
+            lacp {
+                system-id {{ sys_id }};
+            }
+        }
+        replace: unit {{ transit.id }} {
+            encapsulation vlan-bridge;
+            vlan-id {{ transit.id }};
+        }
+    }
+}
+routing-instances {
+    replace: transit {
+        instance-type evpn;
+        interface {{ ae_name }}.{{ transit.id }};
+        vrf-target target:64514:{{ transit.id }};
+        protocols {
+            evpn { 
+                interface {{ ae_name }}.{{ transit.id }};
+                default-gateway do-not-advertise;
+            }
+        }
+    }
+}
+protocols {
+    lldp {
+        interface {{ ae_name }};
+    }
+}

@@ -1,0 +1,40 @@
+---
+host_name: L-DC1-1A
+#ae_name: ae11
+#ae_members:
+#- xe-0/0/0:1
+#description: IXIA-2/5
+ae_name: ae10
+ae_members:
+- xe-0/0/0:0
+description: QFX1
+sys_id: dc:01:22:22:22:22
+local_asn: 64514
+local_ip: 11
+virtual_ip: 1
+ce_asn: 65111
+ce_ip: 111
+
+evi10:
+  id: 10
+  evi: 101 
+  ipv4_subnet: 10.10.1
+  ipv4_mask: 24
+  ipv6_subnet: 101
+  ipv6_mask: 64
+  virtual_v4_mac: 04:d1:10:10:01:01
+  virtual_v6_mac: 06:d1:10:10:01:01
+
+evi20:
+  id: 20
+  evi: 201
+  ipv4_subnet: 10.20.1
+  ipv4_mask: 24
+  ipv6_subnet: 201
+  ipv6_mask: 64
+  virtual_v4_mac: 04:d2:10:20:01:01
+  virtual_v6_mac: 06:d2:10:20:01:01
+
+evi30:
+  id: 30
+  evi: 300

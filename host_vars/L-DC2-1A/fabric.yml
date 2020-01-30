@@ -1,0 +1,26 @@
+host_name: L-DC2-1A
+fxp0: 192.168.200.75
+loopback: 10.35.2.3
+iso: 49.0001.0100.3500.2003.00
+local_asn: 64514
+spring_ipv4_index: 2003
+spring_ipv6_index: 62003
+neighbors:
+  - interface: ae0
+    ae_members:
+    - xe-0/1/0:0
+    name: S-DC2-1
+    type: leaf
+    asn: 64514
+    peer_loopback: 10.35.2.1
+    peer_ip: 10.35.21.0
+    local_ip: 10.35.21.1
+  - interface: ae1
+    ae_members:
+     - xe-0/1/1:0
+    name: S-DC2-2
+    type: leaf
+    asn: 64514
+    peer_loopback: 10.35.2.2
+    peer_ip: 10.35.22.0
+    local_ip: 10.35.22.1

@@ -1,0 +1,64 @@
+
+interfaces {
+    {{ intf_name }} {
+        replace: unit {{ transit.id }} {
+            vlan-id {{ transit.id }};
+            family inet {
+                address {{ transit.ipv4_subnet }}.{{local_ip}}/{{transit.ipv4_mask}};
+            }
+            family inet6 {
+                address {{ transit.ipv6_subnet }}::{{local_ip}}/{{transit.ipv6_mask}};
+            }
+        }
+    }
+}
+routing-instances {
+    dvt {
+        instance-type virtual-router;
+        replace: interface {{ intf_name }}.{{ transit.id }};
+    }
+}
+policy-options {
+    policy-statement STATIC {
+        from protocol static;
+        then accept;
+    }
+}
+{% if host_name == "SRX-ANS-3" %}
+security {
+    zones {
+        replace: security-zone DVT-{{ transit.id }} {
+            host-inbound-traffic {
+                system-services {
+                    ping;
+                    traceroute;
+                }
+                protocols {
+                    all;
+                }
+            }
+            interfaces {
+                {{ intf_name }}.{{ transit.id }};
+            }
+        }
+    }
+    policies {
+        replace: from-zone DVT-{{ transit.id }} to-zone DVT-{{ transit.id }} {
+            policy any2any {
+                match {
+                    source-address any;
+                    destination-address any;
+                    application any;
+                }
+                then {
+                    permit;
+                    log {
+                        session-init;
+                        session-close;
+                    }
+                }
+            }
+        }
+    }
+}
+{% endif %}

@@ -1,0 +1,13 @@
+protocols {
+    isis {
+        backup-spf-options {
+            use-source-packet-routing;
+        }
+        source-packet-routing {
+            srgb start-label 900000 index-range 100000;
+            node-segment {
+                ipv4-index {{ spring_ipv4_index }};
+            }
+        }
+    }
+}

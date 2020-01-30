@@ -1,0 +1,14 @@
+protocols {
+    replace: isis {
+        level 1 disable;
+        level 2 wide-metrics-only;
+{% for neighbor in neighbors %}
+        interface {{ neighbor.interface }}.0 {
+            point-to-point;
+        }
+{% endfor %}
+        interface lo0.0 {
+            passive;
+        }
+    }
+}
