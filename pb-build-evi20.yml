@@ -14,7 +14,7 @@
        - diff
       
   - name: 2- SPINE & LEAF MX routers
-    hosts: SPINE
+    hosts: DVT
     roles:
       - Juniper.junos
     connection: local
@@ -23,8 +23,8 @@
       config: evi20
       credentials:
         host: "{{ inventory_hostname }}"
-        user: "{{ ansible_ssh_user }}"
-        passwd: "{{ ansible_ssh_pass }}"
+        #user: "{{ ansible_ssh_user }}"
+        #passwd: "{{ ansible_ssh_pass }}"
   
     tasks:
   
@@ -38,7 +38,7 @@
       register: dvt
   
     - name: Install Generated {{config|upper}} Configurations
-      when: dvt.changed
+      #when: dvt.changed
       juniper_junos_config:
         config_mode: 'private'
         load: 'replace'
@@ -46,14 +46,15 @@
         comment: "Deploying {{config|upper}} configuration"
         diff: yes
         diffs_file: "{{playbook_dir}}/diff/{{ inventory_hostname }}.{{config}}.log"
-      register: response
+      register: config_results
     
     - name: Print the config changes.
       debug:
-        var: response.diff_lines
+        var: config_results.diff_lines
+      when: config_results.diff_lines is defined
   
   - name: 3- CE Devices
-    hosts: SRX
+    hosts: CE
     roles:
       - Juniper.junos
     connection: local

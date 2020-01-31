@@ -8,12 +8,41 @@ interfaces {
             family inet {
                 address {{ evi30.ipv4_subnet }}.{{local_ip}}/{{evi30.ipv4_mask}};
             }
+            family inet6 {
+                address {{ evi30.ipv6_subnet }}::{{local_ip}}/{{evi30.ipv6_mask}};
+            }
         }
     }
+{% if "QFX" in host_name %}
+    xe-1/0/45 {
+        replace: unit {{evi30.id}} {
+            vlan-id {{evi30.id}};
+            family inet {
+                address {{evi30.ipv4_subnet}}0.1/{{evi30.ipv4_mask}};
+            }
+            family inet6 {
+                address {{local_ip}}::1/{{evi30.ipv6_mask}};
+            }
+        }
+    }
+{% endif %}
 }
 routing-instances {
     vr{{ evi30.id }} {
         instance-type virtual-router;
         replace: interface {{ intf_name }}.{{ evi30.id }};
+{% if "QFX" in host_name %}
+        replace: interface xe-1/0/45.{{ evi30.id }};
+{% endif %}
+        routing-options {
+            static {
+                route 0/0 next-hop {{evi30.ipv4_subnet}}.1;
+            }
+            rib vr{{evi30.id}}.inet6.0 {
+                static {
+                    route ::/0 next-hop {{evi30.ipv6_subnet}}::1;
+                }
+            }
+        }
     }
 }

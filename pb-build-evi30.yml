@@ -46,14 +46,15 @@
         comment: "Deploying {{config|upper}} configuration"
         diff: yes
         diffs_file: "{{playbook_dir}}/diff/{{ inventory_hostname }}.{{config}}.log"
-      register: response
+      register: config_results
     
     - name: Print the config changes.
       debug:
-        var: response.diff_lines
+        var: config_results.diff_lines
+      when: config_results.diff_lines is defined
   
   - name: 3- CE Devices
-    hosts: QFX
+    hosts: CE
     roles:
       - Juniper.junos
     connection: local

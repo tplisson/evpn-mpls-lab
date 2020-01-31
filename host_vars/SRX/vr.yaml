@@ -19,6 +19,14 @@ evi20:
   ipv6_subnet: 200
   ipv6_mask: 64
 
+evi30:
+  id: 30
+  evi: 300
+  ipv4_subnet: 10.30.0
+  ipv4_mask: 24
+  ipv6_subnet: 300
+  ipv6_mask: 64
+
 evpn1001:
   description: S-DC2-1/2
   intf: reth2

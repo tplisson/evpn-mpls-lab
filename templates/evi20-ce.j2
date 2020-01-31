@@ -1,86 +1,107 @@
-
 {# ###### CE DEVICES ##### #}
 
-policy-options {
-    replace: policy-statement STATIC {
-        term static {
-            from protocol static;
-            then accept;
-        }
-    }
-}
 interfaces {
-    {{ intf_name }} {
-        replace: unit {{ evi20.id }} {
-            vlan-id {{ evi20.id }};
+    {{intf_name}} {
+        replace: unit {{evi20.id}} {
+            vlan-id {{evi20.id}};
             family inet {
-                address {{ evi20.ipv4_subnet }}.{{local_ip}}/{{evi20.ipv4_mask}};
+                address {{evi20.ipv4_subnet}}.{{local_ip}}/{{evi20.ipv4_mask}};
             }
             family inet6 {
-                address {{ evi20.ipv6_subnet }}::{{local_ip}}/{{evi20.ipv6_mask}};
+                address {{evi20.ipv6_subnet}}::{{local_ip}}/{{evi20.ipv6_mask}};
             }
         }
     }
+{% if "QFX" in host_name %}
+    xe-1/0/45 {
+        replace: unit {{evi20.id}} {
+            vlan-id {{evi20.id}};
+            family inet {
+                address {{evi20.ipv4_subnet}}0.1/{{evi20.ipv4_mask}};
+            }
+            family inet6 {
+                address {{local_ip}}::1/{{evi20.ipv6_mask}};
+            }
+        }
+    }
+{% endif %}
 }
 routing-instances {
 {% if host_name == "SRX-ANS-3" %}
     vr {
+{% else %}
+    replace: vr{{evi20.id}} {
 {% endif %}
         instance-type virtual-router;
-        replace: interface {{ intf_name }}.{{ evi20.id }};
+        replace: interface {{intf_name}}.{{evi20.id}};
+{% if "QFX" in host_name %}
+        replace: interface xe-1/0/45.{{evi20.id}};
+{% endif %}
         routing-options {
 {% if host_name == "SRX-ANS-3" %}
+            static {
+                route 0.0.0.0/0 discard;
+            }
             rib vr.inet6.0 {
                 static {
-                   route ::/0 reject;
+                    route ::/0 discard;
                 }
             }
+{% endif %}
+{% if host_name == "QFX1" %}
             static {
-                route 0.0.0.0/0 reject;
+                route 0/0 next-hop {{evi20.ipv4_subnet}}.1;
+            }
+            rib vr{{evi20.id}}.inet6.0 {
+                static {
+                    route ::/0 next-hop {{evi20.ipv6_subnet}}::1;
+                }
             }
 {% endif %}
-            autonomous-system {{ local_asn }};
+            autonomous-system {{local_asn}};
         }
+{% if host_name == "SRX-ANS-3" %}
         protocols {
             bgp {
-                replace: group {{ evi20.id }}-v4 {
-                    export STATIC;
+                replace: export PL-DIRECT;
+                replace: group {{evi20.id}}-v4 {
                     peer-as 64514;
-{% if host_name == "SRX-ANS-3" %}
-                    neighbor {{ evi20.ipv4_subnet }}.2;
-                    neighbor {{ evi20.ipv4_subnet }}.3;
-                    neighbor {{ evi20.ipv4_subnet }}.4;
-                    neighbor {{ evi20.ipv4_subnet }}.5;
-{% endif %}
-{% if host_name == "QFX1" %}
-                    neighbor {{ evi20.ipv4_subnet }}.11;
-                    neighbor {{ evi20.ipv4_subnet }}.12;
-{% endif %}
-{% if host_name == "QFX2" %}
-                    neighbor {{ evi20.ipv4_subnet }}.21;
-                    neighbor {{ evi20.ipv4_subnet }}.22;
-{% endif %}
+                    replace: export PL-STATIC;
+                    neighbor {{evi20.ipv4_subnet}}.2;
+                    neighbor {{evi20.ipv4_subnet}}.3;
+                    neighbor {{evi20.ipv4_subnet}}.4;
+                    neighbor {{evi20.ipv4_subnet}}.5;
                 }
-                replace: group {{ evi20.id }}-v6 {
-                    export STATIC;
+                replace: group {{evi20.id}}-v6 {
                     peer-as 64514;
-{% if host_name == "SRX-ANS-3" %}
-                    neighbor {{ evi20.ipv6_subnet }}::2;
-                    neighbor {{ evi20.ipv6_subnet }}::3;
-                    neighbor {{ evi20.ipv6_subnet }}::4;
-                    neighbor {{ evi20.ipv6_subnet }}::5;
-{% endif %}
-{% if host_name == "QFX1" %}
-                    neighbor {{ evi20.ipv6_subnet }}::11;
-                    neighbor {{ evi20.ipv6_subnet }}::12;
-{% endif %}
-{% if host_name == "QFX2" %}
-                    neighbor {{ evi20.ipv6_subnet }}::21;
-                    neighbor {{ evi20.ipv6_subnet }}::22;
-{% endif %}
+                    replace: export PL-STATIC;
+                    neighbor {{evi20.ipv6_subnet}}::2;
+                    neighbor {{evi20.ipv6_subnet}}::3;
+                    neighbor {{evi20.ipv6_subnet}}::4;
+                    neighbor {{evi20.ipv6_subnet}}::5;
                 }
             }
         }
+{% endif %}
+{% if host_name == "QFX2" %}
+        protocols {
+            bgp {
+                replace: export PL-DIRECT;
+                replace: group {{evi20.id}}-v4 {
+                    peer-as 64514;
+                    replace: export PL-STATIC;
+                    neighbor {{evi20.ipv4_subnet}}.21;
+                    neighbor {{evi20.ipv4_subnet}}.22;
+                }
+                replace: group {{evi20.id}}-v6 {
+                    peer-as 64514;
+                    replace: export PL-STATIC;
+                    neighbor {{evi20.ipv6_subnet}}::21;
+                    neighbor {{evi20.ipv6_subnet}}::22;
+                }
+            }
+        }
+{% endif %}
     }
 }
 
@@ -99,7 +120,7 @@ security {
                 }
             }
             interfaces {
-                reth2.{{ evi20.id }};
+                reth2.{{evi20.id}};
             }
         }
     }
@@ -123,4 +144,24 @@ security {
     }
 }
 {% endif %}
+policy-options {
+    replace: policy-statement PL-DIRECT {
+        term DIRECT {
+            from protocol direct;
+            then accept;
+        }
+    }
+    replace: policy-statement PL-STATIC {
+        term STATIC {
+            from protocol static;
+            then accept;
+        }
+    }
+    replace: policy-statement PL-AGGREGATE {
+        term AGGREGATE {
+            from protocol aggregate;
+            then accept;
+        }
+    }
 
+}

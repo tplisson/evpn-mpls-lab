@@ -8,7 +8,7 @@ ae_name: ae10
 ae_members:
 - xe-0/0/0:0
 description: QFX1
-sys_id: dc:01:22:22:22:22
+sys_id: dc:01:11:12:ae:10
 local_asn: 64514
 local_ip: 11
 virtual_ip: 1
@@ -23,7 +23,7 @@ evi10:
   ipv6_subnet: 101
   ipv6_mask: 64
   virtual_v4_mac: 04:d1:10:10:01:01
-  virtual_v6_mac: 06:d1:10:10:01:01
+  virtual_v6_mac: 06:d1:01:01:00:01
 
 evi20:
   id: 20
@@ -32,9 +32,15 @@ evi20:
   ipv4_mask: 24
   ipv6_subnet: 201
   ipv6_mask: 64
-  virtual_v4_mac: 04:d2:10:20:01:01
-  virtual_v6_mac: 06:d2:10:20:01:01
+  virtual_v4_mac: 04:d1:10:20:01:01
+  virtual_v6_mac: 06:d1:02:01:00:01
 
 evi30:
   id: 30
   evi: 300
+  ipv4_subnet: 10.30.0
+  ipv4_mask: 24
+  ipv6_subnet: 300
+  ipv6_mask: 64
+  virtual_v4_mac: 04:ff:30:00:00:00
+  virtual_v6_mac: 06:ff:30:00:00:00

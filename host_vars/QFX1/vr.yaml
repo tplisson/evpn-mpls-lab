@@ -25,6 +25,8 @@ evi30:
   evi: 300
   ipv4_subnet: 10.30.0
   ipv4_mask: 24
+  ipv6_subnet: 300
+  ipv6_mask: 64
 
 evpn1001:
   description: L-DC2-1A/B

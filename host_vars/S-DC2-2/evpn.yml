@@ -4,13 +4,11 @@ ae_name: ae10
 ae_members:
 - xe-0/0/0:0
 description: SRX-ANS-3
-esi: 00:dc:02:33:33:33:00:00:00:00
-sys_id: 00:dc:02:33:33:33
+#esi: 00:dc:12:11:22:ae:10:00:00:00
+sys_id: dc:02:21:22:ae:10
 local_asn: 64514
 local_ip: 5
 virtual_ip: 1
-virtual_v4_mac: 04:dc:02:33:33:33
-virtual_v6_mac: 06:dc:02:33:33:33
 ce_asn: 65100
 ce_ip: 100
 
@@ -21,29 +19,25 @@ evi10:
   ipv4_mask: 24
   ipv6_subnet: 100
   ipv6_mask: 64
-  virtual_v4_mac: 04:ff:10:10:00:01
-  virtual_v6_mac: 06:ff:10:10:00:01
+  virtual_v4_mac: 04:ff:10:00:00:00
+  virtual_v6_mac: 06:ff:10:00:00:00
 
 evi20:
     id: 20
     evi: 200
     ipv4_subnet: 10.20.0
     ipv4_mask: 24
-    ipv6_subnet: 20:0
+    ipv6_subnet: 200
     ipv6_mask: 64
-    virtual_v4_mac: 04:ff:10:20:00:01
-    virtual_v6_mac: 06:ff:10:20:00:01
+    virtual_v4_mac: 04:ff:20:00:00:00
+    virtual_v6_mac: 06:ff:20:00:00:00
 
-evpn1002:
-  ce_ip: 100
-  ce_asn: 65100
-  interfaces: 
-    - ae_name: ae10
-      ae_members:
-      - xe-0/0/0:0
-      description: SRX-ANS-3
-      pref: 100
-      esi: 00:10:00:33:33:33:00:00:00:00
-      sys_id: 00:10:00:33:33:33
-      local_ip: 2
-      virtual_ip: 20
+evi30:
+    id: 30
+    evi: 300
+    ipv4_subnet: 10.30.0
+    ipv4_mask: 24
+    ipv6_subnet: 300
+    ipv6_mask: 64
+    virtual_v4_mac: 04:ff:30:00:00:00
+    virtual_v6_mac: 06:ff:30:00:00:00

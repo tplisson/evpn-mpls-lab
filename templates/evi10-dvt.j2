@@ -86,13 +86,15 @@ interfaces {
         }
     }
 }
+routing-options {
+    route-distinguisher-id {{loopback}};
+}
 routing-instances {
     replace: vlan{{evi10.id}} {
         instance-type evpn;
         vlan-id {{evi10.id}};
         interface {{ae_name}}.{{evi10.id}};
         routing-interface irb.{{evi10.id}};
-        route-distinguisher {{loopback}}:{{evi10.evi}};
         vrf-target target:64514:{{evi10.evi}};
         protocols {
             evpn {
@@ -111,14 +113,13 @@ routing-instances {
     replace: vrf{{evi10.id}} {
         instance-type vrf;
         interface irb.{{evi10.id}};
-        route-distinguisher {{loopback}}:{{evi10.id}};
         vrf-target target:64514:{{evi10.id}};
         vrf-table-label;
         routing-options {
             multipath;
             autonomous-system 64514;
         }
-{% if "S-DC" in host_name %}
+{% if "S-DC" in host_name or "L-DC1" in host_name %}
         protocols {
             bgp {
                 group {{description}} {
@@ -143,10 +144,10 @@ protocols {
         interface {{ae_name}};
     }
 }
-{% if "S-DC" in host_name %}
+{% if "S-DC" in host_name or "L-DC1" in host_name %}
 policy-options {
     replace: policy-statement PL-{{evi10.id}}-NH-VGA-v4 {
-        term nh-vga {
+        term NH-VGA-v4 {
             then {
                 next-hop {{evi10.ipv4_subnet}}.{{virtual_ip}};
                 accept;
@@ -154,15 +155,12 @@ policy-options {
         }
     }
     replace: policy-statement PL-{{evi10.id}}-NH-VGA-v6 {
-        term nh-vga {
+        term NH-VGA-v6 {
             then {
                 next-hop {{evi10.ipv6_subnet}}::{{virtual_ip}};
                 accept;
             }
         }
     }
-    community QFX1 members 64514:111;
-    community QFX2 members 64514:222;
-    community SRX members 64514:100;
 }
 {% endif %}

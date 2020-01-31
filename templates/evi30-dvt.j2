@@ -35,7 +35,7 @@ groups {
                     encapsulation vlan-bridge;
                     esi {
                         auto-derive {
-                            lacp;
+                           lacp;
                         }
                         all-active;
                     }
@@ -65,6 +65,29 @@ interfaces {
             vlan-id {{evi30.id}};
         }
     }
+    irb {
+        replace: unit {{evi30.id}} {
+            virtual-gateway-accept-data;
+            family inet {
+                address {{evi30.ipv4_subnet}}.{{local_ip}}/{{evi30.ipv4_mask}} {
+                    preferred;
+                    virtual-gateway-address {{evi30.ipv4_subnet}}.{{virtual_ip}};
+                }
+            }
+            family inet6 {
+                address {{evi30.ipv6_subnet}}::{{local_ip}}/{{evi30.ipv6_mask}} {
+                    preferred;
+                    virtual-gateway-address {{evi30.ipv6_subnet}}::{{virtual_ip}};
+                }
+                address fe80::{{evi30.id}}:{{local_ip}}/{{evi30.ipv6_mask}};
+            }
+            virtual-gateway-v4-mac {{evi30.virtual_v4_mac}};
+            virtual-gateway-v6-mac {{evi30.virtual_v6_mac}};
+        }
+    }
+}
+routing-options {
+    route-distinguisher-id {{loopback}};
 }
 routing-instances {
     replace: vlan{{evi30.id}} {
@@ -72,7 +95,6 @@ routing-instances {
         vlan-id {{evi30.id}};
         interface {{ae_name}}.{{evi30.id}};
         routing-interface irb.{{evi30.id}};
-        route-distinguisher {{loopback}}:{{evi30.evi}};
         vrf-target target:64514:{{evi30.evi}};
         protocols {
             evpn {
@@ -87,6 +109,12 @@ routing-instances {
                 }
             }
         }
+    }
+    replace: vrf{{evi30.id}} {
+        instance-type vrf;
+        interface irb.{{evi30.id}};
+        vrf-target target:64514:{{evi30.id}};
+        vrf-table-label;
     }
 }
 protocols {
