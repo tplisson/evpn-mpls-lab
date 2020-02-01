@@ -1,0 +1,5 @@
+
+[edit routing-instances vlan10]
++   description "EVPN instance for VLAN 10";
+[edit routing-instances vrf10]
++   description "VRF instance for IRB in VLAN 10";

@@ -1,0 +1,4 @@
+
+[edit interfaces xe-1/0/45 unit 10 family inet6]
++       address 110::1/64;
+-       address 111::1/64;

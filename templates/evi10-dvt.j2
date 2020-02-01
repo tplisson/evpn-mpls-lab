@@ -91,6 +91,7 @@ routing-options {
 }
 routing-instances {
     replace: vlan{{evi10.id}} {
+        description "EVPN instance for VLAN {{evi10.id}}";
         instance-type evpn;
         vlan-id {{evi10.id}};
         interface {{ae_name}}.{{evi10.id}};
@@ -111,6 +112,7 @@ routing-instances {
         }
     }
     replace: vrf{{evi10.id}} {
+        description "VRF instance for IRB in VLAN {{evi10.id}}";
         instance-type vrf;
         interface irb.{{evi10.id}};
         vrf-target target:64514:{{evi10.id}};
@@ -118,8 +120,21 @@ routing-instances {
         routing-options {
             multipath;
             autonomous-system 64514;
+{% if "S-DC" in host_name %}
+            rib vrf{{evi10.id}}.inet6.0 {
+                aggregate {
+                    route 101::/64;
+                    route 102::/64;
+                    route 110::/64;
+                    route 120::/64;
+                }
+            }
+            aggregate {
+                route 10.10.0.0/16;
+            }
+{% endif %}
         }
-{% if "S-DC" in host_name or "L-DC1" in host_name %}
+{% if "S-DC" in host_name %}
         protocols {
             bgp {
                 group {{description}} {
@@ -128,10 +143,27 @@ routing-instances {
                     }
                     peer-as {{ce_asn}};
                     replace: neighbor {{evi10.ipv4_subnet}}.{{ce_ip}} {
-                        export PL-{{evi10.id}}-NH-VGA-v4;
+                        export PL-EVI{{evi10.id}}-V4;
                     }
                     replace: neighbor {{evi10.ipv6_subnet}}::{{ce_ip}} {
-                        export PL-{{evi10.id}}-NH-VGA-v6;
+                        export PL-EVI{{evi10.id}}-V6;
+                    }
+                }
+            }
+        }
+{% elif "L-DC1" in host_name %}
+        protocols {
+            bgp {
+                group {{description}} {
+                    multihop {
+                        no-nexthop-change;
+                    }
+                    peer-as {{ce_asn}};
+                    replace: neighbor {{evi10.ipv4_subnet}}.{{ce_ip}} {
+                        export PL-EVI{{evi10.id}}-DEFAULT-NH-VGA-V4;
+                    }
+                    replace: neighbor {{evi10.ipv6_subnet}}::{{ce_ip}} {
+                        export PL-EVI{{evi10.id}}-DEFAULT-NH-VGA-V6;
                     }
                 }
             }
@@ -144,23 +176,90 @@ protocols {
         interface {{ae_name}};
     }
 }
-{% if "S-DC" in host_name or "L-DC1" in host_name %}
+{% if "L-DC1" in host_name %}
 policy-options {
-    replace: policy-statement PL-{{evi10.id}}-NH-VGA-v4 {
-        term NH-VGA-v4 {
+    replace: policy-statement PL-EVI{{evi10.id}}-DEFAULT-NH-VGA-V4 {
+        term DEFAULT-NH-VGA-V4 {
+            from {
+                prefix-list PL-DEFAULT-V4;
+            }
             then {
                 next-hop {{evi10.ipv4_subnet}}.{{virtual_ip}};
                 accept;
             }
         }
+        term DROP {
+            then reject;
+        }
     }
-    replace: policy-statement PL-{{evi10.id}}-NH-VGA-v6 {
-        term NH-VGA-v6 {
+    replace: policy-statement PL-EVI{{evi10.id}}-DEFAULT-NH-VGA-V6 {
+        term DEFAULT-NH-VGA-V6 {
+            from {
+                prefix-list PL-DEFAULT-V6;
+            }
             then {
                 next-hop {{evi10.ipv6_subnet}}::{{virtual_ip}};
                 accept;
             }
         }
+        term DROP {
+            then reject;
+        }
+    }
+    prefix-list PL-DEFAULT-V4 {
+        0.0.0.0/0;
+    }
+    prefix-list PL-DEFAULT-V6 {
+        ::/0;
+    }
+}
+{% elif "S-DC" in host_name %}
+policy-options {
+    replace: policy-statement PL-EVI{{evi10.id}}-V4 {
+        term DEFAULT-NH-VGA-V4 {
+            from {
+                prefix-list PL-EVI{{evi10.id}}-V4;
+            }
+            then {
+                next-hop {{evi10.ipv4_subnet}}.{{virtual_ip}};
+                accept;
+            }
+        }
+        term DROP {
+            then reject;
+        }
+    }
+    replace: policy-statement PL-EVI{{evi10.id}}-V6 {
+        term DEFAULT-NH-VGA-V6 {
+            from {
+                prefix-list PL-EVI{{evi10.id}}-V6;
+            }
+            then {
+                next-hop {{evi10.ipv6_subnet}}::{{virtual_ip}};
+                accept;
+            }
+        }
+        term DROP {
+            then reject;
+        }
+    }
+    prefix-list PL-EVI10-V4 {
+        10.10.0.0/16;
+    }
+    prefix-list PL-EVI20-V4 {
+        10.20.0.0/16;
+    }
+    prefix-list PL-EVI10-V6 {
+        101::/64;
+        102::/64;
+        110::/64;
+        210::/64;
+    }
+    prefix-list PL-EVI20-V6 {
+        201::/64;
+        202::/64;
+        120::/64;
+        220::/64;
     }
 }
 {% endif %}

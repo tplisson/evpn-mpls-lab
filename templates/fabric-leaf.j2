@@ -208,9 +208,23 @@ interfaces {
     }
 {% endfor %}
 {% endfor %}
+    lo0 {
+        unit 0 {
+            family inet {
+                address {{ loopback }}/32;
+                filter {
+                    inactive: input FF-RE-PROTECT-V4;
+                    output FF-COS-RE-FILTER-V4; 
+                }
+            }
+            family iso {
+                address {{ iso }};
+            }
+        }
+    }
 }
-replace: protocols {
-    bgp {
+protocols {
+    replace: bgp {
         log-updown;
         path-selection external-router-id;
         precision-timers;
@@ -244,7 +258,7 @@ replace: protocols {
 {% endfor %}
         }
     }
-    mpls {
+    replace: mpls {
         ipv6-tunneling;
 {% for neighbor in neighbors %}
         interface {{ neighbor.interface }}.0;
@@ -408,6 +422,10 @@ class-of-service {
             }
         }
     }
+    host-outbound-traffic {
+        forwarding-class network-control;
+        dscp-code-point cs6;
+    }
     drop-profiles {
         dp-be-high {
             interpolate {
@@ -552,5 +570,355 @@ class-of-service {
             buffer-size percent 5;
             priority high;
         }
+    }
+}
+firewall {
+    family inet {
+       filter FF-COS-RE-FILTER-V4 {
+            term TR-ICMP {                 
+                from {
+                    protocol icmp;
+                }
+                then {
+                    count CNT-ICMP;
+                    loss-priority low;
+                    forwarding-class best-effort;
+                    accept;
+                }
+            }
+            term TR-DEFAULT {
+                then {
+                    loss-priority low;
+                    accept;
+                }
+            }
+        }
+        filter FF-RE-PROTECT-V4 {  
+            term TR-FIRST-FRAG-DROP {
+                from {
+                    fragment-offset 0;
+                    fragment-flags more-fragments;
+                }
+                then {
+                    count CNT-RE-FIRST-FRAG-DROP;
+                    discard;
+                }
+            }
+            term TR-NEXT-FRAG-DROP {  
+                from {
+                    fragment-offset-except 0;
+                }
+                then {
+                    count CNT-RE-NEXT-FRAG-DROP;
+                    discard;
+                }
+            }
+            /* TCP session DOS - SYN, FIN, RST Flood - prevention */
+            term TR-TCP-DOS-PREVENTION-DSC {  
+                from {
+                    source-prefix-list {
+                        PL-DEFAULT-V4;
+                        PL-DEFAULT-V6;
+                        PL-BGP-NEIGHBORS except; 
+                        PL-BGP-VRF-NEIGHBORS except;
+                        PL-CORE-LINKS-LOOPBACKS except;
+                        PL-SSH-CLIENTS except;
+                        PL-TACPLUS-SERVER except;
+                    }
+                    protocol tcp;
+                    tcp-flags "(syn & !ack) | fin | rst";
+                }
+                then {
+                    count CNT-RE-TCP-DOS-DSC;
+                    discard;
+                }
+            }
+            term TR-TCP-DOS-PREVENTION-ACC {
+                from {
+                    protocol tcp;
+                    tcp-flags "(syn & !ack) | fin | rst";
+                }
+                then {
+                    policer PC-TCP-DOS;
+                    count CNT-RE-TCP-DOS-ACC;
+                    next term;
+                }
+            }
+            term TR-ICMP-POLICE-ACC {
+                from {
+                    protocol icmp;
+                    icmp-type [ echo-request echo-reply unreachable time-exceeded ];
+                }
+                then {
+                    policer PC-ICMP;
+                    count CNT-RE-ICMP-POLICE;
+                    accept;
+                }
+            }
+            term TR-BFD-ACC {
+                from {
+                    protocol udp;
+                    ttl 255;
+                    port [ 6784 7784 ];
+                }
+                then {
+                    count CNT-RE-BFD-ACC;
+                    accept;
+                }
+            }
+            term TR-BGP-ACC { 
+                from {
+                    source-prefix-list {
+                        PL-BGP-NEIGHBORS;
+                        PL-BGP-VRF-NEIGHBORS;
+                    }
+                    protocol tcp;
+                    port bgp;
+                }
+                then {
+                    count CNT-RE-BGP-ACC;
+                    accept;
+                }
+            }
+            term TR-SNMP-ACC {   
+                from {
+                    source-prefix-list {
+                        PL-SNMPV3-POLLING-HOSTS;
+                    }
+                    protocol udp;
+                    destination-port snmp;
+                }
+                then {
+                    policer PC-SNMP;
+                    count CNT-RE-SNMP-ACC;
+                    accept;
+                }
+            }
+            term TR-LDP-ACC {                                          
+                from {
+                    source-prefix-list {
+                        PL-CORE-LINKS-LOOPBACKS;
+                        PL-CORE-LINKS-P2P;                             ### P2P links required for UDP
+                    }
+                    protocol [ tcp udp ];
+                    port ldp;
+                }
+                then {
+                    count CNT-RE-LDP-ACC;
+                    accept;
+                }
+            }
+            term TR-LSPPING-ACC {                                      
+                from {
+                    source-prefix-list {
+                        PL-CORE-LINKS-LOOPBACKS;
+                    }
+                    protocol udp;
+                    port 3503;
+                }
+                then {
+                    count LSPPING-ACC;
+                    accept;
+                }
+            }
+            term TR-NTP-ACC {
+                from {
+                    source-prefix-list {
+                        PL-NTP-SERVERS;
+                        PL-NTP-SOURCE;
+                    }
+                    protocol udp;
+                    port ntp;
+                }
+                then {
+                    policer PC-NTP;
+                    count CNT-RE-NTP-ACC;
+                    accept;
+                }
+            }
+            term TR-NETCONF-ACC {
+                from {
+                    source-prefix-list {
+                        PL-NETCONF-CLIENTS;
+                    }
+                    protocol tcp;
+                    destination-port 830;
+                }
+                then {
+                    policer PC-NETCONF;
+                    count CNT-RE-NETCONF-ACC;
+                    accept;
+                }
+            }
+            term TR-SSH-ACC {
+                from {
+                    source-prefix-list {
+                        PL-SSH-CLIENTS;
+                    }
+                    protocol tcp;
+                    destination-port ssh;
+                }
+                then {
+                    policer PC-SSH;
+                    count CNT-RE-SSH-ACC;
+                    accept;
+                }
+            }
+            term TR-TACPLUS-ACC { 
+                from {
+                    source-prefix-list {
+                        PL-TACPLUS-SERVER;
+                    }
+                    protocol tcp;
+                    port 49;
+                }
+                then {
+                    policer PC-TACPLUS;
+                    count CNT-RE-TACPLUS-ACC;
+                    accept;
+                }
+            }
+            term TR-TRACEROUTE-ACC {
+                from {
+                    protocol udp;
+                    destination-port 33434-33523;
+                }
+                then {
+                    policer PC-TRACEROUTE;
+                    count CNT-RE-TRACEROUTE-ACC;
+                    accept;
+                }
+            }
+            term TR-DNS-ACP {
+                from {
+                    source-prefix-list {
+                        PL-DNS-SERVERS;
+                    }
+                    protocol udp;
+                    port domain;
+                }
+                then {
+                    policer PC-DNS;
+                    count CNT-RE-DNS-ACP;
+                    accept;
+                }
+            }
+            term TR-ALL-DSC {
+                then {
+                    count CNT-RE-DSC;
+                    discard;
+                }
+            }
+        }
+    }
+    policer PC-NTP {  
+        if-exceeding {
+            bandwidth-limit 500k;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+    policer PC-DNS {  
+        if-exceeding {
+            bandwidth-limit 500k;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+    policer PC-NETCONF {  
+        if-exceeding {
+            bandwidth-limit 4m;
+            burst-size-limit 60k;
+        }
+        then discard;
+    }
+    policer PC-SSH {  
+        if-exceeding {
+            bandwidth-limit 4m;
+            burst-size-limit 60k;
+        }
+        then discard;
+    }
+    policer PC-SNMP {
+        if-exceeding {
+            bandwidth-limit 10m;
+            burst-size-limit 150k;
+        }
+        then discard;
+    }
+    policer PC-TACPLUS {
+        if-exceeding {
+            bandwidth-limit 1m;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+    policer PC-TCP-DOS {
+        if-exceeding {
+            bandwidth-limit 1m;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }   
+    policer PC-ICMP {
+        if-exceeding {
+            bandwidth-limit 5m;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+    policer PC-TRACEROUTE {  
+        if-exceeding {
+            bandwidth-limit 1m;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+}
+policy-options {
+    prefix-list PL-DEFAULT-V4 {      
+        0.0.0.0/0;
+    }
+    prefix-list PL-DEFAULT-V6 {      
+        ::/0;
+    }
+    prefix-list PL-NETCONF-CLIENTS {
+        192.168.200/24;
+    }
+    prefix-list PL-SSH-CLIENTS {
+        192.168.200/24;
+    }
+    prefix-list PL-CORE-LINKS-LOOPBACKS {      
+        10.35.1.0/24;
+        10.35.2.0/24;
+    }
+    prefix-list PL-CORE-LINKS-P2P {      
+        10.35.0.0/24;
+        10.35.11.0/24;
+        10.35.12.0/24;
+        10.35.21.0/24;
+        10.35.22.0/24;
+    }
+    prefix-list PL-SNMPV3-POLLING-HOSTS {
+        apply-path "snmp v3 target-address <*> address <*>";
+    }
+    prefix-list PL-NTP-SOURCE {   
+        127.0.0.1;
+        apply-path "system ntp source-address <*>";
+    }
+    prefix-list PL-NTP-SERVERS {  
+        apply-path "system ntp server <*>";
+    }
+    prefix-list PL-DNS-SERVERS {
+        apply-path "system name-server <*>";
+    }
+    prefix-list PL-BGP-NEIGHBORS {                                     
+        apply-path "protocols bgp group <*> neighbor <*>";
+    }
+    prefix-list PL-BGP-VRF-NEIGHBORS {                                 
+        apply-path "routing-instances <*> protocols bgp group <*> neighbor <*>";
+    }
+    prefix-list PL-TACPLUS-SERVER {
+        apply-path "system tacplus-server <*>";
     }
 }

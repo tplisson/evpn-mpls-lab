@@ -24,6 +24,7 @@ interfaces {
 }
 routing-instances {
     replace: vlan{{evi40.id}} {
+        description "EVPN instance for VLAN {{evi40.id}}";
         instance-type evpn;
         vlan-id {{evi40.id}};
         interface {{ae}}.{{evi40.id}};

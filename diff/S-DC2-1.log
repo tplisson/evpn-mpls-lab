@@ -1,0 +1,17 @@
+
+[edit policy-options prefix-list PL-EVI20-V6]
++    120::/64;
++    220::/64;
+[edit routing-instances vrf20 routing-options]
++     rib vrf20.inet6.0 {
++         aggregate {
++             route 201::/64;
++             route 202::/64;
++             route 210::/64;
++             route 220::/64;
++         }
++     }
+[edit routing-instances vrf20 routing-options]
++     aggregate {
++         route 10.20.0.0/16;
++     }

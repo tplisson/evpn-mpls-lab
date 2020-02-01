@@ -19,9 +19,15 @@ interfaces {
             family inet {
                 address {{evi10.ipv4_subnet}}0.1/{{evi10.ipv4_mask}};
             }
+{% if host_name == "QFX1" %}
             family inet6 {
-                address {{local_ip}}::1/{{evi10.ipv6_mask}};
+                address 1{{evi10.id}}::1/{{evi10.ipv6_mask}};
             }
+{% elif host_name == "QFX2" %}
+            family inet6 {
+                address 2{{evi10.id}}::1/{{evi10.ipv6_mask}};
+            }
+{% endif %}
         }
     }
 {% endif %}
@@ -89,13 +95,11 @@ routing-instances {
                 replace: export PL-DIRECT;
                 replace: group {{evi10.id}}-v4 {
                     peer-as 64514;
-                    replace: export PL-STATIC;
                     neighbor {{evi10.ipv4_subnet}}.11;
                     neighbor {{evi10.ipv4_subnet}}.12;
                 }
                 replace: group {{evi10.id}}-v6 {
                     peer-as 64514;
-                    replace: export PL-STATIC;
                     neighbor {{evi10.ipv6_subnet}}::11;
                     neighbor {{evi10.ipv6_subnet}}::12;
                 }
