@@ -27,3 +27,5 @@ evi30:
   ipv4_mask: 24
   ipv6_subnet: 300
   ipv6_mask: 64
+  ixiav4: 10.30.1
+  ixiav6: 301

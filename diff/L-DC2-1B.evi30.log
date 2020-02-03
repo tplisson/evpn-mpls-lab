@@ -1,5 +1,3 @@
 
-[edit routing-instances vlan30]
-+   description "EVPN instance for VLAN 30";
-[edit routing-instances vrf30]
-+   description "VRF instance for IRB in VLAN 30";
+[edit routing-instances vlan30 protocols]
+!      inactive: igmp-snooping { ... }

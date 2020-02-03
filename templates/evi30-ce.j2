@@ -10,6 +10,7 @@ interfaces {
             }
             family inet6 {
                 address {{ evi30.ipv6_subnet }}::{{local_ip}}/{{evi30.ipv6_mask}};
+                address fe80::{{evi30.id}}:{{local_ip}}/{{evi30.ipv6_mask}};
             }
         }
     }
@@ -18,10 +19,10 @@ interfaces {
         replace: unit {{evi30.id}} {
             vlan-id {{evi30.id}};
             family inet {
-                address {{evi30.ipv4_subnet}}0.1/{{evi30.ipv4_mask}};
+                address {{evi30.ixiav4}}.1/{{evi30.ipv4_mask}};
             }
             family inet6 {
-                address {{local_ip}}::1/{{evi30.ipv6_mask}};
+                address {{evi30.ixiav6}}::1/{{evi30.ipv6_mask}};
             }
         }
     }

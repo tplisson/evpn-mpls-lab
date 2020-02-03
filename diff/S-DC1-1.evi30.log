@@ -1,4 +1,3 @@
 
-[edit interfaces ae10 aggregated-ether-options lacp]
--     system-id dc:01:11:12:ae:10;
-+     system-id dc:01:00:00:ae:10;
+[edit routing-instances vlan30 protocols]
+!      inactive: igmp-snooping { ... }
