@@ -5,7 +5,7 @@ ae_members:
 - xe-0/0/0:0
 description: SRX-ANS-3
 #esi: 00:dc:12:11:22:ae:10:00:00:00
-sys_id: dc:01:11:12:ae:10
+sys_id: dc:01:00:00:ae:10
 local_asn: 64514
 local_ip: 2
 virtual_ip: 1

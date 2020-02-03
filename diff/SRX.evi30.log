@@ -1,0 +1,19 @@
+
+[edit]
++  # ###### ONLY ON SRX ##### #}
+   security { ... }
+[edit security zones]
+     security-zone vr { ... }
++    security-zone vr30 {
++        host-inbound-traffic {
++            system-services {
++                all;
++            }
++            protocols {
++                all;
++            }
++        }
++        interfaces {
++            reth2.30;
++        }
++    }

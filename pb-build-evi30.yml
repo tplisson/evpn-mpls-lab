@@ -14,7 +14,7 @@
        - diff
       
   - name: 2- SPINE & LEAF MX routers
-    hosts: LEAF
+    hosts: DVT
     roles:
       - Juniper.junos
     connection: local
@@ -38,7 +38,7 @@
       register: dvt
   
     - name: Install Generated {{config|upper}} Configurations
-      when: dvt.changed
+      #when: dvt.changed
       juniper_junos_config:
         config_mode: 'private'
         load: 'replace'

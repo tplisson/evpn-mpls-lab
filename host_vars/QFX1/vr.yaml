@@ -27,35 +27,3 @@ evi30:
   ipv4_mask: 24
   ipv6_subnet: 300
   ipv6_mask: 64
-
-evpn1001:
-  description: L-DC2-1A/B
-  intf: ae40
-  local_ip: 111
-  local_asn: 65111
-evpn1002:
-  description: L-DC2-1A/B
-  intf: ae40
-  local_ip: 111
-  local_asn: 65111
-transit:
-  description: L-DC2-1A/B
-  intf: ae40
-  local_ip: 111
-test1:
-  description: L-DC2-1A/B
-  intf: ae40
-  local_ip: 111
-evpn1:
-  - interface: ae40
-    ae_members:
-    - xe-0/0/0:0
-    name: L-DC1-1A
-    vlan: 1000
-    peer_asn: 64514
-    local_ipv4: 100.0.0.3/24
-    virtual_ipv4: 100.0.0.20
-    peer_ipv4: 100.0.0.102
-    local_ipv6: 1000::3/64
-    virtual_ipv6: 1000::20
-    peer_ipv6: 1000::102

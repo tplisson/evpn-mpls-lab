@@ -46,3 +46,42 @@ routing-instances {
         }
     }
 }
+# ###### ONLY ON SRX ##### #}
+
+{% if host_name == "SRX-ANS-3" %}
+security {
+    zones {
+        security-zone vr{{evi30.id}} {
+            host-inbound-traffic {
+                system-services {
+                    all;
+                }
+                protocols {
+                    all;
+                }
+            }
+            interfaces {
+                reth2.{{evi30.id}};
+            }
+        }
+    }
+    policies {
+        from-zone vr to-zone vr {
+            policy permit-all {
+                match {
+                    source-address any;
+                    destination-address any;
+                    application any;
+                }
+                then {
+                    permit;
+                    log {
+                        session-init;
+                        session-close;
+                    }
+                }
+            }
+        }
+    }
+}
+{% endif %}

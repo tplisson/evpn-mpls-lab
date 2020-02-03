@@ -1,0 +1,4 @@
+
+[edit interfaces ae10 aggregated-ether-options lacp]
+-     system-id dc:02:21:22:ae:10;
++     system-id dc:02:00:00:ae:10;

@@ -27,22 +27,3 @@ evi30:
   ipv4_mask: 24
   ipv6_subnet: 300
   ipv6_mask: 64
-
-evpn1001:
-  description: L-DC2-1A/B
-  intf: ae40
-  local_ip: 222
-  local_asn: 65222
-evpn1002:
-  description: L-DC2-1A/B
-  intf: ae40
-  local_ip: 222
-  local_asn: 65222
-transit:
-  description: L-DC2-1A/B
-  intf: ae40
-  local_ip: 222
-test2:
-  description: L-DC2-1A/B
-  intf: ae40
-  local_ip: 222
