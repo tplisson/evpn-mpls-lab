@@ -2,4 +2,4 @@
 [edit routing-instances vlan30 protocols]
 !      inactive: igmp-snooping { ... }
 [edit routing-instances vlan30 protocols igmp-snooping proxy]
--      source-address 10.30.0.11;
+-      source-address 10.30.0.1;

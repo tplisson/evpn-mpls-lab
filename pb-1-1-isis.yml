@@ -61,7 +61,7 @@
         command:
           - "show route 10.35.1.0/24"
           - "show route 10.35.2.0/24"
-        dest: "{{playbook_dir}}/{{test_dir}}/{{ inventory_hostname }}_show_route_10.35.text"
+        dest: "{{playbook_dir}}/{{test_dir}}/{{ inventory_hostname }}_show_route_10.35.txt"
         return_output: false
 
     - name: Gathering detailed output for {{testcase}}
@@ -87,5 +87,5 @@
         command:
           - "show route 10.35.1.0/24 extensive"
           - "show route 10.35.2.0/24 extensive"
-        dest: "{{playbook_dir}}/{{detailed_dir}}/{{ inventory_hostname }}_show_route_10.35_extensive.text"
+        dest: "{{playbook_dir}}/{{detailed_dir}}/{{ inventory_hostname }}_show_route_10.35_extensive.txt"
         return_output: false
