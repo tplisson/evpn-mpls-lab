@@ -14,15 +14,15 @@
   
     tasks:
   
-      #- name: Checking NETCONF connectivity
-      #  wait_for: 
-      #    host: "{{ inventory_hostname }}"
-      #    port: "{{ ansible_port }}"
-      #    timeout: 2
-      #  register: netconf_result
+      - name: Checking NETCONF connectivity
+        wait_for: 
+          host: "{{ inventory_hostname }}"
+          port: "{{ ansible_port }}"
+          timeout: 2
+        register: netconf_result
 
       - name: Install TI-LFA Configuration
-        #when: netconf_result|success
+        when: netconf_result|success
         juniper_junos_config:
           config_mode: 'private'
           load: 'replace'

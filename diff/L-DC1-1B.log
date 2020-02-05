@@ -1,7 +1,10 @@
 
-[edit groups GR-CORE-ISIS protocols isis backup-spf-options]
-+      use-post-convergence-lfa maximum-backup-paths 2;
-[edit groups GR-CORE-ISIS protocols isis interface <ae*> level 2]
-+       post-convergence-lfa {
-+           node-protection cost 16777214;
-+       }
+[edit routing-instances vrf30]
+-    protocols {
+-        evpn {
+-            ip-prefix-routes {
+-                advertise direct-nexthop;
+-                encapsulation mpls;
+-            }
+-        }
+-    }

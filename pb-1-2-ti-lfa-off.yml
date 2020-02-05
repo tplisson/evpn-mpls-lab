@@ -1,5 +1,5 @@
 ---
-  - name: 
+  - name: Import existing playbook to turn TI-LFA off
     import_playbook: pb-ti-lfa-off.yml
 
   - name: Initating test case with TI-LFA disabled
@@ -14,8 +14,8 @@
 
     - name: Create directories      
       vars:
-        test_dir: "testcase/1.2"
-        detailed_dir: "testcase/1.2/detailed"
+        test_dir: "testcase/1.2/off"
+        detailed_dir: "testcase/1.2/off/detailed"
       file: 
         path: "{{playbook_dir}}/{{item}}" 
         state: directory
@@ -32,8 +32,8 @@
     gather_facts: no
     vars:
       testcase: "Test Case 1-2: ISIS SPRING TI-LFA Steady State"
-      test_dir: "testcase/1.2"
-      detailed_dir: "testcase/1.2/detailed"
+      test_dir: "testcase/1.2/off"
+      detailed_dir: "testcase/1.2/off/detailed"
       credentials:
         host: "{{ inventory_hostname }}"
         user: "{{ ansible_ssh_user }}"
@@ -65,6 +65,14 @@
         command:
           - "show route 10.35.1.0/24"
           - "show route 10.35.2.0/24"
+          - "show route forwarding-table table default destination 10.35.1.1"
+          - "show route forwarding-table table default destination 10.35.1.2"
+          - "show route forwarding-table table default destination 10.35.1.3"
+          - "show route forwarding-table table default destination 10.35.1.4"
+          - "show route forwarding-table table default destination 10.35.2.1"
+          - "show route forwarding-table table default destination 10.35.2.2"
+          - "show route forwarding-table table default destination 10.35.2.3"
+          - "show route forwarding-table table default destination 10.35.2.4"
         dest: "{{playbook_dir}}/{{test_dir}}/{{ inventory_hostname }}_show_route_10.35.text"
         return_output: false
 
@@ -87,5 +95,13 @@
         command:
           - "show route 10.35.1.0/24 extensive"
           - "show route 10.35.2.0/24 extensive"
+          - "show route forwarding-table table default destination 10.35.1.1 extensive"
+          - "show route forwarding-table table default destination 10.35.1.2 extensive"
+          - "show route forwarding-table table default destination 10.35.1.3 extensive"
+          - "show route forwarding-table table default destination 10.35.1.4 extensive"
+          - "show route forwarding-table table default destination 10.35.2.1 extensive"
+          - "show route forwarding-table table default destination 10.35.2.2 extensive"
+          - "show route forwarding-table table default destination 10.35.2.3 extensive"
+          - "show route forwarding-table table default destination 10.35.2.4 extensive"
         dest: "{{playbook_dir}}/{{detailed_dir}}/{{ inventory_hostname }}_show_route_10.35_extensive.text"
         return_output: false
