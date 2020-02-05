@@ -1,5 +1,7 @@
 
-[edit routing-instances vlan30 protocols]
-+     igmp-snooping {
-+         proxy;
-+     }
+[edit groups GR-CORE-ISIS protocols isis backup-spf-options]
++      use-post-convergence-lfa maximum-backup-paths 2;
+[edit groups GR-CORE-ISIS protocols isis interface <ae*> level 2]
++       post-convergence-lfa {
++           node-protection cost 16777214;
++       }

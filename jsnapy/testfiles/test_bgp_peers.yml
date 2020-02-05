@@ -1,0 +1,13 @@
+tests_include:
+  #- test_command_bgp
+  - test_bgp_peer_number
+
+test_bgp_peer_number:
+  - command: show bgp summary
+  - iterate:
+      xpath: '/bgp-information/peer-count'
+      tests:
+        - is-equal: "9"    # element in which test is performed
+          err: "Test Failed!! Number of BGP peers has changed, it is now <{{post['peer-count']}}>"
+          info: "Test succeeded!! Number of BGP peers remained the same at <{{post['peer-count']}}>"
+

@@ -1,9 +1,16 @@
 ---
-  - name: Create Directories
+  - name: 
+    import_playbook: pb-ti-lfa-off.yml
+
+  - name: Initating test case with TI-LFA disabled
     hosts: localhost
     gather_facts: no
 
     tasks:
+
+    - name: sleep for 30 seconds and continue with play
+      wait_for:
+        timeout: 30
 
     - name: Create directories      
       vars:
@@ -15,6 +22,7 @@
       with_items:
         - "{{test_dir}}"
         - "{{detailed_dir}}"
+
 
   - name: "{{testcase}}"
     hosts: DVT

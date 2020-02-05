@@ -1,0 +1,38 @@
+---
+  - name: Turning off TI-LFA 
+    hosts: DVT
+    roles:
+     - Juniper.junos
+    connection: local
+    gather_facts: no
+    vars:
+      credentials:
+          host: "{{ inventory_hostname }}"
+          user: "{{ ansible_ssh_user }}"
+          passwd: "{{ ansible_ssh_pass }}"
+  
+    tasks:
+  
+      #- name: Checking NETCONF connectivity
+      #  wait_for: 
+      #    host: "{{ inventory_hostname }}"
+      #    port: "{{ ansible_port }}"
+      #    timeout: 2
+      #  register: netconf_result
+
+      - name: Install TI-LFA Configuration
+        #when: netconf_result|success
+        juniper_junos_config:
+          config_mode: 'private'
+          load: 'replace'
+          src: "{{playbook_dir}}/config/ti-lfa-off.conf"
+          commit: false
+          diff: yes
+          diffs_file: "{{playbook_dir}}/diff/{{ inventory_hostname }}.log"
+        register: config_results
+  
+      - name: Print the config changes.
+        debug:
+          var: config_results.diff_lines
+        when: config_results.diff_lines is defined
+  

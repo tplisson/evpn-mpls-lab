@@ -1,0 +1,11 @@
+tests_include:
+  - test_sw_version
+
+test_sw_version:
+  - command: show version
+  - item:
+      xpath: '//software-information'
+      tests:
+        - all-same: junos-version
+          err: "Test Failed!!! The versions are not the same. From the PRE snapshot, the version is: <{{pre['junos-version']}}>. From the POST snapshot, the version is <{{post['junos-version']}}>!! "
+          info: "Test Succeeded!! The Junos OS version is: <{{post['junos-version']}}>!!!"

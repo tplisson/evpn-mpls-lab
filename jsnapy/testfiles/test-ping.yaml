@@ -1,0 +1,20 @@
+ping-rpc:
+# One can use either Junos XML API RPCs or CLI commands for testing, e.g
+#  - command: ping inet count 4 10.30.0.111
+  - rpc: ping
+  - kwargs:
+        host: '10.30.0.111'
+        count: '4'
+        inet: True
+  - item:
+      xpath: probe-results-summary
+      id: ../target-host
+      tests:
+        # Test should fail if packet loss has increased.
+        - delta: packet-loss, -100
+          err: "Test failed! Packet loss to {{id_0}} before the change:
+               {{pre['packet-loss']}}%. Packet loss after the change:
+               {{post['packet-loss']}}%."
+          info: "Test succeeded! Packet loss to {{id_0}} before the change:
+                {{pre['packet-loss']}}%. Packet loss after the change:
+                {{post['packet-loss']}}%."

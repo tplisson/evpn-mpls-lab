@@ -1,20 +1,28 @@
 ---
-  - name: Create Directories
+  - name: 
+    import_playbook: pb-ti-lfa-on.yml
+
+  - name: Initating test case with TI-LFA enabled
     hosts: localhost
     gather_facts: no
 
     tasks:
 
+    - name: sleep for 30 seconds and continue with play
+      wait_for:
+        timeout: 30
+
     - name: Create directories      
       vars:
-        test_dir: "testcase/1.2"
-        detailed_dir: "testcase/1.2/detailed"
+        test_dir: "testcase/1.3"
+        detailed_dir: "testcase/1.3/detailed"
       file: 
         path: "{{playbook_dir}}/{{item}}" 
         state: directory
       with_items:
         - "{{test_dir}}"
         - "{{detailed_dir}}"
+
 
   - name: "{{testcase}}"
     hosts: DVT
@@ -23,9 +31,9 @@
     connection: local
     gather_facts: no
     vars:
-      testcase: "Test Case 1-2: ISIS SPRING TI-LFA Steady State"
-      test_dir: "testcase/1.2"
-      detailed_dir: "testcase/1.2/detailed"
+      testcase: "Test Case 1-3: ISIS SPRING TI-LFA Steady State"
+      test_dir: "testcase/1.3"
+      detailed_dir: "testcase/1.3/detailed"
       credentials:
         host: "{{ inventory_hostname }}"
         user: "{{ ansible_ssh_user }}"

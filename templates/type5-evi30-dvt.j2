@@ -1,0 +1,157 @@
+{# ###### SPINE / LEAF MXs ##### #}
+
+groups {
+    GR-EDGE-INTF-LAG-MEMBER {
+        interfaces {
+            <*> {
+                hold-time up 2000 down 0;
+                optics-options {
+                    alarm low-light-alarm {
+                        syslog;
+                    }
+                    warning low-light-warning {
+                        syslog;
+                    }
+                }
+            }
+        }
+    }
+    replace: GR-EDGE-INTF-L2 {
+        interfaces {
+            <ae*> {
+                flexible-vlan-tagging;
+                encapsulation flexible-ethernet-services;
+                mtu 9000;
+                aggregated-ether-options {
+                    minimum-links 1;
+                    lacp {
+                        active;
+                        periodic fast;
+                        accept-data;
+                        hold-time up 2;
+                    }
+                }
+                unit <*> {
+                    encapsulation vlan-bridge;
+                    esi {
+                        auto-derive {
+                           lacp;
+                        }
+                        all-active;
+                    }
+                }
+            }
+        }
+    }
+}
+interfaces {
+{% for ae_member in ae_members %}
+    replace: {{ae_member}} {
+        apply-groups GR-EDGE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad {{ae_name}};
+        }
+    }
+{% endfor %}
+    {{ae_name}} {
+        apply-groups GR-EDGE-INTF-L2;
+        description "{{host_name}} ---- {{description}}";
+        aggregated-ether-options {
+            lacp {
+                replace: system-id {{sys_id}};
+            }
+        }
+        replace: unit {{evi30.id}} {
+            vlan-id {{evi30.id}};
+        }
+    }
+    irb {
+        replace: unit {{evi30.id}} {
+            virtual-gateway-accept-data;
+            family inet {
+                address {{evi30.ipv4_subnet}}.{{local_ip}}/{{evi30.ipv4_mask}} {
+                    preferred;
+                    virtual-gateway-address {{evi30.ipv4_subnet}}.{{virtual_ip}};
+                }
+            }
+            family inet6 {
+                address {{evi30.ipv6_subnet}}::{{local_ip}}/{{evi30.ipv6_mask}} {
+                    preferred;
+                    virtual-gateway-address {{evi30.ipv6_subnet}}::{{virtual_ip}};
+                }
+                address fe80::{{evi30.id}}:{{local_ip}}/{{evi30.ipv6_mask}};
+            }
+            virtual-gateway-v4-mac {{evi30.virtual_v4_mac}};
+            virtual-gateway-v6-mac {{evi30.virtual_v6_mac}};
+        }
+    }
+}
+routing-options {
+    route-distinguisher-id {{loopback}};
+}
+routing-instances {
+    replace: vlan{{evi30.id}} {
+        description "EVPN instance for VLAN {{evi30.id}}";
+        instance-type evpn;
+        vlan-id {{evi30.id}};
+        interface {{ae_name}}.{{evi30.id}};
+        routing-interface irb.{{evi30.id}};
+        vrf-target target:64514:{{evi30.evi}};
+        protocols {
+            evpn {
+                default-gateway no-gateway-community;
+            }
+            inactive: igmp-snooping {
+                proxy;
+            }
+            mld-snooping {
+                proxy {
+                    source-address fe80::{{evi30.id}}:{{local_ip}};
+                }
+            }
+        }
+    }
+    replace: vrf{{evi30.id}} {
+        description "VRF instance for IRB in VLAN {{evi30.id}}";
+        instance-type vrf;
+        interface irb.{{evi30.id}};
+        vrf-target target:64514:{{evi30.id}};
+        vrf-table-label;
+        protocols {                     
+            evpn {
+                ip-prefix-routes {
+                    advertise direct-nexthop;
+                    encapsulation mpls;
+                }
+            }
+        }
+    }
+}
+protocols {
+    lldp {
+        interface {{ae_name}};
+    }
+}
+protocols {
+    bgp {
+        group BG-IBGP-LEAF {
+            inactive: family inet-vpn {
+                unicast;
+            }
+            inactive: family inet6-vpn {
+                unicast;
+            }
+        }
+{% if "S-DC" in host_name %}
+        group BG-IBGP-SPINE {
+            inactive: family inet-vpn {
+                unicast;
+            }
+            inactive: family inet6-vpn {
+                unicast;
+            }
+        }
+{% endif %}
+    }
+}
+

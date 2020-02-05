@@ -1,0 +1,23 @@
+tests_include: 
+ - bgp-summary
+bgp-summary:
+- command: show bgp summary 
+- iterate:
+    id: peer-address
+    tests:
+    - err: 'BGP peer AS: {{post["peer-as"]}}, NEI: {{post["peer-address"]}} is not Estab, rather {{post["peer-state"]}}'
+      info: All BGP Peers are 'Established' is-equal: peer-state, Established
+    - err: 'BGP RIB: ''{{post["peer-address"]}}'' went away, oh no!' 
+      info: BGP list did not loose peers
+      list-not-less: null
+    - err: 'BGP RIB: ''{{post["peer-address"]}}'' is added !' 
+      info: BGP list add new peers
+      list-not-more: null
+      xpath: bgp-peer 
+- iterate:
+    id: './bgp-rib/name'
+    tests:
+    - delta: .//bgp-rib/active-prefix-count, 20%
+      err: ' ERROR: The number of active prefix of the BGP Table {{post["bgp-rib/name"]}}have changed more than 20%. [Before = {{pre["bgp-rib/active-prefix-count"]}} / After = {{post["bgp-rib/active-prefix-count"]}}]'
+      info: 'Checking BGP peer active prefix count (tolerance 20%) {{post["bgp-rib/active- prefix-count"]}}'
+      xpath: '/bgp-information'

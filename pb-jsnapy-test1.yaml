@@ -1,0 +1,24 @@
+---
+- name: Jsnapy test1
+  hosts: S-DC1-2
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+    - name: Take a snapshot and immediately evaluate it
+      juniper_junos_jsnapy:
+        action: "snapcheck"
+        dir: "/project/jsnapy/testfiles/"
+        test_files: 
+          - "test_forwarding_summary.yml"
+          #- "test_bgp_summary.yml"
+        logfile: "jsnapy_test1.log"
+      register: test_result
+
+    - name: Verify JSNAPy tests passed
+      assert:
+        that:
+          - "test_result.passPercentage == 100"

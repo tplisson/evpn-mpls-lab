@@ -1,0 +1,11 @@
+tests_include:
+  - check_forwarding_summary
+check_forwarding_summary:
+  - command: show route forwarding-table summary 
+  - iterate:
+    xpath: //forwarding-table-information/route-table/route-table-summary 
+    id: ./../table-name
+    tests:
+      - delta: route-count, 20%
+        info: "Test Succeeded!! Active route for forwarding table <{{post['../table-name']}}> and type <{{post['route-table-type']}}> has changed within delta 20%, before it was <{{pre['route-count']}}>, now it is <{{post['route-count']}}> "
+        err: "Test Failed!!! Active route for forwarding table <{{post['../table-name']}}> and type <{{post['route-table-type']}}> has changed more than delta 20%, before it was <{{pre['route-count']}}>, now it is <{{post['route-count']}}> "

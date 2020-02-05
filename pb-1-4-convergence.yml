@@ -1,0 +1,57 @@
+---
+  - name: Create Directories
+    hosts: localhost
+    gather_facts: no
+
+    tasks:
+
+    - name: Create directories      
+      vars:
+        test_dir: "testcase/1.4"
+        detailed_dir: "testcase/1.4/detailed"
+      file: 
+        path: "{{playbook_dir}}/{{item}}" 
+        state: directory
+      with_items:
+        - "{{test_dir}}"
+        - "{{detailed_dir}}"
+
+  - name: "{{testcase}}"
+    hosts: L-DC1-1A
+    roles:
+     - Juniper.junos
+    connection: local
+    gather_facts: no
+    vars:
+      testcase: "Test Case 1-4: Convergence Test - Spine Link Failure"
+      test_dir: "testcase/1.4"
+      detailed_dir: "testcase/1.4/detailed"
+      credentials:
+        host: "{{ inventory_hostname }}"
+        user: "{{ ansible_ssh_user }}"
+        passwd: "{{ ansible_ssh_pass }}"
+  
+    tasks:
+
+    #- name: Checking NETCONF connectivity
+    #  wait_for: 
+    #    host: "{{ inventory_hostname }}"
+    #    port: "{{ ansible_port }}"
+    #    timeout: 2
+    #  register: netconf_result
+
+    - name: Gathering output for {{testcase}}
+      #when: netconf_result|success
+      junos_rpc:
+        #host: "{{ inventory_hostname }}"
+        rpc: "get-interface-information"
+        kwargs:
+          interface_name: ae1
+        format: text
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+        #return_output: false
+      register: junos
+
+    - name: Print RPC reply
+      debug: msg="{{ junos.rpc_reply }}"
+
