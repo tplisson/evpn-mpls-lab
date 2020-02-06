@@ -1,0 +1,33 @@
+
+Aggregated interface: ae0
+    LACP state:       Role   Exp   Def  Dist  Col  Syn  Aggr  Timeout  Activity
+      xe-0/1/0:0     Actor    No    No   Yes  Yes  Yes   Yes     Slow    Active
+      xe-0/1/0:0   Partner    No    No   Yes  Yes  Yes   Yes     Slow    Active
+    LACP protocol:        Receive State  Transmit State          Mux State 
+      xe-0/1/0:0                Current   Slow periodic Collecting distributing
+
+    LACP hold-timer:  Up, Enabled, Interval: 2 sec
+                        Status         Re-Start Cnt   TTE(sec)    Hold Start
+    xe-0/1/0:0          Not-Running    NA             NA          NA                
+
+Aggregated interface: ae1
+    LACP state:       Role   Exp   Def  Dist  Col  Syn  Aggr  Timeout  Activity
+      xe-0/1/1:0     Actor    No    No   Yes  Yes  Yes   Yes     Slow    Active
+      xe-0/1/1:0   Partner    No    No   Yes  Yes  Yes   Yes     Slow    Active
+    LACP protocol:        Receive State  Transmit State          Mux State 
+      xe-0/1/1:0                Current   Slow periodic Collecting distributing
+
+    LACP hold-timer:  Up, Enabled, Interval: 2 sec
+                        Status         Re-Start Cnt   TTE(sec)    Hold Start
+    xe-0/1/1:0          Not-Running    NA             NA          NA                
+
+Aggregated interface: ae10
+    LACP state:       Role   Exp   Def  Dist  Col  Syn  Aggr  Timeout  Activity
+      xe-0/0/0:0     Actor    No    No   Yes  Yes  Yes   Yes     Fast    Active
+      xe-0/0/0:0   Partner    No    No   Yes  Yes  Yes   Yes     Fast    Active
+    LACP protocol:        Receive State  Transmit State          Mux State 
+      xe-0/0/0:0                Current   Fast periodic Collecting distributing
+
+    LACP hold-timer:  Up, Enabled, Interval: 2 sec
+                        Status         Re-Start Cnt   TTE(sec)    Hold Start
+    xe-0/0/0:0          Not-Running    NA             NA          NA                

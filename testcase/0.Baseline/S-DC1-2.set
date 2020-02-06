@@ -1,0 +1,702 @@
+
+set version 20191026.124700_builder.r1063854
+set groups re0 interfaces fxp0 unit 0 family inet address 192.168.200.58/24
+set groups re0 interfaces fxp0 unit 0 family inet address 192.168.200.60/24 master-only
+set groups re1 interfaces fxp0 unit 0 family inet address 192.168.200.59/24
+set groups re1 interfaces fxp0 unit 0 family inet address 192.168.200.60/24 master-only
+set groups GR-CORE-INTF-L3 interfaces <ae*> traps
+set groups GR-CORE-INTF-L3 interfaces <ae*> mtu 16000
+set groups GR-CORE-INTF-L3 interfaces <ae*> aggregated-ether-options bfd-liveness-detection minimum-interval 50
+set groups GR-CORE-INTF-L3 interfaces <ae*> aggregated-ether-options bfd-liveness-detection multiplier 3
+set groups GR-CORE-INTF-L3 interfaces <ae*> aggregated-ether-options bfd-liveness-detection no-adaptation
+set groups GR-CORE-INTF-L3 interfaces <ae*> aggregated-ether-options minimum-links 1
+set groups GR-CORE-INTF-L3 interfaces <ae*> aggregated-ether-options lacp active
+set groups GR-CORE-INTF-L3 interfaces <ae*> aggregated-ether-options lacp periodic slow
+set groups GR-CORE-INTF-L3 interfaces <ae*> aggregated-ether-options lacp accept-data
+set groups GR-CORE-INTF-L3 interfaces <ae*> aggregated-ether-options lacp hold-time up 2
+set groups GR-CORE-INTF-L3 interfaces <ae*> unit 0 traps
+set groups GR-CORE-INTF-L3 interfaces <ae*> unit 0 family iso
+set groups GR-CORE-INTF-L3 interfaces <ae*> unit 0 family mpls maximum-labels 16
+set groups GR-CORE-INTF-LAG-MEMBER interfaces <*> hold-time up 2000
+set groups GR-CORE-INTF-LAG-MEMBER interfaces <*> hold-time down 0
+set groups GR-CORE-INTF-LAG-MEMBER interfaces <*> optics-options alarm low-light-alarm syslog
+set groups GR-CORE-INTF-LAG-MEMBER interfaces <*> optics-options warning low-light-warning syslog
+set groups GR-EDGE-INTF-LAG-MEMBER interfaces <*> hold-time up 2000
+set groups GR-EDGE-INTF-LAG-MEMBER interfaces <*> hold-time down 0
+set groups GR-EDGE-INTF-LAG-MEMBER interfaces <*> optics-options alarm low-light-alarm syslog
+set groups GR-EDGE-INTF-LAG-MEMBER interfaces <*> optics-options warning low-light-warning syslog
+set groups GR-EDGE-INTF-L2 interfaces <ae*> flexible-vlan-tagging
+set groups GR-EDGE-INTF-L2 interfaces <ae*> mtu 9000
+set groups GR-EDGE-INTF-L2 interfaces <ae*> encapsulation flexible-ethernet-services
+set groups GR-EDGE-INTF-L2 interfaces <ae*> aggregated-ether-options minimum-links 1
+set groups GR-EDGE-INTF-L2 interfaces <ae*> aggregated-ether-options lacp active
+set groups GR-EDGE-INTF-L2 interfaces <ae*> aggregated-ether-options lacp periodic fast
+set groups GR-EDGE-INTF-L2 interfaces <ae*> aggregated-ether-options lacp accept-data
+set groups GR-EDGE-INTF-L2 interfaces <ae*> aggregated-ether-options lacp hold-time up 2
+set groups GR-EDGE-INTF-L2 interfaces <ae*> unit <*> encapsulation vlan-bridge
+set groups GR-EDGE-INTF-L2 interfaces <ae*> unit <*> esi auto-derive lacp
+set groups GR-EDGE-INTF-L2 interfaces <ae*> unit <*> esi all-active
+set groups GR-CORE-ISIS protocols isis backup-spf-options use-post-convergence-lfa maximum-backup-paths 2
+set groups GR-CORE-ISIS protocols isis backup-spf-options use-source-packet-routing
+set groups GR-CORE-ISIS protocols isis level 1 disable
+set groups GR-CORE-ISIS protocols isis level 2 authentication-key-chain KC-ISIS-AUTH
+set groups GR-CORE-ISIS protocols isis level 2 wide-metrics-only
+set groups GR-CORE-ISIS protocols isis interface <ae*> lsp-interval 5
+set groups GR-CORE-ISIS protocols isis interface <ae*> point-to-point
+set groups GR-CORE-ISIS protocols isis interface <ae*> level 2 hello-authentication-key-chain KC-ISIS-AUTH
+set groups GR-CORE-ISIS protocols isis interface <ae*> level 2 post-convergence-lfa node-protection cost 16777214
+set groups GR-CORE-ISIS protocols isis reference-bandwidth 1000g
+set groups GR-CORE-ISIS protocols isis lsp-lifetime 65535
+set groups GR-CORE-ISIS protocols isis spf-options delay 50
+set groups GR-CORE-ISIS protocols isis spf-options holddown 2000
+set groups GR-CORE-ISIS protocols isis spf-options rapid-runs 5
+set groups GR-CORE-ISIS protocols isis overload timeout 300
+set groups GR-CORE-ISIS protocols isis overload advertise-high-metrics
+set apply-groups re0
+set apply-groups re1
+set system commit persist-groups-inheritance
+set system commit fast-synchronize
+set system commit synchronize
+set system configuration-database extend-size
+deactivate system configuration-database extend-size
+deactivate system configuration-database
+set system login idle-timeout 5
+set system login user tplisson uid 2000
+set system login user tplisson class super-user
+set system login user tplisson authentication encrypted-password "$6$AKbrfJIU$dwzn92UgTIIJ9yKJtvJBK2aG0Lr/pxRwpdOZRmesKivbfot9YT3TmczmtLqSF1WRiqEMvhYmyydI4PVMZneHM."
+set system login message "************************************************************************\n************************************************************************\n** *                                                                * **\n** *                                                                * **\n** *                            WARNING                             * **\n** *                                                                * **\n** *              You have accessed a private network.              * **\n** *      You are required to have personal authorisation from      * **\n** *    the system administrator before you use this device and     * **\n** *      you are strictly limited to the use set out in that       * **\n** *                     written authorisation.                     * **\n** *    Unauthorised access or use of this device is prohibited.    * **\n** *                                                                * **\n** *    Unauthorised access or misuse of a computer constitutes     * **\n** *       an offence under the Computer Misuse Act of 1990.        * **\n** *                                                                * **\n** *                                                                * **\n************************************************************************\n************************************************************************\n"
+set system root-authentication encrypted-password "$6$6YJ.5gcI$HGcSYJ1Em8SK4Gt9wHclNQzd6j0L8WwtGeA0D6zxZh/efwq.m52MD/Lv0GEtfOT7d4qKpTmA50mfRlp6MkryL."
+set system services ssh root-login allow
+set system services netconf ssh port 22
+set system host-name S-DC1-2
+set system time-zone Europe/Brussels
+set system switchover-on-routing-crash
+set system no-redirects
+set system no-redirects-ipv6
+set system no-ping-record-route
+set system no-ping-time-stamp
+set system dump-on-panic
+set system arp passive-learning
+set system arp purging
+set system arp gratuitous-arp-on-ifup
+set system management-instance
+set system internet-options icmpv4-rate-limit packet-rate 3000
+set system internet-options icmpv4-rate-limit bucket-size 3
+set system internet-options path-mtu-discovery
+set system internet-options no-source-quench
+set system internet-options tcp-reset-syn-acknowledge
+set system internet-options tcp-drop-synfin-set
+set system internet-options no-tcp-reset drop-all-tcp
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system archival configuration transfer-on-commit
+set system archival configuration routing-instance mgmt_junos
+set system archival configuration archive-sites "ftp://data:dAtra2@10.11.2.23/ARCHIVE/MX/DMZ"
+set system processes routing enable
+set system processes routing failover other-routing-engine
+set system ntp boot-server 10.11.2.21
+set system ntp server 10.11.2.14 routing-instance mgmt_junos
+set system ntp server 10.11.2.21 routing-instance mgmt_junos
+set chassis craft-lockout
+deactivate chassis craft-lockout
+set chassis dump-on-panic
+set chassis redundancy routing-engine 0 master
+set chassis redundancy routing-engine 1 backup
+set chassis redundancy failover on-loss-of-keepalives
+set chassis redundancy failover on-re-to-fpc-stale
+set chassis redundancy failover on-disk-failure
+set chassis redundancy failover on-loss-of-vm-host-connection
+set chassis redundancy graceful-switchover
+set chassis routing-engine on-disk-failure disk-failure-action reboot
+set chassis aggregated-devices ethernet device-count 32
+set chassis mic-aware-power-management
+set security authentication-key-chains key-chain BGP-AUTH key 1 secret "$9$G1jkPpu1IhrtuWL7NbwP5TzFn"
+set security authentication-key-chains key-chain BGP-AUTH key 1 start-time "2020-1-1.00:00:00 +0100"
+set security authentication-key-chains key-chain ISIS-AUTH key 1 secret "$9$7adwgmPQznC.PO1EhrlgoaZGD"
+set security authentication-key-chains key-chain ISIS-AUTH key 1 start-time "2020-1-1.00:00:00 +0100"
+set security authentication-key-chains key-chain ISIS-AUTH key 1 algorithm hmac-sha-1
+set security authentication-key-chains key-chain ISIS-AUTH key 1 options isis-enhanced
+set security authentication-key-chains key-chain KC-BGP-AUTH key 1 secret "$9$G1jkPpu1IhrtuWL7NbwP5TzFn"
+set security authentication-key-chains key-chain KC-BGP-AUTH key 1 start-time "2020-1-1.00:00:00 +0100"
+set security authentication-key-chains key-chain KC-ISIS-AUTH key 1 secret "$9$7adwgmPQznC.PO1EhrlgoaZGD"
+set security authentication-key-chains key-chain KC-ISIS-AUTH key 1 start-time "2020-1-1.00:00:00 +0100"
+set security authentication-key-chains key-chain KC-ISIS-AUTH key 1 algorithm hmac-sha-1
+set security authentication-key-chains key-chain KC-ISIS-AUTH key 1 options isis-enhanced
+set security authentication-key-chains key-chain KC-KC-BGP-AUTH key 1 secret "$9$G1jkPpu1IhrtuWL7NbwP5TzFn"
+set security authentication-key-chains key-chain KC-KC-BGP-AUTH key 1 start-time "2020-1-1.00:00:00 +0100"
+set interfaces xe-0/0/0:0 apply-groups GR-EDGE-INTF-LAG-MEMBER
+set interfaces xe-0/0/0:0 gigether-options 802.3ad ae10
+set interfaces xe-0/1/0:0 apply-groups GR-CORE-INTF-LAG-MEMBER
+set interfaces xe-0/1/0:0 gigether-options 802.3ad ae0
+set interfaces xe-0/1/1:0 apply-groups GR-CORE-INTF-LAG-MEMBER
+set interfaces xe-0/1/1:0 gigether-options 802.3ad ae1
+set interfaces xe-0/1/2:0 apply-groups GR-CORE-INTF-LAG-MEMBER
+set interfaces xe-0/1/2:0 gigether-options 802.3ad ae2
+set interfaces xe-0/1/3:0 apply-groups GR-CORE-INTF-LAG-MEMBER
+set interfaces xe-0/1/3:0 gigether-options 802.3ad ae3
+set interfaces xe-0/1/4:0 apply-groups GR-CORE-INTF-LAG-MEMBER
+set interfaces xe-0/1/4:0 gigether-options 802.3ad ae4
+set interfaces ae0 apply-groups GR-CORE-INTF-L3
+set interfaces ae0 description "S-DC1-2 ---- S-DC2-1"
+set interfaces ae0 aggregated-ether-options bfd-liveness-detection neighbor 10.35.0.7
+set interfaces ae0 aggregated-ether-options bfd-liveness-detection local-address 10.35.0.6
+set interfaces ae0 unit 0 family inet address 10.35.0.6/31
+set interfaces ae1 apply-groups GR-CORE-INTF-L3
+set interfaces ae1 description "S-DC1-2 ---- S-DC2-2"
+set interfaces ae1 aggregated-ether-options bfd-liveness-detection neighbor 10.35.0.9
+set interfaces ae1 aggregated-ether-options bfd-liveness-detection local-address 10.35.0.8
+set interfaces ae1 unit 0 family inet address 10.35.0.8/31
+set interfaces ae2 apply-groups GR-CORE-INTF-L3
+set interfaces ae2 description "S-DC1-2 ---- S-DC1-1"
+set interfaces ae2 aggregated-ether-options bfd-liveness-detection neighbor 10.35.0.4
+set interfaces ae2 aggregated-ether-options bfd-liveness-detection local-address 10.35.0.5
+set interfaces ae2 unit 0 family inet address 10.35.0.5/31
+set interfaces ae3 apply-groups GR-CORE-INTF-L3
+set interfaces ae3 description "S-DC1-2 ---- L-DC1-1A"
+set interfaces ae3 aggregated-ether-options bfd-liveness-detection neighbor 10.35.12.1
+set interfaces ae3 aggregated-ether-options bfd-liveness-detection local-address 10.35.12.0
+set interfaces ae3 unit 0 family inet address 10.35.12.0/31
+set interfaces ae4 apply-groups GR-CORE-INTF-L3
+set interfaces ae4 description "S-DC1-2 ---- L-DC1-1B"
+set interfaces ae4 aggregated-ether-options bfd-liveness-detection neighbor 10.35.12.3
+set interfaces ae4 aggregated-ether-options bfd-liveness-detection local-address 10.35.12.2
+set interfaces ae4 unit 0 family inet address 10.35.12.2/31
+set interfaces ae10 apply-groups GR-EDGE-INTF-L2
+set interfaces ae10 description "S-DC1-2 ---- SRX-ANS-3"
+set interfaces ae10 aggregated-ether-options lacp system-id dc:01:00:00:ae:10
+set interfaces ae10 unit 10 vlan-id 10
+set interfaces ae10 unit 20 vlan-id 20
+set interfaces ae10 unit 30 vlan-id 30
+set interfaces irb description IRB
+set interfaces irb unit 10 virtual-gateway-accept-data
+set interfaces irb unit 10 family inet address 10.10.0.3/24 preferred
+set interfaces irb unit 10 family inet address 10.10.0.3/24 virtual-gateway-address 10.10.0.1
+set interfaces irb unit 10 family inet6 address 100::3/64 preferred
+set interfaces irb unit 10 family inet6 address 100::3/64 virtual-gateway-address 100::1
+set interfaces irb unit 10 family inet6 address fe80::10:3/64
+set interfaces irb unit 10 virtual-gateway-v4-mac 04:ff:10:00:00:00
+set interfaces irb unit 10 virtual-gateway-v6-mac 06:ff:10:00:00:00
+set interfaces irb unit 20 virtual-gateway-accept-data
+set interfaces irb unit 20 family inet address 10.20.0.3/24 preferred
+set interfaces irb unit 20 family inet address 10.20.0.3/24 virtual-gateway-address 10.20.0.1
+set interfaces irb unit 20 family inet6 address 200::3/64 preferred
+set interfaces irb unit 20 family inet6 address 200::3/64 virtual-gateway-address 200::1
+set interfaces irb unit 20 family inet6 address fe80::20:3/64
+set interfaces irb unit 20 virtual-gateway-v4-mac 04:ff:20:00:00:00
+set interfaces irb unit 20 virtual-gateway-v6-mac 06:ff:20:00:00:00
+set interfaces irb unit 30 virtual-gateway-accept-data
+set interfaces irb unit 30 family inet address 10.30.0.3/24 preferred
+set interfaces irb unit 30 family inet address 10.30.0.3/24 virtual-gateway-address 10.30.0.1
+set interfaces irb unit 30 family inet6 address 300::3/64 preferred
+set interfaces irb unit 30 family inet6 address 300::3/64 virtual-gateway-address 300::1
+set interfaces irb unit 30 family inet6 address fe80::30:3/64
+set interfaces irb unit 30 virtual-gateway-v4-mac 04:ff:30:00:00:00
+set interfaces irb unit 30 virtual-gateway-v6-mac 06:ff:30:00:00:00
+set interfaces lo0 unit 0 family inet filter input FF-RE-PROTECT-V4
+deactivate interfaces lo0 unit 0 family inet filter input
+set interfaces lo0 unit 0 family inet filter output FF-COS-RE-FILTER-V4
+set interfaces lo0 unit 0 family inet address 10.35.1.2/32
+set interfaces lo0 unit 0 family iso address 49.0001.0100.3500.1002.00
+set policy-options prefix-list PL-DEFAULT-V4 0.0.0.0/0
+set policy-options prefix-list PL-DEFAULT-V6 ::/0
+set policy-options prefix-list PL-NETCONF-CLIENTS 192.168.200.0/24
+set policy-options prefix-list PL-SSH-CLIENTS 192.168.200.0/24
+set policy-options prefix-list PL-CORE-LINKS-LOOPBACKS 10.35.1.0/24
+set policy-options prefix-list PL-CORE-LINKS-LOOPBACKS 10.35.2.0/24
+set policy-options prefix-list PL-CORE-LINKS-P2P 10.35.0.0/24
+set policy-options prefix-list PL-CORE-LINKS-P2P 10.35.11.0/24
+set policy-options prefix-list PL-CORE-LINKS-P2P 10.35.12.0/24
+set policy-options prefix-list PL-CORE-LINKS-P2P 10.35.21.0/24
+set policy-options prefix-list PL-CORE-LINKS-P2P 10.35.22.0/24
+set policy-options prefix-list PL-SNMPV3-POLLING-HOSTS apply-path "snmp v3 target-address <*> address <*>"
+set policy-options prefix-list PL-NTP-SOURCE 127.0.0.1/32
+set policy-options prefix-list PL-NTP-SOURCE apply-path "system ntp source-address <*>"
+set policy-options prefix-list PL-NTP-SERVERS apply-path "system ntp server <*>"
+set policy-options prefix-list PL-DNS-SERVERS apply-path "system name-server <*>"
+set policy-options prefix-list PL-BGP-NEIGHBORS apply-path "protocols bgp group <*> neighbor <*>"
+set policy-options prefix-list PL-BGP-VRF-NEIGHBORS apply-path "routing-instances <*> protocols bgp group <*> neighbor <*>"
+set policy-options prefix-list PL-TACPLUS-SERVER apply-path "system tacplus-server <*>"
+set policy-options prefix-list PL-EVI10-V4 10.10.0.0/16
+set policy-options prefix-list PL-EVI20-V4 10.20.0.0/16
+set policy-options prefix-list PL-EVI10-V6 101::/64
+set policy-options prefix-list PL-EVI10-V6 102::/64
+set policy-options prefix-list PL-EVI10-V6 110::/64
+set policy-options prefix-list PL-EVI10-V6 210::/64
+set policy-options prefix-list PL-EVI20-V6 120::/64
+set policy-options prefix-list PL-EVI20-V6 201::/64
+set policy-options prefix-list PL-EVI20-V6 202::/64
+set policy-options prefix-list PL-EVI20-V6 220::/64
+set policy-options policy-statement PL-10-NH-VGA-v4 term NH-VGA-v4 then next-hop 10.10.0.1
+set policy-options policy-statement PL-10-NH-VGA-v4 term NH-VGA-v4 then accept
+set policy-options policy-statement PL-10-NH-VGA-v6 term NH-VGA-v6 then next-hop 100::1
+set policy-options policy-statement PL-10-NH-VGA-v6 term NH-VGA-v6 then accept
+set policy-options policy-statement PL-20-NH-VGA-v4 term NH-VGA-v4 then next-hop 10.20.0.1
+set policy-options policy-statement PL-20-NH-VGA-v4 term NH-VGA-v4 then accept
+set policy-options policy-statement PL-20-NH-VGA-v6 term NH-VGA-v6 then next-hop 200::1
+set policy-options policy-statement PL-20-NH-VGA-v6 term NH-VGA-v6 then accept
+set policy-options policy-statement PL-ALL-QFX-OUT-v4 term MATCH-COMM from protocol bgp
+set policy-options policy-statement PL-ALL-QFX-OUT-v4 term MATCH-COMM from community QFX1
+set policy-options policy-statement PL-ALL-QFX-OUT-v4 term MATCH-COMM from community QFX2
+set policy-options policy-statement PL-ALL-QFX-OUT-v4 term MATCH-COMM then next-hop 10.10.0.1
+set policy-options policy-statement PL-ALL-QFX-OUT-v4 term MATCH-COMM then accept
+set policy-options policy-statement PL-ALL-QFX-OUT-v4 term DROP then reject
+set policy-options policy-statement PL-ALL-QFX-OUT-v6 term MATCH-COMM from protocol bgp
+set policy-options policy-statement PL-ALL-QFX-OUT-v6 term MATCH-COMM from community QFX1
+set policy-options policy-statement PL-ALL-QFX-OUT-v6 term MATCH-COMM from community QFX2
+set policy-options policy-statement PL-ALL-QFX-OUT-v6 term MATCH-COMM then next-hop 100::1
+set policy-options policy-statement PL-ALL-QFX-OUT-v6 term MATCH-COMM then accept
+set policy-options policy-statement PL-ALL-QFX-OUT-v6 term DROP then reject
+set policy-options policy-statement PL-EVI10-V4 term DEFAULT-NH-VGA-V4 from prefix-list PL-EVI10-V4
+set policy-options policy-statement PL-EVI10-V4 term DEFAULT-NH-VGA-V4 then next-hop 10.10.0.1
+set policy-options policy-statement PL-EVI10-V4 term DEFAULT-NH-VGA-V4 then accept
+set policy-options policy-statement PL-EVI10-V4 term DROP then reject
+set policy-options policy-statement PL-EVI10-V6 term DEFAULT-NH-VGA-V6 from prefix-list PL-EVI10-V6
+set policy-options policy-statement PL-EVI10-V6 term DEFAULT-NH-VGA-V6 then next-hop 100::1
+set policy-options policy-statement PL-EVI10-V6 term DEFAULT-NH-VGA-V6 then accept
+set policy-options policy-statement PL-EVI10-V6 term DROP then reject
+set policy-options policy-statement PL-EVI20-V4 term DEFAULT-NH-VGA-V4 from prefix-list PL-EVI20-V4
+set policy-options policy-statement PL-EVI20-V4 term DEFAULT-NH-VGA-V4 then next-hop 10.20.0.1
+set policy-options policy-statement PL-EVI20-V4 term DEFAULT-NH-VGA-V4 then accept
+set policy-options policy-statement PL-EVI20-V4 term DROP then reject
+set policy-options policy-statement PL-EVI20-V6 term DEFAULT-NH-VGA-V6 from prefix-list PL-EVI20-V6
+set policy-options policy-statement PL-EVI20-V6 term DEFAULT-NH-VGA-V6 then next-hop 200::1
+set policy-options policy-statement PL-EVI20-V6 term DEFAULT-NH-VGA-V6 then accept
+set policy-options policy-statement PL-EVI20-V6 term DROP then reject
+set policy-options policy-statement PL-FIX-NHv4 term NH then next-hop 10.10.0.1
+set policy-options policy-statement PL-FIX-NHv4 term NH then next policy
+set policy-options policy-statement PL-FIX-NHv6 term NH then next-hop 100.1.0.0
+set policy-options policy-statement PL-FIX-NHv6 term NH then next policy
+set policy-options policy-statement PL-LOAD-BALANCE term LB then load-balance per-packet
+set policy-options policy-statement PL-NH-SELF term NHS then next-hop self
+set policy-options policy-statement PL-NH-VGA-v4 term nh-vga then next-hop 10.20.0.1
+set policy-options policy-statement PL-NH-VGA-v4 term nh-vga then accept
+set policy-options policy-statement PL-NH-VGA-v6 term nh-vga then next-hop 1200::1
+set policy-options policy-statement PL-NH-VGA-v6 term nh-vga then accept
+set policy-options policy-statement PL-QFX1 term MATCH-COMM from protocol bgp
+set policy-options policy-statement PL-QFX1 term MATCH-COMM from community QFX1
+set policy-options policy-statement PL-QFX1 term MATCH-COMM then accept
+set policy-options policy-statement PL-QFX1 term DROP then reject
+set policy-options policy-statement PL-QFX2 term MATCH-COMM from protocol bgp
+set policy-options policy-statement PL-QFX2 term MATCH-COMM from community QFX2
+set policy-options policy-statement PL-QFX2 term MATCH-COMM then accept
+set policy-options policy-statement PL-QFX2 term DROP then reject
+set policy-options policy-statement PL-SRX term MATCH-COMM from protocol bgp
+set policy-options policy-statement PL-SRX term MATCH-COMM from community SRX
+set policy-options policy-statement PL-SRX term MATCH-COMM then accept
+set policy-options policy-statement PL-SRX term DROP then reject
+set policy-options policy-statement PL-SRX-IN term MATCH-COMM from protocol bgp
+set policy-options policy-statement PL-SRX-IN term MATCH-COMM from community SRX
+set policy-options policy-statement PL-SRX-IN term MATCH-COMM then accept
+set policy-options policy-statement PL-SRX-IN term DROP then reject
+set policy-options policy-statement PL-SRX-OUT-v4 term MATCH-COMM from protocol bgp
+set policy-options policy-statement PL-SRX-OUT-v4 term MATCH-COMM from community SRX
+set policy-options policy-statement PL-SRX-OUT-v4 term MATCH-COMM then next-hop 10.10.0.1
+set policy-options policy-statement PL-SRX-OUT-v4 term MATCH-COMM then accept
+set policy-options policy-statement PL-SRX-OUT-v4 term DROP then reject
+set policy-options policy-statement PL-SRX-OUT-v6 term MATCH-COMM from protocol bgp
+set policy-options policy-statement PL-SRX-OUT-v6 term MATCH-COMM from community SRX
+set policy-options policy-statement PL-SRX-OUT-v6 term MATCH-COMM then next-hop 100::1
+set policy-options policy-statement PL-SRX-OUT-v6 term MATCH-COMM then accept
+set policy-options policy-statement PL-SRX-OUT-v6 term DROP then reject
+set policy-options community QFX1 members 64514:111
+set policy-options community QFX2 members 64514:222
+set policy-options community SRX members 64514:100
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points be
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points cs1
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points af11
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points af12
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points af13
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points cs2
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points af21
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points af22
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points af23
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points cs3
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points af31
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points af32
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points af33
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points cs4
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points af41
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points af42
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points af43
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points ef
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points cs5
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority low code-points cs6
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority high code-points cs7
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority low code-points be
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points cs1
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points af11
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points af12
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points af13
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points cs2
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points af21
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points af22
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points af23
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points cs3
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points af31
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points af32
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points af33
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points cs4
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points af41
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points af42
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points af43
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points ef
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points cs5
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority low code-points cs6
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority high code-points cs7
+set class-of-service classifiers exp voo-exp forwarding-class best-effort loss-priority low code-points 000
+set class-of-service classifiers exp voo-exp forwarding-class best-effort loss-priority high code-points 001
+set class-of-service classifiers exp voo-exp forwarding-class business-critical loss-priority low code-points 010
+set class-of-service classifiers exp voo-exp forwarding-class assured-forwarding loss-priority low code-points 011
+set class-of-service classifiers exp voo-exp forwarding-class assured-forwarding loss-priority high code-points 100
+set class-of-service classifiers exp voo-exp forwarding-class expedited-forwarding loss-priority low code-points 101
+set class-of-service classifiers exp voo-exp forwarding-class network-control loss-priority low code-points 110
+set class-of-service classifiers exp voo-exp forwarding-class network-control loss-priority high code-points 111
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class best-effort loss-priority low code-points 000
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class best-effort loss-priority high code-points 001
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class business-critical loss-priority low code-points 010
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class assured-forwarding loss-priority low code-points 011
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class assured-forwarding loss-priority high code-points 100
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class expedited-forwarding loss-priority low code-points 101
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class network-control loss-priority low code-points 110
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class network-control loss-priority high code-points 111
+set class-of-service host-outbound-traffic forwarding-class network-control
+set class-of-service host-outbound-traffic dscp-code-point cs6
+set class-of-service drop-profiles dp-be-high interpolate fill-level 75
+set class-of-service drop-profiles dp-be-high interpolate fill-level 100
+set class-of-service drop-profiles dp-be-high interpolate drop-probability 0
+set class-of-service drop-profiles dp-be-high interpolate drop-probability 100
+set class-of-service forwarding-classes class best-effort queue-num 0
+set class-of-service forwarding-classes class business-critical queue-num 4
+set class-of-service forwarding-classes class assured-forwarding queue-num 2
+set class-of-service forwarding-classes class expedited-forwarding queue-num 1
+set class-of-service forwarding-classes class network-control queue-num 3
+set class-of-service interfaces et-* scheduler-map smap-high-bw
+set class-of-service interfaces et-* unit * classifiers dscp voo-dscp
+set class-of-service interfaces et-* unit * classifiers dscp-ipv6 voo-dscp-ipv6
+set class-of-service interfaces et-* unit * classifiers exp voo-exp
+set class-of-service interfaces et-* unit * classifiers ieee-802.1 voo-802.1p
+set class-of-service interfaces ge-* scheduler-map smap-high-bw
+set class-of-service interfaces ge-* unit * classifiers dscp voo-dscp
+set class-of-service interfaces ge-* unit * classifiers dscp-ipv6 voo-dscp-ipv6
+set class-of-service interfaces ge-* unit * classifiers exp voo-exp
+set class-of-service interfaces ge-* unit * classifiers ieee-802.1 voo-802.1p
+set class-of-service interfaces xe-* scheduler-map smap-high-bw
+set class-of-service interfaces xe-* unit * classifiers dscp voo-dscp
+set class-of-service interfaces xe-* unit * classifiers dscp-ipv6 voo-dscp-ipv6
+set class-of-service interfaces xe-* unit * classifiers exp voo-exp
+set class-of-service interfaces xe-* unit * classifiers ieee-802.1 voo-802.1p
+set class-of-service interfaces ae* scheduler-map smap-high-bw
+set class-of-service interfaces ae* unit * classifiers dscp voo-dscp
+set class-of-service interfaces ae* unit * classifiers dscp-ipv6 voo-dscp-ipv6
+set class-of-service interfaces ae* unit * classifiers exp voo-exp
+set class-of-service interfaces ae* unit * classifiers ieee-802.1 voo-802.1p
+set class-of-service rewrite-rules exp voo-exp forwarding-class best-effort loss-priority low code-point 000
+set class-of-service rewrite-rules exp voo-exp forwarding-class best-effort loss-priority high code-point 001
+set class-of-service rewrite-rules exp voo-exp forwarding-class business-critical loss-priority low code-point 010
+set class-of-service rewrite-rules exp voo-exp forwarding-class business-critical loss-priority high code-point 010
+set class-of-service rewrite-rules exp voo-exp forwarding-class assured-forwarding loss-priority low code-point 011
+set class-of-service rewrite-rules exp voo-exp forwarding-class assured-forwarding loss-priority high code-point 100
+set class-of-service rewrite-rules exp voo-exp forwarding-class expedited-forwarding loss-priority low code-point 101
+set class-of-service rewrite-rules exp voo-exp forwarding-class expedited-forwarding loss-priority high code-point 101
+set class-of-service rewrite-rules exp voo-exp forwarding-class network-control loss-priority low code-point 110
+set class-of-service rewrite-rules exp voo-exp forwarding-class network-control loss-priority high code-point 111
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class best-effort loss-priority low code-point 000
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class best-effort loss-priority high code-point 001
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class business-critical loss-priority low code-point 010
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class business-critical loss-priority high code-point 010
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class assured-forwarding loss-priority low code-point 011
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class assured-forwarding loss-priority high code-point 100
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class expedited-forwarding loss-priority low code-point 101
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class expedited-forwarding loss-priority high code-point 101
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class network-control loss-priority low code-point 110
+set class-of-service rewrite-rules ieee-802.1 voo-802.1p forwarding-class network-control loss-priority high code-point 111
+set class-of-service scheduler-maps smap-high-bw forwarding-class best-effort scheduler sched-high-bw-be
+set class-of-service scheduler-maps smap-high-bw forwarding-class assured-forwarding scheduler sched-high-bw-af
+set class-of-service scheduler-maps smap-high-bw forwarding-class business-critical scheduler sched-high-bw-bc
+set class-of-service scheduler-maps smap-high-bw forwarding-class expedited-forwarding scheduler sched-high-bw-ef
+set class-of-service scheduler-maps smap-high-bw forwarding-class network-control scheduler sched-high-bw-nc
+set class-of-service schedulers sched-high-bw-be transmit-rate percent 50
+set class-of-service schedulers sched-high-bw-be buffer-size percent 65
+set class-of-service schedulers sched-high-bw-be priority low
+set class-of-service schedulers sched-high-bw-be drop-profile-map loss-priority high protocol any drop-profile dp-be-high
+set class-of-service schedulers sched-high-bw-bc transmit-rate percent 25
+set class-of-service schedulers sched-high-bw-bc buffer-size percent 15
+set class-of-service schedulers sched-high-bw-bc priority medium-low
+set class-of-service schedulers sched-high-bw-af transmit-rate percent 15
+set class-of-service schedulers sched-high-bw-af buffer-size percent 10
+set class-of-service schedulers sched-high-bw-af priority high
+set class-of-service schedulers sched-high-bw-ef shaping-rate percent 5
+set class-of-service schedulers sched-high-bw-ef buffer-size percent 5
+set class-of-service schedulers sched-high-bw-ef priority strict-high
+set class-of-service schedulers sched-high-bw-nc transmit-rate percent 5
+set class-of-service schedulers sched-high-bw-nc shaping-rate percent 15
+set class-of-service schedulers sched-high-bw-nc buffer-size percent 5
+set class-of-service schedulers sched-high-bw-nc priority high
+set firewall family inet filter FF-COS-RE-FILTER-V4 term TR-ICMP from protocol icmp
+set firewall family inet filter FF-COS-RE-FILTER-V4 term TR-ICMP then count CNT-ICMP
+set firewall family inet filter FF-COS-RE-FILTER-V4 term TR-ICMP then loss-priority low
+set firewall family inet filter FF-COS-RE-FILTER-V4 term TR-ICMP then forwarding-class best-effort
+set firewall family inet filter FF-COS-RE-FILTER-V4 term TR-ICMP then accept
+set firewall family inet filter FF-COS-RE-FILTER-V4 term TR-DEFAULT then loss-priority low
+set firewall family inet filter FF-COS-RE-FILTER-V4 term TR-DEFAULT then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-FIRST-FRAG-DROP from fragment-offset 0
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-FIRST-FRAG-DROP from fragment-flags more-fragments
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-FIRST-FRAG-DROP then count CNT-RE-FIRST-FRAG-DROP
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-FIRST-FRAG-DROP then discard
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NEXT-FRAG-DROP from fragment-offset-except 0
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NEXT-FRAG-DROP then count CNT-RE-NEXT-FRAG-DROP
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NEXT-FRAG-DROP then discard
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC from source-prefix-list PL-DEFAULT-V4
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC from source-prefix-list PL-DEFAULT-V6
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC from source-prefix-list PL-BGP-NEIGHBORS except
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC from source-prefix-list PL-BGP-VRF-NEIGHBORS except
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC from source-prefix-list PL-CORE-LINKS-LOOPBACKS except
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC from source-prefix-list PL-SSH-CLIENTS except
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC from source-prefix-list PL-TACPLUS-SERVER except
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC from protocol tcp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC from tcp-flags "(syn & !ack) | fin | rst"
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC then count CNT-RE-TCP-DOS-DSC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-DSC then discard
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-ACC from protocol tcp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-ACC from tcp-flags "(syn & !ack) | fin | rst"
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-ACC then policer PC-TCP-DOS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-ACC then count CNT-RE-TCP-DOS-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TCP-DOS-PREVENTION-ACC then next term
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ICMP-POLICE-ACC from protocol icmp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ICMP-POLICE-ACC from icmp-type echo-request
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ICMP-POLICE-ACC from icmp-type echo-reply
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ICMP-POLICE-ACC from icmp-type unreachable
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ICMP-POLICE-ACC from icmp-type time-exceeded
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ICMP-POLICE-ACC then policer PC-ICMP
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ICMP-POLICE-ACC then count CNT-RE-ICMP-POLICE
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ICMP-POLICE-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BFD-ACC from protocol udp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BFD-ACC from ttl 255
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BFD-ACC from port 6784
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BFD-ACC from port 7784
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BFD-ACC then count CNT-RE-BFD-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BFD-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BGP-ACC from source-prefix-list PL-BGP-NEIGHBORS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BGP-ACC from source-prefix-list PL-BGP-VRF-NEIGHBORS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BGP-ACC from protocol tcp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BGP-ACC from port bgp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BGP-ACC then count CNT-RE-BGP-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-BGP-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SNMP-ACC from source-prefix-list PL-SNMPV3-POLLING-HOSTS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SNMP-ACC from protocol udp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SNMP-ACC from destination-port snmp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SNMP-ACC then policer PC-SNMP
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SNMP-ACC then count CNT-RE-SNMP-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SNMP-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LDP-ACC from source-prefix-list PL-CORE-LINKS-LOOPBACKS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LDP-ACC from source-prefix-list PL-CORE-LINKS-P2P
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LDP-ACC from protocol tcp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LDP-ACC from protocol udp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LDP-ACC from port ldp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LDP-ACC then count CNT-RE-LDP-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LDP-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LSPPING-ACC from source-prefix-list PL-CORE-LINKS-LOOPBACKS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LSPPING-ACC from protocol udp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LSPPING-ACC from port 3503
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LSPPING-ACC then count LSPPING-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-LSPPING-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NTP-ACC from source-prefix-list PL-NTP-SERVERS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NTP-ACC from source-prefix-list PL-NTP-SOURCE
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NTP-ACC from protocol udp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NTP-ACC from port ntp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NTP-ACC then policer PC-NTP
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NTP-ACC then count CNT-RE-NTP-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NTP-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NETCONF-ACC from source-prefix-list PL-NETCONF-CLIENTS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NETCONF-ACC from protocol tcp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NETCONF-ACC from destination-port 830
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NETCONF-ACC then policer PC-NETCONF
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NETCONF-ACC then count CNT-RE-NETCONF-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-NETCONF-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SSH-ACC from source-prefix-list PL-SSH-CLIENTS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SSH-ACC from protocol tcp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SSH-ACC from destination-port ssh
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SSH-ACC then policer PC-SSH
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SSH-ACC then count CNT-RE-SSH-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-SSH-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TACPLUS-ACC from source-prefix-list PL-TACPLUS-SERVER
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TACPLUS-ACC from protocol tcp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TACPLUS-ACC from port 49
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TACPLUS-ACC then policer PC-TACPLUS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TACPLUS-ACC then count CNT-RE-TACPLUS-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TACPLUS-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TRACEROUTE-ACC from protocol udp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TRACEROUTE-ACC from destination-port 33434-33523
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TRACEROUTE-ACC then policer PC-TRACEROUTE
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TRACEROUTE-ACC then count CNT-RE-TRACEROUTE-ACC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-TRACEROUTE-ACC then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-DNS-ACP from source-prefix-list PL-DNS-SERVERS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-DNS-ACP from protocol udp
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-DNS-ACP from port domain
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-DNS-ACP then policer PC-DNS
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-DNS-ACP then count CNT-RE-DNS-ACP
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-DNS-ACP then accept
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ALL-DSC then count CNT-RE-DSC
+set firewall family inet filter FF-RE-PROTECT-V4 term TR-ALL-DSC then discard
+set firewall policer PC-NTP if-exceeding bandwidth-limit 500k
+set firewall policer PC-NTP if-exceeding burst-size-limit 15k
+set firewall policer PC-NTP then discard
+set firewall policer PC-DNS if-exceeding bandwidth-limit 500k
+set firewall policer PC-DNS if-exceeding burst-size-limit 15k
+set firewall policer PC-DNS then discard
+set firewall policer PC-NETCONF if-exceeding bandwidth-limit 4m
+set firewall policer PC-NETCONF if-exceeding burst-size-limit 60k
+set firewall policer PC-NETCONF then discard
+set firewall policer PC-SSH if-exceeding bandwidth-limit 4m
+set firewall policer PC-SSH if-exceeding burst-size-limit 60k
+set firewall policer PC-SSH then discard
+set firewall policer PC-SNMP if-exceeding bandwidth-limit 10m
+set firewall policer PC-SNMP if-exceeding burst-size-limit 150k
+set firewall policer PC-SNMP then discard
+set firewall policer PC-TACPLUS if-exceeding bandwidth-limit 1m
+set firewall policer PC-TACPLUS if-exceeding burst-size-limit 15k
+set firewall policer PC-TACPLUS then discard
+set firewall policer PC-TCP-DOS if-exceeding bandwidth-limit 1m
+set firewall policer PC-TCP-DOS if-exceeding burst-size-limit 15k
+set firewall policer PC-TCP-DOS then discard
+set firewall policer PC-ICMP if-exceeding bandwidth-limit 5m
+set firewall policer PC-ICMP if-exceeding burst-size-limit 15k
+set firewall policer PC-ICMP then discard
+set firewall policer PC-TRACEROUTE if-exceeding bandwidth-limit 1m
+set firewall policer PC-TRACEROUTE if-exceeding burst-size-limit 15k
+set firewall policer PC-TRACEROUTE then discard
+set routing-instances mgmt_junos routing-options static route 0.0.0.0/0 next-hop 192.168.200.1
+set routing-instances vlan10 description "EVPN instance for VLAN 10"
+set routing-instances vlan10 instance-type evpn
+set routing-instances vlan10 vlan-id 10
+set routing-instances vlan10 interface ae10.10
+set routing-instances vlan10 routing-interface irb.10
+set routing-instances vlan10 vrf-target target:64514:100
+set routing-instances vlan10 protocols evpn default-gateway no-gateway-community
+set routing-instances vlan10 protocols igmp-snooping proxy
+set routing-instances vlan10 protocols mld-snooping proxy source-address fe80::10:3
+set routing-instances vlan20 description "EVPN instance for VLAN 20"
+set routing-instances vlan20 instance-type evpn
+set routing-instances vlan20 vlan-id 20
+set routing-instances vlan20 interface ae10.20
+set routing-instances vlan20 routing-interface irb.20
+set routing-instances vlan20 vrf-target target:64514:200
+set routing-instances vlan20 protocols evpn default-gateway no-gateway-community
+set routing-instances vlan20 protocols igmp-snooping proxy
+set routing-instances vlan20 protocols mld-snooping proxy source-address fe80::20:3
+set routing-instances vlan30 description "EVPN instance for VLAN 30"
+set routing-instances vlan30 instance-type evpn
+set routing-instances vlan30 vlan-id 30
+set routing-instances vlan30 interface ae10.30
+set routing-instances vlan30 routing-interface irb.30
+set routing-instances vlan30 vrf-target target:64514:300
+set routing-instances vlan30 protocols evpn default-gateway no-gateway-community
+set routing-instances vlan30 protocols igmp-snooping proxy
+deactivate routing-instances vlan30 protocols igmp-snooping
+set routing-instances vlan30 protocols mld-snooping proxy source-address fe80::30:3
+set routing-instances vrf10 description "VRF instance for IRB in VLAN 10"
+set routing-instances vrf10 instance-type vrf
+set routing-instances vrf10 interface irb.10
+set routing-instances vrf10 vrf-target target:64514:10
+set routing-instances vrf10 vrf-table-label
+set routing-instances vrf10 routing-options rib vrf10.inet6.0 aggregate route 101::/64
+set routing-instances vrf10 routing-options rib vrf10.inet6.0 aggregate route 102::/64
+set routing-instances vrf10 routing-options rib vrf10.inet6.0 aggregate route 110::/64
+set routing-instances vrf10 routing-options rib vrf10.inet6.0 aggregate route 120::/64
+set routing-instances vrf10 routing-options autonomous-system 64514
+set routing-instances vrf10 routing-options aggregate route 10.10.0.0/16
+set routing-instances vrf10 routing-options multipath
+set routing-instances vrf10 protocols bgp group SRX-ANS-3 multihop no-nexthop-change
+set routing-instances vrf10 protocols bgp group SRX-ANS-3 peer-as 65100
+set routing-instances vrf10 protocols bgp group SRX-ANS-3 neighbor 10.10.0.100 export PL-EVI10-V4
+set routing-instances vrf10 protocols bgp group SRX-ANS-3 neighbor 100::100 export PL-EVI10-V6
+set routing-instances vrf20 description "VRF instance for IRB in VLAN 20"
+set routing-instances vrf20 instance-type vrf
+set routing-instances vrf20 interface irb.20
+set routing-instances vrf20 vrf-target target:64514:20
+set routing-instances vrf20 vrf-table-label
+set routing-instances vrf20 routing-options rib vrf20.inet6.0 aggregate route 201::/64
+set routing-instances vrf20 routing-options rib vrf20.inet6.0 aggregate route 202::/64
+set routing-instances vrf20 routing-options rib vrf20.inet6.0 aggregate route 210::/64
+set routing-instances vrf20 routing-options rib vrf20.inet6.0 aggregate route 220::/64
+set routing-instances vrf20 routing-options autonomous-system 64514
+set routing-instances vrf20 routing-options aggregate route 10.20.0.0/16
+set routing-instances vrf20 routing-options multipath
+set routing-instances vrf20 protocols bgp group SRX-ANS-3 multihop no-nexthop-change
+set routing-instances vrf20 protocols bgp group SRX-ANS-3 peer-as 65100
+set routing-instances vrf20 protocols bgp group SRX-ANS-3 neighbor 10.20.0.100 export PL-EVI20-V4
+set routing-instances vrf20 protocols bgp group SRX-ANS-3 neighbor 200::100 export PL-EVI20-V6
+set routing-instances vrf30 description "VRF instance for IRB in VLAN 30"
+set routing-instances vrf30 instance-type vrf
+set routing-instances vrf30 interface irb.30
+set routing-instances vrf30 vrf-target target:64514:30
+set routing-instances vrf30 vrf-table-label
+set routing-options nonstop-routing
+set routing-options route-distinguisher-id 10.35.1.2
+set routing-options forwarding-table export PL-LOAD-BALANCE
+set routing-options forwarding-table chained-composite-next-hop ingress evpn
+set routing-options forwarding-table chained-composite-next-hop ingress l3vpn extended-space
+set routing-options router-id 10.35.1.2
+set routing-options autonomous-system 64514
+set protocols bgp path-selection external-router-id
+set protocols bgp group BG-IBGP-SPINE type internal
+set protocols bgp group BG-IBGP-SPINE local-address 10.35.1.2
+set protocols bgp group BG-IBGP-SPINE family inet-vpn unicast
+set protocols bgp group BG-IBGP-SPINE family inet6-vpn unicast
+set protocols bgp group BG-IBGP-SPINE family evpn signaling
+set protocols bgp group BG-IBGP-SPINE authentication-algorithm aes-128-cmac-96
+set protocols bgp group BG-IBGP-SPINE authentication-key-chain KC-BGP-AUTH
+set protocols bgp group BG-IBGP-SPINE multipath
+set protocols bgp group BG-IBGP-SPINE bfd-liveness-detection minimum-interval 300
+set protocols bgp group BG-IBGP-SPINE bfd-liveness-detection multiplier 3
+set protocols bgp group BG-IBGP-SPINE bfd-liveness-detection no-adaptation
+set protocols bgp group BG-IBGP-SPINE neighbor 10.35.2.1 description S-DC2-1
+set protocols bgp group BG-IBGP-SPINE neighbor 10.35.2.2 description S-DC2-2
+set protocols bgp group BG-IBGP-SPINE neighbor 10.35.1.1 description S-DC1-1
+set protocols bgp group BG-IBGP-LEAF type internal
+set protocols bgp group BG-IBGP-LEAF local-address 10.35.1.2
+set protocols bgp group BG-IBGP-LEAF family inet-vpn unicast
+set protocols bgp group BG-IBGP-LEAF family inet6-vpn unicast
+set protocols bgp group BG-IBGP-LEAF family evpn signaling
+set protocols bgp group BG-IBGP-LEAF authentication-algorithm aes-128-cmac-96
+set protocols bgp group BG-IBGP-LEAF authentication-key-chain KC-BGP-AUTH
+set protocols bgp group BG-IBGP-LEAF cluster 10.35.1.2
+set protocols bgp group BG-IBGP-LEAF multipath
+set protocols bgp group BG-IBGP-LEAF bfd-liveness-detection minimum-interval 300
+set protocols bgp group BG-IBGP-LEAF bfd-liveness-detection multiplier 3
+set protocols bgp group BG-IBGP-LEAF bfd-liveness-detection no-adaptation
+set protocols bgp group BG-IBGP-LEAF neighbor 10.35.1.3 description L-DC1-1A
+set protocols bgp group BG-IBGP-LEAF neighbor 10.35.1.4 description L-DC1-1B
+set protocols bgp precision-timers
+set protocols bgp log-updown
+set protocols bgp tcp-mss 4096
+set protocols isis apply-groups GR-CORE-ISIS
+set protocols isis source-packet-routing srgb start-label 900000
+set protocols isis source-packet-routing srgb index-range 100000
+set protocols isis source-packet-routing node-segment ipv4-index 1002
+set protocols isis interface ae0.0
+set protocols isis interface ae1.0
+set protocols isis interface ae2.0
+set protocols isis interface ae3.0
+set protocols isis interface ae4.0
+set protocols isis interface lo0.0 passive
+set protocols mpls ipv6-tunneling
+set protocols mpls interface ae0.0
+set protocols mpls interface ae1.0
+set protocols mpls interface ae2.0
+set protocols mpls interface ae3.0
+set protocols mpls interface ae4.0
+set protocols lldp management-address 192.168.200.60
+set protocols lldp ptopo-configuration-trap-interval 60
+set protocols lldp lldp-configuration-notification-interval 60
+set protocols lldp port-id-subtype interface-name
+set protocols lldp interface all disable
+set protocols lldp interface ae0
+set protocols lldp interface ae1
+set protocols lldp interface ae2
+set protocols lldp interface ae3
+set protocols lldp interface ae4
+set protocols lldp interface ae10
+set protocols layer2-control nonstop-bridging

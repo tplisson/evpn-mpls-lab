@@ -1,0 +1,50 @@
+
+IS-IS interface database:
+ae0.0
+  Index: 90, State: 0x6, Circuit id: 0x1, Circuit type: 2
+  LSP interval: 5 ms, CSNP interval: 25 s, Loose Hello padding, IIH max size: 1492
+  Adjacency advertisement: Advertise, Layer2-map: Disabled
+  Interface Group Holddown Delay: 20 s, remaining: 0 s
+  Level 2
+    Adjacencies: 1, Priority: 64, Metric: 100
+    Hello Interval: 9.000 s, Hold Time: 27 s
+ae1.0
+  Index: 127, State: 0x6, Circuit id: 0x1, Circuit type: 2
+  LSP interval: 5 ms, CSNP interval: 25 s, Loose Hello padding, IIH max size: 1492
+  Adjacency advertisement: Advertise, Layer2-map: Disabled
+  Interface Group Holddown Delay: 20 s, remaining: 0 s
+  Level 2
+    Adjacencies: 1, Priority: 64, Metric: 100
+    Hello Interval: 9.000 s, Hold Time: 27 s
+ae2.0
+  Index: 128, State: 0x6, Circuit id: 0x1, Circuit type: 2
+  LSP interval: 5 ms, CSNP interval: 25 s, Loose Hello padding, IIH max size: 1492
+  Adjacency advertisement: Advertise, Layer2-map: Disabled
+  Interface Group Holddown Delay: 20 s, remaining: 0 s
+  Level 2
+    Adjacencies: 1, Priority: 64, Metric: 100
+    Hello Interval: 9.000 s, Hold Time: 27 s
+ae3.0
+  Index: 129, State: 0x6, Circuit id: 0x1, Circuit type: 2
+  LSP interval: 5 ms, CSNP interval: 25 s, Loose Hello padding, IIH max size: 1492
+  Adjacency advertisement: Advertise, Layer2-map: Disabled
+  Interface Group Holddown Delay: 20 s, remaining: 0 s
+  Level 2
+    Adjacencies: 1, Priority: 64, Metric: 100
+    Hello Interval: 9.000 s, Hold Time: 27 s
+ae4.0
+  Index: 130, State: 0x6, Circuit id: 0x1, Circuit type: 2
+  LSP interval: 5 ms, CSNP interval: 25 s, Loose Hello padding, IIH max size: 1492
+  Adjacency advertisement: Advertise, Layer2-map: Disabled
+  Interface Group Holddown Delay: 20 s, remaining: 0 s
+  Level 2
+    Adjacencies: 1, Priority: 64, Metric: 100
+    Hello Interval: 9.000 s, Hold Time: 27 s
+lo0.0
+  Index: 65, State: 0x6, Circuit id: 0x1, Circuit type: 2
+  LSP interval: 100 ms, CSNP interval: disabled, Loose Hello padding, IIH max size: 1492
+  Adjacency advertisement: Advertise, Layer2-map: Disabled
+  Interface Group Holddown Delay: 20 s, remaining: 0 s
+  Level 2
+    Adjacencies: 0, Priority: 64, Metric: 0
+    Passive

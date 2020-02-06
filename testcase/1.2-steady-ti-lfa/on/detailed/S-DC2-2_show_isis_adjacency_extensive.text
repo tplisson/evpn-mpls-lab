@@ -1,0 +1,60 @@
+
+S-DC1-1
+  Interface: ae0.0, Level: 2, State: Up, Expires in 26 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:46:57 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.0.0
+  Level 2 IPv4 Adj-SID: 2412
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Jan 27 15:01:35   Up           Seenself        
+
+S-DC1-2
+  Interface: ae1.0, Level: 2, State: Up, Expires in 20 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:46:42 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.0.8
+  Level 2 IPv4 Adj-SID: 2413
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Jan 27 15:01:50   Up           Seenself        
+
+S-DC2-1
+  Interface: ae2.0, Level: 2, State: Up, Expires in 24 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:46:57 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.0.10
+  Level 2 IPv4 Adj-SID: 2414
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Jan 27 15:01:35   Up           Seenself        
+
+L-DC2-1A
+  Interface: ae3.0, Level: 2, State: Up, Expires in 25 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:46:51 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.22.1
+  Level 2 IPv4 Adj-SID: 2415
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Jan 27 15:01:41   Up           Seenself        
+
+L-DC2-1B
+  Interface: ae4.0, Level: 2, State: Up, Expires in 24 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:47:22 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.22.3
+  Level 2 IPv4 Adj-SID: 2416
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Jan 27 15:01:10   Up           Seenself        

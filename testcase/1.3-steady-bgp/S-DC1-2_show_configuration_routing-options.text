@@ -1,0 +1,14 @@
+
+nonstop-routing;
+route-distinguisher-id 10.35.1.2;
+forwarding-table {
+    export PL-LOAD-BALANCE;
+    chained-composite-next-hop {
+        ingress {
+            evpn;
+            l3vpn extended-space;
+        }
+    }
+}
+router-id 10.35.1.2;
+autonomous-system 64514;

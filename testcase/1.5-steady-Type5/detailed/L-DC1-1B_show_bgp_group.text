@@ -1,0 +1,72 @@
+
+Group Type: Internal    AS: 64514                  Local AS: 64514
+  Name: BG-IBGP-LEAF    Index: 0                   Flags: <Export Eval>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 0
+  Graceful Shutdown Receiver local-preference: 0
+  Total peers: 2        Established: 2
+  10.35.1.1+179
+  10.35.1.2+179
+  __default_evpn__.evpn.0: 3/6/6/0
+  bgp.evpn.0: 104/208/208/0
+  vlan10.evpn.0: 11/22/22/0
+  vlan20.evpn.0: 11/22/22/0
+  vlan30.evpn.0: 65/130/130/0
+  vrf30.evpn.0: 14/28/28/0
+
+Group Type: External                               Local AS: 64514
+  Name: QFX1            Index: 1                   Flags: <>
+  Export: [ PL-EVI10-DEFAULT-NH-VGA-V4 ] 
+  Options: <Multihop NoNextHopChange>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 0
+  Graceful Shutdown Receiver local-preference: 0
+  Total peers: 1        Established: 1
+  10.10.1.111+59327
+  vrf10.inet.0: 1/2/2/0
+
+Group Type: External                               Local AS: 64514
+  Name: QFX1            Index: 2                   Flags: <>
+  Export: [ PL-EVI10-DEFAULT-NH-VGA-V6 ] 
+  Options: <Multihop NoNextHopChange>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 0
+  Graceful Shutdown Receiver local-preference: 0
+  Total peers: 1        Established: 1
+  101::111+179
+  vrf10.inet6.0: 1/2/2/0
+
+Groups: 3  Peers: 4    External: 2    Internal: 2    Down peers: 0   Flaps: 16
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+bgp.evpn.0           
+                     208        104          0          0          0          0
+vrf20.inet.0         
+                       0          0          0          0          0          0
+vrf20.inet6.0        
+                       0          0          0          0          0          0
+vrf20.mdt.0          
+                       0          0          0          0          0          0
+vlan10.evpn.0        
+                      22         11          0          0          0          0
+mgmt_junos.mdt.0     
+                       0          0          0          0          0          0
+__default_evpn__.evpn.0 
+                       6          3          0          0          0          0
+vlan30.evpn.0        
+                     130         65          0          0          0          0
+vrf10.inet.0         
+                       2          1          0          0          0          0
+vrf10.inet6.0        
+                       2          1          0          0          0          0
+vrf10.mdt.0          
+                       0          0          0          0          0          0
+vlan20.evpn.0        
+                      22         11          0          0          0          0
+vrf30.inet.0         
+                       0          0          0          0          0          0
+vrf30.inet6.0        
+                       0          0          0          0          0          0
+vrf30.mdt.0          
+                       0          0          0          0          0          0
+vrf30.evpn.0         
+                      28         14          0          0          0          0

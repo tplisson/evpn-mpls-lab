@@ -1,0 +1,113 @@
+
+Autonomous system number: 64514
+Router ID: 10.35.2.4
+
+inet.0: 24 destinations, 24 routes (24 active, 0 holddown, 0 hidden)
+              Direct:      3 routes,      3 active
+               Local:      2 routes,      2 active
+               IS-IS:     19 routes,     19 active
+
+inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
+              L-ISIS:      7 routes,      7 active
+
+mgmt_junos.inet.0: 4 destinations, 5 routes (4 active, 0 holddown, 0 hidden)
+              Direct:      2 routes,      1 active
+               Local:      2 routes,      2 active
+              Static:      1 routes,      1 active
+
+vrf30.inet.0: 6 destinations, 28 routes (6 active, 0 holddown, 0 hidden)
+              Direct:      1 routes,      1 active
+               Local:      2 routes,      2 active
+                 BGP:     24 routes,      2 active
+                EVPN:      1 routes,      1 active
+
+vrf10.inet.0: 11 destinations, 55 routes (11 active, 0 holddown, 0 hidden)
+              Direct:      1 routes,      1 active
+               Local:      2 routes,      2 active
+                 BGP:     44 routes,      7 active
+           Multipath:      7 routes,      0 active
+                EVPN:      1 routes,      1 active
+
+vrf20.inet.0: 11 destinations, 54 routes (11 active, 0 holddown, 0 hidden)
+              Direct:      1 routes,      1 active
+               Local:      2 routes,      2 active
+                 BGP:     44 routes,      7 active
+           Multipath:      6 routes,      0 active
+                EVPN:      1 routes,      1 active
+
+iso.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)
+              Direct:      1 routes,      1 active
+
+mpls.0: 67 destinations, 68 routes (67 active, 0 holddown, 0 hidden)
+                MPLS:      6 routes,      6 active
+                 VPN:      3 routes,      3 active
+              L-ISIS:     13 routes,     13 active
+                EVPN:     46 routes,     45 active
+
+bgp.l3vpn.0: 55 destinations, 110 routes (55 active, 0 holddown, 0 hidden)
+                 BGP:    110 routes,     55 active
+
+inet6.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)
+               INET6:      1 routes,      1 active
+
+inet6.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
+              L-ISIS:      7 routes,      7 active
+
+vrf30.inet6.0: 11 destinations, 41 routes (11 active, 0 holddown, 0 hidden)
+              Direct:      1 routes,      1 active
+               Local:      3 routes,      3 active
+                 BGP:     34 routes,      4 active
+               INET6:      1 routes,      1 active
+                EVPN:      2 routes,      2 active
+
+vrf10.inet6.0: 15 destinations, 67 routes (15 active, 0 holddown, 0 hidden)
+              Direct:      1 routes,      1 active
+               Local:      3 routes,      3 active
+                 BGP:     60 routes,      8 active
+               INET6:      1 routes,      1 active
+                EVPN:      2 routes,      2 active
+
+vrf20.inet6.0: 15 destinations, 67 routes (15 active, 0 holddown, 0 hidden)
+              Direct:      1 routes,      1 active
+               Local:      3 routes,      3 active
+                 BGP:     60 routes,      8 active
+               INET6:      1 routes,      1 active
+                EVPN:      2 routes,      2 active
+
+bgp.l3vpn-inet6.0: 78 destinations, 152 routes (78 active, 0 holddown, 0 hidden)
+                 BGP:    152 routes,     78 active
+
+bgp.evpn.0: 118 destinations, 208 routes (118 active, 0 holddown, 0 hidden)
+                 BGP:    180 routes,     90 active
+                EVPN:     28 routes,     28 active
+
+vlan20.evpn.0: 17 destinations, 28 routes (17 active, 0 holddown, 0 hidden)
+                 BGP:     22 routes,     11 active
+                EVPN:      6 routes,      6 active
+
+__default_evpn__.evpn.0: 9 destinations, 12 routes (9 active, 0 holddown, 0 hidden)
+                 BGP:      6 routes,      3 active
+                EVPN:      6 routes,      6 active
+
+vlan30.evpn.0: 75 destinations, 140 routes (75 active, 0 holddown, 0 hidden)
+                 BGP:    130 routes,     65 active
+                EVPN:     10 routes,     10 active
+
+vlan10.evpn.0: 17 destinations, 28 routes (17 active, 0 holddown, 0 hidden)
+                 BGP:     22 routes,     11 active
+                EVPN:      6 routes,      6 active
+
+vlan20.evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
+           Multicast:      2 routes,      2 active
+
+vlan10.evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
+           Multicast:      2 routes,      2 active
+
+vlan20.inet6-evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
+           Multicast:      2 routes,      2 active
+
+vlan30.inet6-evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
+           Multicast:      2 routes,      2 active
+
+vlan10.inet6-evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
+           Multicast:      2 routes,      2 active

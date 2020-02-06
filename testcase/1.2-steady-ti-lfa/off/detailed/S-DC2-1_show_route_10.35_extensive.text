@@ -1,0 +1,517 @@
+
+
+inet.0: 27 destinations, 27 routes (27 active, 0 holddown, 0 hidden)
+10.35.1.1/32 (1 entry, 1 announced)
+TSI:
+KRT in-kernel 10.35.1.1/32 -> {10.35.0.2}
+IS-IS level 2, LSP context 0x47db518
+        *IS-IS  Preference: 18
+                Level: 2
+                Next hop type: Router, Next hop index: 531
+                Address: 0x65a57bc
+                Next-hop reference count: 8
+                Next hop: 10.35.0.2 via ae1.0, selected
+                Session Id: 0x17d
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:59 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 8 
+                AS path: I 
+
+10.35.1.2/32 (1 entry, 1 announced)
+TSI:
+KRT in-kernel 10.35.1.2/32 -> {10.35.0.6}
+IS-IS level 2, LSP context 0x47d2468
+        *IS-IS  Preference: 18
+                Level: 2
+                Next hop type: Router, Next hop index: 530
+                Address: 0x65a572c
+                Next-hop reference count: 8
+                Next hop: 10.35.0.6 via ae0.0, selected
+                Session Id: 0x17e
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:59 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 8 
+                AS path: I 
+
+10.35.1.3/32 (1 entry, 1 announced)
+TSI:
+KRT in-kernel 10.35.1.3/32 -> {list:10.35.0.6, 10.35.0.2}
+IS-IS level 2, LSP context 0x47da050
+        *IS-IS  Preference: 18
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x45ca7dc
+                Next-hop reference count: 3
+                Next hop: 10.35.0.6 via ae0.0
+                Session Id: 0x0
+                Next hop: 10.35.0.2 via ae1.0, selected
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:59 	Metric: 200 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 8 
+                AS path: I 
+
+10.35.1.4/32 (1 entry, 1 announced)
+TSI:
+KRT in-kernel 10.35.1.4/32 -> {list:10.35.0.6, 10.35.0.2}
+IS-IS level 2, LSP context 0x47dc4e0
+        *IS-IS  Preference: 18
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x45ca7dc
+                Next-hop reference count: 3
+                Next hop: 10.35.0.6 via ae0.0
+                Session Id: 0x0
+                Next hop: 10.35.0.2 via ae1.0, selected
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:59 	Metric: 200 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 8 
+                AS path: I 
+
+inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
+
+10.35.1.1/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 929
+                Address: 0x65b4d8c
+                Next-hop reference count: 23
+                Next hop: 10.35.0.2 via ae1.0, selected
+                Label element ptr: 0x46800e8
+                Label parent element ptr: 0x0
+                Label element references: 166
+                Label element child references: 161
+                Label element lsp id: 0
+                Session Id: 0x17d
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:59 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-Resolve tree 1 2-Resolve_IGP_FRR task 3-Resolve tree 8 
+                AS path: I 
+
+10.35.1.2/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 1212
+                Address: 0x65a878c
+                Next-hop reference count: 22
+                Next hop: 10.35.0.6 via ae0.0, selected
+                Label element ptr: 0x46800e8
+                Label parent element ptr: 0x0
+                Label element references: 166
+                Label element child references: 161
+                Label element lsp id: 0
+                Session Id: 0x17e
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:59 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-Resolve tree 1 2-Resolve_IGP_FRR task 3-Resolve tree 8 
+                AS path: I 
+
+10.35.1.3/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x45ce35c
+                Next-hop reference count: 8
+                Next hop: 10.35.0.6 via ae0.0
+                Label operation: Push 901003
+                Label TTL action: prop-ttl
+                Load balance label: Label 901003: None; 
+                Label element ptr: 0x4685b78
+                Label parent element ptr: 0x0
+                Label element references: 10
+                Label element child references: 6
+                Label element lsp id: 0
+                Session Id: 0x0
+                Next hop: 10.35.0.2 via ae1.0, selected
+                Label operation: Push 901003
+                Label TTL action: prop-ttl
+                Load balance label: Label 901003: None; 
+                Label element ptr: 0x4685b78
+                Label parent element ptr: 0x0
+                Label element references: 10
+                Label element child references: 6
+                Label element lsp id: 0
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:59 	Metric: 200 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                AS path: I 
+
+10.35.1.4/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x45ce5fc
+                Next-hop reference count: 8
+                Next hop: 10.35.0.6 via ae0.0
+                Label operation: Push 901004
+                Label TTL action: prop-ttl
+                Load balance label: Label 901004: None; 
+                Label element ptr: 0x4685bc0
+                Label parent element ptr: 0x0
+                Label element references: 9
+                Label element child references: 5
+                Label element lsp id: 0
+                Session Id: 0x0
+                Next hop: 10.35.0.2 via ae1.0, selected
+                Label operation: Push 901004
+                Label TTL action: prop-ttl
+                Load balance label: Label 901004: None; 
+                Label element ptr: 0x4685bc0
+                Label parent element ptr: 0x0
+                Label element references: 9
+                Label element child references: 5
+                Label element lsp id: 0
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:59 	Metric: 200 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                AS path: I 
+
+
+inet.0: 27 destinations, 27 routes (27 active, 0 holddown, 0 hidden)
+10.35.2.1/32 (1 entry, 1 announced)
+TSI:
+IS-IS level 2, LSP fragment 0
+        *Direct Preference: 0
+                Next hop type: Interface, Next hop index: 0
+                Address: 0x65aa1fc
+                Next-hop reference count: 1
+                Next hop: via lo0.0, selected
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 2w6d 17:11:35 
+                Validation State: unverified 
+                Task: IF
+                Announcement bits (2): 1-IS-IS 3-Resolve tree 8 
+                AS path: I 
+
+10.35.2.2/32 (1 entry, 1 announced)
+TSI:
+KRT in-kernel 10.35.2.2/32 -> {10.35.0.11}
+IS-IS level 2, LSP context 0x47d60e0
+        *IS-IS  Preference: 18
+                Level: 2
+                Next hop type: Router, Next hop index: 529
+                Address: 0x65a5e7c
+                Next-hop reference count: 6
+                Next hop: 10.35.0.11 via ae2.0, selected
+                Session Id: 0x17c
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 49:00 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 8 
+                AS path: I 
+
+10.35.2.3/32 (1 entry, 1 announced)
+TSI:
+KRT in-kernel 10.35.2.3/32 -> {10.35.21.1}
+IS-IS level 2, LSP context 0x47d2670
+        *IS-IS  Preference: 18
+                Level: 2
+                Next hop type: Router, Next hop index: 532
+                Address: 0x65a60bc
+                Next-hop reference count: 3
+                Next hop: 10.35.21.1 via ae3.0, selected
+                Session Id: 0x1f3
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 49:00 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 8 
+                AS path: I 
+
+10.35.2.4/32 (1 entry, 1 announced)
+TSI:
+KRT in-kernel 10.35.2.4/32 -> {10.35.21.3}
+IS-IS level 2, LSP context 0x47d7e68
+        *IS-IS  Preference: 18
+                Level: 2
+                Next hop type: Router, Next hop index: 868
+                Address: 0x65a5f9c
+                Next-hop reference count: 3
+                Next hop: 10.35.21.3 via ae4.0, selected
+                Session Id: 0x180
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 49:00 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 8 
+                AS path: I 
+
+inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
+
+10.35.2.2/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x65c114c
+                Next-hop reference count: 21
+                Next hop: 10.35.0.11 via ae2.0, selected
+                Label element ptr: 0x46800e8
+                Label parent element ptr: 0x0
+                Label element references: 166
+                Label element child references: 161
+                Label element lsp id: 0
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 49:00 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-Resolve tree 1 2-Resolve_IGP_FRR task 3-Resolve tree 8 
+                AS path: I 
+
+10.35.2.3/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x65c6e1c
+                Next-hop reference count: 10
+                Next hop: 10.35.21.1 via ae3.0, selected
+                Label element ptr: 0x46800e8
+                Label parent element ptr: 0x0
+                Label element references: 166
+                Label element child references: 161
+                Label element lsp id: 0
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 49:00 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                AS path: I 
+
+10.35.2.4/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x65d608c
+                Next-hop reference count: 10
+                Next hop: 10.35.21.3 via ae4.0, selected
+                Label element ptr: 0x46800e8
+                Label parent element ptr: 0x0
+                Label element references: 166
+                Label element child references: 161
+                Label element lsp id: 0
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 49:00 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                AS path: I 
+
+Routing table: default.inet [Index 0] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  10.35.1.1/32
+  Route type: user                  
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.0.2
+  Next-hop type: unicast               Index: 531      Reference: 53   
+  Next-hop interface: ae1.0        
+    
+Destination:  10.35.1.1/32
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.35.0.2
+  Next-hop type: unicast               Index: 531      Reference: 53   
+  Next-hop interface: ae1.0        
+
+Routing table: default.inet [Index 0] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  10.35.1.2/32
+  Route type: user                  
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.0.6
+  Next-hop type: unicast               Index: 530      Reference: 45   
+  Next-hop interface: ae0.0        
+    
+Destination:  10.35.1.2/32
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.35.0.6
+  Next-hop type: unicast               Index: 530      Reference: 45   
+  Next-hop interface: ae0.0        
+
+Routing table: default.inet [Index 0] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  10.35.1.3/32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048848  Reference: 4    
+  Nexthop: 10.35.0.6
+  Next-hop type: unicast               Index: 530      Reference: 45   
+  Next-hop interface: ae0.0         Weight: 0x0  
+  Nexthop: 10.35.0.2
+  Next-hop type: unicast               Index: 531      Reference: 53   
+  Next-hop interface: ae1.0         Weight: 0x0  
+
+Routing table: default.inet [Index 0] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  10.35.1.4/32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048848  Reference: 4    
+  Nexthop: 10.35.0.6
+  Next-hop type: unicast               Index: 530      Reference: 45   
+  Next-hop interface: ae0.0         Weight: 0x0  
+  Nexthop: 10.35.0.2
+  Next-hop type: unicast               Index: 531      Reference: 53   
+  Next-hop interface: ae1.0         Weight: 0x0  
+
+Routing table: default.inet [Index 0] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  10.35.2.1/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.35.2.1
+  Next-hop type: local                 Index: 512      Reference: 1    
+
+Routing table: default.inet [Index 0] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  10.35.2.2/32
+  Route type: user                  
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.0.11
+  Next-hop type: unicast               Index: 529      Reference: 42   
+  Next-hop interface: ae2.0        
+    
+Destination:  10.35.2.2/32
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.35.0.11
+  Next-hop type: unicast               Index: 529      Reference: 42   
+  Next-hop interface: ae2.0        
+
+Routing table: default.inet [Index 0] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  10.35.2.3/32
+  Route type: user                  
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.21.1
+  Next-hop type: unicast               Index: 532      Reference: 10   
+  Next-hop interface: ae3.0        
+    
+Destination:  10.35.2.3/32
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.35.21.1
+  Next-hop type: unicast               Index: 532      Reference: 10   
+  Next-hop interface: ae3.0        
+
+Routing table: default.inet [Index 0] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  10.35.2.4/32
+  Route type: user                  
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.21.3
+  Next-hop type: unicast               Index: 868      Reference: 14   
+  Next-hop interface: ae4.0        
+    
+Destination:  10.35.2.4/32
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.35.21.3
+  Next-hop type: unicast               Index: 868      Reference: 14   
+  Next-hop interface: ae4.0        

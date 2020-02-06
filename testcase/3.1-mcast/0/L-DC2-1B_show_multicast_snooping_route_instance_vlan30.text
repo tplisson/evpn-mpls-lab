@@ -1,0 +1,28 @@
+
+Nexthop Bulking: OFF
+
+             Family: INET
+
+Group: 224.0.0.0/4 
+    Source: *
+    Bridge-domain: vlan30
+    Mesh-group: __ves__
+
+Group: 224.0.0.0/4 
+    Source: *
+    Bridge-domain: vlan30
+
+Nexthop Bulking: OFF
+
+             Family: INET6
+
+Group: ff00::/8 
+    Source: *
+    Bridge-domain: vlan30
+    Mesh-group: __ves__
+
+Group: ff00::/8 
+    Source: *
+    Bridge-domain: vlan30
+    Downstream interface list: 
+        1048586 

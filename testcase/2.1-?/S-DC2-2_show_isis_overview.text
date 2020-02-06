@@ -1,0 +1,44 @@
+
+Instance: master
+  Router ID: 10.35.2.2
+  Hostname: S-DC2-2
+  Sysid: 0100.3500.2002
+  Areaid: 49.0001
+  Adjacency holddown: enabled
+  Maximum Areas: 3
+  LSP life time: 65535
+  Reference bandwidth: 1000000000000
+  Attached bit evaluation: enabled
+  SPF delay: 50 msec, SPF holddown: 2000 msec, SPF rapid runs: 5
+  Overload bit at startup is set
+    Overload high metrics: enabled
+    Allow route leaking: disabled
+    Allow internal prefix overloading: disabled
+    Allow external prefix overloading: disabled
+    Overload timeout: 300 sec
+  IPv4 is enabled, IPv6 is enabled, SPRING based MPLS is enabled
+  Traffic engineering: enabled
+  Restart: Disabled
+    Helper mode: Enabled
+  Layer2-map: Disabled
+  Source Packet Routing (SPRING): Enabled
+    SRGB Config Range :
+      SRGB Start-Label : 900000, SRGB Index-Range : 100000
+    SRGB Block Allocation: Success
+      SRGB Start Index : 900000, SRGB Size : 100000, Label-Range: [ 900000, 999999 ]
+    Node Segments: Enabled
+      Ipv4 Index : 2002
+  Post Convergence Backup: Enabled
+    Max labels: 3, Max spf: 100, Max Ecmp Backup: 2
+  Level 1
+    Internal route preference: 15
+    External route preference: 160
+    Prefix export count: 0
+    Wide metrics are enabled, Narrow metrics are enabled
+    Source Packet Routing is enabled
+  Level 2
+    Internal route preference: 18
+    External route preference: 165
+    Prefix export count: 0
+    Wide metrics are enabled
+    Source Packet Routing is enabled

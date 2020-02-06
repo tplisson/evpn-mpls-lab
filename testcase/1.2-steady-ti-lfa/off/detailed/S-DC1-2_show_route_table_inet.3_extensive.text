@@ -1,0 +1,182 @@
+
+
+inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
+10.35.1.1/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 1010
+                Address: 0x65bde1c
+                Next-hop reference count: 23
+                Next hop: 10.35.0.4 via ae2.0, selected
+                Label element ptr: 0x4681cc0
+                Label parent element ptr: 0x0
+                Label element references: 79
+                Label element child references: 74
+                Label element lsp id: 0
+                Session Id: 0x241
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:47 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-Resolve tree 1 2-Resolve_IGP_FRR task 3-Resolve tree 8 
+                AS path: I 
+
+10.35.1.3/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x65c570c
+                Next-hop reference count: 10
+                Next hop: 10.35.12.1 via ae3.0, selected
+                Label element ptr: 0x4681cc0
+                Label parent element ptr: 0x0
+                Label element references: 79
+                Label element child references: 74
+                Label element lsp id: 0
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:47 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                AS path: I 
+
+10.35.1.4/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x65bc04c
+                Next-hop reference count: 10
+                Next hop: 10.35.12.3 via ae4.0, selected
+                Label element ptr: 0x4681cc0
+                Label parent element ptr: 0x0
+                Label element references: 79
+                Label element child references: 74
+                Label element lsp id: 0
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:47 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                AS path: I 
+
+10.35.2.1/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 1031
+                Address: 0x65add0c
+                Next-hop reference count: 22
+                Next hop: 10.35.0.7 via ae0.0, selected
+                Label element ptr: 0x4681cc0
+                Label parent element ptr: 0x0
+                Label element references: 79
+                Label element child references: 74
+                Label element lsp id: 0
+                Session Id: 0x240
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:47 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-Resolve tree 1 2-Resolve_IGP_FRR task 3-Resolve tree 8 
+                AS path: I 
+
+10.35.2.2/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 1126
+                Address: 0x65a842c
+                Next-hop reference count: 22
+                Next hop: 10.35.0.9 via ae1.0, selected
+                Label element ptr: 0x4681cc0
+                Label parent element ptr: 0x0
+                Label element references: 79
+                Label element child references: 74
+                Label element lsp id: 0
+                Session Id: 0x242
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:47 	Metric: 100 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (3): 0-Resolve tree 1 2-Resolve_IGP_FRR task 3-Resolve tree 8 
+                AS path: I 
+
+10.35.2.3/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x45cc67c
+                Next-hop reference count: 8
+                Next hop: 10.35.0.7 via ae0.0
+                Label operation: Push 902003
+                Label TTL action: prop-ttl
+                Load balance label: Label 902003: None; 
+                Label element ptr: 0x46834f0
+                Label parent element ptr: 0x0
+                Label element references: 7
+                Label element child references: 3
+                Label element lsp id: 0
+                Session Id: 0x0
+                Next hop: 10.35.0.9 via ae1.0, selected
+                Label operation: Push 902003
+                Label TTL action: prop-ttl
+                Load balance label: Label 902003: None; 
+                Label element ptr: 0x46834f0
+                Label parent element ptr: 0x0
+                Label element references: 7
+                Label element child references: 3
+                Label element lsp id: 0
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:47 	Metric: 200 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                AS path: I 
+
+10.35.2.4/32 (1 entry, 1 announced)
+        *L-ISIS Preference: 14
+                Level: 2
+                Next hop type: Router, Next hop index: 0
+                Address: 0x45cc75c
+                Next-hop reference count: 8
+                Next hop: 10.35.0.7 via ae0.0
+                Label operation: Push 902004
+                Label TTL action: prop-ttl
+                Load balance label: Label 902004: None; 
+                Label element ptr: 0x467eab0
+                Label parent element ptr: 0x0
+                Label element references: 7
+                Label element child references: 3
+                Label element lsp id: 0
+                Session Id: 0x0
+                Next hop: 10.35.0.9 via ae1.0, selected
+                Label operation: Push 902004
+                Label TTL action: prop-ttl
+                Load balance label: Label 902004: None; 
+                Label element ptr: 0x467eab0
+                Label parent element ptr: 0x0
+                Label element references: 7
+                Label element child references: 3
+                Label element lsp id: 0
+                Session Id: 0x0
+                State: <Active Int>
+                Local AS: 64514 
+                Age: 48:47 	Metric: 200 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: IS-IS
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                AS path: I 

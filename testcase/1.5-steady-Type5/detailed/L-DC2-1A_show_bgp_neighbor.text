@@ -1,0 +1,264 @@
+
+Peer: 10.20.2.222+59012 AS 65222 Local: 10.20.2.21+179 AS 64514
+  Group: QFX2                  Routing-Instance: vrf20
+  Forwarding routing-instance: vrf20  
+  Type: External    State: Established    Flags: <Sync RSync>
+  Last State: EstabSync     Last Event: RecvKeepAlive
+  Last Error: Cease
+  Export: [ PL-EVI20-DEFAULT-NH-VGA-V4 ] 
+  Options: <Multihop NoNextHopChange Preference PeerAS Refresh>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 90 Preference: 170
+  Graceful Shutdown Receiver local-preference: 0
+  Number of flaps: 4
+  Last flap event: Stop
+  Error: 'Cease' Sent: 3 Recv: 1
+  Peer ID: 10.20.2.222     Local ID: 10.20.2.21        Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 1    Peer index: 0    SNMP index: 2     
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  NLRI for restart configured on peer: inet-unicast
+  NLRI advertised by peer: inet-unicast
+  NLRI for this session: inet-unicast
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: inet-unicast
+  NLRI of received end-of-rib markers: inet-unicast
+  NLRI of all end-of-rib markers sent: inet-unicast
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 65222)
+  Peer does not support Addpath
+  Table vrf20.inet.0 Bit: 100000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              1
+    Received prefixes:            2
+    Accepted prefixes:            2
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Last traffic (seconds): Received 2    Sent 3    Checked 466 
+  Input messages:  Total 21	Updates 2	Refreshes 0 	Octets 479
+  Output messages: Total 20	Updates 0	Refreshes 0 	Octets 384
+  Output Queue[15]: 0           (vrf20.inet.0, inet-unicast)
+
+Peer: 10.35.2.1+179 AS 64514   Local: 10.35.2.3+64627 AS 64514
+  Description: S-DC2-1
+  Group: BG-IBGP-LEAF          Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: Internal    State: Established    Flags: <Sync RSync>
+  Last State: EstabSync     Last Event: RecvKeepAlive
+  Last Error: None
+  Options: <Preference LocalAddress LogUpDown AddressFamily Multipath Rib-group Refresh>
+  Options: <AutheKeyChain BfdEnabled>
+  Options: <GracefulShutdownRcv>
+  Authentication key chain: KC-BGP-AUTH
+  Authentication algorithm: aes-128-cmac-96
+  Address families configured: evpn
+  Local Address: 10.35.2.3 Holdtime: 90 Preference: 170
+  Graceful Shutdown Receiver local-preference: 0
+  Number of flaps: 0
+  Peer ID: 10.35.2.1       Local ID: 10.35.2.3         Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 0    Peer index: 0    SNMP index: 0     
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: enabled, up
+  NLRI for restart configured on peer: evpn
+  NLRI advertised by peer: evpn
+  NLRI for this session: evpn
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: evpn
+  NLRI of received end-of-rib markers: evpn
+  NLRI of all end-of-rib markers sent: evpn
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 64514)
+  Peer does not support Addpath
+  Table __default_evpn__.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              3
+    Received prefixes:            3
+    Accepted prefixes:            3
+    Suppressed due to damping:    0
+  Table bgp.evpn.0 Bit: 40000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              87
+    Received prefixes:            96
+    Accepted prefixes:            96
+    Suppressed due to damping:    0
+    Advertised prefixes:          37
+  Table vlan10.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              7
+    Received prefixes:            7
+    Accepted prefixes:            7
+    Suppressed due to damping:    0
+  Table vlan20.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              7
+    Received prefixes:            7
+    Accepted prefixes:            7
+    Suppressed due to damping:    0
+  Table vlan30.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              58
+    Received prefixes:            65
+    Accepted prefixes:            65
+    Suppressed due to damping:    0
+  Table vrf30.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              12
+    Received prefixes:            14
+    Accepted prefixes:            14
+    Suppressed due to damping:    0
+  Last traffic (seconds): Received 7    Sent 16   Checked 480 
+  Input messages:  Total 187	Updates 168	Refreshes 0	Octets 25348
+  Output messages: Total 51	Updates 31	Refreshes 0	Octets 3926
+  Output Queue[3]: 0            (bgp.evpn.0, evpn)
+
+Peer: 10.35.2.2+179 AS 64514   Local: 10.35.2.3+50268 AS 64514
+  Description: S-DC2-2
+  Group: BG-IBGP-LEAF          Routing-Instance: master
+  Forwarding routing-instance: master  
+  Type: Internal    State: Established    Flags: <Sync RSync>
+  Last State: EstabSync     Last Event: RecvKeepAlive
+  Last Error: None
+  Options: <Preference LocalAddress LogUpDown AddressFamily Multipath Rib-group Refresh>
+  Options: <AutheKeyChain BfdEnabled>
+  Options: <GracefulShutdownRcv>
+  Authentication key chain: KC-BGP-AUTH
+  Authentication algorithm: aes-128-cmac-96
+  Address families configured: evpn
+  Local Address: 10.35.2.3 Holdtime: 90 Preference: 170
+  Graceful Shutdown Receiver local-preference: 0
+  Number of flaps: 0
+  Peer ID: 10.35.2.2       Local ID: 10.35.2.3         Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 0    Peer index: 1    SNMP index: 1     
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: enabled, up
+  NLRI for restart configured on peer: evpn
+  NLRI advertised by peer: evpn
+  NLRI for this session: evpn
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: evpn
+  NLRI of received end-of-rib markers: evpn
+  NLRI of all end-of-rib markers sent: evpn
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 64514)
+  Peer does not support Addpath
+  Table __default_evpn__.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              0
+    Received prefixes:            3
+    Accepted prefixes:            3
+    Suppressed due to damping:    0
+  Table bgp.evpn.0 Bit: 40000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              9
+    Received prefixes:            96
+    Accepted prefixes:            96
+    Suppressed due to damping:    0
+    Advertised prefixes:          37
+  Table vlan10.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              0
+    Received prefixes:            7
+    Accepted prefixes:            7
+    Suppressed due to damping:    0
+  Table vlan20.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              0
+    Received prefixes:            7
+    Accepted prefixes:            7
+    Suppressed due to damping:    0
+  Table vlan30.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              7
+    Received prefixes:            65
+    Accepted prefixes:            65
+    Suppressed due to damping:    0
+  Table vrf30.evpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              2
+    Received prefixes:            14
+    Accepted prefixes:            14
+    Suppressed due to damping:    0
+  Last traffic (seconds): Received 15   Sent 5    Checked 476 
+  Input messages:  Total 154	Updates 135	Refreshes 0	Octets 21134
+  Output messages: Total 50	Updates 31	Refreshes 0	Octets 3907
+  Output Queue[3]: 0            (bgp.evpn.0, evpn)
+
+Peer: 202::222+56903 AS 65222  Local: 202::21+179 AS 64514
+  Group: QFX2                  Routing-Instance: vrf20
+  Forwarding routing-instance: vrf20  
+  Type: External    State: Established    Flags: <Sync RSync>
+  Last State: EstabSync     Last Event: RecvKeepAlive
+  Last Error: Cease
+  Export: [ PL-EVI20-DEFAULT-NH-VGA-V6 ] 
+  Options: <Multihop NoNextHopChange Preference PeerAS Refresh>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 90 Preference: 170
+  Graceful Shutdown Receiver local-preference: 0
+  Number of flaps: 4
+  Last flap event: TransportError
+  Error: 'Cease' Sent: 1 Recv: 1
+  Peer ID: 10.20.2.222     Local ID: 10.20.2.21        Active Holdtime: 90
+  Keepalive Interval: 30         Group index: 2    Peer index: 0    SNMP index: 3     
+  I/O Session Thread: bgpio-0 State: Enabled
+  BFD: disabled, down
+  NLRI for restart configured on peer: inet6-unicast
+  NLRI advertised by peer: inet6-unicast
+  NLRI for this session: inet6-unicast
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  Restart flag received from the peer: Notification
+  NLRI that restart is negotiated for: inet6-unicast
+  NLRI of received end-of-rib markers: inet6-unicast
+  NLRI of all end-of-rib markers sent: inet6-unicast
+  Peer does not support LLGR Restarter functionality
+  Peer supports 4 byte AS extension (peer-as 65222)
+  Peer does not support Addpath
+  Table vrf20.inet6.0 Bit: 110000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              1
+    Received prefixes:            2
+    Accepted prefixes:            2
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Last traffic (seconds): Received 11   Sent 16   Checked 455 
+  Input messages:  Total 20	Updates 2	Refreshes 0 	Octets 511
+  Output messages: Total 19	Updates 0	Refreshes 0 	Octets 372
+  Output Queue[16]: 0           (vrf20.inet6.0, inet6-unicast)

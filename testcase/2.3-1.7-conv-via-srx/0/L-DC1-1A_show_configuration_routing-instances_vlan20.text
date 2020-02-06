@@ -1,0 +1,20 @@
+
+description "EVPN instance for VLAN 20";
+instance-type evpn;
+vlan-id 20;
+interface ae10.20;
+routing-interface irb.20;
+vrf-target target:64514:201;
+protocols {
+    evpn {
+        default-gateway no-gateway-community;
+    }
+    igmp-snooping {
+        proxy;
+    }
+    mld-snooping {
+        proxy {
+            source-address fe80::20:11;
+        }
+    }
+}

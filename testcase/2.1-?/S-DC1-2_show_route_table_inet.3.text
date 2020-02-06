@@ -1,0 +1,28 @@
+
+
+inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.35.1.1/32       *[L-ISIS/14] 02:53:33, metric 100
+                    >  to 10.35.0.4 via ae2.0
+                       to 10.35.0.9 via ae1.0, Push 901001
+                       to 10.35.12.3 via ae4.0, Push 901001
+10.35.1.3/32       *[L-ISIS/14] 02:53:33, metric 100
+                    >  to 10.35.12.1 via ae3.0
+10.35.1.4/32       *[L-ISIS/14] 19:00:58, metric 100
+                    >  to 10.35.12.3 via ae4.0
+                       to 10.35.0.4 via ae2.0, Push 901004
+10.35.2.1/32       *[L-ISIS/14] 19:00:58, metric 100
+                    >  to 10.35.0.7 via ae0.0
+                       to 10.35.0.9 via ae1.0, Push 902001
+                       to 10.35.0.4 via ae2.0, Push 902001
+10.35.2.2/32       *[L-ISIS/14] 19:00:58, metric 100
+                    >  to 10.35.0.9 via ae1.0
+                       to 10.35.0.7 via ae0.0, Push 902002
+                       to 10.35.0.4 via ae2.0, Push 902002
+10.35.2.3/32       *[L-ISIS/14] 6d 17:01:15, metric 200
+                       to 10.35.0.7 via ae0.0, Push 902003
+                    >  to 10.35.0.9 via ae1.0, Push 902003
+10.35.2.4/32       *[L-ISIS/14] 6d 17:01:15, metric 200
+                       to 10.35.0.7 via ae0.0, Push 902004
+                    >  to 10.35.0.9 via ae1.0, Push 902004

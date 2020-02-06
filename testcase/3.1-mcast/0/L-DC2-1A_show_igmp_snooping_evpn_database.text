@@ -1,0 +1,19 @@
+
+Instance: vlan20
+    Bridge-Domain: vlan20, VLAN ID: 20
+
+Instance: vlan30
+    Bridge-Domain: vlan30, VLAN ID: 30
+        Group IP: 225.30.30.1, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+        Group IP: 225.30.30.2, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+        Group IP: 225.30.30.3, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+        Group IP: 225.30.30.4, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+        Group IP: 225.30.30.5, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+        Group IP: 225.30.30.6, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+        Group IP: 225.30.30.7, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+        Group IP: 225.30.30.8, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+        Group IP: 225.30.30.9, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+        Group IP: 225.30.30.10, Source IP: 0.0.0.0, Access OIF Count: 1, Core NH: 1048763
+
+Instance: vlan10
+    Bridge-Domain: vlan10, VLAN ID: 10

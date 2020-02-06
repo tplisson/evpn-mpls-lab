@@ -1,0 +1,38 @@
+L-DC1-1A                          Seconds: 114                 Time: 20:10:21
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+ xe-0/1/8:0  Down              0          (0)                0          (0)
+ xe-0/1/8:1  Down              0          (0)                0          (0)
+ xe-0/1/8:2  Down              0          (0)                0          (0)
+ xe-0/1/8:3  Down              0          (0)                0          (0)
+ xe-0/1/9:0  Down              0          (0)                0          (0)
+ xe-0/1/9:1  Down              0          (0)                0          (0)
+ xe-0/1/9:2  Down              0          (0)                0          (0)
+ xe-0/1/9:3  Down              0          (0)                0          (0)
+ xe-0/1/10:0 Down              0          (0)                0          (0)
+ xe-0/1/10:1 Down              0          (0)                0          (0)
+ xe-0/1/10:2 Down              0          (0)                0          (0)
+ xe-0/1/10:3 Down              0          (0)                0          (0)
+ xe-0/1/11:0 Down              0          (0)                0          (0)
+ xe-0/1/11:1 Down              0          (0)                0          (0)
+ xe-0/1/11:2 Down              0          (0)                0          (0)
+ xe-0/1/11:3 Down              0          (0)                0          (0)
+ lc-0/2/0      Up              0                             0
+ pfe-0/2/0     Up              0                             0
+ ae0           Up     4783169684         (27)      20823181900      (50006)
+ ae1           Up     5105293260         (25)       7438676001      (50005)
+ ae10          Up    12271412868     (100003)       9552250752          (0)
+ demux0        Up              0                             0
+ dsc           Up              0                             0
+ em2           Up       17217855                      10183788
+ em3           Up      111137133                      67523299
+ em4           Up        5498575                      40739745
+ esi           Up              0                             0
+ fti0          Up              0                             0
+ fti1          Up              0                             0
+ fti2          Up              0                             0
+ fti3          Up              0                             0
+ fti4          Up              0                             0
+
+
+Bytes=b, Clear=c, Delta=d, Packets=p, Quit=q or ESC, Rate=r, Up=^U, Down=^D

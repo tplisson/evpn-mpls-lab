@@ -1,0 +1,45 @@
+
+Aggregated interface: ae0
+    LACP state:       Role   Exp   Def  Dist  Col  Syn  Aggr  Timeout  Activity
+      xe-0/1/0:0     Actor    No    No   Yes  Yes  Yes   Yes     Slow    Active
+      xe-0/1/0:0   Partner    No    No   Yes  Yes  Yes   Yes     Slow    Active
+    LACP protocol:        Receive State  Transmit State          Mux State 
+      xe-0/1/0:0                Current   Slow periodic Collecting distributing
+
+    LACP hold-timer:  Up, Enabled, Interval: 2 sec
+                        Status         Re-Start Cnt   TTE(sec)    Hold Start
+    xe-0/1/0:0          Not-Running    NA             NA          NA                
+    LACP info:        Role     System             System       Port     Port    Port 
+                             priority         identifier   priority   number     key 
+      xe-0/1/0:0     Actor        127  80:7f:f8:75:2c:84        127        2       1
+      xe-0/1/0:0   Partner        127  b8:c2:53:2a:79:00        127        5       4
+
+Aggregated interface: ae1
+    LACP state:       Role   Exp   Def  Dist  Col  Syn  Aggr  Timeout  Activity
+      xe-0/1/1:0     Actor    No    No   Yes  Yes  Yes   Yes     Slow    Active
+      xe-0/1/1:0   Partner    No    No   Yes  Yes  Yes   Yes     Slow    Active
+    LACP protocol:        Receive State  Transmit State          Mux State 
+      xe-0/1/1:0                Current   Slow periodic Collecting distributing
+
+    LACP hold-timer:  Up, Enabled, Interval: 2 sec
+                        Status         Re-Start Cnt   TTE(sec)    Hold Start
+    xe-0/1/1:0          Not-Running    NA             NA          NA                
+    LACP info:        Role     System             System       Port     Port    Port 
+                             priority         identifier   priority   number     key 
+      xe-0/1/1:0     Actor        127  80:7f:f8:75:2c:84        127        3       2
+      xe-0/1/1:0   Partner        127  80:7f:f8:75:cc:84        127        5       4
+
+Aggregated interface: ae10
+    LACP state:       Role   Exp   Def  Dist  Col  Syn  Aggr  Timeout  Activity
+      xe-0/0/0:0     Actor    No    No   Yes  Yes  Yes   Yes     Fast    Active
+      xe-0/0/0:0   Partner    No    No   Yes  Yes  Yes   Yes     Fast    Active
+    LACP protocol:        Receive State  Transmit State          Mux State 
+      xe-0/0/0:0                Current   Fast periodic Collecting distributing
+
+    LACP hold-timer:  Up, Enabled, Interval: 2 sec
+                        Status         Re-Start Cnt   TTE(sec)    Hold Start
+    xe-0/0/0:0          Not-Running    NA             NA          NA                
+    LACP info:        Role     System             System       Port     Port    Port 
+                             priority         identifier   priority   number     key 
+      xe-0/0/0:0     Actor        127  dc:02:21:22:ae:10        127        1      11
+      xe-0/0/0:0   Partner        127  d0:07:ca:44:db:c0        127        5      41

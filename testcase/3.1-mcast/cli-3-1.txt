@@ -1,0 +1,9 @@
+show configuration routing-instances vlan30
+show configuration routing-instances vrf30
+show igmp snooping evpn database
+show igmp snooping evpn membership
+show igmp snooping evpn proxy
+show multicast snooping route instance vlan30
+show route table vlan30 match-prefix 6:*
+show route table vlan30 match-prefix 7:*
+show route table vlan30 match-prefix 8:*

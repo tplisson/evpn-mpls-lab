@@ -1,0 +1,60 @@
+
+S-DC2-1
+  Interface: ae0.0, Level: 2, State: Up, Expires in 21 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w4d 21:08:08 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.0.7
+  Level 2 IPv4 Adj-SID: 1504
+  Transition log:
+  When                  State        Event           Down reason
+  Fri Jan 24 12:40:17   Up           Seenself        
+
+S-DC2-2
+  Interface: ae1.0, Level: 2, State: Up, Expires in 22 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:46:35 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.0.9
+  Level 2 IPv4 Adj-SID: 1505
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Jan 27 15:01:50   Up           Seenself        
+
+S-DC1-1
+  Interface: ae2.0, Level: 2, State: Up, Expires in 21 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:46:58 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.0.4
+  Level 2 IPv4 Adj-SID: 1506
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Jan 27 15:01:26   Up           Seenself        
+
+L-DC1-1A
+  Interface: ae3.0, Level: 2, State: Up, Expires in 22 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1d 16:56:06 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.12.1
+  Level 2 IPv4 Adj-SID: 1668
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Feb  3 16:52:18   Up           Seenself        
+
+L-DC1-1B
+  Interface: ae4.0, Level: 2, State: Up, Expires in 26 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:46:37 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.12.3
+  Level 2 IPv4 Adj-SID: 1508
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Jan 27 15:01:47   Up           Seenself        

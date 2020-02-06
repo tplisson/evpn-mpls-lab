@@ -1,0 +1,129 @@
+
+Group Type: Internal    AS: 64514                  Local AS: 64514
+  Name: BG-IBGP-SPINE   Index: 6                   Flags: <Export Eval>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 0
+  Graceful Shutdown Receiver local-preference: 0
+  Total peers: 3        Established: 3
+  10.35.1.1+179
+  10.35.1.2+179
+  10.35.2.1+179
+  __default_evpn__.evpn.0: 3/9/9/0
+  bgp.evpn.0: 152/276/276/0
+  bgp.l3vpn-inet6.0: 99/99/99/0
+  bgp.l3vpn.0: 69/69/69/0
+  vlan10.evpn.0: 29/29/29/0
+  vlan20.evpn.0: 29/29/29/0
+  vlan30.evpn.0: 43/83/83/0
+  vrf10.inet.0: 4/27/27/0
+  vrf10.inet6.0: 5/38/38/0
+  vrf20.inet.0: 3/25/25/0
+  vrf20.inet6.0: 4/36/36/0
+  vrf30.inet.0: 2/17/17/0
+  vrf30.inet6.0: 4/25/25/0
+
+Group Type: Internal    AS: 64514                  Local AS: 64514
+  Name: BG-IBGP-LEAF    Index: 7                   Flags: <Export Eval>
+  Options: <Cluster>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 0
+  Graceful Shutdown Receiver local-preference: 0
+  Total peers: 2        Established: 2
+  10.35.2.3+179
+  10.35.2.4+49590
+  __default_evpn__.evpn.0: 6/6/6/0
+  bgp.evpn.0: 64/64/64/0
+  bgp.l3vpn-inet6.0: 20/20/20/0
+  bgp.l3vpn.0: 14/14/14/0
+  vlan10.evpn.0: 0/0/0/0
+  vlan20.evpn.0: 0/0/0/0
+  vlan30.evpn.0: 22/22/22/0
+  vrf10.inet.0: 2/4/4/0
+  vrf10.inet6.0: 2/6/6/0
+  vrf20.inet.0: 3/6/6/0
+  vrf20.inet6.0: 3/8/8/0
+  vrf30.inet.0: 1/4/4/0
+  vrf30.inet6.0: 2/6/6/0
+
+Group Type: External                               Local AS: 64514
+  Name: SRX-ANS-3       Index: 4                   Flags: <>
+  Export: [ PL-EVI10-V4 ] 
+  Options: <Multihop NoNextHopChange>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 0
+  Graceful Shutdown Receiver local-preference: 0
+  Total peers: 1        Established: 1
+  10.10.0.100+59303
+  vrf10.inet.0: 1/1/1/0
+
+Group Type: External                               Local AS: 64514
+  Name: SRX-ANS-3       Index: 5                   Flags: <>
+  Export: [ PL-EVI10-V6 ] 
+  Options: <Multihop NoNextHopChange>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 0
+  Graceful Shutdown Receiver local-preference: 0
+  Total peers: 1        Established: 1
+  100::100+179
+  vrf10.inet6.0: 1/1/1/0
+
+Group Type: External                               Local AS: 64514
+  Name: SRX-ANS-3       Index: 0                   Flags: <>
+  Export: [ PL-EVI20-V4 ] 
+  Options: <Multihop NoNextHopChange>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 0
+  Graceful Shutdown Receiver local-preference: 0
+  Total peers: 1        Established: 1
+  10.20.0.100+62375
+  vrf20.inet.0: 1/1/1/0
+
+Group Type: External                               Local AS: 64514
+  Name: SRX-ANS-3       Index: 1                   Flags: <>
+  Export: [ PL-EVI20-V6 ] 
+  Options: <Multihop NoNextHopChange>
+  Options: <GracefulShutdownRcv>
+  Holdtime: 0
+  Graceful Shutdown Receiver local-preference: 0
+  Total peers: 1        Established: 1
+  200::100+62996
+  vrf20.inet6.0: 1/1/1/0
+
+Groups: 6  Peers: 9    External: 4    Internal: 5    Down peers: 0   Flaps: 30
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+bgp.l3vpn.0          
+                      83         83          0          0          0          0
+bgp.l3vpn-inet6.0    
+                     119        119          0          0          0          0
+bgp.evpn.0           
+                     340        216          0          0          0          0
+vrf20.inet.0         
+                      32          7          0          0          0          0
+vrf20.inet6.0        
+                      45          8          0          0          0          0
+vrf20.mdt.0          
+                       0          0          0          0          0          0
+vlan10.evpn.0        
+                      29         29          0          0          0          0
+__default_evpn__.evpn.0 
+                      15          9          0          0          0          0
+vrf30.inet.0         
+                      21          3          0          0          0          0
+vrf30.inet6.0        
+                      31          6          0          0          0          0
+vrf30.mdt.0          
+                       0          0          0          0          0          0
+vlan20.evpn.0        
+                      29         29          0          0          0          0
+vrf10.inet.0         
+                      32          7          0          0          0          0
+mgmt_junos.mdt.0     
+                       0          0          0          0          0          0
+vrf10.inet6.0        
+                      45          8          0          0          0          0
+vrf10.mdt.0          
+                       0          0          0          0          0          0
+vlan30.evpn.0        
+                     105         65          0          0          0          0
+vrf30.evpn.0         
+                       0          0          0          0          0          0

@@ -1,0 +1,42 @@
+################# LEAF
+{master}
+tplisson@L-DC1-1A> show interfaces ae10 | match rate
+  Input rate     : 1090098320 bps (100005 pps)
+  Output rate    : 760 bps (0 pps)
+
+{master}
+tplisson@L-DC1-1A> show interfaces ae0 | match rate
+  Input rate     : 11496 bps (26 pps)
+  Output rate    : 547066440 bps (50006 pps)
+
+{master}
+tplisson@L-DC1-1A> show interfaces ae1 | match rate
+  Input rate     : 11216 bps (26 pps)
+  Output rate    : 543033592 bps (50005 pps)
+
+
+################# SPINE
+{master}
+tplisson@S-DC1-1> show interfaces ae3 | match rate
+  Input rate     : 547740792 bps (50026 pps)
+  Output rate    : 1656 bps (3 pps)
+
+{master}
+tplisson@S-DC1-1> show interfaces ae4 | match rate
+  Input rate     : 544914368 bps (50024 pps)
+  Output rate    : 3096 bps (3 pps)
+
+{master}
+tplisson@S-DC1-1> show interfaces ae0 | match rate
+  Input rate     : 11000 bps (25 pps)
+  Output rate    : 654664672 bps (60005 pps)
+
+{master}
+tplisson@S-DC1-1> show interfaces ae1 | match rate
+  Input rate     : 11224 bps (25 pps)
+  Output rate    : 437985856 bps (40005 pps)
+
+{master}
+tplisson@S-DC1-1> show interfaces ae2 | match rate
+  Input rate     : 10976 bps (25 pps)
+  Output rate    : 1448 bps (3 pps)

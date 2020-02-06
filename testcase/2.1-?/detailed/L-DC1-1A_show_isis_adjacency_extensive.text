@@ -1,0 +1,12 @@
+
+S-DC1-2
+  Interface: ae1.0, Level: 2, State: Up, Expires in 23 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 19:01:50 ago
+  Circuit type: 2, Speaks: IP, IPv6
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  IP addresses: 10.35.12.0
+  Level 2 IPv4 Adj-SID: 1628
+  Transition log:
+  When                  State        Event           Down reason
+  Mon Feb  3 16:52:18   Up           Seenself        

@@ -1,0 +1,22 @@
+
+Instance: vlan30
+
+EVPN-Core-NH: 1048782
+
+Learning-Domain: default
+Interface: xe-0/0/0:1.30, Groups: 0
+Interface: ae10.30, Groups: 0
+
+Instance: vlan10
+
+EVPN-Core-NH: 1048639
+
+Learning-Domain: default
+Interface: ae10.10, Groups: 0
+
+Instance: vlan20
+
+EVPN-Core-NH: 1048717
+
+Learning-Domain: default
+Interface: ae10.20, Groups: 0

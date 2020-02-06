@@ -1,0 +1,68 @@
+
+
+vrf30.inet.0: 4 destinations, 11 routes (4 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.30.0.0/24       *[Direct/0] 01:03:23
+                    >  via irb.30
+                    [EVPN/170] 01:03:23
+                    >  to 10.35.11.0 via ae0.0, Push 4641
+                       to 10.35.12.0 via ae1.0, Push 4641, Push 901001(top)
+                    [EVPN/170] 01:03:23
+                    >  to 10.35.12.0 via ae1.0, Push 1596
+                       to 10.35.11.0 via ae0.0, Push 1596, Push 901002(top)
+                    [EVPN/170] 01:03:23
+                    >  to 10.35.11.0 via ae0.0, Push 321, Push 901004(top)
+                       to 10.35.12.0 via ae1.0, Push 321, Push 901004(top)
+                    [EVPN/170] 01:03:23
+                    >  to 10.35.11.0 via ae0.0, Push 2136, Push 902001(top)
+                       to 10.35.12.0 via ae1.0, Push 2136, Push 902001(top)
+                    [EVPN/170] 01:03:23
+                    >  to 10.35.11.0 via ae0.0, Push 2504, Push 902002(top)
+                       to 10.35.12.0 via ae1.0, Push 2504, Push 902002(top)
+                    [EVPN/170] 01:03:21
+                    >  to 10.35.11.0 via ae0.0, Push 1119, Push 902003(top)
+                       to 10.35.12.0 via ae1.0, Push 1119, Push 902003(top)
+                    [EVPN/170] 01:03:21
+                    >  to 10.35.11.0 via ae0.0, Push 323, Push 902004(top)
+                       to 10.35.12.0 via ae1.0, Push 323, Push 902004(top)
+10.30.0.1/32       *[Local/0] 01:03:23
+                       Local via irb.30
+10.30.0.11/32      *[Local/0] 01:03:23
+                       Local via irb.30
+10.30.0.111/32     *[EVPN/7] 01:03:11
+                    >  via irb.30
+
+
+vrf30.inet6.0: 7 destinations, 14 routes (7 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+300::/64           *[Direct/0] 01:03:12
+                    >  via irb.30
+                    [EVPN/170] 01:03:12
+                    >  to 10.35.11.0 via ae0.0, Push 4641
+                       to 10.35.12.0 via ae1.0, Push 4641, Push 901001(top)
+                    [EVPN/170] 01:03:12
+                    >  to 10.35.12.0 via ae1.0, Push 1596
+                       to 10.35.11.0 via ae0.0, Push 1596, Push 901002(top)
+                    [EVPN/170] 01:03:12
+                    >  to 10.35.11.0 via ae0.0, Push 321, Push 901004(top)
+                       to 10.35.12.0 via ae1.0, Push 321, Push 901004(top)
+                    [EVPN/170] 01:03:12
+                    >  to 10.35.11.0 via ae0.0, Push 2136, Push 902001(top)
+                       to 10.35.12.0 via ae1.0, Push 2136, Push 902001(top)
+                    [EVPN/170] 01:03:12
+                    >  to 10.35.11.0 via ae0.0, Push 2504, Push 902002(top)
+                       to 10.35.12.0 via ae1.0, Push 2504, Push 902002(top)
+                    [EVPN/170] 01:03:10
+                    >  to 10.35.11.0 via ae0.0, Push 1119, Push 902003(top)
+                       to 10.35.12.0 via ae1.0, Push 1119, Push 902003(top)
+                    [EVPN/170] 01:03:10
+                    >  to 10.35.11.0 via ae0.0, Push 323, Push 902004(top)
+                       to 10.35.12.0 via ae1.0, Push 323, Push 902004(top)
+300::1/128         *[Local/0] 01:03:12
+                       Local via irb.30
+300::11/128        *[Local/0] 01:03:12
+                       Local via irb.30
+300::111/128       *[EVPN/7] 01:03:11
+                    >  via irb.30

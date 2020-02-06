@@ -1,0 +1,38 @@
+S-DC1-1                           Seconds: 2300                Time: 01:37:24
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+ xe-0/1/8:0  Down              0          (0)                0          (0)
+ xe-0/1/8:1  Down              0          (0)                0          (0)
+ xe-0/1/8:2  Down              0          (0)                0          (0)
+ xe-0/1/8:3  Down              0          (0)                0          (0)
+ xe-0/1/9:0  Down              0          (0)                0          (0)
+ xe-0/1/9:1  Down              0          (0)                0          (0)
+ xe-0/1/9:2  Down              0          (0)                0          (0)
+ xe-0/1/9:3  Down              0          (0)                0          (0)
+ xe-0/1/10:0 Down              0          (0)                0          (0)
+ xe-0/1/10:1 Down              0          (0)                0          (0)
+ xe-0/1/10:2 Down              0          (0)                0          (0)
+ xe-0/1/10:3 Down              0          (0)                0          (0)
+ xe-0/1/11:0 Down              0          (0)                0          (0)
+ xe-0/1/11:1 Down              0          (0)                0          (0)
+ xe-0/1/11:2 Down              0          (0)                0          (0)
+ xe-0/1/11:3 Down              0          (0)                0          (0)
+ lc-0/2/0      Up              0                             0
+ pfe-0/2/0     Up              0                             0
+ ae0           Up     2820036030         (25)       4560450503      (80006)
+ ae1           Up    27654723590         (26)      26542714510     (100004)
+ ae2           Up    57886158876         (25)      57778961965          (3)
+ ae3           Up    32032108383      (70027)       4679443619          (3)
+ ae4           Up     4304335131      (80028)       2385980181          (3)
+ ae10          Up      142998570     (180005)       6605562973     (150003)
+ demux0        Up              0                             0
+ dsc           Up              0                             0
+ em2           Up       18001157                      10665434
+ em3           Up      117825005                      62811803
+ em4           Up        6621305                      53664436
+ esi           Up              0                             0
+ fti0          Up              0                             0
+ fti1          Up              0                             0
+
+
+Bytes=b, Clear=c, Delta=d, Packets=p, Quit=q or ESC, Rate=r, Up=^U, Down=^D

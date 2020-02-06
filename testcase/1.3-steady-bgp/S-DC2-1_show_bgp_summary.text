@@ -1,0 +1,89 @@
+
+Threading mode: BGP I/O
+Groups: 6 Peers: 9 Down peers: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+bgp.l3vpn.0          
+                      83         83          0          0          0          0
+bgp.l3vpn-inet6.0    
+                     115        115          0          0          0          0
+bgp.evpn.0           
+                     340        216          0          0          0          0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+10.10.0.100           65100        328        330       0       4     2:30:48 Establ
+  vrf10.inet.0: 1/1/1/0
+10.20.0.100           65100        329        330       0       8     2:30:47 Establ
+  vrf20.inet.0: 1/1/1/0
+10.35.1.1             64514        440        443       0       7     2:30:46 Establ
+  __default_evpn__.evpn.0: 0/0/0/0
+  bgp.evpn.0: 96/96/96/0
+  bgp.l3vpn-inet6.0: 33/33/33/0
+  bgp.l3vpn.0: 24/24/24/0
+  vlan10.evpn.0: 11/11/11/0
+  vlan20.evpn.0: 11/11/11/0
+  vlan30.evpn.0: 29/29/29/0
+  vrf10.inet.0: 4/10/10/0
+  vrf10.inet6.0: 5/13/13/0
+  vrf20.inet.0: 3/8/8/0
+  vrf20.inet6.0: 4/11/11/0
+  vrf30.inet.0: 2/6/6/0
+  vrf30.inet6.0: 4/9/9/0
+10.35.1.2             64514        458        447       0       7     2:30:50 Establ
+  __default_evpn__.evpn.0: 0/0/0/0
+  bgp.evpn.0: 32/92/92/0
+  bgp.l3vpn-inet6.0: 33/33/33/0
+  bgp.l3vpn.0: 24/24/24/0
+  vlan10.evpn.0: 11/11/11/0
+  vlan20.evpn.0: 11/11/11/0
+  vlan30.evpn.0: 7/25/25/0
+  vrf10.inet.0: 0/10/10/0
+  vrf10.inet6.0: 0/13/13/0
+  vrf20.inet.0: 0/8/8/0
+  vrf20.inet6.0: 0/11/11/0
+  vrf30.inet.0: 0/6/6/0
+  vrf30.inet6.0: 0/9/9/0
+10.35.2.2             64514        446        442       0       7     2:30:46 Establ
+  __default_evpn__.evpn.0: 3/9/9/0
+  bgp.evpn.0: 24/88/88/0
+  bgp.l3vpn-inet6.0: 29/29/29/0
+  bgp.l3vpn.0: 21/21/21/0
+  vlan10.evpn.0: 7/7/7/0
+  vlan20.evpn.0: 7/7/7/0
+  vlan30.evpn.0: 7/29/29/0
+  vrf10.inet.0: 0/7/7/0
+  vrf10.inet6.0: 0/10/10/0
+  vrf20.inet.0: 0/9/9/0
+  vrf20.inet6.0: 0/12/12/0
+  vrf30.inet.0: 0/5/5/0
+  vrf30.inet6.0: 0/7/7/0
+10.35.2.3             64514        387        674       0       0     2:31:10 Establ
+  __default_evpn__.evpn.0: 3/3/3/0
+  bgp.evpn.0: 36/36/36/0
+  bgp.l3vpn-inet6.0: 10/10/10/0
+  bgp.l3vpn.0: 7/7/7/0
+  vlan10.evpn.0: 0/0/0/0
+  vlan20.evpn.0: 0/0/0/0
+  vlan30.evpn.0: 11/11/11/0
+  vrf10.inet.0: 2/2/2/0
+  vrf10.inet6.0: 2/3/3/0
+  vrf20.inet.0: 3/3/3/0
+  vrf20.inet6.0: 3/4/4/0
+  vrf30.inet.0: 1/2/2/0
+  vrf30.inet6.0: 2/3/3/0
+10.35.2.4             64514        382        670       0       0     2:31:06 Establ
+  __default_evpn__.evpn.0: 3/3/3/0
+  bgp.evpn.0: 28/28/28/0
+  bgp.l3vpn-inet6.0: 10/10/10/0
+  bgp.l3vpn.0: 7/7/7/0
+  vlan10.evpn.0: 0/0/0/0
+  vlan20.evpn.0: 0/0/0/0
+  vlan30.evpn.0: 11/11/11/0
+  vrf10.inet.0: 0/2/2/0
+  vrf10.inet6.0: 0/3/3/0
+  vrf20.inet.0: 0/3/3/0
+  vrf20.inet6.0: 0/4/4/0
+  vrf30.inet.0: 0/2/2/0
+  vrf30.inet6.0: 0/3/3/0
+100::100              65100        327        330       0       4     2:30:25 Establ
+  vrf10.inet6.0: 1/1/1/0
+200::100              65100        326        330       0       7     2:30:34 Establ
+  vrf20.inet6.0: 1/1/1/0

@@ -1,0 +1,13 @@
+
+
+mpls.0: 90 destinations, 90 routes (90 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+901001             *[L-ISIS/14] 6d 05:16:00, metric 100
+                    >  to 10.35.0.2 via ae1.0, Pop      
+                       to 10.35.0.6 via ae0.0, Swap 901001
+                       to 10.35.0.11 via ae2.0, Swap 901001
+901001(S=0)        *[L-ISIS/14] 6d 05:16:00, metric 100
+                    >  to 10.35.0.2 via ae1.0, Pop      
+                       to 10.35.0.6 via ae0.0, Swap 901001
+                       to 10.35.0.11 via ae2.0, Swap 901001
