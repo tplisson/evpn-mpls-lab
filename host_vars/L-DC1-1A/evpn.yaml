@@ -37,7 +37,7 @@ evi20:
 
 evi30:
   id: 30
-  evi: 300
+  evi: 30
   ipv4_subnet: 10.30.0
   ipv4_mask: 24
   ipv6_subnet: 300

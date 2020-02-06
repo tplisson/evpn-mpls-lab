@@ -1,13 +1,11 @@
 ---
-- name: Test Case 1-4 - Convergence Test - SPINE Link Failure
+- name: Test Case 2-1 STEADY-EVPN-VRF-EVI30
   hosts: localhost
   gather_facts: no
-
   tasks:
-
   - name: Create directories      
     file: 
-      path: "{{playbook_dir}}/testcase/1.4/10" 
+      path: "{{playbook_dir}}/testcase/2.1/0" 
       state: directory
 
 - name: "{{testcase}}"
@@ -17,15 +15,18 @@
   connection: local
   gather_facts: no
   vars:
-    testcase: "Test Case 1-4: Step 10 - Traffic statistics on LEAF routers"
-    test_dir: "testcase/1.4/10"
+    testcase: "Test Case 2-1: Baseline on LEAF routers"
+    test_dir: "testcase/2.1/0"
 
   tasks:
 
   - name: Gathering regular output for {{testcase}}
     juniper_junos_command:
       command:
-        - "show interfaces descriptions"
+        - "show configuration routing-instances vlan30"
+        - "show configuration routing-instances vrf30"
+        - "show interfaces ae10.30 terse"
+        - "show interfaces irb.30 terse"
         - "show interfaces ae0 statistics"
         - "show interfaces ae1 statistics"
         - "show interfaces ae10.30 statistics"
@@ -39,8 +40,8 @@
   connection: local
   gather_facts: no
   vars:
-    testcase: "Test Case 1-4: Step 10 - Traffic statistics on SPINE routers"
-    test_dir: "testcase/1.4/10"
+    testcase: "Test Case 2-1: Step 0 - Baseline on SPINE routers"
+    test_dir: "testcase/2.1/0"
 
   tasks:
 

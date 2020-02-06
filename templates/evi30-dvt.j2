@@ -110,7 +110,7 @@ routing-instances {
         interface xe-0/0/0:1.{{evi30.id}};
 {% endif %}
         routing-interface irb.{{evi30.id}};
-        vrf-target target:64514:{{evi30.evi}};
+        vrf-target target:64514:{{evi30.id}};
         protocols {
             evpn {
                 default-gateway no-gateway-community;
