@@ -1,3 +1,0 @@
-
-[edit interfaces ae40 unit 30 family inet6]
--       address fe80::30:222/64;

@@ -1,7 +1,0 @@
-
-[edit interfaces xe-1/0/45 unit 30 family inet]
-+       address 10.30.0.1/24;
--       address 10.30.1.1/24;
-[edit interfaces xe-1/0/45 unit 30 family inet6]
-+       address 111::1/64;
--       address 301::1/64;

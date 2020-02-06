@@ -1,4 +1,0 @@
-
-[edit interfaces reth2 unit 30 family inet6]
-        address 300::100/64 { ... }
-+       address fe80::30:100/64;
