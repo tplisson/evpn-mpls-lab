@@ -1,3 +1,0 @@
-"Port","Tx Frames","Rx Frames","Tx Frame Rate","Rx Frame Rate","Tx L1 Load %","Rx L1 Load %","Tx L1 Rate (bps)","Rx L1 Rate (bps)","Rx Bytes","Tx Rate (Bps)","Rx Rate (Bps)","Tx Rate (bps)","Rx Rate (bps)","Tx Rate (Kbps)","Rx Rate (Kbps)","Tx Rate (Mbps)","Rx Rate (Mbps)","Store-Forward Avg Latency (ns)","Store-Forward Min Latency (ns)","Store-Forward Max Latency (ns)","First TimeStamp","Last TimeStamp"
-"P2/3-QFX1",377968854,,200000.000,,22.128,,2212800016.000,,,272600002.000,,2180800016.000,,2180800.016,,2180.800,,,,,,
-"P2/8-QFX2",,377967979,,200000.000,,22.161,,2216064600.000,515208354664,,273008075.000,,2184064600.000,,2184064.600,,2184.065,92137,44270,222910,"00:00:00.621","00:31:30.465"
