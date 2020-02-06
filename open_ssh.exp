@@ -27,5 +27,5 @@ expect {
     }
 }
 
-log_file -a /tmp/open_voo.log
+log_file -a /tmp/evpn-mpls-lab.log
 interact
