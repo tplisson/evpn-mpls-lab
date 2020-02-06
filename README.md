@@ -8,7 +8,11 @@ Host unique variables are defined within the `host_vars` directory.
 
 
 ## Lab Topology
-![Image of lab topology](https://github.com/tplisson/evpn-mpls-lab/blob/master/lab-topology.png)
+![Image1 of lab topology](https://github.com/tplisson/evpn-mpls-lab/blob/master/lab-topology-1.jpg)
+
+![Image2 of lab topology](https://github.com/tplisson/evpn-mpls-lab/blob/master/lab-topology-2.jpg)
+
+![Image2 of lab topology](https://github.com/tplisson/evpn-mpls-lab/blob/master/lab-topology-3.jpg)
 
 ## Requirements
 Docker image for Juniper Ansible roles for Junos
