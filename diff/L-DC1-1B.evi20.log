@@ -1,5 +1,24 @@
 
-[edit routing-instances vlan20]
-+   description "EVPN instance for VLAN 20";
 [edit routing-instances vrf20]
-+   description "VRF instance for IRB in VLAN 20";
+-    protocols {
+-        evpn {
+-            ip-prefix-routes {
+-                advertise direct-nexthop;
+-                encapsulation mpls;
+-            }
+-        }
+-        bgp {
+-            group QFX1 {
+-                multihop {
+-                    no-nexthop-change;
+-                }
+-                peer-as 65111;
+-                neighbor 10.20.1.111 {
+-                    export PL-EVI20-DEFAULT-NH-VGA-V4;
+-                }
+-                neighbor 201::111 {
+-                    export PL-EVI20-DEFAULT-NH-VGA-V6;
+-                }
+-            }
+-        }
+-    }

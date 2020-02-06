@@ -1,0 +1,49 @@
+---
+- hosts: localhost:LEAF
+  gather_facts: no
+  tasks:
+  - set_fact: 
+      testcase: 'Test Case 3-1'
+      test_dir: "testcase/3.1/0"
+      cacheable: yes
+
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Create directories      
+    file: 
+      path: "{{playbook_dir}}/{{test_dir}}" 
+      state: directory
+
+- name: "Multicast & IGMP Snooping"
+  hosts: LEAF
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  tasks:
+
+  - name: Gathering output for {{testcase}}
+    juniper_junos_command:
+      command:
+        - 'show configuration routing-instances vlan30'
+        - 'show configuration routing-instances vrf30'
+        - 'show igmp snooping evpn database'
+        - 'show igmp snooping evpn membership'
+        - 'show igmp snooping evpn proxy'
+        - 'show multicast snooping route instance vlan30'
+        - "show route table vlan30 match-prefix 6:*"
+        - "show route table vlan30 match-prefix 7:*"
+        - "show route table vlan30 match-prefix 8:*"
+        - "show route table vlan30 match-prefix 6:* extensive"
+        - "show route table vlan30 match-prefix 7:* extensive"
+        - "show route table vlan30 match-prefix 8:* extensive"
+      dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+      return_output: false
+
+  - name: Gathering output for VPN routes
+    juniper_junos_command:
+      command:
+        - 'show interfaces xe-0/0/0:1 statistics'
+      dest: "{{playbook_dir}}/{{test_dir}}/{{ inventory_hostname }}_stats.txt"
+      return_output: false

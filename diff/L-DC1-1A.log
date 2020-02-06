@@ -1,10 +1,10 @@
 
-[edit routing-instances vrf30]
--    protocols {
--        evpn {
--            ip-prefix-routes {
--                advertise direct-nexthop;
--                encapsulation mpls;
--            }
--        }
--    }
+[edit routing-instances vrf20]
++    protocols {
++        evpn {
++            ip-prefix-routes {
++                advertise direct-nexthop;
++                encapsulation mpls;
++            }
++        }
++    }

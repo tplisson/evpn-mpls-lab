@@ -1,0 +1,16 @@
+interfaces {
+    xe-0/0/0:1 {
+        vlan-tagging;
+        mtu 9000;
+        encapsulation flexible-ethernet-services;
+        unit 30 {
+            encapsulation vlan-bridge;
+            vlan-id 30;
+        }
+    }
+}
+routing-instances {
+    vlan30 {
+        interface xe-0/0/0:1.30;
+    }
+}

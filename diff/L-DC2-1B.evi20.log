@@ -1,36 +1,22 @@
 
-[edit policy-options]
-+   policy-statement PL-EVI20-DEFAULT-NH-VGA-V4 {
-+       term DEFAULT-NH-VGA-V4 {
-+           from {
-+               prefix-list PL-DEFAULT-V4;
-+           }
-+           then {
-+               next-hop 10.20.2.1;
-+               accept;
-+           }
-+       }
-+       term DROP {
-+           then reject;
-+       }
-+   }
-+   policy-statement PL-EVI20-DEFAULT-NH-VGA-V6 {
-+       term DEFAULT-NH-VGA-V6 {
-+           from {
-+               prefix-list PL-DEFAULT-V6;
-+           }
-+           then {
-+               next-hop 202::1;
-+               accept;
-+           }
-+       }
-+       term DROP {
-+           then reject;
-+       }
-+   }
-[edit routing-instances vrf20 protocols bgp group QFX2 neighbor 10.20.2.222]
--       export PL-20-NH-VGA-v4;
-+       export PL-EVI20-DEFAULT-NH-VGA-V4;
-[edit routing-instances vrf20 protocols bgp group QFX2 neighbor 202::222]
--       export PL-20-NH-VGA-v6;
-+       export PL-EVI20-DEFAULT-NH-VGA-V6;
+[edit routing-instances vrf20 protocols]
+-     evpn {
+-         ip-prefix-routes {
+-             advertise direct-nexthop;
+-             encapsulation mpls;
+-         }
+-     }
++     bgp {
++         group QFX2 {
++             multihop {
++                 no-nexthop-change;
++             }
++             peer-as 65222;
++             neighbor 10.20.2.222 {
++                 export PL-EVI20-DEFAULT-NH-VGA-V4;
++             }
++             neighbor 202::222 {
++                 export PL-EVI20-DEFAULT-NH-VGA-V6;
++             }
++         }
++     }

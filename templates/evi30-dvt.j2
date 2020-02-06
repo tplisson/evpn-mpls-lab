@@ -45,6 +45,17 @@ groups {
     }
 }
 interfaces {
+{% if "L-DC" in host_name %}
+    xe-0/0/0:1 {
+        vlan-tagging;
+        mtu 9000;
+        encapsulation flexible-ethernet-services;
+        unit {{evi30.id}} {
+            encapsulation vlan-bridge;
+            vlan-id {{evi30.id}};
+        }
+    }
+{% endif %}
 {% for ae_member in ae_members %}
     replace: {{ae_member}} {
         apply-groups GR-EDGE-INTF-LAG-MEMBER;
@@ -95,14 +106,19 @@ routing-instances {
         instance-type evpn;
         vlan-id {{evi30.id}};
         interface {{ae_name}}.{{evi30.id}};
+{% if "L-DC" in host_name %}
+        interface xe-0/0/0:1.{{evi30.id}};
+{% endif %}
         routing-interface irb.{{evi30.id}};
         vrf-target target:64514:{{evi30.evi}};
         protocols {
             evpn {
                 default-gateway no-gateway-community;
             }
-            inactive: igmp-snooping {
-                proxy;
+            igmp-snooping {
+                proxy {
+                    source-address {{evi30.ipv4_subnet}}.{{local_ip}};
+                }
             }
             mld-snooping {
                 proxy {

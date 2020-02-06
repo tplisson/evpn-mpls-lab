@@ -7,7 +7,7 @@
 
   - name: Create directories      
     file: 
-      path: "{{playbook_dir}}/testcase/1.4/4" 
+      path: "{{playbook_dir}}/testcase/1.4/10" 
       state: directory
 
 - name: "{{testcase}}"
@@ -17,19 +17,15 @@
   connection: local
   gather_facts: no
   vars:
-    testcase: "Test Case 1-4: Step 4 - Traffic statistics on LEAF routers"
-    test_dir: "testcase/1.4/4"
+    testcase: "Test Case 1-4: Step 10 - Traffic statistics on LEAF routers"
+    test_dir: "testcase/1.4/10"
 
   tasks:
 
   - name: Gathering regular output for {{testcase}}
-    #when: netconf_result|success
     juniper_junos_command:
       command:
-        - "show configuration routing-instances vlan30"
-        - "show configuration routing-instances vrf30"
-        - "show interfaces ae10.30 terse"
-        - "show interfaces irb.30 terse"
+        - "show interfaces descriptions"
         - "show interfaces ae0 statistics"
         - "show interfaces ae1 statistics"
         - "show interfaces ae10.30 statistics"
@@ -43,8 +39,8 @@
   connection: local
   gather_facts: no
   vars:
-    testcase: "Test Case 1-4: Step 4 - Traffic statistics on SPINE routers"
-    test_dir: "testcase/1.4/4"
+    testcase: "Test Case 1-4: Step 10 - Traffic statistics on SPINE routers"
+    test_dir: "testcase/1.4/10"
 
   tasks:
 

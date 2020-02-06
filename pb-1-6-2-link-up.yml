@@ -1,0 +1,22 @@
+---
+- name: "{{testcase}}"
+  hosts: S-DC1-1
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  vars:
+    testcase: "Test Case 1-6: Step 2 - Restoring interface ae3 on S-DC1-1 (laser on)"
+    test_dir: "testcase/1.6/"
+
+  tasks:
+
+  - name: Gathering regular output for {{testcase}}
+    juniper_junos_command:
+      command:
+        - 'request pfe execute target fpc0 command "test qsfp 10 laser on"'
+    register: response
+    
+  - name: Print the output.
+    debug:
+      var: response
