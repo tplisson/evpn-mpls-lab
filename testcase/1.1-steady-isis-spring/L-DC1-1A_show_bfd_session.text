@@ -3,8 +3,7 @@
 Address                  State     Interface      Time     Interval  Multiplier
 10.35.1.1                Up                       0.900     0.300        3   
 10.35.1.2                Up                       0.900     0.300        3   
-10.35.11.0               Up        xe-0/1/0:0     0.150     0.050        3   
 10.35.12.0               Up        xe-0/1/1:0     0.150     0.050        3   
 
-4 sessions, 4 clients
-Cumulative transmit rate 46.7 pps, cumulative receive rate 46.7 pps
+3 sessions, 3 clients
+Cumulative transmit rate 26.7 pps, cumulative receive rate 26.7 pps

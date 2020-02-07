@@ -1,7 +1,7 @@
 
 S-DC1-1
   Interface: ae0.0, Level: 2, State: Up, Expires in 23 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:07:26 ago
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:52:43 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
@@ -12,8 +12,8 @@ S-DC1-1
   Mon Jan 27 15:01:35   Up           Seenself        
 
 S-DC1-2
-  Interface: ae1.0, Level: 2, State: Up, Expires in 23 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:07:12 ago
+  Interface: ae1.0, Level: 2, State: Up, Expires in 19 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:52:29 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
@@ -24,8 +24,8 @@ S-DC1-2
   Mon Jan 27 15:01:50   Up           Seenself        
 
 S-DC2-1
-  Interface: ae2.0, Level: 2, State: Up, Expires in 25 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:07:26 ago
+  Interface: ae2.0, Level: 2, State: Up, Expires in 22 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:52:44 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
@@ -37,7 +37,7 @@ S-DC2-1
 
 L-DC2-1A
   Interface: ae3.0, Level: 2, State: Up, Expires in 21 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:07:20 ago
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:52:38 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
@@ -48,8 +48,8 @@ L-DC2-1A
   Mon Jan 27 15:01:41   Up           Seenself        
 
 L-DC2-1B
-  Interface: ae4.0, Level: 2, State: Up, Expires in 22 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:07:52 ago
+  Interface: ae4.0, Level: 2, State: Up, Expires in 26 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:53:09 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise

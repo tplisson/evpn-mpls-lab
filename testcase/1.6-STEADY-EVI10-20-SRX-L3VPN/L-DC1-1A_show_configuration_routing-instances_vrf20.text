@@ -1,0 +1,10 @@
+
+description "VRF instance for IRB in VLAN 20";
+instance-type vrf;
+interface irb.20;
+vrf-target target:64514:20;
+vrf-table-label;
+routing-options {
+    autonomous-system 64514;
+    multipath;
+}

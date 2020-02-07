@@ -1,0 +1,12 @@
+
+Threading mode: BGP I/O
+Groups: 0 Peers: 0 Down peers: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+vrf30.mdt.0          
+                       0          0          0          0          0          0
+vrf30.evpn.0         
+                       0          0          0          0          0          0
+vrf30.inet.0         
+                      21          3          0          0          0          0
+vrf30.inet6.0        
+                      31          6          0          0          0          0

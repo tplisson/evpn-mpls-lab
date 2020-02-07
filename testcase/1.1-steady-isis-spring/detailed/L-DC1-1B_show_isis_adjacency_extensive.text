@@ -1,7 +1,7 @@
 
 S-DC1-1
-  Interface: ae0.0, Level: 2, State: Up, Expires in 26 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:06:57 ago
+  Interface: ae0.0, Level: 2, State: Up, Expires in 20 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:52:13 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
@@ -12,8 +12,8 @@ S-DC1-1
   Mon Jan 27 15:01:55   Up           Seenself        
 
 S-DC1-2
-  Interface: ae1.0, Level: 2, State: Up, Expires in 23 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:07:05 ago
+  Interface: ae1.0, Level: 2, State: Up, Expires in 21 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:52:21 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise

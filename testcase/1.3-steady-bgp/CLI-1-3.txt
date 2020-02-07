@@ -1,0 +1,10 @@
+#### Regular output 
+show configuration protocols bgp
+show configuration routing-options
+show bgp summary
+show route summary table bgp
+
+#### Detailed output
+show bgp group
+show bgp neighbor
+show route protocol bgp

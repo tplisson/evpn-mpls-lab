@@ -6,7 +6,7 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Level: 2
                 Next hop type: Router, Next hop index: 0
                 Address: 0x45cab5c
-                Next-hop reference count: 13
+                Next-hop reference count: 8
                 Next hop: 10.35.11.2 via ae0.0 weight 0x1, selected
                 Label element ptr: 0x4680be0
                 Label parent element ptr: 0x0
@@ -26,11 +26,11 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5d 11:07:14 	Metric: 100 
+                Age: 5d 22:52:30 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
                 AS path: I 
 
 10.35.1.2/32 (1 entry, 1 announced)
@@ -38,7 +38,7 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Level: 2
                 Next hop type: Router, Next hop index: 0
                 Address: 0x45cac3c
-                Next-hop reference count: 13
+                Next-hop reference count: 8
                 Next hop: 10.35.12.2 via ae1.0 weight 0x1, selected
                 Label element ptr: 0x4680be0
                 Label parent element ptr: 0x0
@@ -58,20 +58,20 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5d 11:07:14 	Metric: 100 
+                Age: 5d 22:52:30 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
                 AS path: I 
 
 10.35.1.3/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c70bc
-                Next-hop reference count: 13
-                Next hop: 10.35.11.2 via ae0.0 weight 0x1
+                Address: 0x45d0c7c
+                Next-hop reference count: 8
+                Next hop: 10.35.12.2 via ae1.0 weight 0x1, selected
                 Label operation: Push 901003
                 Label TTL action: prop-ttl
                 Load balance label: Label 901003: None; 
@@ -81,7 +81,7 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Label element child references: 13
                 Label element lsp id: 0
                 Session Id: 0x0
-                Next hop: 10.35.12.2 via ae1.0 weight 0x1, selected
+                Next hop: 10.35.11.2 via ae0.0 weight 0xf000
                 Label operation: Push 901003
                 Label TTL action: prop-ttl
                 Load balance label: Label 901003: None; 
@@ -93,11 +93,11 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 7:16:39 	Metric: 200 
+                Age: 2:54:07 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
                 AS path: I 
 
 10.35.2.1/32 (1 entry, 1 announced)
@@ -105,7 +105,7 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Level: 2
                 Next hop type: Router, Next hop index: 0
                 Address: 0x45caedc
-                Next-hop reference count: 13
+                Next-hop reference count: 8
                 Next hop: 10.35.11.2 via ae0.0 weight 0x1
                 Label operation: Push 902001
                 Label TTL action: prop-ttl
@@ -128,11 +128,11 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5d 11:07:14 	Metric: 200 
+                Age: 5d 22:52:30 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
                 AS path: I 
 
 10.35.2.2/32 (1 entry, 1 announced)
@@ -140,7 +140,7 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Level: 2
                 Next hop type: Router, Next hop index: 0
                 Address: 0x45cafbc
-                Next-hop reference count: 13
+                Next-hop reference count: 8
                 Next hop: 10.35.11.2 via ae0.0 weight 0x1
                 Label operation: Push 902002
                 Label TTL action: prop-ttl
@@ -163,11 +163,11 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5d 11:07:14 	Metric: 200 
+                Age: 5d 22:52:30 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
                 AS path: I 
 
 10.35.2.3/32 (1 entry, 1 announced)
@@ -175,7 +175,7 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Level: 2
                 Next hop type: Router, Next hop index: 0
                 Address: 0x45cb17c
-                Next-hop reference count: 13
+                Next-hop reference count: 8
                 Next hop: 10.35.11.2 via ae0.0 weight 0x1
                 Label operation: Push 902003
                 Label TTL action: prop-ttl
@@ -198,11 +198,11 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5d 11:07:14 	Metric: 300 
+                Age: 5d 22:52:30 	Metric: 300 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
                 AS path: I 
 
 10.35.2.4/32 (1 entry, 1 announced)
@@ -210,7 +210,7 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Level: 2
                 Next hop type: Router, Next hop index: 0
                 Address: 0x45cb6bc
-                Next-hop reference count: 13
+                Next-hop reference count: 8
                 Next hop: 10.35.11.2 via ae0.0 weight 0x1
                 Label operation: Push 902004
                 Label TTL action: prop-ttl
@@ -233,9 +233,9 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5d 11:07:14 	Metric: 300 
+                Age: 5d 22:52:30 	Metric: 300 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
+                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
                 AS path: I 

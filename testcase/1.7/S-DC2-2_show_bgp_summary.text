@@ -1,0 +1,53 @@
+
+Threading mode: BGP I/O
+Groups: 6 Peers: 9 Down peers: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+bgp.evpn.0           
+                     384        244          0          0          0          0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+10.10.0.100           65100         34         36       0       2       15:23 Establ
+  vrf10.inet.0: 1/1/1/0
+10.20.0.100           65100         35         36       0       2       15:17 Establ
+  vrf20.inet.0: 1/1/1/0
+10.35.1.1             64514        100        100       0       0       15:54 Establ
+  __default_evpn__.evpn.0: 0/0/0/0
+  bgp.evpn.0: 108/108/108/0
+  vlan10.evpn.0: 11/11/11/0
+  vlan20.evpn.0: 11/11/11/0
+  vlan30.evpn.0: 37/37/37/0
+  vrf10.evpn.0: 22/22/22/0
+  vrf20.evpn.0: 2/2/2/0
+10.35.1.2             64514         96        101       0       0       15:50 Establ
+  __default_evpn__.evpn.0: 0/0/0/0
+  bgp.evpn.0: 36/104/104/0
+  vlan10.evpn.0: 11/11/11/0
+  vlan20.evpn.0: 11/11/11/0
+  vlan30.evpn.0: 7/33/33/0
+  vrf10.evpn.0: 2/22/22/0
+  vrf20.evpn.0: 2/2/2/0
+10.35.2.1             64514        105        101       0       0       15:46 Establ
+  __default_evpn__.evpn.0: 3/3/3/0
+  bgp.evpn.0: 28/100/100/0
+  vlan10.evpn.0: 7/7/7/0
+  vlan20.evpn.0: 7/7/7/0
+  vlan30.evpn.0: 7/37/37/0
+  vrf10.evpn.0: 2/2/2/0
+  vrf20.evpn.0: 2/22/22/0
+10.35.2.3             64514         63        148       0       0       15:33 Establ
+  __default_evpn__.evpn.0: 0/0/0/0
+  bgp.evpn.0: 38/38/38/0
+  vlan10.evpn.0: 0/0/0/0
+  vlan20.evpn.0: 0/0/0/0
+  vlan30.evpn.0: 15/15/15/0
+  vrf20.evpn.0: 10/10/10/0
+10.35.2.4             64514         59        145       0       0       15:29 Establ
+  __default_evpn__.evpn.0: 0/0/0/0
+  bgp.evpn.0: 34/34/34/0
+  vlan10.evpn.0: 0/0/0/0
+  vlan20.evpn.0: 0/0/0/0
+  vlan30.evpn.0: 15/15/15/0
+  vrf20.evpn.0: 10/10/10/0
+100::100              65100         35         37       0       2       14:52 Establ
+  vrf10.inet6.0: 1/1/1/0
+200::100              65100         35         38       0       2       15:10 Establ
+  vrf20.inet6.0: 1/1/1/0

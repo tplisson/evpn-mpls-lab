@@ -1,0 +1,7 @@
+
+term SLASH-32 {
+    from {
+        route-filter 10.30.0.0/24 orlonger;
+    }
+    then accept;
+}

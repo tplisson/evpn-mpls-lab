@@ -1,68 +1,70 @@
 
 
-inet.0: 27 destinations, 27 routes (27 active, 0 holddown, 0 hidden)
+inet.0: 26 destinations, 26 routes (26 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-10.35.1.1/32       *[Direct/0] 3w4d 13:30:30
+10.35.1.1/32       *[Direct/0] 3w5d 01:15:47
                     >  via lo0.0
-10.35.1.2/32       *[IS-IS/18] 07:16:23, metric 100
+10.35.1.2/32       *[IS-IS/18] 02:53:51, metric 100
                     >  to 10.35.0.5 via ae2.0
                        to 10.35.0.1 via ae0.0
-                       to 10.35.11.1 via ae3.0
-10.35.1.3/32       *[IS-IS/18] 07:16:23, metric 100
-                    >  to 10.35.11.1 via ae3.0
-                       to 10.35.0.5 via ae2.0
-10.35.1.4/32       *[IS-IS/18] 08:02:33, metric 100
+                       to 10.35.0.3 via ae1.0
+10.35.1.3/32       *[IS-IS/18] 02:53:51, metric 200
+                    >  to 10.35.0.5 via ae2.0
+                       to 10.35.0.1 via ae0.0
+                       to 10.35.0.3 via ae1.0
+10.35.1.4/32       *[IS-IS/18] 10:44:30, metric 100
                     >  to 10.35.11.3 via ae4.0
                        to 10.35.0.5 via ae2.0
 
 inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-10.35.1.2/32       *[L-ISIS/14] 07:16:23, metric 100
+10.35.1.2/32       *[L-ISIS/14] 02:53:51, metric 100
                     >  to 10.35.0.5 via ae2.0
                        to 10.35.0.1 via ae0.0, Push 901002
-                       to 10.35.11.1 via ae3.0, Push 901002
-10.35.1.3/32       *[L-ISIS/14] 07:16:23, metric 100
-                    >  to 10.35.11.1 via ae3.0
-                       to 10.35.0.5 via ae2.0, Push 901003
-10.35.1.4/32       *[L-ISIS/14] 08:02:33, metric 100
+                       to 10.35.0.3 via ae1.0, Push 901002
+10.35.1.3/32       *[L-ISIS/14] 02:53:51, metric 200
+                    >  to 10.35.0.5 via ae2.0, Push 901003
+                       to 10.35.0.1 via ae0.0, Push 901003
+                       to 10.35.0.3 via ae1.0, Push 901003
+10.35.1.4/32       *[L-ISIS/14] 10:44:30, metric 100
                     >  to 10.35.11.3 via ae4.0
                        to 10.35.0.5 via ae2.0, Push 901004
 
 
-inet.0: 27 destinations, 27 routes (27 active, 0 holddown, 0 hidden)
+inet.0: 26 destinations, 26 routes (26 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-10.35.2.1/32       *[IS-IS/18] 08:02:34, metric 100
+10.35.2.1/32       *[IS-IS/18] 10:44:30, metric 100
                     >  to 10.35.0.3 via ae1.0
                        to 10.35.0.1 via ae0.0
                        to 10.35.0.5 via ae2.0
-10.35.2.2/32       *[IS-IS/18] 08:02:34, metric 100
+10.35.2.2/32       *[IS-IS/18] 10:44:30, metric 100
                     >  to 10.35.0.1 via ae0.0
                        to 10.35.0.3 via ae1.0
                        to 10.35.0.5 via ae2.0
-10.35.2.3/32       *[IS-IS/18] 08:02:34, metric 200
+10.35.2.3/32       *[IS-IS/18] 10:44:30, metric 200
                        to 10.35.0.1 via ae0.0
                     >  to 10.35.0.3 via ae1.0
-10.35.2.4/32       *[IS-IS/18] 08:02:34, metric 200
+10.35.2.4/32       *[IS-IS/18] 10:44:30, metric 200
                        to 10.35.0.1 via ae0.0
                     >  to 10.35.0.3 via ae1.0
 
 inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-10.35.2.1/32       *[L-ISIS/14] 08:02:34, metric 100
+10.35.2.1/32       *[L-ISIS/14] 10:44:30, metric 100
                     >  to 10.35.0.3 via ae1.0
                        to 10.35.0.1 via ae0.0, Push 902001
                        to 10.35.0.5 via ae2.0, Push 902001
-10.35.2.2/32       *[L-ISIS/14] 08:02:34, metric 100
+10.35.2.2/32       *[L-ISIS/14] 10:44:30, metric 100
                     >  to 10.35.0.1 via ae0.0
                        to 10.35.0.3 via ae1.0, Push 902002
                        to 10.35.0.5 via ae2.0, Push 902002
-10.35.2.3/32       *[L-ISIS/14] 5d 03:18:36, metric 200
+10.35.2.3/32       *[L-ISIS/14] 5d 15:03:52, metric 200
                        to 10.35.0.1 via ae0.0, Push 902003
                     >  to 10.35.0.3 via ae1.0, Push 902003
-10.35.2.4/32       *[L-ISIS/14] 5d 03:18:36, metric 200
+10.35.2.4/32       *[L-ISIS/14] 5d 15:03:52, metric 200
                        to 10.35.0.1 via ae0.0, Push 902004
                     >  to 10.35.0.3 via ae1.0, Push 902004

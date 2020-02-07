@@ -1,0 +1,289 @@
+
+
+vrf10.inet.0: 13 destinations, 26 routes (13 active, 0 holddown, 0 hidden)
+@ = Routing Use Only, # = Forwarding Use Only
++ = Active Route, - = Last Active, * = Both
+
+10.10.0.0/24       *[Direct/0] 01:15:15
+                    >  via irb.10
+10.10.0.1/32       *[Local/0] 01:15:15
+                       Local via irb.10
+10.10.0.2/32       *[Local/0] 01:15:15
+                       Local via irb.10
+10.10.0.100/32     *[EVPN/7] 01:15:03
+                    >  via irb.10
+
+
+vrf10.inet.0: 13 destinations, 26 routes (13 active, 0 holddown, 0 hidden)
+@ = Routing Use Only, # = Forwarding Use Only
++ = Active Route, - = Last Active, * = Both
+
+10.10.1.0/24       @[EVPN/170] 01:15:15
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+                    [EVPN/170] 01:15:14
+                    >  to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+                   #[Multipath/255] 01:15:14, metric2 100
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+                       to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+10.10.1.1/32       @[EVPN/170] 00:42:57
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+                    [EVPN/170] 00:42:56
+                    >  to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+                   #[Multipath/255] 00:42:56, metric2 100
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+                       to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+10.10.1.11/32      *[EVPN/170] 00:42:57
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+10.10.1.12/32      *[EVPN/170] 00:42:56
+                    >  to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+10.10.1.111/32     @[EVPN/170] 00:42:57
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+                    [EVPN/170] 00:42:56
+                    >  to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+                   #[Multipath/255] 00:42:56, metric2 100
+                       to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+                    >  to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+
+
+vrf10.inet.0: 13 destinations, 26 routes (13 active, 0 holddown, 0 hidden)
+@ = Routing Use Only, # = Forwarding Use Only
++ = Active Route, - = Last Active, * = Both
+
+10.10.2.0/24       @[EVPN/170] 01:15:05
+                    >  to 10.35.0.1 via ae0.0, Push 24, Push 902003(top)
+                       to 10.35.0.3 via ae1.0, Push 24, Push 902003(top)
+                    [EVPN/170] 01:15:05
+                    >  to 10.35.0.1 via ae0.0, Push 24, Push 902004(top)
+                       to 10.35.0.3 via ae1.0, Push 24, Push 902004(top)
+                   #[Multipath/255] 01:15:05, metric2 200
+                    >  to 10.35.0.1 via ae0.0, Push 24, Push 902003(top)
+                       to 10.35.0.3 via ae1.0, Push 24, Push 902003(top)
+                       to 10.35.0.1 via ae0.0, Push 24, Push 902004(top)
+                       to 10.35.0.3 via ae1.0, Push 24, Push 902004(top)
+
+
+vrf20.inet.0: 14 destinations, 30 routes (14 active, 0 holddown, 0 hidden)
+@ = Routing Use Only, # = Forwarding Use Only
++ = Active Route, - = Last Active, * = Both
+
+10.20.0.0/24       *[Direct/0] 01:15:16
+                    >  via irb.20
+                    [EVPN/170] 00:56:40
+                    >  to 10.35.0.5 via ae2.0, Push 25
+                       to 10.35.0.1 via ae0.0, Push 25, Push 901002(top)
+                       to 10.35.0.3 via ae1.0, Push 25, Push 901002(top)
+                    [EVPN/170] 00:56:40
+                    >  to 10.35.0.3 via ae1.0, Push 25
+                       to 10.35.0.1 via ae0.0, Push 25, Push 902001(top)
+                       to 10.35.0.5 via ae2.0, Push 25, Push 902001(top)
+                    [EVPN/170] 00:56:40
+                    >  to 10.35.0.1 via ae0.0, Push 25
+                       to 10.35.0.3 via ae1.0, Push 25, Push 902002(top)
+                       to 10.35.0.5 via ae2.0, Push 25, Push 902002(top)
+10.20.0.1/32       *[Local/0] 01:15:16
+                       Local via irb.20
+                    [EVPN/170] 00:56:40
+                    >  to 10.35.0.5 via ae2.0, Push 25
+                       to 10.35.0.1 via ae0.0, Push 25, Push 901002(top)
+                       to 10.35.0.3 via ae1.0, Push 25, Push 901002(top)
+                    [EVPN/170] 00:56:40
+                    >  to 10.35.0.3 via ae1.0, Push 25
+                       to 10.35.0.1 via ae0.0, Push 25, Push 902001(top)
+                       to 10.35.0.5 via ae2.0, Push 25, Push 902001(top)
+                    [EVPN/170] 00:56:40
+                    >  to 10.35.0.1 via ae0.0, Push 25
+                       to 10.35.0.3 via ae1.0, Push 25, Push 902002(top)
+                       to 10.35.0.5 via ae2.0, Push 25, Push 902002(top)
+10.20.0.2/32       *[Local/0] 01:15:16
+                       Local via irb.20
+10.20.0.3/32       *[EVPN/170] 00:56:40
+                    >  to 10.35.0.5 via ae2.0, Push 25
+                       to 10.35.0.1 via ae0.0, Push 25, Push 901002(top)
+                       to 10.35.0.3 via ae1.0, Push 25, Push 901002(top)
+10.20.0.4/32       *[EVPN/170] 00:56:40
+                    >  to 10.35.0.3 via ae1.0, Push 25
+                       to 10.35.0.1 via ae0.0, Push 25, Push 902001(top)
+                       to 10.35.0.5 via ae2.0, Push 25, Push 902001(top)
+10.20.0.5/32       *[EVPN/170] 00:56:40
+                    >  to 10.35.0.1 via ae0.0, Push 25
+                       to 10.35.0.3 via ae1.0, Push 25, Push 902002(top)
+                       to 10.35.0.5 via ae2.0, Push 25, Push 902002(top)
+10.20.0.100/32     *[EVPN/7] 00:21:51
+                    >  via irb.20
+                    [EVPN/170] 00:56:40
+                    >  to 10.35.0.5 via ae2.0, Push 25
+                       to 10.35.0.1 via ae0.0, Push 25, Push 901002(top)
+                       to 10.35.0.3 via ae1.0, Push 25, Push 901002(top)
+
+
+vrf20.inet.0: 14 destinations, 30 routes (14 active, 0 holddown, 0 hidden)
+@ = Routing Use Only, # = Forwarding Use Only
++ = Active Route, - = Last Active, * = Both
+
+10.20.1.0/24       @[EVPN/170] 00:42:43
+                    >  to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+                    [EVPN/170] 00:42:41
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+                   #[Multipath/255] 00:42:41, metric2 100
+                       to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+10.20.1.1/32       @[EVPN/170] 00:42:43
+                    >  to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+                    [EVPN/170] 00:42:41
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+                   #[Multipath/255] 00:42:41, metric2 100
+                       to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+10.20.1.11/32      *[EVPN/170] 00:42:43
+                    >  to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+10.20.1.12/32      *[EVPN/170] 00:42:41
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+10.20.1.111/32     @[EVPN/170] 00:42:43
+                    >  to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+                    [EVPN/170] 00:42:41
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+                   #[Multipath/255] 00:42:41, metric2 100
+                    >  to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+                       to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+
+
+vrf10.inet6.0: 16 destinations, 27 routes (15 active, 0 holddown, 3 hidden)
++ = Active Route, - = Last Active, * = Both
+
+100::/64           *[Direct/0] 01:15:06
+                    >  via irb.10
+100::1/128         *[Local/0] 01:15:06
+                       Local via irb.10
+100::2/128         *[Local/0] 01:15:06
+                       Local via irb.10
+100::100/128       *[EVPN/7] 01:15:05
+                    >  via irb.10
+
+
+vrf10.inet6.0: 16 destinations, 27 routes (15 active, 0 holddown, 3 hidden)
++ = Active Route, - = Last Active, * = Both
+
+101::/64           *[Aggregate/130] 00:42:59
+                       Reject
+                    [EVPN/170] 01:15:06
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+                    [EVPN/170] 01:15:05
+                    >  to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+101::1/128         *[EVPN/170] 00:42:59
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+                    [EVPN/170] 00:42:58
+                    >  to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+101::11/128        *[EVPN/170] 00:42:59
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+101::12/128        *[EVPN/170] 00:42:58
+                    >  to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+101::111/128       *[EVPN/170] 00:42:59
+                    >  to 10.35.11.1 via ae3.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901003(top)
+                    [EVPN/170] 00:42:58
+                    >  to 10.35.11.3 via ae4.0, Push 24
+                       to 10.35.0.5 via ae2.0, Push 24, Push 901004(top)
+
+
+vrf10.inet6.0: 16 destinations, 27 routes (15 active, 0 holddown, 3 hidden)
++ = Active Route, - = Last Active, * = Both
+
+102::/64           *[EVPN/170] 01:14:55
+                    >  to 10.35.0.1 via ae0.0, Push 24, Push 902003(top)
+                       to 10.35.0.3 via ae1.0, Push 24, Push 902003(top)
+                    [EVPN/170] 01:14:55
+                    >  to 10.35.0.1 via ae0.0, Push 24, Push 902004(top)
+                       to 10.35.0.3 via ae1.0, Push 24, Push 902004(top)
+
+
+vrf20.inet6.0: 16 destinations, 23 routes (13 active, 0 holddown, 3 hidden)
++ = Active Route, - = Last Active, * = Both
+
+200::/64           *[Direct/0] 01:15:07
+                    >  via irb.20
+200::1/128         *[Local/0] 01:15:07
+                       Local via irb.20
+200::2/128         *[Local/0] 01:15:07
+                       Local via irb.20
+200::100/128       *[EVPN/7] 00:21:53
+                    >  via irb.20
+
+
+vrf20.inet6.0: 16 destinations, 23 routes (13 active, 0 holddown, 3 hidden)
++ = Active Route, - = Last Active, * = Both
+
+201::/64           *[Aggregate/130] 00:42:45
+                       Reject
+                    [EVPN/170] 00:42:45
+                    >  to 10.35.0.5 via ae2.0, Push 25
+                       to 10.35.0.1 via ae0.0, Push 25, Push 901002(top)
+                       to 10.35.0.3 via ae1.0, Push 25, Push 901002(top)
+                    [EVPN/170] 00:42:45
+                    >  to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+                    [EVPN/170] 00:42:43
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+                    [EVPN/170] 00:42:43
+                    >  to 10.35.0.3 via ae1.0, Push 25
+                       to 10.35.0.1 via ae0.0, Push 25, Push 902001(top)
+                       to 10.35.0.5 via ae2.0, Push 25, Push 902001(top)
+                    [EVPN/170] 00:42:43
+                    >  to 10.35.0.1 via ae0.0, Push 25
+                       to 10.35.0.3 via ae1.0, Push 25, Push 902002(top)
+                       to 10.35.0.5 via ae2.0, Push 25, Push 902002(top)
+201::1/128         *[EVPN/170] 00:42:45
+                    >  to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+                    [EVPN/170] 00:42:43
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+201::11/128        *[EVPN/170] 00:42:45
+                    >  to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+201::12/128        *[EVPN/170] 00:42:43
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+201::111/128       *[EVPN/170] 00:01:02
+                    >  to 10.35.11.1 via ae3.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901003(top)
+                    [EVPN/170] 00:01:03
+                    >  to 10.35.11.3 via ae4.0, Push 25
+                       to 10.35.0.5 via ae2.0, Push 25, Push 901004(top)
+
+
+vrf20.inet6.0: 16 destinations, 23 routes (13 active, 0 holddown, 3 hidden)

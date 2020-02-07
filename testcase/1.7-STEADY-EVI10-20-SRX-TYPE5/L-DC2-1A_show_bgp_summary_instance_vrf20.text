@@ -1,0 +1,17 @@
+
+Threading mode: BGP I/O
+Groups: 2 Peers: 2 Down peers: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+vrf20.inet.0         
+                       2          1          0          0          0          0
+vrf20.inet6.0        
+                       2          1          0          0          0          0
+vrf20.mdt.0          
+                       0          0          0          0          0          0
+vrf20.evpn.0         
+                       0          0          0          0          0          0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+10.20.2.222           65222        165        166       0       2     1:14:33 Establ
+  vrf20.inet.0: 1/2/2/0
+202::222              65222        165        167       0       2     1:14:22 Establ
+  vrf20.inet6.0: 1/2/2/0

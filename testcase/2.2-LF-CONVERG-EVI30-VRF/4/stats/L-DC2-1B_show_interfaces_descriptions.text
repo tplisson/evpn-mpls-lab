@@ -1,7 +1,0 @@
-
-Interface       Admin Link Description
-ae0             up    up   L-DC2-1B ---- S-DC2-1
-ae1             up    up   L-DC2-1B ---- S-DC2-2
-ae10            up    up   L-DC2-1B ---- QFX2
-ae11            up    down L-DC2-1B ---- IXIA-1/4
-irb             up    up   IRB

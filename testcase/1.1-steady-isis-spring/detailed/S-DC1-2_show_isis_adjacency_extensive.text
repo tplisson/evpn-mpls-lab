@@ -1,7 +1,7 @@
 
 S-DC2-1
-  Interface: ae0.0, Level: 2, State: Up, Expires in 26 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w3d 11:28:36 ago
+  Interface: ae0.0, Level: 2, State: Up, Expires in 20 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w3d 23:13:51 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
@@ -12,8 +12,8 @@ S-DC2-1
   Fri Jan 24 12:40:17   Up           Seenself        
 
 S-DC2-2
-  Interface: ae1.0, Level: 2, State: Up, Expires in 26 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:07:03 ago
+  Interface: ae1.0, Level: 2, State: Up, Expires in 25 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:52:18 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
@@ -24,8 +24,8 @@ S-DC2-2
   Mon Jan 27 15:01:50   Up           Seenself        
 
 S-DC1-1
-  Interface: ae2.0, Level: 2, State: Up, Expires in 20 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:07:26 ago
+  Interface: ae2.0, Level: 2, State: Up, Expires in 26 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:52:42 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
@@ -36,8 +36,8 @@ S-DC1-1
   Mon Jan 27 15:01:26   Up           Seenself        
 
 L-DC1-1A
-  Interface: ae3.0, Level: 2, State: Up, Expires in 22 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 07:16:34 ago
+  Interface: ae3.0, Level: 2, State: Up, Expires in 26 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 19:01:50 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
@@ -48,8 +48,8 @@ L-DC1-1A
   Mon Feb  3 16:52:18   Up           Seenself        
 
 L-DC1-1B
-  Interface: ae4.0, Level: 2, State: Up, Expires in 18 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 09:07:05 ago
+  Interface: ae4.0, Level: 2, State: Up, Expires in 26 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 1w0d 20:52:21 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise

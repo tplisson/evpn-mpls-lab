@@ -4,8 +4,8 @@
   tasks:
   - set_fact: 
       testcase: 'Test Case 1-1 STEADY-ISIS-SPRING'
-      test_dir: "testcase/1.1"
-      detailed_dir: "testcase/1.1/detailed"
+      test_dir: "testcase/1.1-STEADY-ISIS-SPRING"
+      detailed_dir: "testcase/1.1-STEADY-ISIS-SPRING/detailed"
       cacheable: yes
 
 - name: Create Directories

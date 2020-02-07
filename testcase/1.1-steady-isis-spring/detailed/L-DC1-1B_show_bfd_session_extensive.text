@@ -3,7 +3,7 @@
 Address                  State     Interface      Time     Interval  Multiplier
 10.35.1.1                Up                       0.900     0.300        3   
  Client BGP, TX interval 0.300, RX interval 0.300
- Session up time 1w0d 09:07:05, previous down time 00:06:20
+ Session up time 03:04:09
  Local diagnostic None, remote diagnostic None
  Remote state Up, version 1
  Replicated 
@@ -12,7 +12,7 @@ Address                  State     Interface      Time     Interval  Multiplier
  Adaptive async TX interval 0.300, RX interval 0.300
  Local min TX interval 0.300, minimum RX interval 0.300, multiplier 3
  Remote min TX interval 0.300, min RX interval 0.300, multiplier 3
- Local discriminator 18, remote discriminator 36
+ Local discriminator 22, remote discriminator 63
  Echo mode disabled/inactive
  Remote is control-plane independent
  Adaptation disabled 
@@ -23,7 +23,7 @@ Address                  State     Interface      Time     Interval  Multiplier
 Address                  State     Interface      Time     Interval  Multiplier
 10.35.1.2                Up                       0.900     0.300        3   
  Client BGP, TX interval 0.300, RX interval 0.300
- Session up time 1w0d 09:07:04, previous down time 00:06:21
+ Session up time 03:04:05
  Local diagnostic None, remote diagnostic None
  Remote state Up, version 1
  Replicated 
@@ -32,7 +32,7 @@ Address                  State     Interface      Time     Interval  Multiplier
  Adaptive async TX interval 0.300, RX interval 0.300
  Local min TX interval 0.300, minimum RX interval 0.300, multiplier 3
  Remote min TX interval 0.300, min RX interval 0.300, multiplier 3
- Local discriminator 19, remote discriminator 40
+ Local discriminator 23, remote discriminator 49
  Echo mode disabled/inactive
  Remote is control-plane independent
  Adaptation disabled 
@@ -43,7 +43,7 @@ Address                  State     Interface      Time     Interval  Multiplier
 Address                  State     Interface      Time     Interval  Multiplier
 10.35.11.2               Up        xe-0/1/0:0     0.150     0.050        3   
  Client LACPD, TX interval 0.050, RX interval 0.050
- Session up time 1w0d 09:08:09
+ Session up time 1w0d 20:53:25
  Local diagnostic None, remote diagnostic None
  Remote state Up, version 1
  Replicated 
@@ -62,7 +62,7 @@ Address                  State     Interface      Time     Interval  Multiplier
 Address                  State     Interface      Time     Interval  Multiplier
 10.35.12.2               Up        xe-0/1/1:0     0.150     0.050        3   
  Client LACPD, TX interval 0.050, RX interval 0.050
- Session up time 1w0d 09:08:07
+ Session up time 1w0d 20:53:23
  Local diagnostic None, remote diagnostic None
  Remote state Up, version 1
  Replicated 

@@ -4,6 +4,6 @@ Interface             L CirID Level 1 DR        Level 2 DR        L1/L2 Metric
 ae0.0                 2   0x1 Disabled          Point to Point        100/100
 ae1.0                 2   0x1 Disabled          Point to Point        100/100
 ae2.0                 2   0x1 Disabled          Point to Point        100/100
-ae3.0                 2   0x1 Disabled          Point to Point        100/100
+ae3.0                 2   0x1 Disabled          Down                   10/10
 ae4.0                 2   0x1 Disabled          Point to Point        100/100
 lo0.0                 2   0x1 Passive           Passive                 0/0

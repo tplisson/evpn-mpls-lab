@@ -3,16 +3,13 @@ IS-IS level 1 link-state database:
 
 IS-IS level 2 link-state database:
 
-S-DC1-1.00-00 Sequence: 0x12f, Checksum: 0xd92e, Lifetime: 42239 secs
+S-DC1-1.00-00 Sequence: 0x134, Checksum: 0x386e, Lifetime: 55090 secs
   IPV4 Index: 1001
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
    IS neighbor: S-DC1-2.00                    Metric:      100
      Two-way fragment: S-DC1-2.00-00, Two-way first fragment: S-DC1-2.00-00
      P2P IPv4 Adj-SID:    4552, Weight:   0, Flags: -BVL--
-   IS neighbor: L-DC1-1A.00                   Metric:      100
-     Two-way fragment: L-DC1-1A.00-00, Two-way first fragment: L-DC1-1A.00-00
-     P2P IPv4 Adj-SID:    4713, Weight:   0, Flags: -BVL--
    IS neighbor: L-DC1-1B.00                   Metric:      100
      Two-way fragment: L-DC1-1B.00-00, Two-way first fragment: L-DC1-1B.00-00
      P2P IPv4 Adj-SID:    4554, Weight:   0, Flags: -BVL--
@@ -26,18 +23,17 @@ S-DC1-1.00-00 Sequence: 0x12f, Checksum: 0xd92e, Lifetime: 42239 secs
    IP prefix: 10.35.0.2/31                    Metric:      100 Internal Up
    IP prefix: 10.35.0.4/31                    Metric:      100 Internal Up
    IP prefix: 10.35.1.1/32                    Metric:        0 Internal Up
-   IP prefix: 10.35.11.0/31                   Metric:      100 Internal Up
    IP prefix: 10.35.11.2/31                   Metric:      100 Internal Up
 
-  Header: LSP ID: S-DC1-1.00-00, Length: 375 bytes
+  Header: LSP ID: S-DC1-1.00-00, Length: 326 bytes
     Allocated length: 396 bytes, Router ID: 10.35.1.1
-    Remaining lifetime: 42239 secs, Level: 2, Interface: 127
-    Estimated free bytes: 0, Actual free bytes: 21
-    Aging timer expires in: 42239 secs
+    Remaining lifetime: 55090 secs, Level: 2, Interface: 127
+    Estimated free bytes: 0, Actual free bytes: 70
+    Aging timer expires in: 55090 secs
     Protocols: IP, IPv6
 
-  Packet: LSP ID: S-DC1-1.00-00, Length: 375 bytes, Lifetime : 65531 secs
-    Checksum: 0xd92e, Sequence: 0x12f, Attributes: 0x3 <L1 L2>
+  Packet: LSP ID: S-DC1-1.00-00, Length: 326 bytes, Lifetime : 65531 secs
+    Checksum: 0x386e, Sequence: 0x134, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -49,7 +45,7 @@ S-DC1-1.00-00 Sequence: 0x12f, Checksum: 0xd92e, Lifetime: 42239 secs
     IP router id: 10.35.1.1
     IP address: 10.35.1.1
     Hostname: S-DC1-1
-    Extended IS Reachability TLV, Type: 22, Length: 200
+    Extended IS Reachability TLV, Type: 22, Length: 160
     IS extended neighbor: S-DC2-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.0
       Neighbor's IP address: 10.35.0.1
@@ -68,12 +64,6 @@ S-DC1-1.00-00 Sequence: 0x12f, Checksum: 0xd92e, Lifetime: 42239 secs
       Local interface index: 124, Remote interface index: 94
       P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 4552
       P2P IPv4 Adj-SID:    4552, Weight:   0, Flags: -BVL--
-    IS extended neighbor: L-DC1-1A.00, Metric: default 100 SubTLV len: 29
-      IP address: 10.35.11.0
-      Neighbor's IP address: 10.35.11.1
-      Local interface index: 125, Remote interface index: 106
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 4713
-      P2P IPv4 Adj-SID:    4713, Weight:   0, Flags: -BVL--
     IS extended neighbor: L-DC1-1B.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.11.2
       Neighbor's IP address: 10.35.11.3
@@ -84,7 +74,6 @@ S-DC1-1.00-00 Sequence: 0x12f, Checksum: 0xd92e, Lifetime: 42239 secs
     IP extended prefix: 10.35.0.4/31 metric 100 up
     IP extended prefix: 10.35.0.2/31 metric 100 up
     IP extended prefix: 10.35.0.0/31 metric 100 up
-    IP extended prefix: 10.35.11.0/31 metric 100 up
     IP extended prefix: 10.35.1.1/32 metric 0 up
       8 bytes of subtlvs
       Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1001
@@ -94,7 +83,7 @@ S-DC1-1.00-00 Sequence: 0x12f, Checksum: 0xd92e, Lifetime: 42239 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-S-DC1-2.00-00 Sequence: 0x11b, Checksum: 0xde01, Lifetime: 42239 secs
+S-DC1-2.00-00 Sequence: 0x11c, Checksum: 0xae13, Lifetime: 65141 secs
   IPV4 Index: 1002
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
@@ -122,13 +111,13 @@ S-DC1-2.00-00 Sequence: 0x11b, Checksum: 0xde01, Lifetime: 42239 secs
 
   Header: LSP ID: S-DC1-2.00-00, Length: 375 bytes
     Allocated length: 396 bytes, Router ID: 10.35.1.2
-    Remaining lifetime: 42239 secs, Level: 2, Interface: 90
+    Remaining lifetime: 65141 secs, Level: 2, Interface: 90
     Estimated free bytes: 0, Actual free bytes: 21
-    Aging timer expires in: 42239 secs
+    Aging timer expires in: 65141 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: S-DC1-2.00-00, Length: 375 bytes, Lifetime : 65531 secs
-    Checksum: 0xde01, Sequence: 0x11b, Attributes: 0x3 <L1 L2>
+    Checksum: 0xae13, Sequence: 0x11c, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -185,29 +174,25 @@ S-DC1-2.00-00 Sequence: 0x11b, Checksum: 0xde01, Lifetime: 42239 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-L-DC1-1A.00-00 Sequence: 0x81, Checksum: 0x5b15, Lifetime: 42237 secs
+L-DC1-1A.00-00 Sequence: 0x86, Checksum: 0x81cc, Lifetime: 55088 secs
   IPV4 Index: 1003
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
-   IS neighbor: S-DC1-1.00                    Metric:      100
-     Two-way fragment: S-DC1-1.00-00, Two-way first fragment: S-DC1-1.00-00
-     P2P IPv4 Adj-SID:    1627, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC1-2.00                    Metric:      100
      Two-way fragment: S-DC1-2.00-00, Two-way first fragment: S-DC1-2.00-00
      P2P IPv4 Adj-SID:    1628, Weight:   0, Flags: -BVL--
    IP prefix: 10.35.1.3/32                    Metric:        0 Internal Up
-   IP prefix: 10.35.11.0/31                   Metric:      100 Internal Up
    IP prefix: 10.35.12.0/31                   Metric:      100 Internal Up
 
-  Header: LSP ID: L-DC1-1A.00-00, Length: 229 bytes
+  Header: LSP ID: L-DC1-1A.00-00, Length: 180 bytes
     Allocated length: 284 bytes, Router ID: 10.35.1.3
-    Remaining lifetime: 42237 secs, Level: 2, Interface: 127
-    Estimated free bytes: 55, Actual free bytes: 55
-    Aging timer expires in: 42237 secs
+    Remaining lifetime: 55088 secs, Level: 2, Interface: 90
+    Estimated free bytes: 55, Actual free bytes: 104
+    Aging timer expires in: 55088 secs
     Protocols: IP, IPv6
 
-  Packet: LSP ID: L-DC1-1A.00-00, Length: 229 bytes, Lifetime : 65529 secs
-    Checksum: 0x5b15, Sequence: 0x81, Attributes: 0x3 <L1 L2>
+  Packet: LSP ID: L-DC1-1A.00-00, Length: 180 bytes, Lifetime : 65529 secs
+    Checksum: 0x81cc, Sequence: 0x86, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -219,20 +204,13 @@ L-DC1-1A.00-00 Sequence: 0x81, Checksum: 0x5b15, Lifetime: 42237 secs
     IP router id: 10.35.1.3
     IP address: 10.35.1.3
     Hostname: L-DC1-1A
-    Extended IS Reachability TLV, Type: 22, Length: 80
-    IS extended neighbor: S-DC1-1.00, Metric: default 100 SubTLV len: 29
-      IP address: 10.35.11.1
-      Neighbor's IP address: 10.35.11.0
-      Local interface index: 106, Remote interface index: 125
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1627
-      P2P IPv4 Adj-SID:    1627, Weight:   0, Flags: -BVL--
+    Extended IS Reachability TLV, Type: 22, Length: 40
     IS extended neighbor: S-DC1-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.12.1
       Neighbor's IP address: 10.35.12.0
       Local interface index: 108, Remote interface index: 95
       P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1628
       P2P IPv4 Adj-SID:    1628, Weight:   0, Flags: -BVL--
-    IP extended prefix: 10.35.11.0/31 metric 100 up
     IP extended prefix: 10.35.12.0/31 metric 100 up
     IP extended prefix: 10.35.1.3/32 metric 0 up
       8 bytes of subtlvs
@@ -243,7 +221,7 @@ L-DC1-1A.00-00 Sequence: 0x81, Checksum: 0x5b15, Lifetime: 42237 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-L-DC1-1B.00-00 Sequence: 0x78, Checksum: 0xc12d, Lifetime: 50054 secs
+L-DC1-1B.00-00 Sequence: 0x78, Checksum: 0xc12d, Lifetime: 7738 secs
   IPV4 Index: 1004
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
@@ -259,9 +237,9 @@ L-DC1-1B.00-00 Sequence: 0x78, Checksum: 0xc12d, Lifetime: 50054 secs
 
   Header: LSP ID: L-DC1-1B.00-00, Length: 229 bytes
     Allocated length: 284 bytes, Router ID: 10.35.1.4
-    Remaining lifetime: 50054 secs, Level: 2, Interface: 90
+    Remaining lifetime: 7738 secs, Level: 2, Interface: 90
     Estimated free bytes: 55, Actual free bytes: 55
-    Aging timer expires in: 50054 secs
+    Aging timer expires in: 7738 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: L-DC1-1B.00-00, Length: 229 bytes, Lifetime : 65529 secs
@@ -301,7 +279,7 @@ L-DC1-1B.00-00 Sequence: 0x78, Checksum: 0xc12d, Lifetime: 50054 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-S-DC2-1.00-00 Sequence: 0x11c, Checksum: 0x91af, Lifetime: 31295 secs
+S-DC2-1.00-00 Sequence: 0x11d, Checksum: 0xc09f, Lifetime: 54197 secs
   IPV4 Index: 2001
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
@@ -329,13 +307,13 @@ S-DC2-1.00-00 Sequence: 0x11c, Checksum: 0x91af, Lifetime: 31295 secs
 
   Header: LSP ID: S-DC2-1.00-00, Length: 375 bytes
     Allocated length: 1492 bytes, Router ID: 10.35.2.1
-    Remaining lifetime: 31295 secs, Level: 2, Interface: 0
+    Remaining lifetime: 54197 secs, Level: 2, Interface: 0
     Estimated free bytes: 1076, Actual free bytes: 1117
-    Aging timer expires in: 31295 secs
+    Aging timer expires in: 54197 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: S-DC2-1.00-00, Length: 375 bytes, Lifetime : 65533 secs
-    Checksum: 0x91af, Sequence: 0x11c, Attributes: 0x3 <L1 L2>
+    Checksum: 0xc09f, Sequence: 0x11d, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -392,7 +370,7 @@ S-DC2-1.00-00 Sequence: 0x11c, Checksum: 0x91af, Lifetime: 31295 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-S-DC2-2.00-00 Sequence: 0x101, Checksum: 0x8dfe, Lifetime: 31297 secs
+S-DC2-2.00-00 Sequence: 0x102, Checksum: 0xe30b, Lifetime: 54199 secs
   IPV4 Index: 2002
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
@@ -420,13 +398,13 @@ S-DC2-2.00-00 Sequence: 0x101, Checksum: 0x8dfe, Lifetime: 31297 secs
 
   Header: LSP ID: S-DC2-2.00-00, Length: 375 bytes
     Allocated length: 396 bytes, Router ID: 10.35.2.2
-    Remaining lifetime: 31297 secs, Level: 2, Interface: 128
+    Remaining lifetime: 54199 secs, Level: 2, Interface: 128
     Estimated free bytes: 0, Actual free bytes: 21
-    Aging timer expires in: 31297 secs
+    Aging timer expires in: 54199 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: S-DC2-2.00-00, Length: 375 bytes, Lifetime : 65531 secs
-    Checksum: 0x8dfe, Sequence: 0x101, Attributes: 0x3 <L1 L2>
+    Checksum: 0xe30b, Sequence: 0x102, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -483,7 +461,7 @@ S-DC2-2.00-00 Sequence: 0x101, Checksum: 0x8dfe, Lifetime: 31297 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-L-DC2-1A.00-00 Sequence: 0x7d, Checksum: 0xcf2d, Lifetime: 19791 secs
+L-DC2-1A.00-00 Sequence: 0x7e, Checksum: 0x53e, Lifetime: 42693 secs
   IPV4 Index: 2003
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
@@ -499,13 +477,13 @@ L-DC2-1A.00-00 Sequence: 0x7d, Checksum: 0xcf2d, Lifetime: 19791 secs
 
   Header: LSP ID: L-DC2-1A.00-00, Length: 229 bytes
     Allocated length: 284 bytes, Router ID: 10.35.2.3
-    Remaining lifetime: 19791 secs, Level: 2, Interface: 129
+    Remaining lifetime: 42693 secs, Level: 2, Interface: 129
     Estimated free bytes: 95, Actual free bytes: 55
-    Aging timer expires in: 19791 secs
+    Aging timer expires in: 42693 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: L-DC2-1A.00-00, Length: 229 bytes, Lifetime : 65531 secs
-    Checksum: 0xcf2d, Sequence: 0x7d, Attributes: 0x3 <L1 L2>
+    Checksum: 0x53e, Sequence: 0x7e, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -541,7 +519,7 @@ L-DC2-1A.00-00 Sequence: 0x7d, Checksum: 0xcf2d, Lifetime: 19791 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-L-DC2-1B.00-00 Sequence: 0x77, Checksum: 0x4848, Lifetime: 31217 secs
+L-DC2-1B.00-00 Sequence: 0x78, Checksum: 0x3333, Lifetime: 54119 secs
   IPV4 Index: 2004
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
@@ -557,13 +535,13 @@ L-DC2-1B.00-00 Sequence: 0x77, Checksum: 0x4848, Lifetime: 31217 secs
 
   Header: LSP ID: L-DC2-1B.00-00, Length: 229 bytes
     Allocated length: 284 bytes, Router ID: 10.35.2.4
-    Remaining lifetime: 31217 secs, Level: 2, Interface: 130
+    Remaining lifetime: 54119 secs, Level: 2, Interface: 130
     Estimated free bytes: 95, Actual free bytes: 55
-    Aging timer expires in: 31217 secs
+    Aging timer expires in: 54119 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: L-DC2-1B.00-00, Length: 229 bytes, Lifetime : 65531 secs
-    Checksum: 0x4848, Sequence: 0x77, Attributes: 0x3 <L1 L2>
+    Checksum: 0x3333, Sequence: 0x78, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 

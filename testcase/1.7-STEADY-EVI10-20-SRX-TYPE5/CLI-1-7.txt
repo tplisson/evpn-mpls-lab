@@ -1,0 +1,81 @@
+#### LEAF only
+show configuration routing-instances vlan10
+show configuration routing-instances vrf10
+show configuration routing-instances vlan20
+show configuration routing-instances vrf20
+show configuration protocols bgp
+show configuration policy-options policy-statement PL-EVI30-T5-V4-SLASH-32
+show configuration policy-options policy-statement PL-EVI30-T5-V6-SLASH-64
+show interfaces ae10.10 terse
+show interfaces ae10.20 terse
+show interfaces irb.10 terse
+show interfaces irb.20 terse
+show bgp summary instance vrf10
+show bgp summary instance vrf20
+show route summary table bgp
+show route advertising-protocol bgp 10.35.1.1 table vrf10
+show route advertising-protocol bgp 10.35.1.1 table vrf20
+show route receive-protocol bgp 10.35.1.1 table vrf10
+show route receive-protocol bgp 10.35.1.1 table vrf20
+show route advertising-protocol bgp 10.35.2.1 table vrf10
+show route advertising-protocol bgp 10.35.2.1 table vrf20
+show route receive-protocol bgp 10.35.2.1 table vrf10
+show route receive-protocol bgp 10.35.2.1 table vrf20
+show route table vrf10 match-prefix 5:*
+show route table vrf20 match-prefix 5:*
+show route 10.10.0/24
+show route 10.10.1/24
+show route 10.10.2/24
+show route 10.20.0/24
+show route 10.20.1/24
+show route 10.20.2/24
+show route 100::/64
+show route 101::/64
+show route 102::/64
+show route 200::/64
+show route 201::/64
+show route 202::/64
+
+#### SPINE only
+show configuration routing-instances vlan10
+show configuration routing-instances vrf10
+show configuration routing-instances vlan20
+show configuration routing-instances vrf20
+show configuration protocols bgp
+show configuration policy-options policy-statement PL-EVI30-T5-V4-SLASH-32
+show configuration policy-options policy-statement PL-EVI30-T5-V6-SLASH-64
+show interfaces ae10.10 terse
+show interfaces ae10.20 terse
+show interfaces irb.10 terse
+show interfaces irb.20 terse
+show route summary table bgp
+show bgp summary instance vrf10
+show bgp summary instance vrf20
+show route advertising-protocol bgp 10.35.1.3 table vrf10
+show route advertising-protocol bgp 10.35.1.3 table vrf20
+show route receive-protocol bgp 10.35.1.3 table vrf10
+show route receive-protocol bgp 10.35.1.3 table vrf20
+show route advertising-protocol bgp 10.35.2.3 table vrf10
+show route advertising-protocol bgp 10.35.2.3 table vrf20
+show route receive-protocol bgp 10.35.2.3 table vrf10
+show route receive-protocol bgp 10.35.2.3 table vrf20
+show route table vrf10 match-prefix 5:*
+show route table vrf20 match-prefix 5:*
+      dest_dir: {{playbook_dir}}/{{test_dir}}/
+      return_output: false
+
+  - name: Gathering output for VPN routes
+    juniper_junos_command:
+      command:
+show route 10.10.0/24
+show route 10.10.1/24
+show route 10.10.2/24
+show route 10.20.0/24
+show route 10.20.1/24
+show route 10.20.2/24
+show route 100::/64
+show route 101::/64
+show route 102::/64
+show route 200::/64
+show route 201::/64
+show route 202::/64

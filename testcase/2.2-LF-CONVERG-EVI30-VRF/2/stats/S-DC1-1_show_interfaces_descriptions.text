@@ -1,9 +1,0 @@
-
-Interface       Admin Link Description
-ae0             up    up   S-DC1-1 ---- S-DC2-2
-ae1             up    up   S-DC1-1 ---- S-DC2-1
-ae2             up    up   S-DC1-1 ---- S-DC1-2
-ae3             up    down S-DC1-1 ---- L-DC1-1A
-ae4             up    up   S-DC1-1 ---- L-DC1-1B
-ae10            up    up   S-DC1-1 ---- SRX-ANS-3
-irb             up    up   IRB

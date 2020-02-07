@@ -1,0 +1,28 @@
+#### CHECKS
+show configuration routing-instances vlan30
+show configuration routing-instances vrf30
+show interfaces ae10.30 terse
+show interfaces irb.30 terse
+show interfaces ae0 statistics
+show interfaces ae1 statistics
+show interfaces ae10.30 statistics 
+
+#### LINK DOWN
+show interfaces ae3 descriptions
+show lacp interfaces ae3
+request pfe execute target fpc0 command "show qsfp list"
+request pfe execute target fpc0 command "test qsfp 10 laser off"
+show interfaces ae3 terse
+
+#### CHECKS
+show configuration routing-instances vlan30
+show configuration routing-instances vrf30
+show interfaces ae10.30 terse
+show interfaces irb.30 terse
+show interfaces ae0 statistics
+show interfaces ae1 statistics
+show interfaces ae10.30 statistics 
+
+#### LINK UP
+request pfe execute target fpc0 command "test qsfp 10 laser on"
+show interfaces ae3 terse

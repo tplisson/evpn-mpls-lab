@@ -1,0 +1,17 @@
+#### Regular output 
+show configuration routing-instances vlan30
+show configuration routing-instances vrf30
+show configuration protocols bgp
+show configuration policy-options policy-statement PL-EVI30-T5-V4-SLASH-32
+show configuration policy-options policy-statement PL-EVI30-T5-V6-SLASH-64
+show interfaces ae10.30 terse
+show interfaces irb.30 terse
+show bgp summary instance vrf30
+show route summary table bgp
+show route advertising-protocol bgp 10.35.1.1 table vrf30
+show route receive-protocol bgp 10.35.1.1 table vrf30
+show route advertising-protocol bgp 10.35.1.2 table vrf30
+show route receive-protocol bgp 10.35.1.2 table vrf30
+show route table vrf30 match-prefix 5:*
+show route 10.30.0/24
+show route 300::/64

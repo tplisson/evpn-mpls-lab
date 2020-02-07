@@ -172,7 +172,7 @@ system {
         synchronize;
         persist-groups-inheritance;
     }
-    inactive: configuration-database {
+    configuration-database {
         extend-size;
     }
     processes {
@@ -574,7 +574,7 @@ class-of-service {
 }
 firewall {
     family inet {
-       filter FF-COS-RE-FILTER-V4 {
+       replace: filter FF-COS-RE-FILTER-V4 {
             term TR-ICMP {                 
                 from {
                     protocol icmp;
@@ -593,7 +593,7 @@ firewall {
                 }
             }
         }
-        filter FF-RE-PROTECT-V4 {  
+        replace: filter FF-RE-PROTECT-V4 {  
             term TR-FIRST-FRAG-DROP {
                 from {
                     fragment-offset 0;

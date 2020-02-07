@@ -1,0 +1,21 @@
+
+description "EVPN instance for VLAN 30";
+instance-type evpn;
+vlan-id 30;
+interface xe-0/0/0:1.30;
+interface ae10.30;
+routing-interface irb.30;
+vrf-target target:64514:30;
+protocols {
+    evpn {
+        default-gateway no-gateway-community;
+    }
+    igmp-snooping {
+        proxy;
+    }
+    mld-snooping {
+        proxy {
+            source-address fe80::30:21;
+        }
+    }
+}

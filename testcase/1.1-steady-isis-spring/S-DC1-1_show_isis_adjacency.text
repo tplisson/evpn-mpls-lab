@@ -1,7 +1,6 @@
 
 Interface             System         L State        Hold (secs) SNPA
-ae0.0                 S-DC2-2        2  Up                   19
-ae1.0                 S-DC2-1        2  Up                   24
-ae2.0                 S-DC1-2        2  Up                   18
-ae3.0                 L-DC1-1A       2  Up                   20
+ae0.0                 S-DC2-2        2  Up                   22
+ae1.0                 S-DC2-1        2  Up                   21
+ae2.0                 S-DC1-2        2  Up                   22
 ae4.0                 L-DC1-1B       2  Up                   25

@@ -1,0 +1,29 @@
+#### Regular output
+show route 10.35.1.0/24
+show route 10.35.2.0/24
+show route forwarding-table table default destination 10.35.1.1
+show route forwarding-table table default destination 10.35.1.2
+show route forwarding-table table default destination 10.35.1.3
+show route forwarding-table table default destination 10.35.1.4
+show route forwarding-table table default destination 10.35.2.1
+show route forwarding-table table default destination 10.35.2.2
+show route forwarding-table table default destination 10.35.2.3
+show route forwarding-table table default destination 10.35.2.4
+
+#### Detailed output
+show isis interface extensive
+show isis adjacency extensive
+show isis database extensive
+show route summary
+show route
+show route table inet.3 extensive
+show route 10.35.1.0/24 extensive
+show route 10.35.2.0/24 extensive
+show route forwarding-table table default destination 10.35.1.1 extensive
+show route forwarding-table table default destination 10.35.1.2 extensive
+show route forwarding-table table default destination 10.35.1.3 extensive
+show route forwarding-table table default destination 10.35.1.4 extensive
+show route forwarding-table table default destination 10.35.2.1 extensive
+show route forwarding-table table default destination 10.35.2.2 extensive
+show route forwarding-table table default destination 10.35.2.3 extensive
+show route forwarding-table table default destination 10.35.2.4 extensive

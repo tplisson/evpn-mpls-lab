@@ -122,6 +122,7 @@ routing-instances {
                 ip-prefix-routes {
                     advertise direct-nexthop;
                     encapsulation mpls;
+                    export [ PL-EVI{{evi10.id}}-T5-V4 PL-EVI{{evi10.id}}-T5-V6 ];
                 }
             }
         }
@@ -180,8 +181,60 @@ routing-instances {
     }
 }
 protocols {
+    bgp {
+        group BG-IBGP-LEAF {
+            inactive: family inet-vpn {
+                unicast;
+            }
+            inactive: family inet6-vpn {
+                unicast;
+            }
+            family evpn {
+                signaling;
+            }
+        }
+{% if "S-DC" in host_name %}
+        group BG-IBGP-SPINE {
+            inactive: family inet-vpn {
+                unicast;
+            }
+            inactive: family inet6-vpn {
+                unicast;
+            }
+            family evpn {
+                signaling;
+            }
+        }
+{% endif %}
+    }
     lldp {
         interface {{ae_name}};
+    }
+}
+policy-options {
+    prefix-list PL-EVI10-V4 {
+        10.10.0.0/16;
+    }
+    prefix-list PL-EVI20-V4 {
+        10.20.0.0/16;
+    }
+    prefix-list PL-EVI10-V6 {
+        101::/64;
+        102::/64;
+        110::/64;
+        210::/64;
+    }
+    prefix-list PL-EVI20-V6 {
+        201::/64;
+        202::/64;
+        120::/64;
+        220::/64;
+    }
+    prefix-list PL-DEFAULT-V4 {
+        0.0.0.0/0;
+    }
+    prefix-list PL-DEFAULT-V6 {
+        ::/0;
     }
 }
 {% if "L-DC1" in host_name %}
@@ -214,11 +267,21 @@ policy-options {
             then reject;
         }
     }
-    prefix-list PL-DEFAULT-V4 {
-        0.0.0.0/0;
+    replace: policy-statement PL-EVI{{evi10.id}}-T5-V4 {
+       term SLASH-32 {
+           from {
+                prefix-list-filter PL-EVI{{evi10.id}}-V4 orlonger;
+            }
+           then accept;
+       }
     }
-    prefix-list PL-DEFAULT-V6 {
-        ::/0;
+    replace: policy-statement PL-EVI{{evi10.id}}-T5-V6 {
+       term SLASH-64 {
+           from {
+               prefix-list-filter PL-EVI{{evi10.id}}-V6 orlonger;
+           }
+           then accept;
+       }
     }
 }
 {% elif "S-DC" in host_name %}
@@ -251,23 +314,23 @@ policy-options {
             then reject;
         }
     }
-    prefix-list PL-EVI10-V4 {
-        10.10.0.0/16;
+    replace: policy-statement PL-EVI{{evi10.id}}-T5-V4 {
+       term DEFAULT {
+           from {
+                prefix-list PL-DEFAULT-V4;
+                {# prefix-list-filter PL-DEFAULT-V4 orlonger; #}
+            }
+           then accept;
+       }
     }
-    prefix-list PL-EVI20-V4 {
-        10.20.0.0/16;
-    }
-    prefix-list PL-EVI10-V6 {
-        101::/64;
-        102::/64;
-        110::/64;
-        210::/64;
-    }
-    prefix-list PL-EVI20-V6 {
-        201::/64;
-        202::/64;
-        120::/64;
-        220::/64;
+    replace: policy-statement PL-EVI{{evi10.id}}-T5-V6 {
+       term DEFAULT {
+           from {
+               prefix-list PL-DEFAULT-V6;
+                {# prefix-list-filter PL-DEFAULT-V6 orlonger; #}
+           }
+           then accept;
+       }
     }
 }
 {% endif %}

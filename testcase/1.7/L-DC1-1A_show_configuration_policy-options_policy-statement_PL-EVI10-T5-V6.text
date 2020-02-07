@@ -1,0 +1,7 @@
+
+term SLASH-64 {
+    from {
+        prefix-list-filter PL-EVI10-V6 orlonger;
+    }
+    then accept;
+}

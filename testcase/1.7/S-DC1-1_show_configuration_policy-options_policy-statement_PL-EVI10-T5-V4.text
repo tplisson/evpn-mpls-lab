@@ -1,0 +1,7 @@
+
+term DEFAULT {
+    from {
+        prefix-list PL-DEFAULT-V4;
+    }
+    then accept;
+}

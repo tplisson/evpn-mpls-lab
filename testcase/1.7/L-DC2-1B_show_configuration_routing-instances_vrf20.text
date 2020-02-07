@@ -1,0 +1,33 @@
+
+description "VRF instance for IRB in VLAN 20";
+instance-type vrf;
+interface irb.20;
+vrf-target target:64514:20;
+vrf-table-label;
+routing-options {
+    autonomous-system 64514;
+    multipath;
+}
+protocols {
+    evpn {
+        ip-prefix-routes {
+            advertise direct-nexthop;
+            encapsulation mpls;
+            export [ PL-EVI20-T5-V4 PL-EVI20-T5-V6 ];
+        }
+    }
+    bgp {
+        group QFX2 {
+            multihop {
+                no-nexthop-change;
+            }
+            peer-as 65222;
+            neighbor 10.20.2.222 {
+                export PL-EVI20-DEFAULT-NH-VGA-V4;
+            }
+            neighbor 202::222 {
+                export PL-EVI20-DEFAULT-NH-VGA-V6;
+            }
+        }
+    }
+}

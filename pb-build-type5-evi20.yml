@@ -14,7 +14,7 @@
        - diff
       
   - name: 2- SPINE & LEAF MX routers
-    hosts: DVT
+    hosts: [ L-DC2 , SPINE ]
     roles:
       - Juniper.junos
     connection: local
