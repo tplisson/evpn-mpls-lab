@@ -6,23 +6,10 @@
      - Juniper.junos
     connection: local
     gather_facts: no
-    vars:
-      credentials:
-          host: "{{ inventory_hostname }}"
-          user: "{{ ansible_ssh_user }}"
-          passwd: "{{ ansible_ssh_pass }}"
   
     tasks:
   
-      - name: Checking NETCONF connectivity
-        wait_for: 
-          host: "{{ inventory_hostname }}"
-          port: "{{ ansible_port }}"
-          timeout: 2
-        register: netconf_result
-
       - name: Install TI-LFA Configuration
-        when: netconf_result|success
         juniper_junos_config:
           config_mode: 'private'
           load: 'replace'

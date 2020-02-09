@@ -1,6 +1,0 @@
-
-Interface             Level IIH Auth  CSN Auth  PSN Auth
-ae0.0                 2     KC-ISIS-AUTH KC-ISIS-AUTH KC-ISIS-AUTH
-ae1.0                 2     KC-ISIS-AUTH KC-ISIS-AUTH KC-ISIS-AUTH
-
-L2 LSP Authentication: KC-ISIS-AUTH
