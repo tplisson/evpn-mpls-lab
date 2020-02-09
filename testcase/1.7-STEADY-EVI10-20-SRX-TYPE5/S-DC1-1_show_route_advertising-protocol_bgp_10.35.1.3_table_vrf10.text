@@ -1,8 +1,8 @@
 
 
-vrf10.evpn.0: 32 destinations, 56 routes (32 active, 0 holddown, 0 hidden)
+vrf10.evpn.0: 28 destinations, 48 routes (28 active, 0 holddown, 0 hidden)
   Prefix		  Nexthop	       MED     Lclpref    AS path
-  5:10.35.1.1:11::0::0.0.0.0::0/248                   
+  5:10.35.1.1:14::0::0.0.0.0::0/248                   
 *                         Self                         100        65100 I
-  5:10.35.1.1:11::0::::::0/248                   
+  5:10.35.1.1:14::0::::::0/248                   
 *                         Self                         100        65100 I

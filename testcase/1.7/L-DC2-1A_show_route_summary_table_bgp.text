@@ -1,7 +1,0 @@
-
-Autonomous system number: 64514
-Router ID: 10.35.2.3
-
-bgp.evpn.0: 138 destinations, 238 routes (138 active, 0 holddown, 0 hidden)
-                 BGP:    200 routes,    100 active
-                EVPN:     38 routes,     38 active

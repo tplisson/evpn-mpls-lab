@@ -1,0 +1,14 @@
+show interfaces ae10 | match rate
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+################# LEAF
+
+
+
+
+show interfaces ae3 | match rate
+show interfaces ae4 | match rate
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+show interfaces ae2 | match rate
+################# SPINE

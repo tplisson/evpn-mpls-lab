@@ -3,7 +3,6 @@ description "EVPN instance for VLAN 10";
 instance-type evpn;
 vlan-id 10;
 interface ae10.10;
-inactive: interface ae11.10;
 routing-interface irb.10;
 vrf-target target:64514:101;
 protocols {

@@ -3,7 +3,6 @@ description "EVPN instance for VLAN 20";
 instance-type evpn;
 vlan-id 20;
 interface ae10.20;
-inactive: interface ae11.20;
 routing-interface irb.20;
 vrf-target target:64514:202;
 protocols {

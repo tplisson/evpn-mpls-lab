@@ -9,6 +9,13 @@ routing-options {
     multipath;
 }
 protocols {
+    evpn {
+        ip-prefix-routes {
+            advertise direct-nexthop;
+            encapsulation mpls;
+            export [ PL-EVI20-T5-V4 PL-EVI20-T5-V6 ];
+        }
+    }
     bgp {
         group QFX2 {
             multihop {

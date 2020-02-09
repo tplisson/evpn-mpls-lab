@@ -1,7 +1,0 @@
-
-term SLASH-32 {
-    from {
-        prefix-list-filter PL-EVI20-V4 orlonger;
-    }
-    then accept;
-}

@@ -1,237 +1,165 @@
 
 
-vrf10.inet.0: 8 destinations, 19 routes (8 active, 0 holddown, 0 hidden)
+vrf10.inet.0: 7 destinations, 15 routes (7 active, 0 holddown, 0 hidden)
 
-vrf10.inet6.0: 11 destinations, 20 routes (11 active, 0 holddown, 0 hidden)
+vrf10.inet6.0: 10 destinations, 18 routes (10 active, 0 holddown, 0 hidden)
 
-vrf10.evpn.0: 32 destinations, 54 routes (32 active, 0 holddown, 0 hidden)
+vrf10.evpn.0: 28 destinations, 46 routes (28 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-5:10.35.1.1:11::0::0.0.0.0::0/248               
-                   *[BGP/170] 00:22:32, localpref 100, from 10.35.1.1
+5:10.35.1.1:14::0::0.0.0.0::0/248               
+                   *[BGP/170] 1d 19:33:00, localpref 100, from 10.35.1.1
                       AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0
-                       to 10.35.12.0 via ae1.0, Push 901001
-                    [BGP/170] 00:22:32, localpref 100, from 10.35.1.2
+                    >  to 10.35.12.0 via ae1.0, Push 901001
+                    [BGP/170] 1d 19:33:00, localpref 100, from 10.35.1.2
                       AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0
-                       to 10.35.12.0 via ae1.0, Push 901001
-5:10.35.1.2:11::0::0.0.0.0::0/248               
-                   *[BGP/170] 00:22:32, localpref 100, from 10.35.1.2
+                    >  to 10.35.12.0 via ae1.0, Push 901001
+5:10.35.1.2:15::0::0.0.0.0::0/248               
+                   *[BGP/170] 1d 22:01:04, localpref 100, from 10.35.1.2
                       AS path: 65100 I, validation-state: unverified
                     >  to 10.35.12.0 via ae1.0
-                       to 10.35.11.0 via ae0.0, Push 901002
-                    [BGP/170] 00:22:32, localpref 100, from 10.35.1.1
+                    [BGP/170] 1d 22:01:04, localpref 100, from 10.35.1.1
                       AS path: 65100 I, validation-state: unverified
                     >  to 10.35.12.0 via ae1.0
-                       to 10.35.11.0 via ae0.0, Push 901002
-5:10.35.1.3:9::0::10.10.1.0::24/248               
-                   *[EVPN/170] 01:14:52
+5:10.35.1.3:14::0::10.10.1.0::24/248               
+                   *[EVPN/170] 1d 22:01:12
                        Indirect
-5:10.35.1.3:9::0::10.10.10.0::24/248               
-                   *[EVPN/170] 01:14:47
+5:10.35.1.3:14::0::10.10.10.0::24/248               
+                   *[EVPN/170] 1d 22:01:07
                        Indirect
-5:10.35.1.3:9::0::10.10.1.1::32/248               
-                   *[EVPN/170] 00:42:34
+5:10.35.1.3:14::0::10.10.1.1::32/248               
+                   *[EVPN/170] 1d 22:01:34
                        Indirect
-5:10.35.1.3:9::0::10.10.1.11::32/248               
-                   *[EVPN/170] 00:42:34
+5:10.35.1.3:14::0::10.10.1.11::32/248               
+                   *[EVPN/170] 1d 22:01:34
                        Indirect
-5:10.35.1.3:9::0::10.10.1.111::32/248               
-                   *[EVPN/170] 00:42:34
+5:10.35.1.3:14::0::10.10.1.111::32/248               
+                   *[EVPN/170] 1d 22:01:08
                        Indirect
-5:10.35.1.4:9::0::10.10.1.0::24/248               
-                   *[BGP/170] 01:14:50, localpref 100, from 10.35.1.1
+5:10.35.1.4:14::0::10.10.1.0::24/248               
+                   *[BGP/170] 1d 22:01:11, localpref 100, from 10.35.1.1
                       AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
                     >  to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 01:14:50, localpref 100, from 10.35.1.2
+                    [BGP/170] 1d 22:01:11, localpref 100, from 10.35.1.2
                       AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
                     >  to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.1.4:9::0::10.10.10.0::24/248               
-                   *[BGP/170] 01:14:42, localpref 100, from 10.35.1.1
+5:10.35.1.4:14::0::10.10.10.0::24/248               
+                   *[BGP/170] 1d 22:01:03, localpref 100, from 10.35.1.1
                       AS path: 65111 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0, Push 901004
-                       to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 01:14:42, localpref 100, from 10.35.1.2
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+                    [BGP/170] 1d 22:01:03, localpref 100, from 10.35.1.2
                       AS path: 65111 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0, Push 901004
-                       to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.1.4:9::0::10.10.1.1::32/248               
-                   *[BGP/170] 00:42:32, localpref 100, from 10.35.1.1
-                      AS path: I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0, Push 901004
-                       to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 00:42:32, localpref 100, from 10.35.1.2
-                      AS path: I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0, Push 901004
-                       to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.1.4:9::0::10.10.1.12::32/248               
-                   *[BGP/170] 00:42:32, localpref 100, from 10.35.1.1
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
                     >  to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 00:42:32, localpref 100, from 10.35.1.2
+5:10.35.1.4:14::0::10.10.1.1::32/248               
+                   *[BGP/170] 1d 22:01:21, localpref 100, from 10.35.1.1
                       AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
                     >  to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.1.4:9::0::10.10.1.111::32/248               
-                   *[BGP/170] 00:42:32, localpref 100, from 10.35.1.1
+                    [BGP/170] 1d 22:01:17, localpref 100, from 10.35.1.2
                       AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
                     >  to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 00:42:32, localpref 100, from 10.35.1.2
+5:10.35.1.4:14::0::10.10.1.12::32/248               
+                   *[BGP/170] 1d 22:01:21, localpref 100, from 10.35.1.1
                       AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
                     >  to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.2.1:9::0::0.0.0.0::0/248               
-                   *[BGP/170] 00:22:32, localpref 100, from 10.35.1.1
+                    [BGP/170] 1d 22:01:17, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+5:10.35.1.4:14::0::10.10.1.111::32/248               
+                   *[BGP/170] 1d 22:01:07, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+                    [BGP/170] 1d 22:01:07, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+5:10.35.2.1:14::0::0.0.0.0::0/248               
+                   *[BGP/170] 04:57:07, localpref 100, from 10.35.1.1
                       AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0, Push 902001
-                       to 10.35.12.0 via ae1.0, Push 902001
-                    [BGP/170] 00:22:32, localpref 100, from 10.35.1.2
-                      AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0, Push 902001
-                       to 10.35.12.0 via ae1.0, Push 902001
-5:10.35.2.2:11::0::0.0.0.0::0/248               
-                   *[BGP/170] 00:22:28, localpref 100, from 10.35.1.1
-                      AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0, Push 902002
-                       to 10.35.12.0 via ae1.0, Push 902002
-                    [BGP/170] 00:22:28, localpref 100, from 10.35.1.2
-                      AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0, Push 902002
-                       to 10.35.12.0 via ae1.0, Push 902002
-5:10.35.2.3:9::0::10.10.2.0::24/248               
-                   *[BGP/170] 01:14:40, localpref 100, from 10.35.1.1
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902003
-                    >  to 10.35.12.0 via ae1.0, Push 902003
-                    [BGP/170] 01:14:40, localpref 100, from 10.35.1.2
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902003
-                    >  to 10.35.12.0 via ae1.0, Push 902003
-5:10.35.2.4:9::0::10.10.2.0::24/248               
-                   *[BGP/170] 01:14:40, localpref 100, from 10.35.1.1
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902004
-                    >  to 10.35.12.0 via ae1.0, Push 902004
-                    [BGP/170] 01:14:40, localpref 100, from 10.35.1.2
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902004
-                    >  to 10.35.12.0 via ae1.0, Push 902004
-5:10.35.1.1:11::0::::::0/248               
-                   *[BGP/170] 00:22:32, localpref 100, from 10.35.1.1
-                      AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0
-                       to 10.35.12.0 via ae1.0, Push 901001
-                    [BGP/170] 00:22:32, localpref 100, from 10.35.1.2
-                      AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.11.0 via ae0.0
-                       to 10.35.12.0 via ae1.0, Push 901001
-5:10.35.1.2:11::0::::::0/248               
-                   *[BGP/170] 00:22:32, localpref 100, from 10.35.1.2
-                      AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.12.0 via ae1.0
-                       to 10.35.11.0 via ae0.0, Push 901002
-                    [BGP/170] 00:22:32, localpref 100, from 10.35.1.1
-                      AS path: 65100 I, validation-state: unverified
-                    >  to 10.35.12.0 via ae1.0
-                       to 10.35.11.0 via ae0.0, Push 901002
-5:10.35.1.3:9::0::101::::64/248               
-                   *[EVPN/170] 01:14:41
-                       Indirect
-5:10.35.1.3:9::0::110::::64/248               
-                   *[EVPN/170] 01:14:37
-                       Indirect
-5:10.35.1.3:9::0::101::1::128/248               
-                   *[EVPN/170] 00:42:34
-                       Indirect
-5:10.35.1.3:9::0::101::11::128/248               
-                   *[EVPN/170] 00:42:34
-                       Indirect
-5:10.35.1.3:9::0::101::111::128/248               
-                   *[EVPN/170] 00:42:34
-                       Indirect
-5:10.35.1.4:9::0::101::::64/248               
-                   *[BGP/170] 01:14:39, localpref 100, from 10.35.1.1
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 01:14:39, localpref 100, from 10.35.1.2
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.1.4:9::0::110::::64/248               
-                   *[BGP/170] 01:14:36, localpref 100, from 10.35.1.1
-                      AS path: 65111 I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 01:14:36, localpref 100, from 10.35.1.2
-                      AS path: 65111 I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.1.4:9::0::101::1::128/248               
-                   *[BGP/170] 00:42:32, localpref 100, from 10.35.1.1
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 00:42:32, localpref 100, from 10.35.1.2
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.1.4:9::0::101::12::128/248               
-                   *[BGP/170] 00:42:32, localpref 100, from 10.35.1.1
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 00:42:32, localpref 100, from 10.35.1.2
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.1.4:9::0::101::111::128/248               
-                   *[BGP/170] 00:42:32, localpref 100, from 10.35.1.1
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-                    [BGP/170] 00:42:32, localpref 100, from 10.35.1.2
-                      AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 901004
-                    >  to 10.35.12.0 via ae1.0, Push 901004
-5:10.35.2.1:9::0::::::0/248               
-                   *[BGP/170] 00:22:32, localpref 100, from 10.35.1.1
-                      AS path: 65100 I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902001
                     >  to 10.35.12.0 via ae1.0, Push 902001
-                    [BGP/170] 00:22:32, localpref 100, from 10.35.1.2
+                    [BGP/170] 04:57:06, localpref 100, from 10.35.1.2
                       AS path: 65100 I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902001
                     >  to 10.35.12.0 via ae1.0, Push 902001
-5:10.35.2.2:11::0::::::0/248               
-                   *[BGP/170] 00:22:28, localpref 100, from 10.35.1.1
+5:10.35.2.2:14::0::0.0.0.0::0/248               
+                   *[BGP/170] 05:44:38, localpref 100, from 10.35.1.1
                       AS path: 65100 I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902002
                     >  to 10.35.12.0 via ae1.0, Push 902002
-                    [BGP/170] 00:22:28, localpref 100, from 10.35.1.2
+                    [BGP/170] 05:44:38, localpref 100, from 10.35.1.2
                       AS path: 65100 I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902002
                     >  to 10.35.12.0 via ae1.0, Push 902002
-5:10.35.2.3:9::0::102::::64/248               
-                   *[BGP/170] 01:14:29, localpref 100, from 10.35.1.1
+5:10.35.1.1:14::0::::::0/248               
+                   *[BGP/170] 1d 19:33:00, localpref 100, from 10.35.1.1
+                      AS path: 65100 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901001
+                    [BGP/170] 1d 19:33:00, localpref 100, from 10.35.1.2
+                      AS path: 65100 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901001
+5:10.35.1.2:15::0::::::0/248               
+                   *[BGP/170] 1d 22:00:48, localpref 100, from 10.35.1.2
+                      AS path: 65100 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0
+                    [BGP/170] 1d 22:00:48, localpref 100, from 10.35.1.1
+                      AS path: 65100 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0
+5:10.35.1.3:14::0::101::::64/248               
+                   *[EVPN/170] 1d 22:01:01
+                       Indirect
+5:10.35.1.3:14::0::110::::64/248               
+                   *[EVPN/170] 1d 22:00:56
+                       Indirect
+5:10.35.1.3:14::0::101::1::128/248               
+                   *[EVPN/170] 1d 22:01:34
+                       Indirect
+5:10.35.1.3:14::0::101::11::128/248               
+                   *[EVPN/170] 1d 22:01:34
+                       Indirect
+5:10.35.1.3:14::0::101::111::128/248               
+                   *[EVPN/170] 1d 22:01:01
+                       Indirect
+5:10.35.1.4:14::0::101::::64/248               
+                   *[BGP/170] 1d 22:01:00, localpref 100, from 10.35.1.1
                       AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902003
-                    >  to 10.35.12.0 via ae1.0, Push 902003
-                    [BGP/170] 01:14:29, localpref 100, from 10.35.1.2
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+                    [BGP/170] 1d 22:01:00, localpref 100, from 10.35.1.2
                       AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902003
-                    >  to 10.35.12.0 via ae1.0, Push 902003
-5:10.35.2.4:9::0::102::::64/248               
-                   *[BGP/170] 01:14:29, localpref 100, from 10.35.1.1
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+5:10.35.1.4:14::0::110::::64/248               
+                   *[BGP/170] 1d 22:00:52, localpref 100, from 10.35.1.1
+                      AS path: 65111 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+                    [BGP/170] 1d 22:00:52, localpref 100, from 10.35.1.2
+                      AS path: 65111 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+5:10.35.1.4:14::0::101::1::128/248               
+                   *[BGP/170] 1d 22:01:21, localpref 100, from 10.35.1.1
                       AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902004
-                    >  to 10.35.12.0 via ae1.0, Push 902004
-                    [BGP/170] 01:14:29, localpref 100, from 10.35.1.2
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+                    [BGP/170] 1d 22:01:17, localpref 100, from 10.35.1.2
                       AS path: I, validation-state: unverified
-                       to 10.35.11.0 via ae0.0, Push 902004
-                    >  to 10.35.12.0 via ae1.0, Push 902004
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+5:10.35.1.4:14::0::101::12::128/248               
+                   *[BGP/170] 1d 22:01:21, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+                    [BGP/170] 1d 22:01:17, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+5:10.35.1.4:14::0::101::111::128/248               
+                   *[BGP/170] 1d 22:01:00, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+                    [BGP/170] 1d 22:01:00, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+5:10.35.2.1:14::0::::::0/248               
+                   *[BGP/170] 01:34:52, localpref 100, from 10.35.1.1
+                      AS path: 65100 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 902001
+                    [BGP/170] 01:34:52, localpref 100, from 10.35.1.2
+                      AS path: 65100 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 902001
+5:10.35.2.2:14::0::::::0/248               
+                   *[BGP/170] 05:25:37, localpref 100, from 10.35.1.1
+                      AS path: 65100 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 902002
+                    [BGP/170] 05:25:37, localpref 100, from 10.35.1.2
+                      AS path: 65100 I, validation-state: unverified
+                    >  to 10.35.12.0 via ae1.0, Push 902002

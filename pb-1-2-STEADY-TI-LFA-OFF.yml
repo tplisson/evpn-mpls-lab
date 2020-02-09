@@ -1,28 +1,26 @@
 ---
+- hosts: localhost:DVT
+  gather_facts: no
+  tasks:
+  - set_fact: 
+      testcase: 1.2-STEADY-TI-LFA
+      test_dir: "testcase/1.2-STEADY-TI-LFA/OFF"
+      cacheable: yes
+
   - name: Import existing playbook to turn TI-LFA off
     import_playbook: pb-ti-lfa-off.yml
 
   - name: Initating test case with TI-LFA disabled
     hosts: localhost
     gather_facts: no
-
     tasks:
-
     - name: sleep for 30 seconds and continue with play
       wait_for:
         timeout: 30
-
     - name: Create directories      
-      vars:
-        test_dir: "testcase/1.2/off"
-        detailed_dir: "testcase/1.2/off/detailed"
       file: 
-        path: "{{playbook_dir}}/{{item}}" 
+        path: "{{playbook_dir}}/{{test_dir}}" 
         state: directory
-      with_items:
-        - "{{test_dir}}"
-        - "{{detailed_dir}}"
-
 
   - name: "{{testcase}}"
     hosts: DVT
@@ -30,23 +28,7 @@
      - Juniper.junos
     connection: local
     gather_facts: no
-    vars:
-      testcase: "Test Case 1-2: ISIS SPRING TI-LFA Steady State"
-      test_dir: "testcase/1.2/off"
-      detailed_dir: "testcase/1.2/off/detailed"
-      credentials:
-        host: "{{ inventory_hostname }}"
-        user: "{{ ansible_ssh_user }}"
-        passwd: "{{ ansible_ssh_pass }}"
-  
     tasks:
-
-    - name: Checking NETCONF connectivity
-      wait_for: 
-        host: "{{ inventory_hostname }}"
-        port: "{{ ansible_port }}"
-        timeout: 2
-      register: netconf_result
 
     - name: Gathering regular output for {{testcase}}
       when: netconf_result|success
