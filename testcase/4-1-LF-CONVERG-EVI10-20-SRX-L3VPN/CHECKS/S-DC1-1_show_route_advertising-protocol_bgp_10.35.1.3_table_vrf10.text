@@ -1,0 +1,17 @@
+
+
+vrf10.inet.0: 9 destinations, 28 routes (9 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+* 0.0.0.0/0               Self                         100        65100 I
+* 10.10.0.0/16            Self                         100        {65111} I
+* 10.10.0.0/24            Self                         100        I
+* 10.10.0.100/32          Self                         100        I
+
+vrf10.inet6.0: 14 destinations, 37 routes (12 active, 0 holddown, 3 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+* ::/0                    Self                         100        65100 I
+* 100::/64                Self                         100        I
+* 100::100/128            Self                         100        I
+* 101::/64                Self                         100        I
+  fe80::210:db00:aff:1002/128
+*                         Self                         100        I

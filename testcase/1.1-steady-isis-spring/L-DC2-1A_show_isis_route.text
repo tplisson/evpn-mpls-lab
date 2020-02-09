@@ -1,96 +1,98 @@
 
- IS-IS routing table             Current version: L1: 0 L2: 706
+ IS-IS routing table             Current version: L1: 0 L2: 35
 IPv4/IPv6 Routes
 ----------------
 Prefix             L Version   Metric Type Interface       NH   Via                 Backup Score
-10.35.0.0/31       2     706      200 int  ae1.0           IPV4 S-DC2-2            
-10.35.0.2/31       2     706      200 int  ae0.0           IPV4 S-DC2-1            
-10.35.0.4/31       2     706      300 int  ae0.0           IPV4 S-DC2-1            
+10.35.0.0/31       2      35      200 int  ae1.0           IPV4 S-DC2-2            
+10.35.0.2/31       2      35      200 int  ae0.0           IPV4 S-DC2-1            
+10.35.0.4/31       2      35      300 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           IPV4 S-DC2-2            
-10.35.0.6/31       2     706      200 int  ae0.0           IPV4 S-DC2-1            
-10.35.0.8/31       2     706      200 int  ae1.0           IPV4 S-DC2-2            
-10.35.0.10/31      2     706      200 int  ae1.0           IPV4 S-DC2-2            
+10.35.0.6/31       2      35      200 int  ae0.0           IPV4 S-DC2-1            
+10.35.0.8/31       2      35      200 int  ae1.0           IPV4 S-DC2-2            
+10.35.0.10/31      2      35      200 int  ae1.0           IPV4 S-DC2-2            
                                            ae0.0           IPV4 S-DC2-1            
-10.35.1.1/32       2     706      200 int  ae0.0           IPV4 S-DC2-1            
+10.35.1.1/32       2      35      200 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           IPV4 S-DC2-2            
-10.35.1.2/32       2     706      200 int  ae0.0           IPV4 S-DC2-1            
+10.35.1.2/32       2      35      200 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           IPV4 S-DC2-2            
-10.35.1.3/32       2     706      300 int  ae0.0           IPV4 S-DC2-1            
+10.35.1.3/32       2      35      300 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           IPV4 S-DC2-2            
-10.35.1.4/32       2     706      300 int  ae0.0           IPV4 S-DC2-1            
+10.35.1.4/32       2      35      300 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           IPV4 S-DC2-2            
-10.35.2.1/32       2     706      100 int  ae0.0           IPV4 S-DC2-1            
+10.35.2.1/32       2      35      100 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           MPLS Direct->S-DC2-2(10.35.2.2)
-10.35.2.2/32       2     706      100 int  ae1.0           IPV4 S-DC2-2            
+10.35.2.2/32       2      35      100 int  ae1.0           IPV4 S-DC2-2            
                                            ae0.0           MPLS Direct->S-DC2-1(10.35.2.1)
-10.35.2.4/32       2     706      200 int  ae0.0           IPV4 S-DC2-1            
+10.35.2.4/32       2      35      200 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           IPV4 S-DC2-2            
-10.35.11.2/31      2     706      300 int  ae0.0           IPV4 S-DC2-1            
+10.35.11.0/31      2      35      300 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           IPV4 S-DC2-2            
-10.35.12.0/31      2     706      300 int  ae0.0           IPV4 S-DC2-1            
+10.35.11.2/31      2      35      300 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           IPV4 S-DC2-2            
-10.35.12.2/31      2     706      300 int  ae0.0           IPV4 S-DC2-1            
+10.35.12.0/31      2      35      300 int  ae0.0           IPV4 S-DC2-1            
                                            ae1.0           IPV4 S-DC2-2            
-10.35.21.2/31      2     706      200 int  ae0.0           IPV4 S-DC2-1            
-10.35.22.2/31      2     706      200 int  ae1.0           IPV4 S-DC2-2            
+10.35.12.2/31      2      35      300 int  ae0.0           IPV4 S-DC2-1            
+                                           ae1.0           IPV4 S-DC2-2            
+10.35.21.2/31      2      35      200 int  ae0.0           IPV4 S-DC2-1            
+10.35.22.2/31      2      35      200 int  ae1.0           IPV4 S-DC2-2            
 
 MPLS Routes
 -----------
 Label              L Version   Metric Type Interface       NH     Via
-1092/52            2     706        0 int  ae1.0           MPLS   Direct->S-DC2-2(10.35.2.2)
+61/52              2      35        0 int  ae0.0           MPLS   Direct->S-DC2-1(10.35.2.1)
+                                           ae1.0           MPLS   S-DC2-2(10.35.2.2) 
+61/56              2      35        0 int  ae0.0           MPLS   Direct->S-DC2-1(10.35.2.1)
+                                           ae1.0           MPLS   S-DC2-2(10.35.2.2) 
+62/52              2      35        0 int  ae1.0           MPLS   Direct->S-DC2-2(10.35.2.2)
                                            ae0.0           MPLS   S-DC2-1(10.35.2.1) 
-1092/56            2     706        0 int  ae1.0           MPLS   Direct->S-DC2-2(10.35.2.2)
+62/56              2      35        0 int  ae1.0           MPLS   Direct->S-DC2-2(10.35.2.2)
                                            ae0.0           MPLS   S-DC2-1(10.35.2.1) 
-1093/52            2     706        0 int  ae0.0           MPLS   Direct->S-DC2-1(10.35.2.1)
+902001/52          2      35      100 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS   S-DC2-2(10.35.2.2) 
-1093/56            2     706        0 int  ae0.0           MPLS   Direct->S-DC2-1(10.35.2.1)
+902001/56          2      35      100 int  ae0.0           MPLS   Direct->S-DC2-1(10.35.2.1)
                                            ae1.0           MPLS   S-DC2-2(10.35.2.2) 
-902001/52          2     706      100 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
-                                           ae1.0           MPLS   S-DC2-2(10.35.2.2) 
-902001/56          2     706      100 int  ae0.0           MPLS   Direct->S-DC2-1(10.35.2.1)
-                                           ae1.0           MPLS   S-DC2-2(10.35.2.2) 
-902002/52          2     706      100 int  ae1.0           MPLS   S-DC2-2(10.35.2.2) 
+902002/52          2      35      100 int  ae1.0           MPLS   S-DC2-2(10.35.2.2) 
                                            ae0.0           MPLS   S-DC2-1(10.35.2.1) 
-902002/56          2     706      100 int  ae1.0           MPLS   Direct->S-DC2-2(10.35.2.2)
+902002/56          2      35      100 int  ae1.0           MPLS   Direct->S-DC2-2(10.35.2.2)
                                            ae0.0           MPLS   S-DC2-1(10.35.2.1) 
-902004/52          2     706      200 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
+902004/52          2      35      200 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS   S-DC2-2(10.35.2.2) 
-901001/52          2     706      200 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
+901001/52          2      35      200 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS   S-DC2-2(10.35.2.2) 
-901002/52          2     706      200 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
+901002/52          2      35      200 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS   S-DC2-2(10.35.2.2) 
-901003/52          2     706      300 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
+901003/52          2      35      300 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS   S-DC2-2(10.35.2.2) 
-901004/52          2     706      300 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
+901004/52          2      35      300 int  ae0.0           MPLS   S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS   S-DC2-2(10.35.2.2) 
 IPv4/IPv6->MPLS Routes
 ----------------------
 Prefix             L Version   Metric Type Interface       NH   Via                 Backup Score
-10.35.1.1/32       2     706      200 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
+10.35.1.1/32       2      35      200 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-10.35.1.2/32       2     706      200 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
+10.35.1.2/32       2      35      200 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-10.35.1.3/32       2     706      300 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
+10.35.1.3/32       2      35      300 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-10.35.1.4/32       2     706      300 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
+10.35.1.4/32       2      35      300 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-10.35.2.1/32       2     706      100 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
+10.35.2.1/32       2      35      100 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-10.35.2.2/32       2     706      100 int  ae1.0           MPLS S-DC2-2(10.35.2.2) 
+10.35.2.2/32       2      35      100 int  ae1.0           MPLS S-DC2-2(10.35.2.2) 
                                            ae0.0           MPLS S-DC2-1(10.35.2.1) 
-10.35.2.4/32       2     706      200 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
+10.35.2.4/32       2      35      200 int  ae0.0           MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-::ffff:10.35.1.1/128 2     706      200 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
+::ffff:10.35.1.1/128 2      35      200 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-::ffff:10.35.1.2/128 2     706      200 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
+::ffff:10.35.1.2/128 2      35      200 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-::ffff:10.35.1.3/128 2     706      300 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
+::ffff:10.35.1.3/128 2      35      300 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-::ffff:10.35.1.4/128 2     706      300 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
+::ffff:10.35.1.4/128 2      35      300 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-::ffff:10.35.2.1/128 2     706      100 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
+::ffff:10.35.2.1/128 2      35      100 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 
-::ffff:10.35.2.2/128 2     706      100 int ae1.0          MPLS S-DC2-2(10.35.2.2) 
+::ffff:10.35.2.2/128 2      35      100 int ae1.0          MPLS S-DC2-2(10.35.2.2) 
                                            ae0.0           MPLS S-DC2-1(10.35.2.1) 
-::ffff:10.35.2.4/128 2     706      200 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
+::ffff:10.35.2.4/128 2      35      200 int ae0.0          MPLS S-DC2-1(10.35.2.1) 
                                            ae1.0           MPLS S-DC2-2(10.35.2.2) 

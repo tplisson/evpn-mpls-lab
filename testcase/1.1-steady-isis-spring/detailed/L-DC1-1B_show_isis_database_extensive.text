@@ -3,37 +3,41 @@ IS-IS level 1 link-state database:
 
 IS-IS level 2 link-state database:
 
-S-DC1-1.00-00 Sequence: 0x134, Checksum: 0x386e, Lifetime: 55090 secs
+S-DC1-1.00-00 Sequence: 0xd, Checksum: 0xdb6a, Lifetime: 62608 secs
   IPV4 Index: 1001
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
    IS neighbor: S-DC1-2.00                    Metric:      100
      Two-way fragment: S-DC1-2.00-00, Two-way first fragment: S-DC1-2.00-00
-     P2P IPv4 Adj-SID:    4552, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     159, Weight:   0, Flags: -BVL--
+   IS neighbor: L-DC1-1A.00                   Metric:      100
+     Two-way fragment: L-DC1-1A.00-00, Two-way first fragment: L-DC1-1A.00-00
+     P2P IPv4 Adj-SID:     156, Weight:   0, Flags: -BVL--
    IS neighbor: L-DC1-1B.00                   Metric:      100
      Two-way fragment: L-DC1-1B.00-00, Two-way first fragment: L-DC1-1B.00-00
-     P2P IPv4 Adj-SID:    4554, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     155, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC2-1.00                    Metric:      100
      Two-way fragment: S-DC2-1.00-00, Two-way first fragment: S-DC2-1.00-00
-     P2P IPv4 Adj-SID:    4551, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     158, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC2-2.00                    Metric:      100
      Two-way fragment: S-DC2-2.00-00, Two-way first fragment: S-DC2-2.00-00
-     P2P IPv4 Adj-SID:    4550, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     157, Weight:   0, Flags: -BVL--
    IP prefix: 10.35.0.0/31                    Metric:      100 Internal Up
    IP prefix: 10.35.0.2/31                    Metric:      100 Internal Up
    IP prefix: 10.35.0.4/31                    Metric:      100 Internal Up
    IP prefix: 10.35.1.1/32                    Metric:        0 Internal Up
+   IP prefix: 10.35.11.0/31                   Metric:      100 Internal Up
    IP prefix: 10.35.11.2/31                   Metric:      100 Internal Up
 
-  Header: LSP ID: S-DC1-1.00-00, Length: 326 bytes
+  Header: LSP ID: S-DC1-1.00-00, Length: 375 bytes
     Allocated length: 375 bytes, Router ID: 10.35.1.1
-    Remaining lifetime: 55090 secs, Level: 2, Interface: 82
-    Estimated free bytes: 0, Actual free bytes: 49
-    Aging timer expires in: 55090 secs
+    Remaining lifetime: 62608 secs, Level: 2, Interface: 70
+    Estimated free bytes: 69, Actual free bytes: 0
+    Aging timer expires in: 62608 secs
     Protocols: IP, IPv6
 
-  Packet: LSP ID: S-DC1-1.00-00, Length: 326 bytes, Lifetime : 65531 secs
-    Checksum: 0x386e, Sequence: 0x134, Attributes: 0x3 <L1 L2>
+  Packet: LSP ID: S-DC1-1.00-00, Length: 375 bytes, Lifetime : 65531 secs
+    Checksum: 0xdb6a, Sequence: 0xd, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -45,35 +49,42 @@ S-DC1-1.00-00 Sequence: 0x134, Checksum: 0x386e, Lifetime: 55090 secs
     IP router id: 10.35.1.1
     IP address: 10.35.1.1
     Hostname: S-DC1-1
-    Extended IS Reachability TLV, Type: 22, Length: 160
+    Extended IS Reachability TLV, Type: 22, Length: 200
     IS extended neighbor: S-DC2-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.0
       Neighbor's IP address: 10.35.0.1
-      Local interface index: 110, Remote interface index: 104
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 4550
-      P2P IPv4 Adj-SID:    4550, Weight:   0, Flags: -BVL--
+      Local interface index: 78, Remote interface index: 75
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 157
+      P2P IPv4 Adj-SID:     157, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC2-1.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.2
       Neighbor's IP address: 10.35.0.3
-      Local interface index: 115, Remote interface index: 127
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 4551
-      P2P IPv4 Adj-SID:    4551, Weight:   0, Flags: -BVL--
+      Local interface index: 73, Remote interface index: 77
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 158
+      P2P IPv4 Adj-SID:     158, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC1-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.4
       Neighbor's IP address: 10.35.0.5
-      Local interface index: 124, Remote interface index: 94
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 4552
-      P2P IPv4 Adj-SID:    4552, Weight:   0, Flags: -BVL--
+      Local interface index: 74, Remote interface index: 78
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 159
+      P2P IPv4 Adj-SID:     159, Weight:   0, Flags: -BVL--
+    IS extended neighbor: L-DC1-1A.00, Metric: default 100 SubTLV len: 29
+      IP address: 10.35.11.0
+      Neighbor's IP address: 10.35.11.1
+      Local interface index: 75, Remote interface index: 70
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 156
+      P2P IPv4 Adj-SID:     156, Weight:   0, Flags: -BVL--
     IS extended neighbor: L-DC1-1B.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.11.2
       Neighbor's IP address: 10.35.11.3
-      Local interface index: 126, Remote interface index: 82
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 4554
-      P2P IPv4 Adj-SID:    4554, Weight:   0, Flags: -BVL--
-    IP extended prefix: 10.35.11.2/31 metric 100 up
-    IP extended prefix: 10.35.0.4/31 metric 100 up
-    IP extended prefix: 10.35.0.2/31 metric 100 up
+      Local interface index: 76, Remote interface index: 70
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 155
+      P2P IPv4 Adj-SID:     155, Weight:   0, Flags: -BVL--
     IP extended prefix: 10.35.0.0/31 metric 100 up
+    IP extended prefix: 10.35.0.2/31 metric 100 up
+    IP extended prefix: 10.35.0.4/31 metric 100 up
+    IP extended prefix: 10.35.11.0/31 metric 100 up
+    IP extended prefix: 10.35.11.2/31 metric 100 up
     IP extended prefix: 10.35.1.1/32 metric 0 up
       8 bytes of subtlvs
       Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1001
@@ -83,25 +94,25 @@ S-DC1-1.00-00 Sequence: 0x134, Checksum: 0x386e, Lifetime: 55090 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-S-DC1-2.00-00 Sequence: 0x11c, Checksum: 0xae13, Lifetime: 65141 secs
+S-DC1-2.00-00 Sequence: 0xe, Checksum: 0xc8da, Lifetime: 62607 secs
   IPV4 Index: 1002
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
    IS neighbor: S-DC1-1.00                    Metric:      100
      Two-way fragment: S-DC1-1.00-00, Two-way first fragment: S-DC1-1.00-00
-     P2P IPv4 Adj-SID:    1506, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     156, Weight:   0, Flags: -BVL--
    IS neighbor: L-DC1-1A.00                   Metric:      100
      Two-way fragment: L-DC1-1A.00-00, Two-way first fragment: L-DC1-1A.00-00
-     P2P IPv4 Adj-SID:    1668, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     157, Weight:   0, Flags: -BVL--
    IS neighbor: L-DC1-1B.00                   Metric:      100
      Two-way fragment: L-DC1-1B.00-00, Two-way first fragment: L-DC1-1B.00-00
-     P2P IPv4 Adj-SID:    1508, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     158, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC2-1.00                    Metric:      100
      Two-way fragment: S-DC2-1.00-00, Two-way first fragment: S-DC2-1.00-00
-     P2P IPv4 Adj-SID:    1504, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     155, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC2-2.00                    Metric:      100
      Two-way fragment: S-DC2-2.00-00, Two-way first fragment: S-DC2-2.00-00
-     P2P IPv4 Adj-SID:    1505, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     154, Weight:   0, Flags: -BVL--
    IP prefix: 10.35.0.4/31                    Metric:      100 Internal Up
    IP prefix: 10.35.0.6/31                    Metric:      100 Internal Up
    IP prefix: 10.35.0.8/31                    Metric:      100 Internal Up
@@ -111,13 +122,13 @@ S-DC1-2.00-00 Sequence: 0x11c, Checksum: 0xae13, Lifetime: 65141 secs
 
   Header: LSP ID: S-DC1-2.00-00, Length: 375 bytes
     Allocated length: 375 bytes, Router ID: 10.35.1.2
-    Remaining lifetime: 65141 secs, Level: 2, Interface: 83
-    Estimated free bytes: 0, Actual free bytes: 0
-    Aging timer expires in: 65141 secs
+    Remaining lifetime: 62607 secs, Level: 2, Interface: 73
+    Estimated free bytes: 69, Actual free bytes: 0
+    Aging timer expires in: 62607 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: S-DC1-2.00-00, Length: 375 bytes, Lifetime : 65531 secs
-    Checksum: 0xae13, Sequence: 0x11c, Attributes: 0x3 <L1 L2>
+    Checksum: 0xc8da, Sequence: 0xe, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -133,38 +144,38 @@ S-DC1-2.00-00 Sequence: 0x11c, Checksum: 0xae13, Lifetime: 65141 secs
     IS extended neighbor: S-DC2-1.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.6
       Neighbor's IP address: 10.35.0.7
-      Local interface index: 92, Remote interface index: 90
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1504
-      P2P IPv4 Adj-SID:    1504, Weight:   0, Flags: -BVL--
+      Local interface index: 75, Remote interface index: 75
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 155
+      P2P IPv4 Adj-SID:     155, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC2-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.8
       Neighbor's IP address: 10.35.0.9
-      Local interface index: 93, Remote interface index: 130
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1505
-      P2P IPv4 Adj-SID:    1505, Weight:   0, Flags: -BVL--
+      Local interface index: 77, Remote interface index: 77
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 154
+      P2P IPv4 Adj-SID:     154, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC1-1.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.5
       Neighbor's IP address: 10.35.0.4
-      Local interface index: 94, Remote interface index: 124
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1506
-      P2P IPv4 Adj-SID:    1506, Weight:   0, Flags: -BVL--
+      Local interface index: 78, Remote interface index: 74
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 156
+      P2P IPv4 Adj-SID:     156, Weight:   0, Flags: -BVL--
     IS extended neighbor: L-DC1-1A.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.12.0
       Neighbor's IP address: 10.35.12.1
-      Local interface index: 95, Remote interface index: 108
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1668
-      P2P IPv4 Adj-SID:    1668, Weight:   0, Flags: -BVL--
+      Local interface index: 79, Remote interface index: 73
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 157
+      P2P IPv4 Adj-SID:     157, Weight:   0, Flags: -BVL--
     IS extended neighbor: L-DC1-1B.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.12.2
       Neighbor's IP address: 10.35.12.3
-      Local interface index: 96, Remote interface index: 83
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1508
-      P2P IPv4 Adj-SID:    1508, Weight:   0, Flags: -BVL--
+      Local interface index: 81, Remote interface index: 73
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 158
+      P2P IPv4 Adj-SID:     158, Weight:   0, Flags: -BVL--
     IP extended prefix: 10.35.0.6/31 metric 100 up
-    IP extended prefix: 10.35.0.4/31 metric 100 up
-    IP extended prefix: 10.35.12.2/31 metric 100 up
     IP extended prefix: 10.35.0.8/31 metric 100 up
+    IP extended prefix: 10.35.0.4/31 metric 100 up
     IP extended prefix: 10.35.12.0/31 metric 100 up
+    IP extended prefix: 10.35.12.2/31 metric 100 up
     IP extended prefix: 10.35.1.2/32 metric 0 up
       8 bytes of subtlvs
       Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 1002
@@ -174,25 +185,29 @@ S-DC1-2.00-00 Sequence: 0x11c, Checksum: 0xae13, Lifetime: 65141 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-L-DC1-1A.00-00 Sequence: 0x86, Checksum: 0x81cc, Lifetime: 55088 secs
+L-DC1-1A.00-00 Sequence: 0x9, Checksum: 0xe6b1, Lifetime: 62605 secs
   IPV4 Index: 1003
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
+   IS neighbor: S-DC1-1.00                    Metric:      100
+     Two-way fragment: S-DC1-1.00-00, Two-way first fragment: S-DC1-1.00-00
+     P2P IPv4 Adj-SID:     174, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC1-2.00                    Metric:      100
      Two-way fragment: S-DC1-2.00-00, Two-way first fragment: S-DC1-2.00-00
-     P2P IPv4 Adj-SID:    1628, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     175, Weight:   0, Flags: -BVL--
    IP prefix: 10.35.1.3/32                    Metric:        0 Internal Up
+   IP prefix: 10.35.11.0/31                   Metric:      100 Internal Up
    IP prefix: 10.35.12.0/31                   Metric:      100 Internal Up
 
-  Header: LSP ID: L-DC1-1A.00-00, Length: 180 bytes
+  Header: LSP ID: L-DC1-1A.00-00, Length: 229 bytes
     Allocated length: 284 bytes, Router ID: 10.35.1.3
-    Remaining lifetime: 55088 secs, Level: 2, Interface: 83
-    Estimated free bytes: 55, Actual free bytes: 104
-    Aging timer expires in: 55088 secs
+    Remaining lifetime: 62605 secs, Level: 2, Interface: 73
+    Estimated free bytes: 95, Actual free bytes: 55
+    Aging timer expires in: 62605 secs
     Protocols: IP, IPv6
 
-  Packet: LSP ID: L-DC1-1A.00-00, Length: 180 bytes, Lifetime : 65529 secs
-    Checksum: 0x81cc, Sequence: 0x86, Attributes: 0x3 <L1 L2>
+  Packet: LSP ID: L-DC1-1A.00-00, Length: 229 bytes, Lifetime : 65529 secs
+    Checksum: 0xe6b1, Sequence: 0x9, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -204,13 +219,20 @@ L-DC1-1A.00-00 Sequence: 0x86, Checksum: 0x81cc, Lifetime: 55088 secs
     IP router id: 10.35.1.3
     IP address: 10.35.1.3
     Hostname: L-DC1-1A
-    Extended IS Reachability TLV, Type: 22, Length: 40
+    Extended IS Reachability TLV, Type: 22, Length: 80
+    IS extended neighbor: S-DC1-1.00, Metric: default 100 SubTLV len: 29
+      IP address: 10.35.11.1
+      Neighbor's IP address: 10.35.11.0
+      Local interface index: 70, Remote interface index: 75
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 174
+      P2P IPv4 Adj-SID:     174, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC1-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.12.1
       Neighbor's IP address: 10.35.12.0
-      Local interface index: 108, Remote interface index: 95
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1628
-      P2P IPv4 Adj-SID:    1628, Weight:   0, Flags: -BVL--
+      Local interface index: 73, Remote interface index: 79
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 175
+      P2P IPv4 Adj-SID:     175, Weight:   0, Flags: -BVL--
+    IP extended prefix: 10.35.11.0/31 metric 100 up
     IP extended prefix: 10.35.12.0/31 metric 100 up
     IP extended prefix: 10.35.1.3/32 metric 0 up
       8 bytes of subtlvs
@@ -221,29 +243,29 @@ L-DC1-1A.00-00 Sequence: 0x86, Checksum: 0x81cc, Lifetime: 55088 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-L-DC1-1B.00-00 Sequence: 0x78, Checksum: 0xc12d, Lifetime: 7742 secs
+L-DC1-1B.00-00 Sequence: 0x9, Checksum: 0x93cb, Lifetime: 62608 secs
   IPV4 Index: 1004
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
    IS neighbor: S-DC1-1.00                    Metric:      100
      Two-way fragment: S-DC1-1.00-00, Two-way first fragment: S-DC1-1.00-00
-     P2P IPv4 Adj-SID:     251, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     180, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC1-2.00                    Metric:      100
      Two-way fragment: S-DC1-2.00-00, Two-way first fragment: S-DC1-2.00-00
-     P2P IPv4 Adj-SID:     252, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     181, Weight:   0, Flags: -BVL--
    IP prefix: 10.35.1.4/32                    Metric:        0 Internal Up
    IP prefix: 10.35.11.2/31                   Metric:      100 Internal Up
    IP prefix: 10.35.12.2/31                   Metric:      100 Internal Up
 
   Header: LSP ID: L-DC1-1B.00-00, Length: 229 bytes
     Allocated length: 1492 bytes, Router ID: 10.35.1.4
-    Remaining lifetime: 7742 secs, Level: 2, Interface: 0
+    Remaining lifetime: 62608 secs, Level: 2, Interface: 0
     Estimated free bytes: 1222, Actual free bytes: 1263
-    Aging timer expires in: 7742 secs
+    Aging timer expires in: 62608 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: L-DC1-1B.00-00, Length: 229 bytes, Lifetime : 65533 secs
-    Checksum: 0xc12d, Sequence: 0x78, Attributes: 0x3 <L1 L2>
+    Checksum: 0x93cb, Sequence: 0x9, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -259,15 +281,15 @@ L-DC1-1B.00-00 Sequence: 0x78, Checksum: 0xc12d, Lifetime: 7742 secs
     IS extended neighbor: S-DC1-1.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.11.3
       Neighbor's IP address: 10.35.11.2
-      Local interface index: 82, Remote interface index: 126
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 251
-      P2P IPv4 Adj-SID:     251, Weight:   0, Flags: -BVL--
+      Local interface index: 70, Remote interface index: 76
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 180
+      P2P IPv4 Adj-SID:     180, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC1-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.12.3
       Neighbor's IP address: 10.35.12.2
-      Local interface index: 83, Remote interface index: 96
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 252
-      P2P IPv4 Adj-SID:     252, Weight:   0, Flags: -BVL--
+      Local interface index: 73, Remote interface index: 81
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 181
+      P2P IPv4 Adj-SID:     181, Weight:   0, Flags: -BVL--
     IP extended prefix: 10.35.11.2/31 metric 100 up
     IP extended prefix: 10.35.12.2/31 metric 100 up
     IP extended prefix: 10.35.1.4/32 metric 0 up
@@ -279,25 +301,25 @@ L-DC1-1B.00-00 Sequence: 0x78, Checksum: 0xc12d, Lifetime: 7742 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-S-DC2-1.00-00 Sequence: 0x11d, Checksum: 0xc09f, Lifetime: 54193 secs
+S-DC2-1.00-00 Sequence: 0x10, Checksum: 0x782b, Lifetime: 62605 secs
   IPV4 Index: 2001
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
    IS neighbor: S-DC1-1.00                    Metric:      100
      Two-way fragment: S-DC1-1.00-00, Two-way first fragment: S-DC1-1.00-00
-     P2P IPv4 Adj-SID:    2043, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     142, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC1-2.00                    Metric:      100
      Two-way fragment: S-DC1-2.00-00, Two-way first fragment: S-DC1-2.00-00
-     P2P IPv4 Adj-SID:    2042, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     144, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC2-2.00                    Metric:      100
      Two-way fragment: S-DC2-2.00-00, Two-way first fragment: S-DC2-2.00-00
-     P2P IPv4 Adj-SID:    2044, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     145, Weight:   0, Flags: -BVL--
    IS neighbor: L-DC2-1A.00                   Metric:      100
      Two-way fragment: L-DC2-1A.00-00, Two-way first fragment: L-DC2-1A.00-00
-     P2P IPv4 Adj-SID:    2045, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     141, Weight:   0, Flags: -BVL--
    IS neighbor: L-DC2-1B.00                   Metric:      100
      Two-way fragment: L-DC2-1B.00-00, Two-way first fragment: L-DC2-1B.00-00
-     P2P IPv4 Adj-SID:    2046, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     143, Weight:   0, Flags: -BVL--
    IP prefix: 10.35.0.2/31                    Metric:      100 Internal Up
    IP prefix: 10.35.0.6/31                    Metric:      100 Internal Up
    IP prefix: 10.35.0.10/31                   Metric:      100 Internal Up
@@ -307,13 +329,13 @@ S-DC2-1.00-00 Sequence: 0x11d, Checksum: 0xc09f, Lifetime: 54193 secs
 
   Header: LSP ID: S-DC2-1.00-00, Length: 375 bytes
     Allocated length: 375 bytes, Router ID: 10.35.2.1
-    Remaining lifetime: 54193 secs, Level: 2, Interface: 83
-    Estimated free bytes: 0, Actual free bytes: 0
-    Aging timer expires in: 54193 secs
+    Remaining lifetime: 62605 secs, Level: 2, Interface: 70
+    Estimated free bytes: 29, Actual free bytes: 0
+    Aging timer expires in: 62605 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: S-DC2-1.00-00, Length: 375 bytes, Lifetime : 65529 secs
-    Checksum: 0xc09f, Sequence: 0x11d, Attributes: 0x3 <L1 L2>
+    Checksum: 0x782b, Sequence: 0x10, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -329,38 +351,38 @@ S-DC2-1.00-00 Sequence: 0x11d, Checksum: 0xc09f, Lifetime: 54193 secs
     IS extended neighbor: S-DC1-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.7
       Neighbor's IP address: 10.35.0.6
-      Local interface index: 90, Remote interface index: 92
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2042
-      P2P IPv4 Adj-SID:    2042, Weight:   0, Flags: -BVL--
+      Local interface index: 75, Remote interface index: 75
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 144
+      P2P IPv4 Adj-SID:     144, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC1-1.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.3
       Neighbor's IP address: 10.35.0.2
-      Local interface index: 127, Remote interface index: 115
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2043
-      P2P IPv4 Adj-SID:    2043, Weight:   0, Flags: -BVL--
+      Local interface index: 77, Remote interface index: 73
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 142
+      P2P IPv4 Adj-SID:     142, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC2-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.10
       Neighbor's IP address: 10.35.0.11
-      Local interface index: 128, Remote interface index: 131
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2044
-      P2P IPv4 Adj-SID:    2044, Weight:   0, Flags: -BVL--
+      Local interface index: 78, Remote interface index: 78
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 145
+      P2P IPv4 Adj-SID:     145, Weight:   0, Flags: -BVL--
     IS extended neighbor: L-DC2-1A.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.21.0
       Neighbor's IP address: 10.35.21.1
-      Local interface index: 129, Remote interface index: 82
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2045
-      P2P IPv4 Adj-SID:    2045, Weight:   0, Flags: -BVL--
+      Local interface index: 79, Remote interface index: 70
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 141
+      P2P IPv4 Adj-SID:     141, Weight:   0, Flags: -BVL--
     IS extended neighbor: L-DC2-1B.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.21.2
       Neighbor's IP address: 10.35.21.3
-      Local interface index: 130, Remote interface index: 79
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2046
-      P2P IPv4 Adj-SID:    2046, Weight:   0, Flags: -BVL--
+      Local interface index: 81, Remote interface index: 70
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 143
+      P2P IPv4 Adj-SID:     143, Weight:   0, Flags: -BVL--
     IP extended prefix: 10.35.0.6/31 metric 100 up
-    IP extended prefix: 10.35.21.0/31 metric 100 up
     IP extended prefix: 10.35.0.2/31 metric 100 up
-    IP extended prefix: 10.35.21.2/31 metric 100 up
     IP extended prefix: 10.35.0.10/31 metric 100 up
+    IP extended prefix: 10.35.21.0/31 metric 100 up
+    IP extended prefix: 10.35.21.2/31 metric 100 up
     IP extended prefix: 10.35.2.1/32 metric 0 up
       8 bytes of subtlvs
       Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 2001
@@ -370,25 +392,25 @@ S-DC2-1.00-00 Sequence: 0x11d, Checksum: 0xc09f, Lifetime: 54193 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-S-DC2-2.00-00 Sequence: 0x102, Checksum: 0xe30b, Lifetime: 54196 secs
+S-DC2-2.00-00 Sequence: 0xe, Checksum: 0x4406, Lifetime: 62614 secs
   IPV4 Index: 2002
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
    IS neighbor: S-DC1-1.00                    Metric:      100
      Two-way fragment: S-DC1-1.00-00, Two-way first fragment: S-DC1-1.00-00
-     P2P IPv4 Adj-SID:    2412, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     149, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC1-2.00                    Metric:      100
      Two-way fragment: S-DC1-2.00-00, Two-way first fragment: S-DC1-2.00-00
-     P2P IPv4 Adj-SID:    2413, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     150, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC2-1.00                    Metric:      100
      Two-way fragment: S-DC2-1.00-00, Two-way first fragment: S-DC2-1.00-00
-     P2P IPv4 Adj-SID:    2414, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     151, Weight:   0, Flags: -BVL--
    IS neighbor: L-DC2-1A.00                   Metric:      100
      Two-way fragment: L-DC2-1A.00-00, Two-way first fragment: L-DC2-1A.00-00
-     P2P IPv4 Adj-SID:    2415, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     153, Weight:   0, Flags: -BVL--
    IS neighbor: L-DC2-1B.00                   Metric:      100
      Two-way fragment: L-DC2-1B.00-00, Two-way first fragment: L-DC2-1B.00-00
-     P2P IPv4 Adj-SID:    2416, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:     152, Weight:   0, Flags: -BVL--
    IP prefix: 10.35.0.0/31                    Metric:      100 Internal Up
    IP prefix: 10.35.0.8/31                    Metric:      100 Internal Up
    IP prefix: 10.35.0.10/31                   Metric:      100 Internal Up
@@ -398,13 +420,13 @@ S-DC2-2.00-00 Sequence: 0x102, Checksum: 0xe30b, Lifetime: 54196 secs
 
   Header: LSP ID: S-DC2-2.00-00, Length: 375 bytes
     Allocated length: 375 bytes, Router ID: 10.35.2.2
-    Remaining lifetime: 54196 secs, Level: 2, Interface: 83
-    Estimated free bytes: 0, Actual free bytes: 0
-    Aging timer expires in: 54196 secs
+    Remaining lifetime: 62614 secs, Level: 2, Interface: 70
+    Estimated free bytes: 69, Actual free bytes: 0
+    Aging timer expires in: 62614 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: S-DC2-2.00-00, Length: 375 bytes, Lifetime : 65529 secs
-    Checksum: 0xe30b, Sequence: 0x102, Attributes: 0x3 <L1 L2>
+    Checksum: 0x4406, Sequence: 0xe, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -420,38 +442,38 @@ S-DC2-2.00-00 Sequence: 0x102, Checksum: 0xe30b, Lifetime: 54196 secs
     IS extended neighbor: S-DC1-1.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.1
       Neighbor's IP address: 10.35.0.0
-      Local interface index: 104, Remote interface index: 110
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2412
-      P2P IPv4 Adj-SID:    2412, Weight:   0, Flags: -BVL--
+      Local interface index: 75, Remote interface index: 78
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 149
+      P2P IPv4 Adj-SID:     149, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC1-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.9
       Neighbor's IP address: 10.35.0.8
-      Local interface index: 130, Remote interface index: 93
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2413
-      P2P IPv4 Adj-SID:    2413, Weight:   0, Flags: -BVL--
+      Local interface index: 77, Remote interface index: 77
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 150
+      P2P IPv4 Adj-SID:     150, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC2-1.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.0.11
       Neighbor's IP address: 10.35.0.10
-      Local interface index: 131, Remote interface index: 128
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2414
-      P2P IPv4 Adj-SID:    2414, Weight:   0, Flags: -BVL--
+      Local interface index: 78, Remote interface index: 78
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 151
+      P2P IPv4 Adj-SID:     151, Weight:   0, Flags: -BVL--
     IS extended neighbor: L-DC2-1A.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.22.0
       Neighbor's IP address: 10.35.22.1
-      Local interface index: 132, Remote interface index: 89
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2415
-      P2P IPv4 Adj-SID:    2415, Weight:   0, Flags: -BVL--
+      Local interface index: 79, Remote interface index: 73
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 153
+      P2P IPv4 Adj-SID:     153, Weight:   0, Flags: -BVL--
     IS extended neighbor: L-DC2-1B.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.22.2
       Neighbor's IP address: 10.35.22.3
-      Local interface index: 133, Remote interface index: 80
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 2416
-      P2P IPv4 Adj-SID:    2416, Weight:   0, Flags: -BVL--
+      Local interface index: 81, Remote interface index: 73
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 152
+      P2P IPv4 Adj-SID:     152, Weight:   0, Flags: -BVL--
     IP extended prefix: 10.35.0.0/31 metric 100 up
-    IP extended prefix: 10.35.22.2/31 metric 100 up
-    IP extended prefix: 10.35.22.0/31 metric 100 up
-    IP extended prefix: 10.35.0.10/31 metric 100 up
     IP extended prefix: 10.35.0.8/31 metric 100 up
+    IP extended prefix: 10.35.0.10/31 metric 100 up
+    IP extended prefix: 10.35.22.0/31 metric 100 up
+    IP extended prefix: 10.35.22.2/31 metric 100 up
     IP extended prefix: 10.35.2.2/32 metric 0 up
       8 bytes of subtlvs
       Node SID, Flags: 0x40(R:0,N:1,P:0,E:0,V:0,L:0), Algo: SPF(0), Value: 2002
@@ -461,29 +483,29 @@ S-DC2-2.00-00 Sequence: 0x102, Checksum: 0xe30b, Lifetime: 54196 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-L-DC2-1A.00-00 Sequence: 0x7e, Checksum: 0x53e, Lifetime: 42689 secs
+L-DC2-1A.00-00 Sequence: 0xa, Checksum: 0x95be, Lifetime: 62674 secs
   IPV4 Index: 2003
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
    IS neighbor: S-DC2-1.00                    Metric:      100
      Two-way fragment: S-DC2-1.00-00, Two-way first fragment: S-DC2-1.00-00
-     P2P IPv4 Adj-SID:    1093, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:      61, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC2-2.00                    Metric:      100
      Two-way fragment: S-DC2-2.00-00, Two-way first fragment: S-DC2-2.00-00
-     P2P IPv4 Adj-SID:    1092, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:      62, Weight:   0, Flags: -BVL--
    IP prefix: 10.35.2.3/32                    Metric:        0 Internal Up
    IP prefix: 10.35.21.0/31                   Metric:      100 Internal Up
    IP prefix: 10.35.22.0/31                   Metric:      100 Internal Up
 
   Header: LSP ID: L-DC2-1A.00-00, Length: 229 bytes
     Allocated length: 284 bytes, Router ID: 10.35.2.3
-    Remaining lifetime: 42689 secs, Level: 2, Interface: 83
-    Estimated free bytes: 55, Actual free bytes: 55
-    Aging timer expires in: 42689 secs
+    Remaining lifetime: 62674 secs, Level: 2, Interface: 70
+    Estimated free bytes: 95, Actual free bytes: 55
+    Aging timer expires in: 62674 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: L-DC2-1A.00-00, Length: 229 bytes, Lifetime : 65527 secs
-    Checksum: 0x53e, Sequence: 0x7e, Attributes: 0x3 <L1 L2>
+    Checksum: 0x95be, Sequence: 0xa, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -499,15 +521,15 @@ L-DC2-1A.00-00 Sequence: 0x7e, Checksum: 0x53e, Lifetime: 42689 secs
     IS extended neighbor: S-DC2-1.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.21.1
       Neighbor's IP address: 10.35.21.0
-      Local interface index: 82, Remote interface index: 129
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1093
-      P2P IPv4 Adj-SID:    1093, Weight:   0, Flags: -BVL--
+      Local interface index: 70, Remote interface index: 79
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 61
+      P2P IPv4 Adj-SID:      61, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC2-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.22.1
       Neighbor's IP address: 10.35.22.0
-      Local interface index: 89, Remote interface index: 132
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 1092
-      P2P IPv4 Adj-SID:    1092, Weight:   0, Flags: -BVL--
+      Local interface index: 73, Remote interface index: 79
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 62
+      P2P IPv4 Adj-SID:      62, Weight:   0, Flags: -BVL--
     IP extended prefix: 10.35.21.0/31 metric 100 up
     IP extended prefix: 10.35.22.0/31 metric 100 up
     IP extended prefix: 10.35.2.3/32 metric 0 up
@@ -519,29 +541,29 @@ L-DC2-1A.00-00 Sequence: 0x7e, Checksum: 0x53e, Lifetime: 42689 secs
     Authentication data: 23 bytes
   No queued transmissions
 
-L-DC2-1B.00-00 Sequence: 0x78, Checksum: 0x3333, Lifetime: 54114 secs
+L-DC2-1B.00-00 Sequence: 0xa, Checksum: 0xce25, Lifetime: 62674 secs
   IPV4 Index: 2004
   Node Segment Blocks Advertised:
     Start Index : 0, Size : 100000, Label-Range: [ 900000, 999999 ]
    IS neighbor: S-DC2-1.00                    Metric:      100
      Two-way fragment: S-DC2-1.00-00, Two-way first fragment: S-DC2-1.00-00
-     P2P IPv4 Adj-SID:     268, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:      52, Weight:   0, Flags: -BVL--
    IS neighbor: S-DC2-2.00                    Metric:      100
      Two-way fragment: S-DC2-2.00-00, Two-way first fragment: S-DC2-2.00-00
-     P2P IPv4 Adj-SID:     269, Weight:   0, Flags: -BVL--
+     P2P IPv4 Adj-SID:      53, Weight:   0, Flags: -BVL--
    IP prefix: 10.35.2.4/32                    Metric:        0 Internal Up
    IP prefix: 10.35.21.2/31                   Metric:      100 Internal Up
    IP prefix: 10.35.22.2/31                   Metric:      100 Internal Up
 
   Header: LSP ID: L-DC2-1B.00-00, Length: 229 bytes
     Allocated length: 284 bytes, Router ID: 10.35.2.4
-    Remaining lifetime: 54114 secs, Level: 2, Interface: 82
-    Estimated free bytes: 55, Actual free bytes: 55
-    Aging timer expires in: 54114 secs
+    Remaining lifetime: 62674 secs, Level: 2, Interface: 73
+    Estimated free bytes: 95, Actual free bytes: 55
+    Aging timer expires in: 62674 secs
     Protocols: IP, IPv6
 
   Packet: LSP ID: L-DC2-1B.00-00, Length: 229 bytes, Lifetime : 65527 secs
-    Checksum: 0x3333, Sequence: 0x78, Attributes: 0x3 <L1 L2>
+    Checksum: 0xce25, Sequence: 0xa, Attributes: 0x3 <L1 L2>
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 
@@ -557,15 +579,15 @@ L-DC2-1B.00-00 Sequence: 0x78, Checksum: 0x3333, Lifetime: 54114 secs
     IS extended neighbor: S-DC2-1.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.21.3
       Neighbor's IP address: 10.35.21.2
-      Local interface index: 79, Remote interface index: 130
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 268
-      P2P IPv4 Adj-SID:     268, Weight:   0, Flags: -BVL--
+      Local interface index: 70, Remote interface index: 81
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 52
+      P2P IPv4 Adj-SID:      52, Weight:   0, Flags: -BVL--
     IS extended neighbor: S-DC2-2.00, Metric: default 100 SubTLV len: 29
       IP address: 10.35.22.3
       Neighbor's IP address: 10.35.22.2
-      Local interface index: 80, Remote interface index: 133
-      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 269
-      P2P IPv4 Adj-SID:     269, Weight:   0, Flags: -BVL--
+      Local interface index: 73, Remote interface index: 81
+      P2P IPV4 Adj-SID - Flags:0x70(F:0,B:1,V:1,L:1,S:0,P:0), Weight:0, Label: 53
+      P2P IPv4 Adj-SID:      53, Weight:   0, Flags: -BVL--
     IP extended prefix: 10.35.21.2/31 metric 100 up
     IP extended prefix: 10.35.22.2/31 metric 100 up
     IP extended prefix: 10.35.2.4/32 metric 0 up

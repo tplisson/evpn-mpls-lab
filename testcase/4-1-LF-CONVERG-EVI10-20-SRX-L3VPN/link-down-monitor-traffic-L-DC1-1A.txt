@@ -1,0 +1,8 @@
+L-DC1-1A                          Seconds: 3275                Time: 18:46:01
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+[...]
+ ae0         Down       13158695          (0)        491949999          (0)
+ ae1           Up       52180740         (28)       1877629349     (100010)
+ ae10          Up     2308862514     (100000)            65756          (0)
+[..]

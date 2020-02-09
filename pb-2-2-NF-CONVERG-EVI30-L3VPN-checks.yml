@@ -1,0 +1,52 @@
+---
+  - hosts: localhost:LEAF:SPINE
+    gather_facts: no
+    tasks:
+    - set_fact: 
+        testcase: 2-2-NF-CONVERG-EVI30-L3VPN
+        test_dir: "testcase/2-2-NF-CONVERG-EVI30-L3VPN/CHECKS"
+        cacheable: yes
+
+  - hosts: localhost
+    gather_facts: no
+    tasks:
+    - name: Create directories      
+      file: 
+        path: "{{playbook_dir}}/{{test_dir}}" 
+        state: directory
+
+  - hosts: LEAF
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+
+    - name: "{{testcase|upper}} - Gathering traffic statistics on LEAF routers"
+      juniper_junos_command:
+        command:
+          - "show interfaces descriptions"
+          - "show interfaces ae0 statistics"
+          - "show interfaces ae1 statistics"
+          - "show interfaces ae10.30 statistics"
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+        return_output: false
+
+  - hosts: SPINE
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+
+    - name: "{{testcase|upper}} - Gathering traffic statistics on SPINE routers"
+      juniper_junos_command:
+        command:
+          - "show interfaces descriptions"
+          - "show interfaces ae3 statistics"
+          - "show interfaces ae4 statistics"
+          - "show interfaces ae0 statistics"
+          - "show interfaces ae1 statistics"
+          - "show interfaces ae2 statistics"
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+        return_output: false

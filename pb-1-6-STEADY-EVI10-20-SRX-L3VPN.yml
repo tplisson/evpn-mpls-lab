@@ -5,7 +5,7 @@
   - set_fact: 
       testcase: 1-6-STEADY-EVI10-20-SRX-L3VPN
       config: type5-evi30
-      test_dir: "testcase/1.6-STEADY-EVI10-20-SRX-L3VPN"
+      test_dir: "testcase/1-6-STEADY-EVI10-20-SRX-L3VPN"
       cacheable: yes
   
     

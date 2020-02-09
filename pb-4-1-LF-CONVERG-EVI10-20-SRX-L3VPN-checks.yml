@@ -3,9 +3,8 @@
     gather_facts: no
     tasks:
     - set_fact: 
-        testcase: 4.1-LF-CONVERG-EVI10-20-SRX-L3VPN
-        config: type5-evi30
-        test_dir: "testcase/4.1-LF-CONVERG-EVI10-20-SRX-L3VPN"
+        testcase: 4-1-LF-CONVERG-EVI10-20-SRX-L3VPN
+        test_dir: "testcase/4-1-LF-CONVERG-EVI10-20-SRX-L3VPN/CHECKS"
         cacheable: yes
     
       

@@ -1,0 +1,15 @@
+################# LEAF
+show interfaces ae10 | match rate
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+
+################# SPINE
+show interfaces ae3 | match rate
+show interfaces ae4 | match rate
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+show interfaces ae2 | match rate
+
+################# SRX
+show interfaces reth2 | match rate
+

@@ -3,9 +3,8 @@
     gather_facts: no
     tasks:
     - set_fact: 
-        testcase: 5-1 LF-CONVERG-EVI10-20-SRX-TYPE5
-        config: type5-evi30
-        test_dir: "testcase/5.1-LF-CONVERG-EVI10-20-SRX-T5/4"
+        testcase: 5-1-LF-CONVERG-EVI10-20-SRX-TYPE5
+        test_dir: "testcase/5-1-LF-CONVERG-EVI10-20-SRX-T5/CHECKS"
         cacheable: yes
     
       

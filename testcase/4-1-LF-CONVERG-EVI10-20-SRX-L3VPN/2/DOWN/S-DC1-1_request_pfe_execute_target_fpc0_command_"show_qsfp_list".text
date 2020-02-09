@@ -1,0 +1,28 @@
+
+SENT: Ukern command: show qsfp list
+
+QSFP Toolkit summary:
+  wakeup count: 276092, debug: 0
+  thread: 0xdeb43a70, itable: 0xdeb116f8
+
+Index  Name   State
+-----  ----   -----
+    1  qsfp-0/0/0 Present
+    2  qsfp-0/0/1 Absent
+    3  qsfp-0/0/2 Absent
+    4  qsfp-0/0/3 Absent
+    5  qsfp-0/0/4 Absent
+    6  qsfp-0/0/5 Absent
+    7  qsfp-0/1/0 Present
+    8  qsfp-0/1/1 Present
+    9  qsfp-0/1/2 Present
+   10  qsfp-0/1/3 Present
+   11  qsfp-0/1/4 Present
+   12  qsfp-0/1/5 Absent
+   13  qsfp-0/1/6 Absent
+   14  qsfp-0/1/7 Absent
+   15  qsfp-0/1/8 Absent
+   16  qsfp-0/1/9 Absent
+   17  qsfp-0/1/10 Absent
+   18  qsfp-0/1/11 Absent
+

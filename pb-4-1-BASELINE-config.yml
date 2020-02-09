@@ -1,9 +1,0 @@
----
-- name: Import & Deploy Fabric configuration
-  import_playbook: pb-build-fabric.yml
-
-- name: Import & Deploy EVI 10 configuration
-  import_playbook: pb-build-evi10.yml
-
-- name: Import & Deploy EVI 20 configuration
-  import_playbook: pb-build-evi20.yml

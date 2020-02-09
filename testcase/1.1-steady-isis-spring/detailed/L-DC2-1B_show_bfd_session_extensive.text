@@ -3,7 +3,7 @@
 Address                  State     Interface      Time     Interval  Multiplier
 10.35.2.1                Up                       0.900     0.300        3   
  Client BGP, TX interval 0.300, RX interval 0.300
- Session up time 03:04:15, previous down time 00:00:21
+ Session up time 00:40:58
  Local diagnostic None, remote diagnostic None
  Remote state Up, version 1
  Replicated 
@@ -12,18 +12,18 @@ Address                  State     Interface      Time     Interval  Multiplier
  Adaptive async TX interval 0.300, RX interval 0.300
  Local min TX interval 0.300, minimum RX interval 0.300, multiplier 3
  Remote min TX interval 0.300, min RX interval 0.300, multiplier 3
- Local discriminator 20, remote discriminator 54
+ Local discriminator 49, remote discriminator 129
  Echo mode disabled/inactive
  Remote is control-plane independent
  Adaptation disabled 
  Multi-hop route table 0, local-address 10.35.2.4
-  Session ID: 0x17d
+  Session ID: 0x145
 
                                                   Detect   Transmit
 Address                  State     Interface      Time     Interval  Multiplier
 10.35.2.2                Up                       0.900     0.300        3   
  Client BGP, TX interval 0.300, RX interval 0.300
- Session up time 03:04:06
+ Session up time 00:40:54
  Local diagnostic None, remote diagnostic None
  Remote state Up, version 1
  Replicated 
@@ -32,18 +32,18 @@ Address                  State     Interface      Time     Interval  Multiplier
  Adaptive async TX interval 0.300, RX interval 0.300
  Local min TX interval 0.300, minimum RX interval 0.300, multiplier 3
  Remote min TX interval 0.300, min RX interval 0.300, multiplier 3
- Local discriminator 26, remote discriminator 54
+ Local discriminator 50, remote discriminator 105
  Echo mode disabled/inactive
  Remote is control-plane independent
  Adaptation disabled 
  Multi-hop route table 0, local-address 10.35.2.4
-  Session ID: 0x184
+  Session ID: 0x150
 
                                                   Detect   Transmit
 Address                  State     Interface      Time     Interval  Multiplier
 10.35.21.2               Up        xe-0/1/0:0     0.150     0.050        3   
  Client LACPD, TX interval 0.050, RX interval 0.050
- Session up time 1w0d 20:53:30
+ Session up time 00:56:46
  Local diagnostic None, remote diagnostic None
  Remote state Up, version 1
  Replicated 
@@ -52,7 +52,7 @@ Address                  State     Interface      Time     Interval  Multiplier
  Adaptive async TX interval 0.050, RX interval 0.050
  Local min TX interval 0.050, minimum RX interval 0.050, multiplier 3
  Remote min TX interval 0.050, min RX interval 0.050, multiplier 3
- Local discriminator 24, remote discriminator 51
+ Local discriminator 42, remote discriminator 105
  Echo mode disabled/inactive
  Remote is control-plane independent
  Adaptation disabled 
@@ -62,7 +62,7 @@ Address                  State     Interface      Time     Interval  Multiplier
 Address                  State     Interface      Time     Interval  Multiplier
 10.35.22.2               Up        xe-0/1/1:0     0.150     0.050        3   
  Client LACPD, TX interval 0.050, RX interval 0.050
- Session up time 1w0d 20:53:25
+ Session up time 00:56:46
  Local diagnostic None, remote diagnostic None
  Remote state Up, version 1
  Replicated 
@@ -71,7 +71,7 @@ Address                  State     Interface      Time     Interval  Multiplier
  Adaptive async TX interval 0.050, RX interval 0.050
  Local min TX interval 0.050, minimum RX interval 0.050, multiplier 3
  Remote min TX interval 0.050, min RX interval 0.050, multiplier 3
- Local discriminator 25, remote discriminator 48
+ Local discriminator 43, remote discriminator 87
  Echo mode disabled/inactive
  Remote is control-plane independent
  Adaptation disabled 

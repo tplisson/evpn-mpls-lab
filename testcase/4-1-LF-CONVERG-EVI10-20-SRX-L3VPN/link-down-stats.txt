@@ -1,0 +1,59 @@
+################# LEAF
+{master}
+tplisson@L-DC1-1A> show interfaces ae10 | match rate
+Feb 09 18:48:25
+  Input rate     : 1088933848 bps (100003 pps)
+  Output rate    : 384 bps (0 pps)
+
+{master}
+tplisson@L-DC1-1A> show interfaces ae0 | match rate
+Feb 09 18:48:25
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+
+{master}
+tplisson@L-DC1-1A> show interfaces ae1 | match rate
+Feb 09 18:48:25
+  Input rate     : 13848 bps (30 pps)
+  Output rate    : 1074501088 bps (100010 pps)
+
+
+
+################# SPINE
+{master}
+tplisson@S-DC1-1> show interfaces ae3 | match rate
+Feb 09 18:49:09
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+
+{master}
+tplisson@S-DC1-1> show interfaces ae4 | match rate
+Feb 09 18:49:09
+  Input rate     : 860387912 bps (80031 pps)
+  Output rate    : 2496 bps (3 pps)
+
+{master}
+tplisson@S-DC1-1> show interfaces ae0 | match rate
+Feb 09 18:49:09
+  Input rate     : 11184 bps (26 pps)
+  Output rate    : 750904176 bps (70008 pps)
+
+{master}
+tplisson@S-DC1-1> show interfaces ae1 | match rate
+Feb 09 18:49:09
+  Input rate     : 10792 bps (25 pps)
+  Output rate    : 1182604832 bps (110009 pps)
+
+{master}
+tplisson@S-DC1-1> show interfaces ae2 | match rate
+Feb 09 18:49:09
+  Input rate     : 12808 bps (29 pps)
+  Output rate    : 3664 bps (7 pps)
+
+
+################# SRX
+{primary:node0}
+tplisson@SRX-ANS-3> show interfaces reth2 | match rate
+Feb 09 18:42:14
+  Input rate     : 2148829824 bps (200086 pps)
+  Output rate    : 2147827224 bps (199987 pps)

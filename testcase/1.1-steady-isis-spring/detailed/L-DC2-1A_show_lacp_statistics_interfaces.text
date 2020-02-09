@@ -1,12 +1,12 @@
 
 Aggregated interface: ae0
     LACP Statistics:       LACP Rx     LACP Tx   Unknown Rx   Illegal Rx 
-      xe-0/1/0:0             11632       11638            0            0
+      xe-0/1/0:0               120         119            0            0
 
 Aggregated interface: ae1
     LACP Statistics:       LACP Rx     LACP Tx   Unknown Rx   Illegal Rx 
-      xe-0/1/1:0             11632       11638            0            0
+      xe-0/1/1:0               119         120            0            0
 
 Aggregated interface: ae10
     LACP Statistics:       LACP Rx     LACP Tx   Unknown Rx   Illegal Rx 
-      xe-0/0/0:0            346142      348411            0            0
+      xe-0/0/0:0              3147        3161            0            0

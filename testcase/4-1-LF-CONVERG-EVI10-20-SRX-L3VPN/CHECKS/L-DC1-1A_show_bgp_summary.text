@@ -1,0 +1,37 @@
+
+Threading mode: BGP I/O
+Groups: 3 Peers: 4 Down peers: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+bgp.l3vpn.0          
+                      58         54          0          0          0          0
+bgp.l3vpn-inet6.0    
+                      70         70          0          0          0          0
+bgp.evpn.0           
+                     148         74          0          0          0          0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+10.10.1.111           65111         69         69       0       3       30:08 Establ
+  vrf10.inet.0: 1/2/2/0
+10.35.1.1             64514        393        107       0       0       30:22 Establ
+  __default_evpn__.evpn.0: 2/2/2/0
+  bgp.evpn.0: 67/74/74/0
+  bgp.l3vpn-inet6.0: 35/35/35/0
+  bgp.l3vpn.0: 28/29/29/0
+  vlan10.evpn.0: 11/11/11/0
+  vlan30.evpn.0: 54/61/61/0
+  vrf10.inet.0: 0/17/17/0
+  vrf10.inet6.0: 0/18/18/0
+  vrf30.inet.0: 1/12/12/0
+  vrf30.inet6.0: 2/17/17/0
+10.35.1.2             64514        383        105       0       0       30:18 Establ
+  __default_evpn__.evpn.0: 0/2/2/0
+  bgp.evpn.0: 7/74/74/0
+  bgp.l3vpn-inet6.0: 35/35/35/0
+  bgp.l3vpn.0: 26/29/29/0
+  vlan10.evpn.0: 0/11/11/0
+  vlan30.evpn.0: 7/61/61/0
+  vrf10.inet.0: 4/17/17/0
+  vrf10.inet6.0: 4/18/18/0
+  vrf30.inet.0: 1/12/12/0
+  vrf30.inet6.0: 2/17/17/0
+101::111              65111         68         69       0       3       29:57 Establ
+  vrf10.inet6.0: 1/2/2/0

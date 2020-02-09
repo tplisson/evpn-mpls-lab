@@ -5,7 +5,7 @@
     - set_fact:
         testcase: 1-7-STEADY-EVI10-20-SRX-TYPE5
         config: type5-evi30
-        test_dir: "testcase/1.7-STEADY-EVI10-20-SRX-TYPE5/"
+        test_dir: "testcase/1-7-STEADY-EVI10-20-SRX-TYPE5/"
         cacheable: yes
     
       

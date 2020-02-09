@@ -1,0 +1,16 @@
+
+Label space Total   Available        Applications
+LSI         899984  899926 (99.99% ) BGP/LDP VPLS with no-tunnel-services, BGP L3VPN with vrf-table-label
+Block       899984  899926 (99.99% ) BGP/LDP VPLS with tunnel-services, BGP L2VPN
+Dynamic     899984  899926 (99.99% ) RSVP, LDP, PW, L3VPN, RSVP-P2MP, LDP-P2MP, MVPN, EVPN, BGP
+Static      48576   48576  (100.00%) Static LSP, Static PW
+Effective Ranges
+Range name  Shared with Start   End      
+Dynamic     16      899999  
+Static      1000000 1048575 
+SRGB        900000  999999   ISIS   
+Configured Ranges
+Range name  Shared with Start   End      
+Dynamic     16      899999  
+Static      1000000 1048575 
+SRGB        900000  999999   ISIS   

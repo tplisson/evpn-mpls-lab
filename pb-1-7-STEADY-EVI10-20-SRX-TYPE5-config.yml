@@ -3,11 +3,11 @@
   gather_facts: no
   tasks:
   - set_fact: 
-      testcase: 1.7-STEADY-EVI10-20-SRX-TYPE5
+      testcase: 1-7-STEADY-EVI10-20-SRX-TYPE5
       cacheable: yes
 
 
-- name: Deploy EVPN {{config|upper}}
+- name: STEADY STATE
   hosts: [ L-DC1, SPINE ]
   roles:
     - Juniper.junos

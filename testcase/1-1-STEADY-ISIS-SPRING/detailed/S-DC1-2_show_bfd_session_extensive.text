@@ -1,0 +1,198 @@
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.0.4                Up        xe-0/1/2:0     0.150     0.050        3   
+ Client LACPD, TX interval 0.050, RX interval 0.050
+ Session up time 01:02:42
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Micro BFD
+ Min async interval 0.050, min slow interval 1.000
+ Adaptive async TX interval 0.050, RX interval 0.050
+ Local min TX interval 0.050, minimum RX interval 0.050, multiplier 3
+ Remote min TX interval 0.050, min RX interval 0.050, multiplier 3
+ Local discriminator 105, remote discriminator 106
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+  Session ID: 0x0
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.0.7                Up        xe-0/1/0:0     0.150     0.050        3   
+ Client LACPD, TX interval 0.050, RX interval 0.050
+ Session up time 01:02:43
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Micro BFD
+ Min async interval 0.050, min slow interval 1.000
+ Adaptive async TX interval 0.050, RX interval 0.050
+ Local min TX interval 0.050, minimum RX interval 0.050, multiplier 3
+ Remote min TX interval 0.050, min RX interval 0.050, multiplier 3
+ Local discriminator 102, remote discriminator 101
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+  Session ID: 0x0
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.0.9                Up        xe-0/1/1:0     0.150     0.050        3   
+ Client LACPD, TX interval 0.050, RX interval 0.050
+ Session up time 01:02:33
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Micro BFD
+ Min async interval 0.050, min slow interval 1.000
+ Adaptive async TX interval 0.050, RX interval 0.050
+ Local min TX interval 0.050, minimum RX interval 0.050, multiplier 3
+ Remote min TX interval 0.050, min RX interval 0.050, multiplier 3
+ Local discriminator 106, remote discriminator 83
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+  Session ID: 0x0
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.1.1                Up                       0.900     0.300        3   
+ Client BGP, TX interval 0.300, RX interval 0.300
+ Session up time 00:46:44
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Multi hop BFD
+ Min async interval 0.300, min slow interval 1.000
+ Adaptive async TX interval 0.300, RX interval 0.300
+ Local min TX interval 0.300, minimum RX interval 0.300, multiplier 3
+ Remote min TX interval 0.300, min RX interval 0.300, multiplier 3
+ Local discriminator 131, remote discriminator 133
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+ Multi-hop route table 0, local-address 10.35.1.2
+  Session ID: 0x29f
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.1.3                Up                       0.900     0.300        3   
+ Client BGP, TX interval 0.300, RX interval 0.300
+ Session up time 00:46:50
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Multi hop BFD
+ Min async interval 0.300, min slow interval 1.000
+ Adaptive async TX interval 0.300, RX interval 0.300
+ Local min TX interval 0.300, minimum RX interval 0.300, multiplier 3
+ Remote min TX interval 0.300, min RX interval 0.300, multiplier 3
+ Local discriminator 128, remote discriminator 69
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+ Multi-hop route table 0, local-address 10.35.1.2
+  Session ID: 0x148
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.1.4                Up                       0.900     0.300        3   
+ Client BGP, TX interval 0.300, RX interval 0.300
+ Session up time 00:46:49
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Multi hop BFD
+ Min async interval 0.300, min slow interval 1.000
+ Adaptive async TX interval 0.300, RX interval 0.300
+ Local min TX interval 0.300, minimum RX interval 0.300, multiplier 3
+ Remote min TX interval 0.300, min RX interval 0.300, multiplier 3
+ Local discriminator 129, remote discriminator 61
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+ Multi-hop route table 0, local-address 10.35.1.2
+  Session ID: 0x155
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.2.1                Up                       0.900     0.300        3   
+ Client BGP, TX interval 0.300, RX interval 0.300
+ Session up time 00:46:52
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Multi hop BFD
+ Min async interval 0.300, min slow interval 1.000
+ Adaptive async TX interval 0.300, RX interval 0.300
+ Local min TX interval 0.300, minimum RX interval 0.300, multiplier 3
+ Remote min TX interval 0.300, min RX interval 0.300, multiplier 3
+ Local discriminator 127, remote discriminator 126
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+ Multi-hop route table 0, local-address 10.35.1.2
+  Session ID: 0x14c
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.2.2                Up                       0.900     0.300        3   
+ Client BGP, TX interval 0.300, RX interval 0.300
+ Session up time 00:46:50
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Multi hop BFD
+ Min async interval 0.300, min slow interval 1.000
+ Adaptive async TX interval 0.300, RX interval 0.300
+ Local min TX interval 0.300, minimum RX interval 0.300, multiplier 3
+ Remote min TX interval 0.300, min RX interval 0.300, multiplier 3
+ Local discriminator 130, remote discriminator 102
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+ Multi-hop route table 0, local-address 10.35.1.2
+  Session ID: 0x15c
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.12.1               Up        xe-0/1/3:0     0.150     0.050        3   
+ Client LACPD, TX interval 0.050, RX interval 0.050
+ Session up time 01:02:42
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Micro BFD
+ Min async interval 0.050, min slow interval 1.000
+ Adaptive async TX interval 0.050, RX interval 0.050
+ Local min TX interval 0.050, minimum RX interval 0.050, multiplier 3
+ Remote min TX interval 0.050, min RX interval 0.050, multiplier 3
+ Local discriminator 104, remote discriminator 58
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+  Session ID: 0x0
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.12.3               Up        xe-0/1/4:0     0.150     0.050        3   
+ Client LACPD, TX interval 0.050, RX interval 0.050
+ Session up time 01:02:42
+ Local diagnostic None, remote diagnostic None
+ Remote state Up, version 1
+ Replicated 
+ Session type: Micro BFD
+ Min async interval 0.050, min slow interval 1.000
+ Adaptive async TX interval 0.050, RX interval 0.050
+ Local min TX interval 0.050, minimum RX interval 0.050, multiplier 3
+ Remote min TX interval 0.050, min RX interval 0.050, multiplier 3
+ Local discriminator 103, remote discriminator 50
+ Echo mode disabled/inactive
+ Remote is control-plane independent
+ Adaptation disabled 
+  Session ID: 0x0
+
+10 sessions, 10 clients
+Cumulative transmit rate 116.7 pps, cumulative receive rate 116.7 pps

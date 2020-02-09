@@ -1,15 +1,4 @@
 
-Aggregated interface: ae11
-    LACP state:       Role   Exp   Def  Dist  Col  Syn  Aggr  Timeout  Activity
-      xe-0/0/0:1     Actor    No   Yes    No   No   No   Yes     Fast    Active
-      xe-0/0/0:1   Partner    No   Yes    No   No   No   Yes     Fast   Passive
-    LACP protocol:        Receive State  Transmit State          Mux State 
-      xe-0/0/0:1              Defaulted   Fast periodic           Detached
-
-    LACP hold-timer:  Up, Enabled, Interval: 2 sec
-                        Status         Re-Start Cnt   TTE(sec)    Hold Start
-    xe-0/0/0:1          Not-Running    NA             NA          NA                
-
 Aggregated interface: ae0
     LACP state:       Role   Exp   Def  Dist  Col  Syn  Aggr  Timeout  Activity
       xe-0/1/0:0     Actor    No    No   Yes  Yes  Yes   Yes     Slow    Active

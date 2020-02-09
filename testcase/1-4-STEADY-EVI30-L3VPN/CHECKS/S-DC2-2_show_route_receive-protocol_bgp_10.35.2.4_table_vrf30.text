@@ -1,0 +1,12 @@
+
+
+vrf30.inet.0: 6 destinations, 24 routes (6 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+  10.30.0.0/24            10.35.2.4                    100        I
+  10.30.0.222/32          10.35.2.4                    100        I
+
+vrf30.inet6.0: 11 destinations, 36 routes (11 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+  300::/64                ::ffff:10.35.2.4             100        I
+  300::222/128            ::ffff:10.35.2.4             100        I
+  fe80::30:222/128        ::ffff:10.35.2.4             100        I

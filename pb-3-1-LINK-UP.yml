@@ -1,24 +1,48 @@
 ---
-- hosts: localhost:S-DC1-1
-  gather_facts: no
-  tasks:
-  - set_fact: 
-      testcase: 'Test Case 3-1 LF-CONVERG-EVI30-TYPE-5'
-      cacheable: yes
+  - hosts: localhost:S-DC1-1
+    gather_facts: no
+    tasks:
+    - set_fact: 
+        testcase: '3-1-LF-CONVERG-EVI30-TYPE-5'
+        test_dir: "testcase/3-1-LF-CONVERG-EVI30-TYPE-5/6/UP"
+        cacheable: yes
   
-- name: "{{testcase|upper}} - 5th attempt - Restoring interface ae3 on S-DC1-1 (laser off)"
-  hosts: S-DC1-1
-  roles:
-    - Juniper.junos
-  connection: local
-  gather_facts: no
-  tasks:
-  - name: Bringing up interface
-    juniper_junos_command:
-      command:
-        - 'request pfe execute target fpc0 command "test qsfp 10 laser on"'
-    register: response
-    
-  - name: Print the coutput.
-    debug:
-      var: response
+  - hosts: localhost
+    gather_facts: no
+    tasks:
+    - file: 
+        path: "{{playbook_dir}}/{{test_dir}}" 
+        state: directory
+  
+  - name: Bringing up interface ae3 on S-DC1-1 (laser on)
+    hosts: S-DC1-1
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Bringing up interface
+      juniper_junos_command:
+        command:
+          - 'set cli timestamp'
+          - 'request pfe execute target fpc0 command "test qsfp 10 laser on"'
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+      register: response
+    - debug:
+        var: response
+
+    - name: sleep for 60 seconds and continue with play
+      wait_for:
+        timeout: 60
+
+    - name: Checking interface status
+      juniper_junos_command:
+        command:
+          - "show interfaces ae3 terse"
+          - "show interfaces ae3 statistics"
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+      register: response
+    - debug:
+        var: response
+
+

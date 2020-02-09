@@ -1,0 +1,9 @@
+---
+  - name: Clean up the configuration
+    import_playbook: pb-wipe-all.yml
+
+  - name: Deploy Fabric configuration
+    import_playbook: pb-build-fabric.yml
+
+  - name: Deploy EVI 30 configuration
+    import_playbook: pb-build-type5-evi30.yml

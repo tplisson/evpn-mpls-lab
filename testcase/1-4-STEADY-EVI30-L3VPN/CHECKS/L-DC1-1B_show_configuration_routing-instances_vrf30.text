@@ -1,0 +1,6 @@
+
+description "VRF instance for IRB in VLAN 30";
+instance-type vrf;
+interface irb.30;
+vrf-target target:64514:30;
+vrf-table-label;
