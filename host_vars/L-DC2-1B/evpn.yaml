@@ -44,3 +44,5 @@ evi30:
   ipv6_mask: 64
   virtual_v4_mac: 04:ff:30:00:00:00
   virtual_v6_mac: 06:ff:30:00:00:00
+  ixiav4: 10.30.2
+  ixiav6: 302

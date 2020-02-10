@@ -1,0 +1,40 @@
+
+Physical interface: ae0, Enabled, Physical link is Down
+  Interface index: 230, SNMP ifIndex: 606
+  Description: L-DC1-1A ---- S-DC1-1
+  Link-level type: Ethernet, MTU: 16000, Speed: Unspecified, BPDU Error: None,
+  MAC-REWRITE Error: None, Loopback: Disabled, Source filtering: Disabled,
+  Flow control: Disabled
+  Pad to minimum frame size: Disabled
+  Minimum links needed: 1, Minimum bandwidth needed: 1bps
+  Device flags   : Present Running
+  Interface flags: Hardware-Down SNMP-Traps Internal: 0x4000
+  Current address: 80:7f:f8:74:7c:8d, Hardware address: 80:7f:f8:74:7c:8d
+  Last flapped   : 2020-02-10 17:33:12 CET (00:00:48 ago)
+  Statistics last cleared: Never
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+  Input errors: 0, Output errors: 0
+
+  Logical interface ae0.0 (Index 70) (SNMP ifIndex 610)
+    Flags: Device-Down SNMP-Traps 0x4004000 Encapsulation: ENET2
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :      92885326          0  124284059217            0
+        Output:    2296573568          0 3095087022999            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol inet, MTU: 15986
+    Max nh cache: 100000, New hold nh limit: 100000, Curr nh cnt: 1,
+    Curr new hold cnt: 0, NH drop cnt: 0
+      Flags: Sendbcast-pkt-to-re, Is-Primary
+      Addresses, Flags: Dest-route-down Is-Preferred Is-Primary
+        Destination: 10.35.11.0/31, Local: 10.35.11.1
+    Protocol iso, MTU: 15983
+      Flags: Is-Primary
+    Protocol mpls, MTU: 15922, Maximum labels: 16
+      Flags: Is-Primary
+    Protocol multiservice, MTU: Unlimited
+      Flags: Is-Primary

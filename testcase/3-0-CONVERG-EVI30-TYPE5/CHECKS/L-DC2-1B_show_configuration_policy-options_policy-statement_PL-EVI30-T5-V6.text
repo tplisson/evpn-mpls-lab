@@ -1,0 +1,8 @@
+
+term SLASH-64 {
+    from {
+        route-filter 300::0/64 orlonger;
+        prefix-list-filter PL-EVI30-V6 orlonger;
+    }
+    then accept;
+}

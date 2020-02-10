@@ -1,0 +1,8 @@
+
+term SLASH-32 {
+    from {
+        route-filter 10.30.0.0/24 orlonger;
+        prefix-list-filter PL-EVI30-V4 orlonger;
+    }
+    then accept;
+}

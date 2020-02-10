@@ -1,0 +1,639 @@
+Booting from Flash A
+
+FPGA Reset Reason = 0x3
+
+Primary BIOS version CBEP_P_SUM1_00.13.01
+
+Booting from Flash A
+
+FPGA Reset Reason = 0x83
+
+Primary BIOS version CBEP_P_SUM1_00.13.01
+
+Total Memory Size = 64GB
+
+Checking Primary BIOS code integrity...Passed!
+Press Esc for boot options
+ME is in normal operational state
+
+Booting HDD00 (SFSA100GM3AA4TO-C-LB-64A-JUN)...
+
+Secure boot is enforced
+Welcome to GRUB!
+
+Secure Grub2 Diskboot
+
+                     GNU GRUB  version 2.02~juniper/rel_v4~
+
+ /----------------------------------------------------------------------------\
+ |*Serial console efi_P                                                       |
+ | Serial console jspare_P                                                    |
+ |                                                                            |
+ |                                                                            |
+ |                                                                            |
+ |                                                                            |
+ |                                                                            |
+ |                                                                            |
+ |                                                                            |
+ |                                                                            |
+ |                                                                            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+      Use the ^ and v keys to select which entry is highlighted.
+      Press enter to boot the selected OS, `e' to edit the commands
+      before booting or `c' for a command-line. ESC to return previous
+      menu.
+   The highlighted entry will be executed automatically in 0s.
+  Booting `Serial console efi_P'
+
+error: no suitable video mode found.
+Booting in blind mode
+i8042: No controller found
+EDAC sbridge: : IMP sbridge device found for derive 8086:6fa0
+EDAC sbridge: : MCI:
+VMHost crash kernel loaded at reserved memory
+Current Boot: Boot0000* HDD00 (SFSA100GM3AA4TO-C-LB-64A-JUN)
+detected current boot medium.. ssd
+Starting file system check on rootfs
+findfs: unable to resolve 'LABEL=jrootp_P'
+fsck from util-linux 2.23.2
+fsck from util-linux 2.23.2
+e2fsck 1.42.8 (20-Jun-2013)
+jrootp_P: clean, 49878/131072 files, 428131/524288 blocks
+INIT: version 2.88 booting
+Checking SELinux security contexts:
+Running /initial_setup.sh
+Type ^C to abort
+Running initial setup scripts
+-> running /etc/initial_setup/00read_only_root.sh
+Check ...
+/dev/sda3 on / type ext4 (ro,relatime,seclabel,data=orget_fpga_base_addr: RE-FPGA-DRV: Got the Base address 0xfc800000
+dered)
+sysfs on /sys type sysfs (rw,relatime,seclabel)
+selinuxuio_fpga_probe: RE-FPGA-DRV: Got the Base address 0xfc800000
+fs on /sys/fs/selinux type selinuxfs (rw,relatime)
+proc on /proRE-FPGA-DRV: RE FPGA type LPCM
+c type proc (rw,relatime)
+efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,relatime)
+Check ...
+cat: /etc/modules-load.d/*.conf: No such file or directory
+Starting udev
+udevd[275]: RUN+="socket:..." support will be removed from a future udev release. Please remove it from: /etc/udev/rules.d/multipath.rules:7 and use libudev to subscribe to events.
+
+  4 logical volume(s) in volume group "jvg_S" now active
+  4 logical volume(s) in volume group "jvg_P" now active
+  Reading all physical volumes.  This may take a while...
+  Found volume group "jvg_S" using metadata type lvm2
+  Found volume group "jvg_P" using metadata type lvm2
+rm: cannot remove '/var/lib/rpm/__db.001': Read-only file system
+rm: cannot remove '/var/lib/rpm/__db.002': Read-only file system
+rm: cannot remove '/var/lib/rpm/__db.003': Read-only file system
+Cleaned RW Root, proceeding...
+mount: proc is already mounted or /proc busy
+       proc is already mounted on /proc
+INIT: Entering runlevel: 3ootlog
+umount: /.old/tdev/.union/.s: target is busy.
+        (In some cases useful info about processes that use
+         the device is found by lsof(8) or fuser(1))
+rmdir: missing operand
+Try 'rmdir --help' for more information.
+Starting system message bus: dbus.
+Mounting cgroups...Done
+Starting OpenBSD Secure Shell server: sshd
+done.
+Configuring network interfaces... done.
+Starting rpcbind daemon...done.
+starting statd: done
+Starting domain name service: named.
+Starting glusterd:
+exportfs: can't open /etc/exports for reading
+udevd[275]: failed to create queue file: No such file or directory
+
+starting 8 nfsd kernel threads: done
+starting mountd: done
+Starting ntpd: done
+starting rsyslogd ... done
+Starting wdmd:  Success
+Starting internet superserver: xinetd.
+ * Starting Avahi mDNS/DNS-SD Daemon: avahi-daemon
+Creating VFs...
+Starting sanlock:  Success
+Inserting openvswitch module.
+Starting ovsdb-server.
+Configuring Open vSwitch system IDs.
+Starting ovs-vswitchd.
+Enabling remote OVSDB managers.
+Enabling gre with iptables.
+ * Starting virtualization library daemon: libvirtd
+no /usr/bin/dnsmasq found; none killed
+Starting crond: OK
+starting mcelog... done
+Initializing platform services:              stty: /dev/ttyS3: Input/output error
+RE FPGA: Read reg 0x3 <- Data 0x00
+
+
+Hardware Threading feature has been disabled on CPU...
+DEBUG: Core to VM: 6, total_vcpus: 6, ht_disable: 1, resize: , cpuset: 0-7, excl_cpus: 2, Cores: 8
+OK.
+Creating the macvlan0 interface...
+Cannot change scatter-gather
+Cannot change tcp-segmentation-offload
+Starting random number generator daemon.
+Executing rc.local ...
+Running final setup scripts
+-> running /etc/final_setup/00junos_setup.sh
+Running junos setup scripts
+System local time now is Mon Feb 10 18:00:10 CET 2020..
+Enabling write cache on disk  /dev/sda5
+Symlink /junos/jinstall-current.img to /junos/Current.p/junos-install-mx-x86-64-19.1R2.8.img
+lrwxrwxrwx. 1 root root 53 Feb 10 18:00 /junos/jinstall-current.img -> /junos/Current.p/junos-install-mx-x86-64-19.1R2.8.img
+Restarting OpenBSD Secure Shell server: sshdstopped /usr/sbin/sshd (pid 2215)
+.
+stopping rsyslogd ... done
+starting rsyslogd ... done
+Restarting OpenBSD Secure Shell server: sshdstopped /usr/sbin/sshd (pid 3335)
+.
+-> running /etc/final_setup/011tvp_setup.sh
+ln: failed to create symbolic link '/etc/init.d/lcmd': File exists
+Executing tvp-setup-MX10002.sh
+CBFPGA: PCIe bus:dev:func = [17:0.0]midplaneid_dump : local_slot is RE0
+midplaneid_dump : reg_val is 1, going ahead with ideeprom read
+midplaneid_dump : Done reading midplane, relinquishing bus
+setup images for RE0
+4+0 records in
+4+0 records out
+4 bytes (4 B) copied, 7.0132e-05 s, 57.0 kB/s
+8+0 records in
+8+0 records out
+8 bytes (8 B) copied, 6.6777e-05 s, 120 kB/s
+cut: /var/run/cpuboardideeprom.dat: No such file or directory
+0print_re_slot_id:607: Error in file open /junos/images/1/config/vm_pseudo_eeprom.bin
+cut: /var/run/cpuboardideeprom.dat: No such file or directory
+add map loop0p1 (252:8): 0 62500 linear /dev/loop0 1
+add map loop0p2 (252:9): 0 187500 linear /dev/loop0 62501
+cp: omitting directory '/var/platforms-supported/0ca6/default//jdm'
+cp: omitting directory '/var/platforms-supported/0ca6///default'
+cp: cannot stat '/var/platforms-supported/0ca6///mx10002': Too many levels of symbolic links
+0
+RE FPGA: Read reg 0x5 <- Data 0x03
+Restarting SSHD server..
+Restarting OpenBSD Secure Shell server: sshdstopped /usr/sbin/sshd (pid 3534)
+.
+-> running /etc/final_setup/01boot_setup.sh
+Setting the correct entry
+-> running /etc/final_setup/01setup_environment.sh
+Set Environment ...
+-> running /etc/final_setup/03boot_info.sh
+Reading active SPI boot flash info
+-> running /etc/final_setup/04CheckDisk.sh
+-> running /etc/final_setup/05fips-check.sh
+-> running /etc/final_setup/09persona_cleanup.sh
+Synchronizing UEFI key-store:
+Juniper Dev keys are not revoked. Doing nothing
+Stopping Bootlog daemon: bootlogd.
+show interfaces description
+set cli timestamp
+show interfaces ae10 | grep rate
+show interfaces ae0 | grep rate
+show interfaces ae1 | grep rate
+Consoles: serial port
+BIOS drive C: is disk0
+BIOS drive D: is disk1
+BIOS drive E: is disk2
+BIOS drive F: is disk3
+BIOS 639kB/3668980kB available memory
+
+FreeBSD/x86 bootstrap loader, Revision 1.1
+(Thu Sep 26 03:59:34 PDT 2019 builder@feyrith.juniper.net)
+-
+
+Booting from Junos volume ...
+|
+/packages/sets/active/boot/os-kernel/kernel text=0x4536f8 data=0x83b70+0x30d910 syms=[0x8+0x95f58+0x8+0x82704]
+/packages/sets/active/boot/os-kernel/contents.izo size=0x881e00
+/packages/sets/active/boot/os-kernel/miibus.ko size 0x3fda8 at 0x157f000
+loading required module 'netstack'
+/packages/sets/active/boot/netstack/netstack.ko size 0x13f2620 at 0x15bf000
+loading required module 'crypto'
+/packages/sets/active/boot/os-crypto/crypto.ko size 0x43e28 at 0x29b2000
+/packages/sets/active/boot/os-kernel/if_em.ko size 0x7f858 at 0x29f6000
+/packages/sets/active/boot/os-kernel/if_fxp.ko size 0x13668 at 0x2a76000
+/packages/sets/active/boot/os-kernel/if_igb.ko size 0x6b888 at 0x2a8a000
+/packages/sets/active/boot/os-kernel/if_ixlv1211k.ko size 0x34050 at 0x2af6000
+/packages/sets/active/boot/junos-modules-platform/fxpci.ko size 0xca38 at 0x2b2b000
+/packages/sets/active/boot/junos-modules-platform/pcidev.ko size 0x8308 at 0x2b38000
+loading required module 'mtx_re'
+/packages/sets/active/boot/junos-net-platform/mtx_re.ko size 0x28b910 at 0x2b41000
+loading required module 'pvi_db'
+/packages/sets/active/boot/netstack/pvi_db.ko size 0x68d0 at 0x2dcd000
+/packages/sets/active/boot/netstack/acb.ko size 0x6e6a0 at 0x2dd4000
+/packages/sets/active/boot/netstack/ptxfabsw.ko size 0x6210 at 0x2e43000
+/packages/sets/active/boot/junos-modules/fips_core.ko size 0x6260 at 0x2e4a000
+/packages/sets/active/boot/junos-modules/hmac_drbg.ko size 0x9518 at 0x2e51000
+/packages/sets/active/boot/junos-modules/mac_sdk.ko size 0x12a00 at 0x2e5b000
+/packages/sets/active/boot/junos-modules/sdk_core.ko size 0x25a38 at 0x2e6e000
+/packages/sets/active/boot/junos-modules/junosprocfs.ko size 0x5830 at 0x2e94000
+/packages/sets/active/boot/junos-modules/mac_fips.ko size 0x5790 at 0x2e9a000
+/packages/sets/active/boot/os-vmguest/virtio.ko size 0x58b8 at 0x2ea0000
+/packages/sets/active/boot/os-vmguest/virtio_blk.ko size 0x7c68 at 0x2ea6000
+/packages/sets/active/boot/os-vmguest/virtio_pci.ko size 0x7318 at 0x2eae000
+/packages/sets/active/boot/os-vmguest/virtio_random.ko size 0x28b8 at 0x2eb6000
+/packages/sets/active/boot/os-vmguest/virtio_scsi.ko size 0xc760 at 0x2eb9000
+/packages/sets/active/boot/os-vmguest/virtio_9pnet.ko size 0xfbf0 at 0x2ec6000
+/packages/sets/active/boot/os-vmguest/virtio_9pfs.ko size 0x10890 at 0x2ed6000
+/packages/sets/active/boot/os-vmguest/if_vtnet.ko size 0x13470 at 0x2ee7000
+/packages/sets/active/boot/os-vmguest/if_vmx.ko size 0x121f8 at 0x2efb000
+Booting [/packages/sets/active/boot/os-kernel/kernel]...
+GDB: debug ports: uart
+GDB: current port: uart
+KDB: debugger backends: ddb gdb ndb
+KDB: current backend: ddb
+Copyright (c) 1992-2017 The FreeBSD Project.
+Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+	The Regents of the University of California. All rights reserved.
+FreeBSD is a registered trademark of The FreeBSD Foundation.
+FreeBSD JNPR-11.0-20190926.ca2fd68_builder_stable_11 #0 r356482+ca2fd683ff2(HEAD): Thu Sep 26 03:57:59 PDT 2019
+    builder@feyrith.juniper.net:/volume/build/junos/occam/llvm-5.0/sandbox-20190912/freebsd/stable_11/20190912.203715_builder_stable_11.ca2fd68/obj/amd64/juniper/kernels/JNPR-AMD64-PRD/kernel amd64
+Juniper clang version 5.0.2  (based on LLVM 5.0.2)
+VT(vga): text 80x25
+CPU: QEMU Virtual CPU version 1.7.2 (1600.04-MHz K8-class CPU)
+  Origin="GenuineIntel"  Id=0x663  Family=0x6  Model=0x6  Stepping=3
+  Features=0x783fbfd<FPU,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,MMX,FXSR,SSE,SSE2>
+  Features2=0x80802001<SSE3,CX16,POPCNT,HV>
+  AMD Features=0x20100800<SYSCALL,NX,LM>
+  AMD Features2=0x21<LAHF,ABM>
+  TSC: P-state invariant
+Hypervisor: Origin = "KVMKVMKVM"
+real memory  = 51539607552 (49152 MB)
+avail memory = 50024157184 (47706 MB)
+mtx_platform_early_bootinit: M/T/EX/SRX Series Early Boot Initialization
+mtx_platform_set_re_type: vm_retype :RE-S-2X00x6
+
+Using default hgcomm API hgcommdev_io_read
+TVP mode:1
+jnx_product_sub_type:1
+jnx_vm_index:0
+jnx_re_slotid:0
+jnx_re_tissu:0
+jnx_lc_issuboot:0
+jnx_re_fastboot:0
+TVP: Model Name read from HostOS is mx10002
+jnx_product_sub_type:4
+tvp modular platform 1 chas_max_fpc 2 router_max_fpc 2 VC enabled: 16 max_pfe_per_fpc: 3 cluster enabled 0
+Event timer "LAPIC" quality 100
+ACPI APIC Table: <BOCHS  BXPCAPIC>
+FreeBSD/SMP: Multiprocessor System Detected: 6 CPUs
+FreeBSD/SMP: 6 package(s)
+random: entropy device external interface
+random: <Fortuna> initialized
+Security policy loaded: MAC/veriexec (mac_veriexec)
+Security policy loaded: Junos MAC/SDK (mac_sdk)
+Security policy loaded: JUNOS MAC/privcheck (mac_privcheck)
+Security policy loaded: Junos MAC/fips (mac_fips)
+MAC/veriexec fingerprint module loaded: SHA1
+MAC/veriexec fingerprint module loaded: SHA256
+MAC/veriexec fingerprint module loaded: SHA384
+ioapic0 <Version 1.1> irqs 0-23 on motherboard
+Creating PCI Scan thread
+pcidev module loaded, 0 (null)
+Initializing M/T/EX platform properties ..
+Don't init dcf_ng_hw_token_init - bypassing the init
+nexus0
+ofwbus0: <Open Firmware Device Tree> on motherboard
+fdtio0: <FDT I/O port space> on ofwbus0
+fpga0: <RE system controller> port 0x191-0x198 on fdtio0
+vtvga0: <VT VGA driver> on motherboard
+cryptosoft0: <software crypto> on motherboard
+acpi0: <BOCHS BXPCRSDT> on motherboard
+acpi0: Power Button (fixed)
+cpu0: <ACPI CPU> on acpi0
+cpu1: <ACPI CPU> on acpi0
+cpu2: <ACPI CPU> on acpi0
+cpu3: <ACPI CPU> on acpi0
+cpu4: <ACPI CPU> on acpi0
+cpu5: <ACPI CPU> on acpi0
+atrtc0: <AT realtime clock> port 0x70-0x71,0x72-0x77 irq 8 on acpi0
+Event timer "RTC" frequency 32768 Hz quality 0
+hpet0: <High Precision Event Timer> iomem 0xfed00000-0xfed003ff on acpi0
+Timecounter "HPET" frequency 100000000 Hz quality 950
+Timecounter "ACPI-fast" frequency 3579545 Hz quality 900
+acpi_timer0: <24-bit timer at 3.579545MHz> port 0xb008-0xb00b on acpi0
+pcib0: <ACPI Host-PCI bridge> port 0xcf8-0xcff on acpi0
+pci0: <ACPI PCI bus> on pcib0
+isab0: <PCI-ISA bridge> at device 1.0 on pci0
+isa0: <ISA bus> on isab0
+atapci0: <Intel PIIX3 WDMA2 controller> port 0x1f0-0x1f7,0x3f6,0x170-0x177,0x376,0xc280-0xc28f at device 1.1 on pci0
+ata0: <ATA channel> at channel 0 on atapci0
+ata1: <ATA channel> at channel 1 on atapci0
+summitcb_mstr0: <Summit Control Subsystem> mem 0xfe400000-0xfe7fffff at device 2.0 on pci0
+summit CBC PCIe Function-1 (Mastership block) attach
+CB_FPGA0 map 0xfffff800fe400000: REG-0 = 0x11011804, REG-1 = 0x1304009b
+CB_FPGA0 map 0xfffff800fe400000: REG-144 = 0x11011804, REG- = 0x1304009b
+CB_FPGA0 map 0xfffff800fe400000: REG-146 = 0x00000005, REG- = 0x80010019
+xhci0: <Intel Wellsburg USB 3.0 controller> mem 0xfe900000-0xfe90ffff irq 11 at device 3.0 on pci0
+xhci0: 32 bytes context size, 64-bit DMA
+usbus0 on xhci0
+esb0: <i6300esb watchdog Driver, Version - 0.05> mem 0xfe910000-0xfe91000f at device 16.0 on pci0
+virtio_pci0: <VirtIO PCI Network adapter> port 0xc1e0-0xc1ff mem 0xfe911000-0xfe911fff irq 10 at device 17.0 on pci0
+vtnet0: <VirtIO Networking Adapter> on virtio_pci0
+virtio_pci1: <VirtIO PCI Network adapter> port 0xc200-0xc21f mem 0xfe912000-0xfe912fff irq 10 at device 18.0 on pci0
+vtnet1: <VirtIO Networking Adapter> on virtio_pci1
+virtio_pci2: <VirtIO PCI Block adapter> port 0xc100-0xc13f mem 0xfe913000-0xfe913fff irq 11 at device 19.0 on pci0
+vtblk0: <VirtIO Block Adapter> on virtio_pci2
+vtblk0: 17408MB (35651712 512 byte sectors)
+virtio_pci3: <VirtIO PCI Block adapter> port 0xc140-0xc17f mem 0xfe914000-0xfe914fff irq 10 at device 21.0 on pci0
+vtblk1: <VirtIO Block Adapter> on virtio_pci3
+vtblk1: 32768MB (67108864 512 byte sectors)
+pci0: <old> at device 22.0 (no driver attached)
+virtio_pci4: <VirtIO PCI SCSI adapter> port 0xc180-0xc1bf mem 0xfe916000-0xfe916fff irq 11 at device 23.0 on pci0
+vtscsi0: <VirtIO SCSI Adapter> on virtio_pci4
+virtio_pci5: <VirtIO PCI Network adapter> port 0xc220-0xc23f mem 0xfe917000-0xfe917fff irq 11 at device 28.0 on pci0
+vtnet2: <VirtIO Networking Adapter> on virtio_pci5
+virtio_pci6: <VirtIO PCI Network adapter> port 0xc240-0xc25f mem 0xfe918000-0xfe918fff irq 10 at device 29.0 on pci0
+vtnet3: <VirtIO Networking Adapter> on virtio_pci6
+virtio_pci7: <VirtIO PCI Entropy adapter> port 0xc260-0xc27f irq 10 at device 30.0 on pci0
+vtrnd0: <VirtIO Entropy Adapter> on virtio_pci7
+uart0: <16550 or compatible> port 0x3f8-0x3ff irq 4 on acpi0
+uart0: console (9600,n,8,1)
+uart0: [GIANT-LOCKED]
+uart1: <16550 or compatible> port 0x2f8-0x2ff irq 3 on acpi0
+uart1: [GIANT-LOCKED]
+orm0: <ISA Option ROM> at iomem 0xeb800-0xeffff on isa0
+uart2: <16550 or compatible> at port 0x3e8 irq 4 on isa0
+uart2: [GIANT-LOCKED]
+uart3: <16550 or compatible> at port 0x2e8 irq 3 on isa0
+uart3: [GIANT-LOCKED]
+Setting the peertype and VKS
+Setting the product type to TVP
+Initializing Kernel PVIDB.
+pvidb_size=0
+mt_product_prop_init: product_model = mx10002 mx10002
+mt_product_prop_init: Initialising MX Early PVIDB len = 63960
+Unified Services mode is turned off(0)
+Initializing product: 218 ..
+pfe_peer_smp_chk_product_supp: jnx_product_type: 218 mp_ncpus: 6 support: 1
+Setting up M/T interface operations and attributes
+
+ure_set_prodinfo Setting PDK(0xfffff80008e07780) vectors for Unified RE
+JUNOS procfs is initialized.
+Timecounters tick every 1.000 msec
+can't re-use a leaf (pvidb_rootnode)!
+tcp_ip_smp_supp_chk_product: jnx_product_type: 218 support: 1
+Registering tcp_platform_dependent = tcp_handle_special_ports
+md0: Preloaded image </packages/sets/active/boot/os-kernel/contents.izo> 8920576 bytes at 0xffffffff80cfd1e8
+usbus0: 5.0Gbps Super Speed USB v3.0
+ugen0.1: <0x8086 XHCI root HUB> at usbus0
+uhub0: <0x8086 XHCI root HUB, class 9/0, rev 3.00/1.00, addr 1> on usbus0
+ada0 at ata0 bus 0 scbus0 target 1 lun 0
+ada0: <QEMU HARDDISK 1.7.2> ATA-7 device
+ada0: Serial Number QM00002
+ada0: 16.700MB/s transfers (WDMA2, PIO 8192bytes)
+ada0: 512MB (1048576 512 byte sectors)
+ada1 at ata1 bus 0 scbus1 target 1 lun 0
+ada1: <QEMU HARDDISK 1.7.2> ATA-7 device
+ada1: Serial Number QM00004
+ada1: 16.700MB/s transfers (WDMA2, PIO 8192bytes)
+ada1: 128MB (262144 512 byte sectors)
+SMP: AP CPU #5 Launched!
+SMP: AP CPU #3 Launched!
+SMP: AP CPU #4 Launched!
+SMP: AP CPU #2 Launched!
+SMP: AP CPU #1 Launched!
+Kernel thread "wkupdaemon" (pid 57) exited prematurely.
+Timecounter "TSC" frequency 1600037282 Hz quality 1000
+Trying to mount root from cd9660:/dev/md0.uzip []...
+/dev/gpt/junos: 6740 files, 2153661 used, 8297304 free (192 frags, 1037139 blocks, 0.0% fragmentation)
+@ 1581354056 [2020-02-10 17:00:56] preboot
+Initializing Verified Exec:
+Verified os-kernel-prd-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+uhub0: 21 ports with 21 removable, self powered
+Enforcing Verified Exec:
+Verified os-libs-11-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Mounting os-libs-11-x86-64-20190926.ca2fd68_builder_stable_11
+Verified os-runtime-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Mounting os-runtime-x86-64-20190926.ca2fd68_builder_stable_11
+/dev/gpt/config: 18 files, 21 used, 243675 free (11 frags, 30458 blocks, 0.0% fragmentation)
+/dev/gpt/var: 1044 files, 1659023 used, 6221260 free (1468 frags, 777474 blocks, 0.0% fragmentation)
+@ 1581354059 [2020-02-10 17:00:59 UTC] verify active ...
+Verified jdocs-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jfirmware-x86-32-19.8 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jinsight-x86-32-19.8 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jpfe-X960-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jpfe-X-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jpfe-common-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jail-runtime-x86-32-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jsd-x86-32-19.8-jet-1 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jsdn-x86-32-19.8 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jpfe-wrlinux9-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-alg-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-cos-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-appid-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-cpcd-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-aacl-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-hcm-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-idp-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-fwdd-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-ids-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-jflow-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-crypto-base-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-ipsec-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-jdpi-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-lrf-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-llpdf-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-mobile-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-mss-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-pcef-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-rpm-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-nat-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-rtcom-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-ssl-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-tcp-log-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-softwire-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-traffic-dird-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-sfw-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-telemetry-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-daemons-mx-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified jservices-urlf-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-dp-crypto-support-mtx-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-libs-mx-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-libs-compat32-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-daemons-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-jsqlsync-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-libs-compat32-mx-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-libs-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-modules-mx-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-modules-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-platform-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-net-mtx-prd-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-runtime-mx-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-runtime-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-openconfig-x86-32-19.8 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-secintel-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified na-telemetry-x86-32-19.8 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified os-kernel-prd-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified os-libs-11-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-net-prd-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified os-runtime-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified os-compat32-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified os-libs-compat32-11-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified os-crypto-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified os-vmguest-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified py-extensions-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified py-base-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified junos-vmguest-mtx-x86-64-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified sflow-mx-x86-32-20191121 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+Verified os-zoneinfo-x86-64-20190926 signed by PackageProductionEc_2019 method ECDSA256+SHA256
+@ 1581354059 [2020-02-10 17:00:59 UTC] verify done
+@ 1581354059 [2020-02-10 17:00:59 UTC] mount start
+@ 1581354060 [2020-02-10 17:01:00 UTC] junos 19.1R2.8
+Mounting os-zoneinfo-x86-64-20190926.ca2fd68_builder_stable_11
+Mounting junos-net-prd-x86-64-20191121.101920_builder_junos_191_r2
+Mounting junos-libs-x86-64-20191121.101920_builder_junos_191_r2
+Mounting os-libs-compat32-11-x86-64-20190926.ca2fd68_builder_stable_11
+Mounting os-compat32-x86-64-20190926.ca2fd68_builder_stable_11
+Mounting junos-libs-compat32-x86-64-20191121.101920_builder_junos_191_r2
+Mounting junos-runtime-x86-32-20191121.101920_builder_junos_191_r2
+Starting watchdog daemon ...
+Mounting junos-vmguest-mtx-x86-64-20191121.101920_builder_junos_191_r2
+Mounting sflow-mx-x86-32-20191121.101920_builder_junos_191_r2
+Mounting py-extensions-x86-32-20191121.101920_builder_junos_191_r2
+Mounting py-base-x86-32-20191121.101920_builder_junos_191_r2
+Mounting os-vmguest-x86-64-20190926.ca2fd68_builder_stable_11
+Mounting os-crypto-x86-64-20190926.ca2fd68_builder_stable_11
+Mounting na-telemetry-x86-32-19.1R2.8
+Mounting junos-secintel-x86-32-20191121.101920_builder_junos_191_r2
+Mounting junos-libs-compat32-mx-x86-64-20191121.101920_builder_junos_191_r2
+Mounting junos-runtime-mx-x86-32-20191121.101920_builder_junos_191_r2
+Mounting junos-platform-x86-32-20191121.101920_builder_junos_191_r2
+Mounting junos-openconfig-x86-32-19.1R2.8
+Mounting junos-modules-x86-64-20191121.101920_builder_junos_191_r2
+Mounting junos-modules-mx-x86-64-20191121.101920_builder_junos_191_r2
+Mounting junos-libs-mx-x86-64-20191121.101920_builder_junos_191_r2
+Mounting junos-jsqlsync-x86-32-20191121.101920_builder_junos_191_r2
+Mounting junos-dp-crypto-support-mtx-x86-32-20191121.101920_builder_junos_191_r2
+Mounting junos-daemons-x86-64-20191121.101920_builder_junos_191_r2
+Mounting junos-daemons-mx-x86-64-20191121.101920_builder_junos_191_r2
+Mounting jsdn-x86-32-19.1R2.8
+Mounting jsd-x86-32-19.1R2.8-jet-1
+Mounting jpfe-wrlinux9-x86-32-20191121.101920_builder_junos_191_r2
+Mounting jpfe-X960-x86-32-20191121.101920_builder_junos_191_r2
+Mounting jpfe-common-x86-32-20191121.101920_builder_junos_191_r2
+Mounting jpfe-X-x86-32-20191121.101920_builder_junos_191_r2
+Mounting jinsight-x86-32-19.1R2.8
+Mounting jfirmware-x86-32-19.1R2.8
+Mounting jdocs-x86-32-20191121.101920_builder_junos_191_r2
+@ 1581354110 [2020-02-10 17:01:50 UTC] mount done
+Renaming vtnet1 interface to em2 for TVP Summit
+Renaming vtnet2 interface to em3 for TVP Summit
+Renaming vtnet3 interface to em4 for TVP Summit
+random: unblocking device.
+Checking platform support for: mx10002
+@ 1581354111 [2020-02-10 17:01:51 UTC] mountlate start
+hw.re.gres_sync_other: 0 -> 1
+@ 1581354112 [2020-02-10 17:01:52 UTC] mountlate done
+kern.module_path: /packages/sets/active/boot/os-vmguest/;/packages/sets/active/boot/junos-net-platform/;/packages/sets/active/boot/junos-modules/;/packages/sets/active/boot/os-crypto/;/packages/sets/active/boot/netstack/;/packages/sets/active/boot/junos-modules-platform/;/packages/sets/active/boot/os-kernel/ -> /modules;/modules/dev;/modules/ifpfe_drv;/modules/ifpfe_media;/modules/jam_core;/modules/jam_plugin;/modules/peertype;/modules/platform
+Loading JUNOS chassis module
+chassis_init_hw_chassis_startup_time: chassis startup time 0.000000, shared: 0x7ffffffff300, base: 0x7ffffffff000, offset: 0x300
+IPsec: Initialized Security Association Processing.
+fuse-freebsd: version 0.4.4, FUSE ABI 7.8
+hgcommdev0: <HGCOMMDEV For Host VM communication> port 0xc000-0xc0ff mem 0xfe915000-0xfe915fff at device 22.0 on pci0
+hgcommdev0: hgcommdev: registers at 0xfffff800fe915000
+
+pci-hgcomdev module loadedLoading the CHMIC module
+Loading POS driver
+ Loading Aggregate sonet driver
+Loading the IMA Group Media Layer; Attaching to media services layer
+Loading the IMA Link Media Layer; Attaching to media services layer
+Loading the SONET Media Layer; Attaching to media services layer
+Loading the Protobuf-C module
+Loading the JAM-Core module
+Loading the JAM-Core module - succeeded
+Loading Multilink Services PICs module.
+Loading the M&T Platform NETPFE module
+MTX Platform JAM-Core module - load success
+MPC NG 2E/3E JAM Plugin: load succeeded
+ bcmsdk_5_9_x kld
+ Loading BCMSDK module.....
+Junosprocfs mounted on /junosproc.
+@ 1581354115 [2020-02-10 17:01:55 UTC] mtx_init product mx10002
+@ 1581354115 [2020-02-10 17:01:55 UTC] mtx_init pvi_model mx10002
+@ 1581354115 [2020-02-10 17:01:55 UTC] mtx_init tvp_mode 1
+Directory /var/host exists. No need to create again
+Mounting the /dev/ada1s2 -> mount -t msdosfs /dev/ada1s2 /var/host
+virtual_tvp_routing_processing
+Loading /var/host/pvidbschema.bin..
+ln: /usr/lib/dd/filter/libschema-filter-dd.tlv: File exists
+*** Creating PVIDb.. /var/host/pvidbschema.bin\n
+1135+0 records in
+1135+0 records out
+590200 bytes transferred in 0.008989 secs (65658056 bytes/sec)
+@ 1581354115 [2020-02-10 17:01:55 UTC] mgd start
+Creating initial configuration:  ...
+Chassis control process: <xnm:warning xmlns="http://xml.juniper.net/xnm/1.1/xnm" xmlns:xnm="http://xml.juniper.net/xnm/1.1/xnm">
+Chassis control process: <source-daemon>chassisd</source-daemon>
+Chassis control process: <edit-path>[edit]</edit-path>
+Chassis control process: <statement>chassis</statement>
+Chassis control process: <message>Chassis configuration for network services has been changed. A system reboot is mandatory.  Please reboot *ALL* routing engines NOW. Continuing without a reboot might result in unexpected system behavior.</message>
+Chassis control process: </xnm:warning>
+[1] 5957
+mgd: commit complete
+@ 1581354127 [2020-02-10 18:02:07 CET] mgd done
+
+ Lock Manager
+RDM Embedded 7 [04-Aug-2006] http://www.birdstep.com
+Copyright (c) 1992-2006 Birdstep Technology, Inc.  All Rights Reserved.
+
+Unix Domain sockets Lock manager
+Lock manager 'lockmgr' started successfully.
+
+Database Initialization Utility
+RDM Embedded 7 [04-Aug-2006] http://www.birdstep.com
+Copyright (c) 1992-2006 Birdstep Technology, Inc.  All Rights Reserved.
+
+Profile database initialized
+Set Enhanced BBE Default...
+Enhanced BBE Default for mx10002 set to... 2
+Set Enhanced BBE to 2
+Enhanced arp scale is disabled
+lag enhanced disabled 0
+Set Inline Services Cookie Mode to Default...
+Inline Services Coookie MODE  Default for mx10002 set to... 2
+No core dumps found.
+Prefetching /usr/sbin/rpd ...
+Prefetching /usr/libexec64/rpd ...
+Prefetching /usr/sbin/lacpd ...
+Prefetching /usr/sbin/chassisd ...
+Starting jlaunchhelperd.
+Invoking jdid_diag_mode_setup.sh on junos
+Starting cron.
+
+Feb 10 18:02:09 jlaunchd: Registered PID 6566(alarm-control): exec_command
+Mon Feb 10 18:02:09 CET 2020
+Feb 10 18:02:09 jlaunchd: alarm-control (PID 6566) started
+Feb 10 18:02:09 Feb 10 18:02:09 jlaunchd: Registered PID 6569(craft-control): exec_command
+Feb 10 18:02:09 jlaunchd: craft-control (PID 6569) started
+************************************************************************
+************************************************************************
+** *                                                                * **
+** *                                                                * **
+** *                            WARNING                             * **
+** *                                                                * **
+** *              You have accessed a private network.              * **
+** *      You are required to have personal authorisation from      * **
+** *    the system administrator before you use this device and     * **
+** *      you are strictly limited to the use set out in that       * **
+** *                     wriFeb 10 18:02:09 jlaunchd: Registered PID 6620(charged): exec_command
+Feb 10 18:02:09 jlaunchd: charged (PID 6620) started
+tten authorisation.                     * **
+** *    Unauthorised access or use of this device is prohibited.    * **
+** *    Feb 10 18:02:09 jlaunchd: Registered PID 6620(charged): new process
+                                                            * **
+** *    Unauthorised access or misuse of a computer constitutes     * **
+** *       an offence under the Computer Misuse Act of 1990.        * **
+** *                                                                * **
+** *                                                                * **
+************************************************************************
+************************************************************************
+
+FreeBSD/amd64 (S-DC1-1) (ttyu0)

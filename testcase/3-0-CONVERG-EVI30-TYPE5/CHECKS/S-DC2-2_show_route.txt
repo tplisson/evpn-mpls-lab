@@ -1,0 +1,206 @@
+
+
+vrf30.inet.0: 15 destinations, 34 routes (15 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.30.0.0/24       *[Direct/0] 00:02:43
+                    >  via irb.30
+                    [EVPN/170] 00:02:41
+                    >  to 10.35.0.0 via ae0.0, Push 224
+                       to 10.35.0.8 via ae1.0, Push 224, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 224, Push 901001(top)
+                    [EVPN/170] 00:02:31
+                    >  to 10.35.0.8 via ae1.0, Push 222
+                       to 10.35.0.0 via ae0.0, Push 222, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 222, Push 901002(top)
+                    [EVPN/170] 00:02:37
+                    >  to 10.35.0.10 via ae2.0, Push 209
+                       to 10.35.22.1 via ae3.0, Push 209, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 209, Push 902001(top)
+                    [EVPN/170] 00:02:44
+                    >  to 10.35.22.1 via ae3.0, Push 83
+                       to 10.35.0.10 via ae2.0, Push 83, Push 902003(top)
+                    [EVPN/170] 00:02:40
+                    >  to 10.35.22.3 via ae4.0, Push 74
+                       to 10.35.0.10 via ae2.0, Push 74, Push 902004(top)
+                    [EVPN/170] 00:02:41
+                    >  to 10.35.0.0 via ae0.0, Push 196, Push 901003(top)
+                       to 10.35.0.8 via ae1.0, Push 196, Push 901003(top)
+                    [EVPN/170] 00:02:41
+                    >  to 10.35.0.0 via ae0.0, Push 202, Push 901004(top)
+                       to 10.35.0.8 via ae1.0, Push 202, Push 901004(top)
+10.30.0.1/32       *[Local/0] 00:02:43
+                       Local via irb.30
+                    [EVPN/170] 00:02:41
+                    >  to 10.35.0.0 via ae0.0, Push 224
+                       to 10.35.0.8 via ae1.0, Push 224, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 224, Push 901001(top)
+                    [EVPN/170] 00:02:31
+                    >  to 10.35.0.8 via ae1.0, Push 222
+                       to 10.35.0.0 via ae0.0, Push 222, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 222, Push 901002(top)
+                    [EVPN/170] 00:02:37
+                    >  to 10.35.0.10 via ae2.0, Push 209
+                       to 10.35.22.1 via ae3.0, Push 209, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 209, Push 902001(top)
+                    [EVPN/170] 00:02:44
+                    >  to 10.35.22.1 via ae3.0, Push 83
+                       to 10.35.0.10 via ae2.0, Push 83, Push 902003(top)
+                    [EVPN/170] 00:02:40
+                    >  to 10.35.22.3 via ae4.0, Push 74
+                       to 10.35.0.10 via ae2.0, Push 74, Push 902004(top)
+                    [EVPN/170] 00:02:41
+                    >  to 10.35.0.0 via ae0.0, Push 196, Push 901003(top)
+                       to 10.35.0.8 via ae1.0, Push 196, Push 901003(top)
+                    [EVPN/170] 00:02:41
+                    >  to 10.35.0.0 via ae0.0, Push 202, Push 901004(top)
+                       to 10.35.0.8 via ae1.0, Push 202, Push 901004(top)
+10.30.0.2/32       *[EVPN/170] 00:02:41
+                    >  to 10.35.0.0 via ae0.0, Push 224
+                       to 10.35.0.8 via ae1.0, Push 224, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 224, Push 901001(top)
+10.30.0.3/32       *[EVPN/170] 00:02:31
+                    >  to 10.35.0.8 via ae1.0, Push 222
+                       to 10.35.0.0 via ae0.0, Push 222, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 222, Push 901002(top)
+10.30.0.4/32       *[EVPN/170] 00:02:37
+                    >  to 10.35.0.10 via ae2.0, Push 209
+                       to 10.35.22.1 via ae3.0, Push 209, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 209, Push 902001(top)
+10.30.0.5/32       *[Local/0] 00:02:43
+                       Local via irb.30
+10.30.0.11/32      *[EVPN/170] 00:02:41
+                       to 10.35.0.0 via ae0.0, Push 196, Push 901003(top)
+                    >  to 10.35.0.8 via ae1.0, Push 196, Push 901003(top)
+10.30.0.12/32      *[EVPN/170] 00:02:41
+                       to 10.35.0.0 via ae0.0, Push 202, Push 901004(top)
+                    >  to 10.35.0.8 via ae1.0, Push 202, Push 901004(top)
+10.30.0.21/32      *[EVPN/170] 00:02:44
+                    >  to 10.35.22.1 via ae3.0, Push 83
+                       to 10.35.0.10 via ae2.0, Push 83, Push 902003(top)
+10.30.0.22/32      *[EVPN/170] 00:02:40
+                    >  to 10.35.22.3 via ae4.0, Push 74
+                       to 10.35.0.10 via ae2.0, Push 74, Push 902004(top)
+10.30.0.100/32     *[EVPN/170] 00:02:41
+                    >  to 10.35.0.0 via ae0.0, Push 224
+                       to 10.35.0.8 via ae1.0, Push 224, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 224, Push 901001(top)
+                    [EVPN/170] 00:02:31
+                    >  to 10.35.0.8 via ae1.0, Push 222
+                       to 10.35.0.0 via ae0.0, Push 222, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 222, Push 901002(top)
+10.30.0.111/32     *[EVPN/170] 00:02:30
+                       to 10.35.0.0 via ae0.0, Push 196, Push 901003(top)
+                    >  to 10.35.0.8 via ae1.0, Push 196, Push 901003(top)
+                    [EVPN/170] 00:02:29
+                       to 10.35.0.0 via ae0.0, Push 202, Push 901004(top)
+                    >  to 10.35.0.8 via ae1.0, Push 202, Push 901004(top)
+10.30.0.222/32     *[EVPN/170] 00:02:33
+                    >  to 10.35.22.1 via ae3.0, Push 83
+                       to 10.35.0.10 via ae2.0, Push 83, Push 902003(top)
+                    [EVPN/170] 00:02:32
+                    >  to 10.35.22.3 via ae4.0, Push 74
+                       to 10.35.0.10 via ae2.0, Push 74, Push 902004(top)
+
+
+vrf30.inet6.0: 17 destinations, 36 routes (17 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+300::/64           *[Direct/0] 00:02:33
+                    >  via irb.30
+                    [EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 224
+                       to 10.35.0.8 via ae1.0, Push 224, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 224, Push 901001(top)
+                    [EVPN/170] 00:02:32
+                    >  to 10.35.0.8 via ae1.0, Push 222
+                       to 10.35.0.0 via ae0.0, Push 222, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 222, Push 901002(top)
+                    [EVPN/170] 00:02:38
+                    >  to 10.35.0.10 via ae2.0, Push 209
+                       to 10.35.22.1 via ae3.0, Push 209, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 209, Push 902001(top)
+                    [EVPN/170] 00:02:45
+                    >  to 10.35.22.1 via ae3.0, Push 83
+                       to 10.35.0.10 via ae2.0, Push 83, Push 902003(top)
+                    [EVPN/170] 00:02:41
+                    >  to 10.35.22.3 via ae4.0, Push 74
+                       to 10.35.0.10 via ae2.0, Push 74, Push 902004(top)
+                    [EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 196, Push 901003(top)
+                       to 10.35.0.8 via ae1.0, Push 196, Push 901003(top)
+                    [EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 202, Push 901004(top)
+                       to 10.35.0.8 via ae1.0, Push 202, Push 901004(top)
+300::1/128         *[Local/0] 00:02:33
+                       Local via irb.30
+                    [EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 224
+                       to 10.35.0.8 via ae1.0, Push 224, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 224, Push 901001(top)
+                    [EVPN/170] 00:02:32
+                    >  to 10.35.0.8 via ae1.0, Push 222
+                       to 10.35.0.0 via ae0.0, Push 222, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 222, Push 901002(top)
+                    [EVPN/170] 00:02:38
+                    >  to 10.35.0.10 via ae2.0, Push 209
+                       to 10.35.22.1 via ae3.0, Push 209, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 209, Push 902001(top)
+                    [EVPN/170] 00:02:45
+                    >  to 10.35.22.1 via ae3.0, Push 83
+                       to 10.35.0.10 via ae2.0, Push 83, Push 902003(top)
+                    [EVPN/170] 00:02:41
+                    >  to 10.35.22.3 via ae4.0, Push 74
+                       to 10.35.0.10 via ae2.0, Push 74, Push 902004(top)
+                    [EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 196, Push 901003(top)
+                       to 10.35.0.8 via ae1.0, Push 196, Push 901003(top)
+                    [EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 202, Push 901004(top)
+                       to 10.35.0.8 via ae1.0, Push 202, Push 901004(top)
+300::2/128         *[EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 224
+                       to 10.35.0.8 via ae1.0, Push 224, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 224, Push 901001(top)
+300::3/128         *[EVPN/170] 00:02:32
+                    >  to 10.35.0.8 via ae1.0, Push 222
+                       to 10.35.0.0 via ae0.0, Push 222, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 222, Push 901002(top)
+300::4/128         *[EVPN/170] 00:02:38
+                    >  to 10.35.0.10 via ae2.0, Push 209
+                       to 10.35.22.1 via ae3.0, Push 209, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 209, Push 902001(top)
+300::5/128         *[Local/0] 00:02:33
+                       Local via irb.30
+300::11/128        *[EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 196, Push 901003(top)
+                       to 10.35.0.8 via ae1.0, Push 196, Push 901003(top)
+300::12/128        *[EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 202, Push 901004(top)
+                       to 10.35.0.8 via ae1.0, Push 202, Push 901004(top)
+300::21/128        *[EVPN/170] 00:02:45
+                    >  to 10.35.22.1 via ae3.0, Push 83
+                       to 10.35.0.10 via ae2.0, Push 83, Push 902003(top)
+300::22/128        *[EVPN/170] 00:02:41
+                    >  to 10.35.22.3 via ae4.0, Push 74
+                       to 10.35.0.10 via ae2.0, Push 74, Push 902004(top)
+300::100/128       *[EVPN/170] 00:02:42
+                    >  to 10.35.0.0 via ae0.0, Push 224
+                       to 10.35.0.8 via ae1.0, Push 224, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 224, Push 901001(top)
+                    [EVPN/170] 00:02:32
+                    >  to 10.35.0.8 via ae1.0, Push 222
+                       to 10.35.0.0 via ae0.0, Push 222, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 222, Push 901002(top)
+300::111/128       *[EVPN/170] 00:02:32
+                    >  to 10.35.0.0 via ae0.0, Push 196, Push 901003(top)
+                       to 10.35.0.8 via ae1.0, Push 196, Push 901003(top)
+                    [EVPN/170] 00:02:31
+                    >  to 10.35.0.0 via ae0.0, Push 202, Push 901004(top)
+                       to 10.35.0.8 via ae1.0, Push 202, Push 901004(top)
+300::222/128       *[EVPN/170] 00:02:22
+                    >  to 10.35.22.1 via ae3.0, Push 83
+                       to 10.35.0.10 via ae2.0, Push 83, Push 902003(top)
+                    [EVPN/170] 00:02:23
+                    >  to 10.35.22.3 via ae4.0, Push 74
+                       to 10.35.0.10 via ae2.0, Push 74, Push 902004(top)

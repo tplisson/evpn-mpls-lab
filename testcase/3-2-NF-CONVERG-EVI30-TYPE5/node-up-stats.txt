@@ -1,0 +1,102 @@
+################# LEAF
+
+set cli timestamp
+show interfaces ae10 | grep rate
+show interfaces ae0 | grep rate
+show interfaces ae1 | grep rate
+
+################# L-DC1-1A
+Interface       Admin Link Description
+ae0             up    up   L-DC1-1A ---- S-DC1-1
+ae1             up    up   L-DC1-1A ---- S-DC1-2
+ae10            up    up   L-DC1-1A ---- QFX1
+
+{master}
+tplisson@L-DC1-1A> show interfaces ae10 | grep rate
+Feb 10 17:19:35
+  Input rate     : 1087656352 bps (100004 pps)
+  Output rate    : 0 bps (0 pps)
+
+{master}
+tplisson@L-DC1-1A> show interfaces ae0 | grep rate
+Feb 10 17:19:35
+  Input rate     : 10808 bps (25 pps)
+  Output rate    : 755154928 bps (70006 pps)
+
+{master}
+tplisson@L-DC1-1A> show interfaces ae1 | grep rate
+Feb 10 17:19:35
+  Input rate     : 10392 bps (24 pps)
+  Output rate    : 325099064 bps (30004 pps)
+
+################# L-DC1-1B
+Interface       Admin Link Description
+ae0             up    up   L-DC1-1B ---- S-DC1-1
+ae1             up    up   L-DC1-1B ---- S-DC1-2
+ae10            up    up   L-DC1-1B ---- QFX1
+
+{master}
+tplisson@L-DC1-1B> show interfaces ae10 | grep rate
+Feb 10 17:19:35
+  Input rate     : 1092977624 bps (100004 pps)
+  Output rate    : 0 bps (0 pps)
+
+{master}
+tplisson@L-DC1-1B> show interfaces ae0 | grep rate
+Feb 10 17:19:35
+  Input rate     : 11000 bps (25 pps)
+  Output rate    : 539730880 bps (50005 pps)
+
+{master}
+tplisson@L-DC1-1B> show interfaces ae1 | grep rate
+Feb 10 17:19:35
+  Input rate     : 11416 bps (25 pps)
+  Output rate    : 546020016 bps (50005 pps)
+
+################# L-DC2-1A
+Interface       Admin Link Description
+ae0             up    up   L-DC2-1A ---- S-DC2-1
+ae1             up    up   L-DC2-1A ---- S-DC2-2
+ae10            up    up   L-DC2-1A ---- QFX2
+
+{master}
+tplisson@L-DC2-1A> show interfaces ae10 | grep rate
+Feb 10 17:19:35
+  Input rate     : 2488 bps (1 pps)
+  Output rate    : 1400336168 bps (130005 pps)
+
+{master}
+tplisson@L-DC2-1A> show interfaces ae0 | grep rate
+Feb 10 17:19:35
+  Input rate     : 539943000 bps (50026 pps)
+  Output rate    : 2480 bps (3 pps)
+
+{master}
+tplisson@L-DC2-1A> show interfaces ae1 | grep rate
+Feb 10 17:19:35
+  Input rate     : 864549104 bps (80027 pps)
+  Output rate    : 2904 bps (3 pps)
+  
+################# L-DC2-1B
+Interface       Admin Link Description
+ae0             up    up   L-DC2-1B ---- S-DC2-1
+ae1             up    up   L-DC2-1B ---- S-DC2-2
+ae10            up    up   L-DC2-1B ---- QFX2
+
+{master}
+tplisson@L-DC2-1B> show interfaces ae10 | grep rate
+Feb 10 17:19:35
+  Input rate     : 2488 bps (1 pps)
+  Output rate    : 768101064 bps (69998 pps)
+
+{master}
+tplisson@L-DC2-1B> show interfaces ae0 | grep rate
+Feb 10 17:19:35
+  Input rate     : 550582720 bps (50025 pps)
+  Output rate    : 2288 bps (3 pps)
+
+{master}
+tplisson@L-DC2-1B> show interfaces ae1 | grep rate
+Feb 10 17:19:35
+  Input rate     : 219744936 bps (20025 pps)
+  Output rate    : 2496 bps (3 pps)

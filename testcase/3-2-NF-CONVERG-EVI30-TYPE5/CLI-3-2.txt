@@ -1,0 +1,56 @@
+### LEAF
+show configuration routing-instances vlan30
+show configuration routing-instances vrf30
+show interfaces ae10.30 terse
+show interfaces irb.30 terse
+show bgp summary
+show route advertising-protocol bgp 10.35.1.1 table vrf30
+show route receive-protocol bgp 10.35.1.1 table vrf30
+show route advertising-protocol bgp 10.35.1.2 table vrf30
+show route receive-protocol bgp 10.35.1.2 table vrf30
+show route table vrf30 match-prefix 5:*
+show route 10.30.0/24
+show route 300::/64
+show interfaces ae0 statistics
+show interfaces ae1 statistics
+show interfaces ae10.30 statistics
+#
+set cli timestamp
+show interfaces ae0 terse
+show interfaces ae1 terse
+show bfd session
+show isis interface
+show isis adjacency
+show bgp summary
+show interfaces ae10 statistics
+show interfaces ae0 statistics
+show interfaces ae1 statistics
+
+show interfaces description
+set cli timestamp
+show interfaces ae10 | grep rate
+show interfaces ae0 | grep rate
+show interfaces ae1 | grep rate
+
+
+
+### SPINE
+show configuration routing-instances vlan30
+show configuration routing-instances vrf30
+show interfaces ae10.30 terse
+show interfaces irb.30 terse
+show bgp summary
+show route advertising-protocol bgp 10.35.1.3 table vrf30
+show route receive-protocol bgp 10.35.1.3 table vrf30
+show route advertising-protocol bgp 10.35.1.4 table vrf30
+show route receive-protocol bgp 10.35.1.4 table vrf30
+show route advertising-protocol bgp 10.35.2.3 table vrf30
+show route receive-protocol bgp 10.35.2.3 table vrf30
+show route advertising-protocol bgp 10.35.2.4 table vrf30
+show route receive-protocol bgp 10.35.2.4 table vrf30
+show route table vrf30 match-prefix 5:*
+show route 10.30.0/24
+show route 300::/64
+
+
+

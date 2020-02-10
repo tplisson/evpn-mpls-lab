@@ -1,6 +1,12 @@
 ---
-  - name: 1- Create Directories
-    hosts: localhost
+  - hosts: localhost:DVT:CE
+    gather_facts: no
+    tasks:
+    - set_fact: 
+        config: type5-evi30
+        cacheable: yes
+
+  - hosts: localhost
     gather_facts: no
   
     tasks:
@@ -19,8 +25,7 @@
       - Juniper.junos
     connection: local
     gather_facts: no
-    vars:
-      config: type5-evi30
+  
     tasks:
   
     - name: Building {{config|upper}} configurations for SPINE & LEAF MX routers

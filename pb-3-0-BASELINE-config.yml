@@ -1,9 +1,52 @@
 ---
-  - name: Clean up the configuration
-    import_playbook: pb-wipe-all.yml
+  - hosts: localhost:DVT:CE
+    gather_facts: no
+    tasks:
+    - set_fact: 
+        testcase: 3-0-CONVERG-EVI30-TYPE5
+        test_dir: "testcase/3-0-CONVERG-EVI30-TYPE5/CONFIG"
+        cacheable: yes
+
+  #- name: Clean up the configuration
+  #  import_playbook: pb-wipe-all.yml
 
   - name: Deploy Fabric configuration
     import_playbook: pb-build-fabric.yml
 
   - name: Deploy EVI 30 configuration
     import_playbook: pb-build-type5-evi30.yml
+  
+  - name: Create directories
+    hosts: localhost
+    gather_facts: no
+    tasks:
+    - name: Create directories      
+      file: 
+        path: "{{playbook_dir}}/{{test_dir}}" 
+        state: directory
+
+  - name: "Gathering Baseline Configuration"
+    hosts: [ DVT, CE ]
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+
+    tasks:
+
+    - name: "{{testcase}} in regular curly braces format"
+      juniper_junos_config:
+        retrieve: 'committed'
+        diff: true
+        check: false
+        commit: false
+        dest_dir: "{{playbook_dir}}/{{test_dir}}"
+
+    - name: "{{testcase}} in 'set' format"
+      juniper_junos_config:
+        retrieve: 'committed'
+        diff: true
+        check: false
+        commit: false
+        format: 'set'
+        dest_dir: "{{playbook_dir}}/{{test_dir}}"

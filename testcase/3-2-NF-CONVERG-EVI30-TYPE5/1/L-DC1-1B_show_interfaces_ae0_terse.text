@@ -1,0 +1,7 @@
+
+Interface               Admin Link Proto    Local                 Remote
+ae0                     up    down
+ae0.0                   up    down inet     10.35.11.3/31   
+                                   iso     
+                                   mpls    
+                                   multiservice
