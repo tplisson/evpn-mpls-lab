@@ -1,0 +1,7 @@
+
+
+vrf20.inet.0: 7 destinations, 16 routes (7 active, 0 holddown, 0 hidden)
+
+vrf20.inet6.0: 10 destinations, 18 routes (10 active, 0 holddown, 0 hidden)
+
+vrf20.evpn.0: 28 destinations, 46 routes (28 active, 0 holddown, 0 hidden)

@@ -1,0 +1,33 @@
+
+description "VRF instance for IRB in VLAN 10";
+instance-type vrf;
+interface irb.10;
+vrf-target target:64514:10;
+vrf-table-label;
+routing-options {
+    autonomous-system 64514;
+    multipath;
+}
+protocols {
+    evpn {
+        ip-prefix-routes {
+            advertise direct-nexthop;
+            encapsulation mpls;
+            export [ PL-EVI10-T5-V4 PL-EVI10-T5-V6 ];
+        }
+    }
+    bgp {
+        group QFX1 {
+            multihop {
+                no-nexthop-change;
+            }
+            peer-as 65111;
+            neighbor 10.10.1.111 {
+                export PL-EVI10-DEFAULT-NH-VGA-V4;
+            }
+            neighbor 101::111 {
+                export PL-EVI10-DEFAULT-NH-VGA-V6;
+            }
+        }
+    }
+}

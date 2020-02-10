@@ -1,0 +1,44 @@
+
+Groups: 4 Peers: 16 Down peers: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+vr.inet.0            
+                       8          2          0          0          0          0
+vr.inet6.0           
+                      16          4          0          0          0          0
+vr.mdt.0             
+                       0          0          0          0          0          0
+vr30.mdt.0           
+                       0          0          0          0          0          0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+10.10.0.2             64514        751        744       0      24     5:43:58 Establ
+  vr.inet.0: 1/1/1/0
+10.10.0.3             64514        751        743       0      24     5:43:54 Establ
+  vr.inet.0: 0/1/1/0
+10.10.0.4             64514        751        743       0      40     5:43:50 Establ
+  vr.inet.0: 0/1/1/0
+10.10.0.5             64514        751        742       0      40     5:43:46 Establ
+  vr.inet.0: 0/1/1/0
+10.20.0.2             64514        752        742       0      26     5:43:44 Establ
+  vr.inet.0: 0/1/1/0
+10.20.0.3             64514        752        742       0      26     5:43:44 Establ
+  vr.inet.0: 0/1/1/0
+10.20.0.4             64514        752        744       0      39     5:43:58 Establ
+  vr.inet.0: 0/1/1/0
+10.20.0.5             64514        752        743       0      41     5:43:54 Establ
+  vr.inet.0: 1/1/1/0
+100::2                64514        753        744       0      24     5:43:48 Establ
+  vr.inet6.0: 2/2/2/0
+100::3                64514        753        743       0      28     5:43:48 Establ
+  vr.inet6.0: 0/2/2/0
+100::4                64514        753        742       0      34     5:43:39 Establ
+  vr.inet6.0: 0/2/2/0
+100::5                64514        752        743       0      32     5:43:47 Establ
+  vr.inet6.0: 0/2/2/0
+200::2                64514        752        742       0      26     5:43:43 Establ
+  vr.inet6.0: 0/2/2/0
+200::3                64514        752        742       0      26     5:43:40 Establ
+  vr.inet6.0: 0/2/2/0
+200::4                64514        753        744       0      38     5:43:47 Establ
+  vr.inet6.0: 2/2/2/0
+200::5                64514        751        742       0      33     5:43:31 Establ
+  vr.inet6.0: 0/2/2/0

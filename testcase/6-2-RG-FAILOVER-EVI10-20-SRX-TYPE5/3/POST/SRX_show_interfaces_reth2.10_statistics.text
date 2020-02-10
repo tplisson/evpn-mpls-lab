@@ -1,0 +1,30 @@
+
+  Logical interface reth2.10 (Index 78) (SNMP ifIndex 671)
+    Flags: Up SNMP-Traps 0x4000 VLAN-Tag [ 0x8100.10 ]  Encapsulation: ENET2
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :   12232659202     200052 15216317421663   2150232592
+        Output:     107133044          0    4538023480            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Security: Zone: vr
+    Allowed host-inbound traffic : bootp bfd bgp dns dvmrp igmp ldp msdp nhrp
+    ospf ospf3 pgm pim rip ripng router-discovery rsvp sap vrrp dhcp finger ftp
+    tftp ident-reset http https ike netconf ping reverse-telnet reverse-ssh
+    rlogin rpm rsh snmp snmp-trap ssh telnet traceroute xnm-clear-text xnm-ssl
+    lsping ntp sip dhcpv6 r2cp webapi-clear-text webapi-ssl tcp-encap
+    sdwan-appqoe
+    Protocol inet, MTU: 8982
+      Flags: Sendbcast-pkt-to-re, Is-Primary
+      Addresses, Flags: Is-Default Is-Preferred Is-Primary
+        Destination: 10.10.0/24, Local: 10.10.0.100, Broadcast: 10.10.0.255
+    Protocol inet6, MTU: 8982
+    Max nh cache: 20000, New hold nh limit: 20000, Curr nh cnt: 8,
+    Curr new hold cnt: 0, NH drop cnt: 0
+      Flags: Is-Primary
+      Addresses, Flags: Is-Default Is-Preferred Is-Primary
+        Destination: 100::/64, Local: 100::100
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::210:db00:aff:1002

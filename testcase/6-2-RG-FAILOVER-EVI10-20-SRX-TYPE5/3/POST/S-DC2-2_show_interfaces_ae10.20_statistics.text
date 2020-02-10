@@ -1,0 +1,15 @@
+
+  Logical interface ae10.20 (Index 88) (SNMP ifIndex 671)
+    Flags: Up SNMP-Traps 0x20004000 VLAN-Tag [ 0x8100.20 ] 
+    Encapsulation: VLAN-Bridge
+    Ethernet segment value: 01:dc:02:00:00:ae:10:00:14:00, Mode: all-active, 
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :     205825184      20000  280457245789    218098600
+        Output:          3145          0        277353            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol bridge, MTU: 9000
+      Flags: Is-Primary

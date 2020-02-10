@@ -1,0 +1,5 @@
+
+Interface               Admin Link Proto    Local                 Remote
+reth2.10                up    up   inet     10.10.0.100/24  
+                                   inet6    100::100/64     
+                                            fe80::210:db00:aff:1002/64
