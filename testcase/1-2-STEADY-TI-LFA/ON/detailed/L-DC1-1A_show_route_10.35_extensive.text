@@ -4,11 +4,11 @@ inet.0: 24 destinations, 24 routes (24 active, 0 holddown, 0 hidden)
 10.35.1.1/32 (1 entry, 1 announced)
 TSI:
 KRT in-kernel 10.35.1.1/32 -> {list:10.35.11.0, 10.35.12.0}
-IS-IS level 2, LSP context 0x47d84f8
+IS-IS level 2, LSP context 0x47d2c38
         *IS-IS  Preference: 18
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c6fdc
+                Address: 0x45cbf7c
                 Next-hop reference count: 1
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1, selected
                 Session Id: 0x0
@@ -16,21 +16,21 @@ IS-IS level 2, LSP context 0x47d84f8
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:19 	Metric: 100 
+                Age: 3:17:36 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 6 
+                Announcement bits (2): 0-KRT 1-IS-IS 
                 AS path: I 
 
 10.35.1.2/32 (1 entry, 1 announced)
 TSI:
 KRT in-kernel 10.35.1.2/32 -> {list:10.35.12.0, 10.35.11.0}
-IS-IS level 2, LSP context 0x47d3980
+IS-IS level 2, LSP context 0x47d3070
         *IS-IS  Preference: 18
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c70bc
+                Address: 0x45c9f1c
                 Next-hop reference count: 1
                 Next hop: 10.35.12.0 via ae1.0 weight 0x1, selected
                 Session Id: 0x0
@@ -38,11 +38,11 @@ IS-IS level 2, LSP context 0x47d3980
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:19 	Metric: 100 
+                Age: 3:17:36 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 6 
+                Announcement bits (2): 0-KRT 1-IS-IS 
                 AS path: I 
 
 10.35.1.3/32 (1 entry, 1 announced)
@@ -50,25 +50,25 @@ TSI:
 IS-IS level 2, LSP fragment 0
         *Direct Preference: 0
                 Next hop type: Interface, Next hop index: 0
-                Address: 0x65a8c9c
+                Address: 0x65b42dc
                 Next-hop reference count: 1
                 Next hop: via lo0.0, selected
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 1d 20:56:13 
+                Age: 3:22:36 
                 Validation State: unverified 
                 Task: IF
-                Announcement bits (2): 1-IS-IS 3-Resolve tree 6 
+                Announcement bits (1): 1-IS-IS 
                 AS path: I 
 
 10.35.1.4/32 (1 entry, 1 announced)
 TSI:
 KRT in-kernel 10.35.1.4/32 -> {list:10.35.11.0, 10.35.12.0}
-IS-IS level 2, LSP context 0x47d8548
+IS-IS level 2, LSP context 0x47dcfd0
         *IS-IS  Preference: 18
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c67fc
+                Address: 0x45cc21c
                 Next-hop reference count: 11
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Session Id: 0x0
@@ -76,11 +76,11 @@ IS-IS level 2, LSP context 0x47d8548
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:19 	Metric: 200 
+                Age: 3:17:35 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 6 
+                Announcement bits (2): 0-KRT 1-IS-IS 
                 AS path: I 
 
 inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
@@ -89,99 +89,99 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c965c
-                Next-hop reference count: 8
+                Address: 0x45c981c
+                Next-hop reference count: 11
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1, selected
-                Label element ptr: 0x467f7e8
+                Label element ptr: 0x4680298
                 Label parent element ptr: 0x0
-                Label element references: 10
-                Label element child references: 6
+                Label element references: 15
+                Label element child references: 11
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.12.0 via ae1.0 weight 0xf000
                 Label operation: Push 901001
                 Label TTL action: prop-ttl
                 Load balance label: Label 901001: None; 
-                Label element ptr: 0x4688c20
+                Label element ptr: 0x4680e68
                 Label parent element ptr: 0x0
-                Label element references: 5
-                Label element child references: 3
+                Label element references: 9
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:19 	Metric: 100 
+                Age: 3:17:36 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.1.2/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c981c
-                Next-hop reference count: 8
+                Address: 0x45cce5c
+                Next-hop reference count: 11
                 Next hop: 10.35.12.0 via ae1.0 weight 0x1, selected
-                Label element ptr: 0x467f7e8
+                Label element ptr: 0x4680298
                 Label parent element ptr: 0x0
-                Label element references: 10
-                Label element child references: 6
+                Label element references: 15
+                Label element child references: 11
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.11.0 via ae0.0 weight 0xf000
                 Label operation: Push 901002
                 Label TTL action: prop-ttl
                 Load balance label: Label 901002: None; 
-                Label element ptr: 0x4687168
+                Label element ptr: 0x4680760
                 Label parent element ptr: 0x0
-                Label element references: 5
-                Label element child references: 3
+                Label element references: 9
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:19 	Metric: 100 
+                Age: 3:17:36 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.1.4/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c9abc
-                Next-hop reference count: 8
+                Address: 0x45cf85c
+                Next-hop reference count: 11
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Label operation: Push 901004
                 Label TTL action: prop-ttl
                 Load balance label: Label 901004: None; 
-                Label element ptr: 0x4684540
+                Label element ptr: 0x4681be8
                 Label parent element ptr: 0x0
-                Label element references: 16
-                Label element child references: 12
+                Label element references: 12
+                Label element child references: 8
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.12.0 via ae1.0 weight 0x1, selected
                 Label operation: Push 901004
                 Label TTL action: prop-ttl
                 Load balance label: Label 901004: None; 
-                Label element ptr: 0x4684540
+                Label element ptr: 0x4681be8
                 Label parent element ptr: 0x0
-                Label element references: 16
-                Label element child references: 12
+                Label element references: 12
+                Label element child references: 8
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:19 	Metric: 200 
+                Age: 3:17:35 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 
@@ -189,11 +189,11 @@ inet.0: 24 destinations, 24 routes (24 active, 0 holddown, 0 hidden)
 10.35.2.1/32 (1 entry, 1 announced)
 TSI:
 KRT in-kernel 10.35.2.1/32 -> {list:10.35.11.0, 10.35.12.0}
-IS-IS level 2, LSP context 0x47d8598
+IS-IS level 2, LSP context 0x47d36b0
         *IS-IS  Preference: 18
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c67fc
+                Address: 0x45cc21c
                 Next-hop reference count: 11
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Session Id: 0x0
@@ -201,21 +201,21 @@ IS-IS level 2, LSP context 0x47d8598
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:20 	Metric: 200 
+                Age: 3:17:35 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 6 
+                Announcement bits (2): 0-KRT 1-IS-IS 
                 AS path: I 
 
 10.35.2.2/32 (1 entry, 1 announced)
 TSI:
 KRT in-kernel 10.35.2.2/32 -> {list:10.35.11.0, 10.35.12.0}
-IS-IS level 2, LSP context 0x47d85e8
+IS-IS level 2, LSP context 0x47dc1e8
         *IS-IS  Preference: 18
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c67fc
+                Address: 0x45cc21c
                 Next-hop reference count: 11
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Session Id: 0x0
@@ -223,21 +223,21 @@ IS-IS level 2, LSP context 0x47d85e8
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:20 	Metric: 200 
+                Age: 3:17:35 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 6 
+                Announcement bits (2): 0-KRT 1-IS-IS 
                 AS path: I 
 
 10.35.2.3/32 (1 entry, 1 announced)
 TSI:
 KRT in-kernel 10.35.2.3/32 -> {list:10.35.11.0, 10.35.12.0}
-IS-IS level 2, LSP context 0x47d8638
+IS-IS level 2, LSP context 0x47d8cc8
         *IS-IS  Preference: 18
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c67fc
+                Address: 0x45cc21c
                 Next-hop reference count: 11
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Session Id: 0x0
@@ -245,21 +245,21 @@ IS-IS level 2, LSP context 0x47d8638
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:20 	Metric: 300 
+                Age: 3:17:35 	Metric: 300 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 6 
+                Announcement bits (2): 0-KRT 1-IS-IS 
                 AS path: I 
 
 10.35.2.4/32 (1 entry, 1 announced)
 TSI:
 KRT in-kernel 10.35.2.4/32 -> {list:10.35.11.0, 10.35.12.0}
-IS-IS level 2, LSP context 0x47d8688
+IS-IS level 2, LSP context 0x47d79b8
         *IS-IS  Preference: 18
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c67fc
+                Address: 0x45cc21c
                 Next-hop reference count: 11
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Session Id: 0x0
@@ -267,11 +267,11 @@ IS-IS level 2, LSP context 0x47d8688
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:20 	Metric: 300 
+                Age: 3:17:35 	Metric: 300 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-KRT 1-IS-IS 3-Resolve tree 6 
+                Announcement bits (2): 0-KRT 1-IS-IS 
                 AS path: I 
 
 inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
@@ -280,140 +280,140 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c9c7c
-                Next-hop reference count: 8
+                Address: 0x45c7cfc
+                Next-hop reference count: 11
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Label operation: Push 902001
                 Label TTL action: prop-ttl
                 Load balance label: Label 902001: None; 
-                Label element ptr: 0x4684588
+                Label element ptr: 0x46809a0
                 Label parent element ptr: 0x0
-                Label element references: 7
-                Label element child references: 3
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.12.0 via ae1.0 weight 0x1, selected
                 Label operation: Push 902001
                 Label TTL action: prop-ttl
                 Load balance label: Label 902001: None; 
-                Label element ptr: 0x4684588
+                Label element ptr: 0x46809a0
                 Label parent element ptr: 0x0
-                Label element references: 7
-                Label element child references: 3
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:20 	Metric: 200 
+                Age: 3:17:35 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.2.2/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c9e3c
-                Next-hop reference count: 8
+                Address: 0x45c67fc
+                Next-hop reference count: 11
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Label operation: Push 902002
                 Label TTL action: prop-ttl
                 Load balance label: Label 902002: None; 
-                Label element ptr: 0x46845d0
+                Label element ptr: 0x46807f0
                 Label parent element ptr: 0x0
-                Label element references: 7
-                Label element child references: 3
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.12.0 via ae1.0 weight 0x1, selected
                 Label operation: Push 902002
                 Label TTL action: prop-ttl
                 Load balance label: Label 902002: None; 
-                Label element ptr: 0x46845d0
+                Label element ptr: 0x46807f0
                 Label parent element ptr: 0x0
-                Label element references: 7
-                Label element child references: 3
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:20 	Metric: 200 
+                Age: 3:17:35 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.2.3/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45ca0dc
-                Next-hop reference count: 8
+                Address: 0x45c6a9c
+                Next-hop reference count: 9
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Label operation: Push 902003
                 Label TTL action: prop-ttl
                 Load balance label: Label 902003: None; 
-                Label element ptr: 0x4684618
+                Label element ptr: 0x4680cb8
                 Label parent element ptr: 0x0
-                Label element references: 7
-                Label element child references: 3
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.12.0 via ae1.0 weight 0x1, selected
                 Label operation: Push 902003
                 Label TTL action: prop-ttl
                 Load balance label: Label 902003: None; 
-                Label element ptr: 0x4684618
+                Label element ptr: 0x4680cb8
                 Label parent element ptr: 0x0
-                Label element references: 7
-                Label element child references: 3
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:20 	Metric: 300 
+                Age: 3:17:35 	Metric: 300 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.2.4/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45ca37c
-                Next-hop reference count: 8
+                Address: 0x45c6c5c
+                Next-hop reference count: 9
                 Next hop: 10.35.11.0 via ae0.0 weight 0x1
                 Label operation: Push 902004
                 Label TTL action: prop-ttl
                 Load balance label: Label 902004: None; 
-                Label element ptr: 0x4684660
+                Label element ptr: 0x4680d00
                 Label parent element ptr: 0x0
-                Label element references: 7
-                Label element child references: 3
+                Label element references: 10
+                Label element child references: 6
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.12.0 via ae1.0 weight 0x1, selected
                 Label operation: Push 902004
                 Label TTL action: prop-ttl
                 Load balance label: Label 902004: None; 
-                Label element ptr: 0x4684660
+                Label element ptr: 0x4680d00
                 Label parent element ptr: 0x0
-                Label element references: 7
-                Label element child references: 3
+                Label element references: 10
+                Label element child references: 6
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:20 	Metric: 300 
+                Age: 3:17:35 	Metric: 300 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 6 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 Routing table: default.inet [Index 0] 
@@ -426,12 +426,12 @@ Destination:  10.35.1.1/32
   Multicast RPF nh index: 0             
   P2mpidx: 0              
   Flags: sent to PFE, rt nh decoupled  
-  Next-hop type: unilist               Index: 1048686  Reference: 3    
+  Next-hop type: unilist               Index: 1048577  Reference: 3    
   Nexthop: 10.35.11.0
-  Next-hop type: unicast               Index: 528      Reference: 52   
+  Next-hop type: unicast               Index: 532      Reference: 49   
   Next-hop interface: ae0.0         Weight: 0x1  
   Nexthop: 10.35.12.0
-  Next-hop type: unicast               Index: 527      Reference: 52   
+  Next-hop type: unicast               Index: 531      Reference: 49   
   Next-hop interface: ae1.0         Weight: 0xf000
     
 Destination:  10.35.1.1/32
@@ -440,12 +440,12 @@ Destination:  10.35.1.1/32
   Multicast RPF nh index: 0             
   P2mpidx: 0              
   Flags: none 
-  Next-hop type: unilist               Index: 1048686  Reference: 3    
+  Next-hop type: unilist               Index: 1048577  Reference: 3    
   Nexthop: 10.35.11.0
-  Next-hop type: unicast               Index: 528      Reference: 52   
+  Next-hop type: unicast               Index: 532      Reference: 49   
   Next-hop interface: ae0.0         Weight: 0x1  
   Nexthop: 10.35.12.0
-  Next-hop type: unicast               Index: 527      Reference: 52   
+  Next-hop type: unicast               Index: 531      Reference: 49   
   Next-hop interface: ae1.0         Weight: 0xf000
 
 Routing table: default.inet [Index 0] 
@@ -458,12 +458,12 @@ Destination:  10.35.1.2/32
   Multicast RPF nh index: 0             
   P2mpidx: 0              
   Flags: sent to PFE, rt nh decoupled  
-  Next-hop type: unilist               Index: 1048687  Reference: 3    
+  Next-hop type: unilist               Index: 1048578  Reference: 3    
   Nexthop: 10.35.12.0
-  Next-hop type: unicast               Index: 527      Reference: 52   
+  Next-hop type: unicast               Index: 531      Reference: 49   
   Next-hop interface: ae1.0         Weight: 0x1  
   Nexthop: 10.35.11.0
-  Next-hop type: unicast               Index: 528      Reference: 52   
+  Next-hop type: unicast               Index: 532      Reference: 49   
   Next-hop interface: ae0.0         Weight: 0xf000
     
 Destination:  10.35.1.2/32
@@ -472,12 +472,12 @@ Destination:  10.35.1.2/32
   Multicast RPF nh index: 0             
   P2mpidx: 0              
   Flags: none 
-  Next-hop type: unilist               Index: 1048687  Reference: 3    
+  Next-hop type: unilist               Index: 1048578  Reference: 3    
   Nexthop: 10.35.12.0
-  Next-hop type: unicast               Index: 527      Reference: 52   
+  Next-hop type: unicast               Index: 531      Reference: 49   
   Next-hop interface: ae1.0         Weight: 0x1  
   Nexthop: 10.35.11.0
-  Next-hop type: unicast               Index: 528      Reference: 52   
+  Next-hop type: unicast               Index: 532      Reference: 49   
   Next-hop interface: ae0.0         Weight: 0xf000
 
 Routing table: default.inet [Index 0] 
@@ -503,12 +503,12 @@ Destination:  10.35.1.4/32
   Multicast RPF nh index: 0             
   P2mpidx: 0              
   Flags: sent to PFE, rt nh decoupled  
-  Next-hop type: unilist               Index: 1048680  Reference: 12   
+  Next-hop type: unilist               Index: 1048576  Reference: 12   
   Nexthop: 10.35.11.0
-  Next-hop type: unicast               Index: 528      Reference: 52   
+  Next-hop type: unicast               Index: 532      Reference: 49   
   Next-hop interface: ae0.0         Weight: 0x1  
   Nexthop: 10.35.12.0
-  Next-hop type: unicast               Index: 527      Reference: 52   
+  Next-hop type: unicast               Index: 531      Reference: 49   
   Next-hop interface: ae1.0         Weight: 0x1  
 
 Routing table: default.inet [Index 0] 
@@ -521,12 +521,12 @@ Destination:  10.35.2.1/32
   Multicast RPF nh index: 0             
   P2mpidx: 0              
   Flags: sent to PFE, rt nh decoupled  
-  Next-hop type: unilist               Index: 1048680  Reference: 12   
+  Next-hop type: unilist               Index: 1048576  Reference: 12   
   Nexthop: 10.35.11.0
-  Next-hop type: unicast               Index: 528      Reference: 52   
+  Next-hop type: unicast               Index: 532      Reference: 49   
   Next-hop interface: ae0.0         Weight: 0x1  
   Nexthop: 10.35.12.0
-  Next-hop type: unicast               Index: 527      Reference: 52   
+  Next-hop type: unicast               Index: 531      Reference: 49   
   Next-hop interface: ae1.0         Weight: 0x1  
 
 Routing table: default.inet [Index 0] 
@@ -539,12 +539,12 @@ Destination:  10.35.2.2/32
   Multicast RPF nh index: 0             
   P2mpidx: 0              
   Flags: sent to PFE, rt nh decoupled  
-  Next-hop type: unilist               Index: 1048680  Reference: 12   
+  Next-hop type: unilist               Index: 1048576  Reference: 12   
   Nexthop: 10.35.11.0
-  Next-hop type: unicast               Index: 528      Reference: 52   
+  Next-hop type: unicast               Index: 532      Reference: 49   
   Next-hop interface: ae0.0         Weight: 0x1  
   Nexthop: 10.35.12.0
-  Next-hop type: unicast               Index: 527      Reference: 52   
+  Next-hop type: unicast               Index: 531      Reference: 49   
   Next-hop interface: ae1.0         Weight: 0x1  
 
 Routing table: default.inet [Index 0] 
@@ -557,12 +557,12 @@ Destination:  10.35.2.3/32
   Multicast RPF nh index: 0             
   P2mpidx: 0              
   Flags: sent to PFE, rt nh decoupled  
-  Next-hop type: unilist               Index: 1048680  Reference: 12   
+  Next-hop type: unilist               Index: 1048576  Reference: 12   
   Nexthop: 10.35.11.0
-  Next-hop type: unicast               Index: 528      Reference: 52   
+  Next-hop type: unicast               Index: 532      Reference: 49   
   Next-hop interface: ae0.0         Weight: 0x1  
   Nexthop: 10.35.12.0
-  Next-hop type: unicast               Index: 527      Reference: 52   
+  Next-hop type: unicast               Index: 531      Reference: 49   
   Next-hop interface: ae1.0         Weight: 0x1  
 
 Routing table: default.inet [Index 0] 
@@ -575,10 +575,10 @@ Destination:  10.35.2.4/32
   Multicast RPF nh index: 0             
   P2mpidx: 0              
   Flags: sent to PFE, rt nh decoupled  
-  Next-hop type: unilist               Index: 1048680  Reference: 12   
+  Next-hop type: unilist               Index: 1048576  Reference: 12   
   Nexthop: 10.35.11.0
-  Next-hop type: unicast               Index: 528      Reference: 52   
+  Next-hop type: unicast               Index: 532      Reference: 49   
   Next-hop interface: ae0.0         Weight: 0x1  
   Nexthop: 10.35.12.0
-  Next-hop type: unicast               Index: 527      Reference: 52   
+  Next-hop type: unicast               Index: 531      Reference: 49   
   Next-hop interface: ae1.0         Weight: 0x1  

@@ -1,24 +1,24 @@
 
 S-DC2-1
-  Interface: ae0.0, Level: 2, State: Up, Expires in 22 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:47:01 ago
+  Interface: ae0.0, Level: 2, State: Up, Expires in 20 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 03:21:33 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
   IP addresses: 10.35.21.2
-  Level 2 IPv4 Adj-SID: 268
+  Level 2 IPv4 Adj-SID: 52
   Transition log:
   When                  State        Event           Down reason
-  Mon Jan 27 15:01:31   Up           Seenself        
+  Sun Feb  9 20:09:25   Up           Seenself        
 
 S-DC2-2
-  Interface: ae1.0, Level: 2, State: Up, Expires in 26 secs
-  Priority: 0, Up/Down transitions: 1, Last transition: 1w1d 18:47:22 ago
+  Interface: ae1.0, Level: 2, State: Up, Expires in 18 secs
+  Priority: 0, Up/Down transitions: 1, Last transition: 03:21:12 ago
   Circuit type: 2, Speaks: IP, IPv6
   Topologies: Unicast
   Restart capable: Yes, Adjacency advertisement: Advertise
   IP addresses: 10.35.22.2
-  Level 2 IPv4 Adj-SID: 269
+  Level 2 IPv4 Adj-SID: 53
   Transition log:
   When                  State        Event           Down reason
-  Mon Jan 27 15:01:10   Up           Seenself        
+  Sun Feb  9 20:09:46   Up           Seenself        

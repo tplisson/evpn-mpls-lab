@@ -5,6 +5,7 @@
     - set_fact: 
         testcase: 1-2-STEADY-TI-LFA
         test_dir: "testcase/1-2-STEADY-TI-LFA/OFF"
+        detailed_dir: "testcase/1-2-STEADY-TI-LFA/OFF/detailed"
         cacheable: yes
 
   - name: Import existing playbook to turn TI-LFA off

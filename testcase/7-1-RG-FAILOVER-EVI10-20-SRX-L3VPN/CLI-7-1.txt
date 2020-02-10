@@ -1,0 +1,13 @@
+################# SRX
+set cli timestamp'
+
+show interfaces reth2.10 statistics | grep "input|output"
+show bgp summary instance vr
+
+################# SPINE
+set cli timestamp'
+show interfaces ae10 | match rate
+traceroute routing-instance vrf10 10.10.0.100
+traceroute routing-instance vrf20 10.20.0.100
+
+

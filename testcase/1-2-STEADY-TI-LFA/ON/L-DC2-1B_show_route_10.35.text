@@ -3,32 +3,32 @@
 inet.0: 24 destinations, 24 routes (24 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-10.35.1.1/32       *[IS-IS/18] 00:04:47, metric 200
+10.35.1.1/32       *[IS-IS/18] 03:17:01, metric 200
                        to 10.35.21.2 via ae0.0
                     >  to 10.35.22.2 via ae1.0
-10.35.1.2/32       *[IS-IS/18] 00:04:47, metric 200
+10.35.1.2/32       *[IS-IS/18] 03:17:01, metric 200
                        to 10.35.21.2 via ae0.0
                     >  to 10.35.22.2 via ae1.0
-10.35.1.3/32       *[IS-IS/18] 00:04:47, metric 300
+10.35.1.3/32       *[IS-IS/18] 03:17:01, metric 300
                        to 10.35.21.2 via ae0.0
                     >  to 10.35.22.2 via ae1.0
-10.35.1.4/32       *[IS-IS/18] 00:04:47, metric 300
+10.35.1.4/32       *[IS-IS/18] 03:17:01, metric 300
                        to 10.35.21.2 via ae0.0
                     >  to 10.35.22.2 via ae1.0
 
 inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-10.35.1.1/32       *[L-ISIS/14] 00:04:47, metric 200
+10.35.1.1/32       *[L-ISIS/14] 03:17:01, metric 200
                        to 10.35.21.2 via ae0.0, Push 901001
                     >  to 10.35.22.2 via ae1.0, Push 901001
-10.35.1.2/32       *[L-ISIS/14] 00:04:47, metric 200
+10.35.1.2/32       *[L-ISIS/14] 03:17:01, metric 200
                        to 10.35.21.2 via ae0.0, Push 901002
                     >  to 10.35.22.2 via ae1.0, Push 901002
-10.35.1.3/32       *[L-ISIS/14] 00:04:47, metric 300
+10.35.1.3/32       *[L-ISIS/14] 03:17:01, metric 300
                        to 10.35.21.2 via ae0.0, Push 901003
                     >  to 10.35.22.2 via ae1.0, Push 901003
-10.35.1.4/32       *[L-ISIS/14] 00:04:47, metric 300
+10.35.1.4/32       *[L-ISIS/14] 03:17:01, metric 300
                        to 10.35.21.2 via ae0.0, Push 901004
                     >  to 10.35.22.2 via ae1.0, Push 901004
 
@@ -36,28 +36,28 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
 inet.0: 24 destinations, 24 routes (24 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-10.35.2.1/32       *[IS-IS/18] 00:04:47, metric 100
+10.35.2.1/32       *[IS-IS/18] 03:17:01, metric 100
                     >  to 10.35.21.2 via ae0.0
                        to 10.35.22.2 via ae1.0
-10.35.2.2/32       *[IS-IS/18] 00:04:47, metric 100
+10.35.2.2/32       *[IS-IS/18] 03:17:01, metric 100
                     >  to 10.35.22.2 via ae1.0
                        to 10.35.21.2 via ae0.0
-10.35.2.3/32       *[IS-IS/18] 00:04:47, metric 200
+10.35.2.3/32       *[IS-IS/18] 03:17:01, metric 200
                        to 10.35.21.2 via ae0.0
                     >  to 10.35.22.2 via ae1.0
-10.35.2.4/32       *[Direct/0] 1w5d 15:49:42
+10.35.2.4/32       *[Direct/0] 03:22:01
                     >  via lo0.0
 
 inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-10.35.2.1/32       *[L-ISIS/14] 00:04:47, metric 100
+10.35.2.1/32       *[L-ISIS/14] 03:17:01, metric 100
                     >  to 10.35.21.2 via ae0.0
                        to 10.35.22.2 via ae1.0, Push 902001
-10.35.2.2/32       *[L-ISIS/14] 00:04:47, metric 100
+10.35.2.2/32       *[L-ISIS/14] 03:17:01, metric 100
                     >  to 10.35.22.2 via ae1.0
                        to 10.35.21.2 via ae0.0, Push 902002
-10.35.2.3/32       *[L-ISIS/14] 00:04:47, metric 200
+10.35.2.3/32       *[L-ISIS/14] 03:17:01, metric 200
                        to 10.35.21.2 via ae0.0, Push 902003
                     >  to 10.35.22.2 via ae1.0, Push 902003
 
@@ -65,60 +65,60 @@ Routing table: default.inet
 Internet:
 Enabled protocols: Bridging, 
 Destination        Type RtRef Next hop           Type Index    NhRef Netif
-10.35.1.1/32       user     0                    ulst  1048574    12
-                              10.35.21.2         ucst      796    60 ae0.0
-                              10.35.22.2         ucst     1003    60 ae1.0
+10.35.1.1/32       user     0                    ulst  1048578    12
+                              10.35.21.2         ucst      531    48 ae0.0
+                              10.35.22.2         ucst      532    48 ae1.0
 
 Routing table: default.inet
 Internet:
 Enabled protocols: Bridging, 
 Destination        Type RtRef Next hop           Type Index    NhRef Netif
-10.35.1.2/32       user     0                    ulst  1048574    12
-                              10.35.21.2         ucst      796    60 ae0.0
-                              10.35.22.2         ucst     1003    60 ae1.0
+10.35.1.2/32       user     0                    ulst  1048578    12
+                              10.35.21.2         ucst      531    48 ae0.0
+                              10.35.22.2         ucst      532    48 ae1.0
 
 Routing table: default.inet
 Internet:
 Enabled protocols: Bridging, 
 Destination        Type RtRef Next hop           Type Index    NhRef Netif
-10.35.1.3/32       user     0                    ulst  1048574    12
-                              10.35.21.2         ucst      796    60 ae0.0
-                              10.35.22.2         ucst     1003    60 ae1.0
+10.35.1.3/32       user     0                    ulst  1048578    12
+                              10.35.21.2         ucst      531    48 ae0.0
+                              10.35.22.2         ucst      532    48 ae1.0
 
 Routing table: default.inet
 Internet:
 Enabled protocols: Bridging, 
 Destination        Type RtRef Next hop           Type Index    NhRef Netif
-10.35.1.4/32       user     0                    ulst  1048574    12
-                              10.35.21.2         ucst      796    60 ae0.0
-                              10.35.22.2         ucst     1003    60 ae1.0
+10.35.1.4/32       user     0                    ulst  1048578    12
+                              10.35.21.2         ucst      531    48 ae0.0
+                              10.35.22.2         ucst      532    48 ae1.0
 
 Routing table: default.inet
 Internet:
 Enabled protocols: Bridging, 
 Destination        Type RtRef Next hop           Type Index    NhRef Netif
-10.35.2.1/32       user     1                    ulst  1048607     3
-                              10.35.21.2         ucst      796    60 ae0.0
-                              10.35.22.2         ucst     1003    60 ae1.0
+10.35.2.1/32       user     1                    ulst  1048579     3
+                              10.35.21.2         ucst      531    48 ae0.0
+                              10.35.22.2         ucst      532    48 ae1.0
 
 Routing table: default.inet
 Internet:
 Enabled protocols: Bridging, 
 Destination        Type RtRef Next hop           Type Index    NhRef Netif
-10.35.2.2/32       user     1                    ulst  1048612     3
-                              10.35.22.2         ucst     1003    60 ae1.0
-                              10.35.21.2         ucst      796    60 ae0.0
+10.35.2.2/32       user     1                    ulst  1048580     3
+                              10.35.22.2         ucst      532    48 ae1.0
+                              10.35.21.2         ucst      531    48 ae0.0
 
 Routing table: default.inet
 Internet:
 Enabled protocols: Bridging, 
 Destination        Type RtRef Next hop           Type Index    NhRef Netif
-10.35.2.3/32       user     0                    ulst  1048574    12
-                              10.35.21.2         ucst      796    60 ae0.0
-                              10.35.22.2         ucst     1003    60 ae1.0
+10.35.2.3/32       user     0                    ulst  1048578    12
+                              10.35.21.2         ucst      531    48 ae0.0
+                              10.35.22.2         ucst      532    48 ae1.0
 
 Routing table: default.inet
 Internet:
 Enabled protocols: Bridging, 
 Destination        Type RtRef Next hop           Type Index    NhRef Netif
-10.35.2.4/32       intf     0 10.35.2.4          locl      656     1
+10.35.2.4/32       intf     0 10.35.2.4          locl      512     1

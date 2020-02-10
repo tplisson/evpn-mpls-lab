@@ -8,6 +8,6 @@ bgp.l3vpn.0: 29 destinations, 58 routes (29 active, 0 holddown, 0 hidden)
 bgp.l3vpn-inet6.0: 35 destinations, 70 routes (35 active, 0 holddown, 0 hidden)
                  BGP:     70 routes,     35 active
 
-bgp.evpn.0: 98 destinations, 172 routes (98 active, 0 holddown, 0 hidden)
-                 BGP:    148 routes,     74 active
+bgp.evpn.0: 94 destinations, 164 routes (94 active, 0 holddown, 0 hidden)
+                 BGP:    140 routes,     70 active
                 EVPN:     24 routes,     24 active

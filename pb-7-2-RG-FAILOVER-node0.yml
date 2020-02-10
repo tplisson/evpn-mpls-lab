@@ -1,0 +1,110 @@
+---
+  - hosts: localhost:SRX:SPINE
+    gather_facts: no
+    tasks:
+    - set_fact: 
+        testcase: 7-2-RG-FAILOVER-EVI10-20-SRX-TYPE5
+        test_dir: "testcase/7-2-RG-FAILOVER-EVI10-20-SRX-TYPE5/1"
+        cacheable: yes
+  
+  - hosts: localhost
+    gather_facts: no
+    tasks:
+    - file: 
+        path: "{{playbook_dir}}/{{item}}" 
+        state: directory
+      with_items:
+        - "{{test_dir}}"
+        - "{{test_dir}}/PRE"
+        - "{{test_dir}}/POST"
+
+  - name: Pre-Checks
+    hosts: SPINE
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Pre-Checks for Test {{testcase}}
+      juniper_junos_command:
+        command:
+          - 'set cli timestamp'
+          - 'traceroute routing-instance vrf10 10.10.0.100'
+          - 'traceroute routing-instance vrf20 10.20.0.100'
+          - 'show interfaces ae10.10 statistics'
+          - 'show interfaces ae10.20 statistics'
+          - 'show bgp summary instance vrf10'
+          - 'show bgp summary instance vrf20'
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/PRE"
+        return_output: false
+
+  - name: Pre-Checks
+    hosts: SRX
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Pre-Checks for Test {{testcase}}
+      juniper_junos_command:
+        command:
+          - 'set cli timestamp'
+          - 'show interfaces reth2.10 terse'
+          - 'show interfaces reth2.10 statistics'
+          - 'show interfaces reth2.20 terse'
+          - 'show interfaces reth2.20 statistics'
+          - 'show chassis cluster status redundancy-group 2'
+          - 'show bgp summary instance vr'
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/PRE"
+        return_output: false
+
+    - name: SRX RG Failover to node 0
+      juniper_junos_command:
+        command:
+          - 'set cli timestamp'
+          - 'request chassis cluster failover reset redundancy-group 2'
+          - 'request chassis cluster failover redundancy-group 2 node 0'
+          - 'show chassis cluster status redundancy-group 2'
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+      register: response
+    - name: Print the coutput.
+      debug:
+        var: response
+
+    - name: Sleep for 30 seconds and continue with play
+      wait_for:
+        timeout: 30
+
+    - name: Post-Checks
+      juniper_junos_command:
+        command:
+          - 'set cli timestamp'
+          - 'show interfaces reth2.10 terse'
+          - 'show interfaces reth2.10 statistics'
+          - 'show interfaces reth2.20 terse'
+          - 'show interfaces reth2.20 statistics'
+          - 'show chassis cluster status redundancy-group 2'
+          - 'show bgp summary instance vr'
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/post"
+        return_output: false
+
+
+  - name: Post-Checks
+    hosts: SPINE
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Pre-Checks for Test {{testcase}}
+      juniper_junos_command:
+        command:
+          - 'set cli timestamp'
+          - 'traceroute routing-instance vrf10 10.10.0.100'
+          - 'traceroute routing-instance vrf20 10.20.0.100'
+          - 'show interfaces ae10.10 statistics'
+          - 'show interfaces ae10.20 statistics'
+          - 'show bgp summary instance vrf10'
+          - 'show bgp summary instance vrf20'
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/post"
+        return_output: false

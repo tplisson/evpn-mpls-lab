@@ -5,258 +5,258 @@ inet.3: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0xa0a9b5c
-                Next-hop reference count: 17
+                Address: 0x673991c
+                Next-hop reference count: 13
                 Next hop: 10.35.0.0 via ae0.0 weight 0x1, selected
-                Label element ptr: 0x4681498
+                Label element ptr: 0x46804d8
                 Label parent element ptr: 0x0
-                Label element references: 187
-                Label element child references: 177
+                Label element references: 63
+                Label element child references: 53
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.0.8 via ae1.0 weight 0xf000
                 Label operation: Push 901001
                 Label TTL action: prop-ttl
                 Load balance label: Label 901001: None; 
-                Label element ptr: 0x468cb68
+                Label element ptr: 0x46810a8
                 Label parent element ptr: 0x0
-                Label element references: 69
-                Label element child references: 65
+                Label element references: 25
+                Label element child references: 21
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.0.10 via ae2.0 weight 0xf000
                 Label operation: Push 901001
                 Label TTL action: prop-ttl
                 Load balance label: Label 901001: None; 
-                Label element ptr: 0x468cb68
+                Label element ptr: 0x46810a8
                 Label parent element ptr: 0x0
-                Label element references: 69
-                Label element child references: 65
+                Label element references: 25
+                Label element child references: 21
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:05 	Metric: 100 
+                Age: 3:17:19 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-Resolve tree 1 2-Resolve_IGP_FRR task 3-Resolve tree 8 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.1.2/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0xa0a9a1c
-                Next-hop reference count: 17
+                Address: 0x673941c
+                Next-hop reference count: 13
                 Next hop: 10.35.0.8 via ae1.0 weight 0x1, selected
-                Label element ptr: 0x4681498
+                Label element ptr: 0x46804d8
                 Label parent element ptr: 0x0
-                Label element references: 187
-                Label element child references: 177
+                Label element references: 63
+                Label element child references: 53
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.0.0 via ae0.0 weight 0xf000
                 Label operation: Push 901002
                 Label TTL action: prop-ttl
                 Load balance label: Label 901002: None; 
-                Label element ptr: 0x4689328
+                Label element ptr: 0x46806d0
                 Label parent element ptr: 0x0
-                Label element references: 70
-                Label element child references: 66
+                Label element references: 25
+                Label element child references: 21
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.0.10 via ae2.0 weight 0xf000
                 Label operation: Push 901002
                 Label TTL action: prop-ttl
                 Load balance label: Label 901002: None; 
-                Label element ptr: 0x4689328
+                Label element ptr: 0x46806d0
                 Label parent element ptr: 0x0
-                Label element references: 70
-                Label element child references: 66
+                Label element references: 25
+                Label element child references: 21
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:05 	Metric: 100 
+                Age: 3:17:19 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-Resolve tree 1 2-Resolve_IGP_FRR task 3-Resolve tree 8 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.1.3/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c735c
-                Next-hop reference count: 8
+                Address: 0x45cd9bc
+                Next-hop reference count: 11
                 Next hop: 10.35.0.0 via ae0.0 weight 0x1
                 Label operation: Push 901003
                 Label TTL action: prop-ttl
                 Load balance label: Label 901003: None; 
-                Label element ptr: 0x4681cc0
+                Label element ptr: 0x4680880
                 Label parent element ptr: 0x0
-                Label element references: 13
-                Label element child references: 9
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.0.8 via ae1.0 weight 0x1, selected
                 Label operation: Push 901003
                 Label TTL action: prop-ttl
                 Load balance label: Label 901003: None; 
-                Label element ptr: 0x4681cc0
+                Label element ptr: 0x4680880
                 Label parent element ptr: 0x0
-                Label element references: 13
-                Label element child references: 9
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:05 	Metric: 200 
+                Age: 3:17:19 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.1.4/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c84dc
-                Next-hop reference count: 8
+                Address: 0x45cdb7c
+                Next-hop reference count: 11
                 Next hop: 10.35.0.0 via ae0.0 weight 0x1
                 Label operation: Push 901004
                 Label TTL action: prop-ttl
                 Load balance label: Label 901004: None; 
-                Label element ptr: 0x46819f0
+                Label element ptr: 0x4680a30
                 Label parent element ptr: 0x0
-                Label element references: 12
-                Label element child references: 8
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.0.8 via ae1.0 weight 0x1, selected
                 Label operation: Push 901004
                 Label TTL action: prop-ttl
                 Load balance label: Label 901004: None; 
-                Label element ptr: 0x46819f0
+                Label element ptr: 0x4680a30
                 Label parent element ptr: 0x0
-                Label element references: 12
-                Label element child references: 8
+                Label element references: 11
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:05 	Metric: 200 
+                Age: 3:17:19 	Metric: 200 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.2.1/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0xa0a98dc
-                Next-hop reference count: 17
+                Address: 0xa49b69c
+                Next-hop reference count: 13
                 Next hop: 10.35.0.10 via ae2.0 weight 0x1, selected
-                Label element ptr: 0x4681498
+                Label element ptr: 0x46804d8
                 Label parent element ptr: 0x0
-                Label element references: 187
-                Label element child references: 177
+                Label element references: 63
+                Label element child references: 53
                 Label element lsp id: 0
                 Session Id: 0x0
-                Next hop: 10.35.0.0 via ae0.0 weight 0xf000
+                Next hop: 10.35.22.1 via ae3.0 weight 0xf000
                 Label operation: Push 902001
                 Label TTL action: prop-ttl
                 Load balance label: Label 902001: None; 
-                Label element ptr: 0x4685668
+                Label element ptr: 0x468a888
                 Label parent element ptr: 0x0
-                Label element references: 40
-                Label element child references: 36
+                Label element references: 16
+                Label element child references: 12
                 Label element lsp id: 0
                 Session Id: 0x0
-                Next hop: 10.35.0.8 via ae1.0 weight 0xf000
+                Next hop: 10.35.22.3 via ae4.0 weight 0xf000
                 Label operation: Push 902001
                 Label TTL action: prop-ttl
                 Load balance label: Label 902001: None; 
-                Label element ptr: 0x4685668
+                Label element ptr: 0x468a888
                 Label parent element ptr: 0x0
-                Label element references: 40
-                Label element child references: 36
+                Label element references: 16
+                Label element child references: 12
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:05 	Metric: 100 
+                Age: 3:17:18 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (3): 0-Resolve tree 1 2-Resolve_IGP_FRR task 3-Resolve tree 8 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.2.3/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45c98fc
-                Next-hop reference count: 8
+                Address: 0x45cc59c
+                Next-hop reference count: 11
                 Next hop: 10.35.22.1 via ae3.0 weight 0x1, selected
-                Label element ptr: 0x4681498
+                Label element ptr: 0x46804d8
                 Label parent element ptr: 0x0
-                Label element references: 187
-                Label element child references: 177
+                Label element references: 63
+                Label element child references: 53
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.0.10 via ae2.0 weight 0xf000
                 Label operation: Push 902003
                 Label TTL action: prop-ttl
                 Load balance label: Label 902003: None; 
-                Label element ptr: 0x468ccd0
+                Label element ptr: 0x46811c8
                 Label parent element ptr: 0x0
-                Label element references: 20
-                Label element child references: 18
+                Label element references: 9
+                Label element child references: 7
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:05 	Metric: 100 
+                Age: 3:17:19 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 
 
 10.35.2.4/32 (1 entry, 1 announced)
         *L-ISIS Preference: 14
                 Level: 2
                 Next hop type: Router, Next hop index: 0
-                Address: 0x45caa7c
-                Next-hop reference count: 8
+                Address: 0x45ccadc
+                Next-hop reference count: 11
                 Next hop: 10.35.22.3 via ae4.0 weight 0x1, selected
-                Label element ptr: 0x4681498
+                Label element ptr: 0x46804d8
                 Label parent element ptr: 0x0
-                Label element references: 187
-                Label element child references: 177
+                Label element references: 63
+                Label element child references: 53
                 Label element lsp id: 0
                 Session Id: 0x0
                 Next hop: 10.35.0.10 via ae2.0 weight 0xf000
                 Label operation: Push 902004
                 Label TTL action: prop-ttl
                 Load balance label: Label 902004: None; 
-                Label element ptr: 0x468cdf0
+                Label element ptr: 0x4680f40
                 Label parent element ptr: 0x0
-                Label element references: 23
-                Label element child references: 21
+                Label element references: 8
+                Label element child references: 6
                 Label element lsp id: 0
                 Session Id: 0x0
                 State: <Active Int>
                 Local AS: 64514 
-                Age: 5:05 	Metric: 100 
+                Age: 3:17:19 	Metric: 100 
                 Validation State: unverified 
                 ORR Generation-ID: 0 
                 Task: IS-IS
-                Announcement bits (2): 0-Resolve tree 1 3-Resolve tree 8 
+                Announcement bits (2): 0-Resolve tree 1 2-Resolve_IGP_FRR task 
                 AS path: I 

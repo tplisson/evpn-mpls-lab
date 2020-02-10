@@ -6,18 +6,15 @@ Group Type: Internal    AS: 64514                  Local AS: 64514
   Graceful Shutdown Receiver local-preference: 0
   Total peers: 2        Established: 2
   10.35.1.1+179
-  10.35.1.2+58321
-  __default_evpn__.evpn.0: 3/6/6/0
-  bgp.evpn.0: 90/180/180/0
-  bgp.l3vpn-inet6.0: 152/152/152/0
-  bgp.l3vpn.0: 102/110/110/0
+  10.35.1.2+179
+  __default_evpn__.evpn.0: 2/4/4/0
+  bgp.evpn.0: 78/156/156/0
+  bgp.l3vpn-inet6.0: 72/72/72/0
+  bgp.l3vpn.0: 54/58/58/0
   vlan10.evpn.0: 11/22/22/0
-  vlan20.evpn.0: 11/22/22/0
   vlan30.evpn.0: 65/130/130/0
-  vrf10.inet.0: 6/42/42/0
-  vrf10.inet6.0: 7/58/58/0
-  vrf20.inet.0: 7/44/44/0
-  vrf20.inet6.0: 8/60/60/0
+  vrf10.inet.0: 4/34/34/0
+  vrf10.inet6.0: 4/38/38/0
   vrf30.inet.0: 2/24/24/0
   vrf30.inet6.0: 4/34/34/0
 
@@ -29,7 +26,7 @@ Group Type: External                               Local AS: 64514
   Holdtime: 0
   Graceful Shutdown Receiver local-preference: 0
   Total peers: 1        Established: 1
-  10.10.1.111+60472
+  10.10.1.111+64127
   vrf10.inet.0: 1/2/2/0
 
 Group Type: External                               Local AS: 64514
@@ -43,41 +40,33 @@ Group Type: External                               Local AS: 64514
   101::111+179
   vrf10.inet6.0: 1/2/2/0
 
-Groups: 3  Peers: 4    External: 2    Internal: 2    Down peers: 0   Flaps: 14
+Groups: 3  Peers: 4    External: 2    Internal: 2    Down peers: 0   Flaps: 6
 Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
-bgp.l3vpn.0          
-                     110        102          0          0          0          0
-bgp.l3vpn-inet6.0    
-                     152        152          0          0          0          0
-bgp.evpn.0           
-                     180         90          0          0          0          0
-vrf20.inet.0         
-                      44          7          0          0          0          0
-vrf20.inet6.0        
-                      60          8          0          0          0          0
-vrf20.mdt.0          
-                       0          0          0          0          0          0
-vlan10.evpn.0        
-                      22         11          0          0          0          0
-mgmt_junos.mdt.0     
-                       0          0          0          0          0          0
-__default_evpn__.evpn.0 
-                       6          3          0          0          0          0
-vlan30.evpn.0        
-                     130         65          0          0          0          0
-vrf10.inet.0         
-                      44          7          0          0          0          0
-vrf10.inet6.0        
-                      60          8          0          0          0          0
-vrf10.mdt.0          
-                       0          0          0          0          0          0
-vlan20.evpn.0        
-                      22         11          0          0          0          0
-vrf30.inet.0         
-                      24          2          0          0          0          0
-vrf30.inet6.0        
-                      34          4          0          0          0          0
 vrf30.mdt.0          
                        0          0          0          0          0          0
 vrf30.evpn.0         
                        0          0          0          0          0          0
+bgp.evpn.0           
+                     156         78          0          0          0          0
+vrf10.inet.0         
+                      36          5          0          0          0          0
+vrf10.inet6.0        
+                      40          5          0          0          0          0
+vrf10.mdt.0          
+                       0          0          0          0          0          0
+vlan10.evpn.0        
+                      22         11          0          0          0          0
+__default_evpn__.evpn.0 
+                       4          2          0          0          0          0
+vrf10.evpn.0         
+                       0          0          0          0          0          0
+vlan30.evpn.0        
+                     130         65          0          0          0          0
+bgp.l3vpn.0          
+                      58         54          0          0          0          0
+bgp.l3vpn-inet6.0    
+                      72         72          0          0          0          0
+vrf30.inet.0         
+                      24          2          0          0          0          0
+vrf30.inet6.0        
+                      34          4          0          0          0          0
