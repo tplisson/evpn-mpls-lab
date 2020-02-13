@@ -1,8 +1,0 @@
-
-Interface               Admin Link Proto    Local                 Remote
-irb.20                  up    up   inet     10.20.1.1/24    
-                                            10.20.1.12/24   
-                                   inet6    201::1/64       
-                                            201::12/64      
-                                            fe80::20:12/64  
-                                   multiservice

@@ -777,11 +777,6 @@ set protocols isis interface ae1.0 family inet bfd-liveness-detection minimum-in
 set protocols isis interface ae1.0 family inet bfd-liveness-detection minimum-receive-interval 300
 set protocols isis interface ae1.0 family inet bfd-liveness-detection multiplier 3
 set protocols isis interface lo0.0 passive
-set protocols igmp interface ae40.101 static group 233.0.0.111 source 101.0.0.10
-set protocols igmp interface ae40.101 static group 225.0.101.111
-set protocols igmp interface ae40.102 static group 225.0.102.111
-set protocols igmp interface ae40.105 static group 225.105.2.111
-set protocols igmp interface ae40.30 static group 225.30.30.30
 set protocols mpls explicit-null
 set protocols mpls ipv6-tunneling
 set protocols mpls interface ae1.0

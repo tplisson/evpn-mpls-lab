@@ -1,0 +1,333 @@
+
+
+vrf20.inet.0: 9 destinations, 26 routes (9 active, 0 holddown, 0 hidden)
+@ = Routing Use Only, # = Forwarding Use Only
++ = Active Route, - = Last Active, * = Both
+
+10.20.0.0/24       *[Direct/0] 00:12:18
+                    >  via irb.20
+                    [BGP/170] 00:12:18, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+                    [BGP/170] 00:12:10, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+                    [BGP/170] 00:12:05, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.10 via ae2.0, Push 221
+                       to 10.35.0.0 via ae0.0, Push 221, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 221, Push 902001(top)
+10.20.0.1/32       *[Local/0] 00:12:18
+                       Local via irb.20
+10.20.0.5/32       *[Local/0] 00:12:18
+                       Local via irb.20
+10.20.0.100/32     @[BGP/170] 00:12:18, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+                    [BGP/170] 00:12:10, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+                   #[Multipath/255] 00:12:10, metric2 100
+                       to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+
+bgp.l3vpn.0: 49 destinations, 66 routes (49 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.35.1.1:17:10.20.0.0/24                
+                   *[BGP/170] 00:12:18, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+10.35.1.1:17:10.20.0.100/32                
+                   *[BGP/170] 00:12:18, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+10.35.1.2:16:10.20.0.0/24                
+                   *[BGP/170] 00:12:10, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+10.35.1.2:16:10.20.0.100/32                
+                   *[BGP/170] 00:12:10, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+10.35.2.1:17:10.20.0.0/24                
+                   *[BGP/170] 00:12:05, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.10 via ae2.0, Push 221
+                       to 10.35.0.0 via ae0.0, Push 221, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 221, Push 902001(top)
+10.35.2.2:17:10.20.0.0/24                
+                   *[Direct/0] 00:12:18
+                    >  via irb.20
+10.35.2.2:17:10.20.0.1/32                
+                   *[Local/0] 00:12:18
+                       Local via irb.20
+10.35.2.2:17:10.20.0.5/32                
+                   *[Local/0] 00:12:18
+                       Local via irb.20
+
+
+vrf20.inet.0: 9 destinations, 26 routes (9 active, 0 holddown, 0 hidden)
+@ = Routing Use Only, # = Forwarding Use Only
++ = Active Route, - = Last Active, * = Both
+
+10.20.2.0/24       @[BGP/170] 00:12:03, localpref 100, from 10.35.2.3
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.1 via ae3.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902003(top)
+                    [BGP/170] 00:12:05, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.1 via ae3.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902003(top)
+                    [BGP/170] 00:12:03, localpref 100, from 10.35.2.4
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+                    [BGP/170] 00:12:05, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+                   #[Multipath/255] 00:12:03, metric2 100
+                       to 10.35.22.1 via ae3.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902003(top)
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+10.20.2.222/32     *[BGP/170] 00:12:03, localpref 100, from 10.35.2.4
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+                    [BGP/170] 00:12:05, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+
+bgp.l3vpn.0: 49 destinations, 66 routes (49 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.35.2.3:14:10.20.2.0/24                
+                   *[BGP/170] 00:12:03, localpref 100, from 10.35.2.3
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.1 via ae3.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902003(top)
+                    [BGP/170] 00:12:05, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.1 via ae3.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902003(top)
+10.35.2.4:14:10.20.2.0/24                
+                   *[BGP/170] 00:12:03, localpref 100, from 10.35.2.4
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+                    [BGP/170] 00:12:05, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+10.35.2.4:14:10.20.2.222/32                
+                   *[BGP/170] 00:12:03, localpref 100, from 10.35.2.4
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+                    [BGP/170] 00:12:05, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+
+
+vrf20.inet6.0: 15 destinations, 39 routes (13 active, 0 holddown, 3 hidden)
++ = Active Route, - = Last Active, * = Both
+
+200::/64           *[Direct/0] 00:12:08
+                    >  via irb.20
+                    [BGP/170] 00:12:19, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+                    [BGP/170] 00:12:11, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+                    [BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.10 via ae2.0, Push 221
+                       to 10.35.0.0 via ae0.0, Push 221, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 221, Push 902001(top)
+200::1/128         *[Local/0] 00:12:19
+                       Local via irb.20
+200::5/128         *[Local/0] 00:12:08
+                       Local via irb.20
+200::100/128       *[BGP/170] 00:12:19, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+                    [BGP/170] 00:12:11, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+
+bgp.l3vpn-inet6.0: 64 destinations, 90 routes (64 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.35.1.1:17:200::/64                
+                   *[BGP/170] 00:12:19, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+10.35.1.1:17:200::100/128               
+                   *[BGP/170] 00:12:19, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+10.35.1.2:16:200::/64                
+                   *[BGP/170] 00:12:11, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+10.35.1.2:16:200::100/128               
+                   *[BGP/170] 00:12:11, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+10.35.2.1:17:200::/64                
+                   *[BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.10 via ae2.0, Push 221
+                       to 10.35.0.0 via ae0.0, Push 221, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 221, Push 902001(top)
+10.35.2.2:17:200::/64                
+                   *[Direct/0] 00:12:08
+                    >  via irb.20
+10.35.2.2:17:200::1/128               
+                   *[Local/0] 00:12:19
+                       Local via irb.20
+10.35.2.2:17:200::5/128               
+                   *[Local/0] 00:12:08
+                       Local via irb.20
+
+
+vrf20.inet6.0: 15 destinations, 39 routes (13 active, 0 holddown, 3 hidden)
+
+
+vrf20.inet6.0: 15 destinations, 39 routes (13 active, 0 holddown, 3 hidden)
++ = Active Route, - = Last Active, * = Both
+
+202::/64           *[Aggregate/130] 00:12:04
+                       Reject
+                    [BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.10 via ae2.0, Push 221
+                       to 10.35.0.0 via ae0.0, Push 221, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 221, Push 902001(top)
+                    [BGP/170] 00:12:04, localpref 100, from 10.35.2.3
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.1 via ae3.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902003(top)
+                    [BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.1 via ae3.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902003(top)
+                    [BGP/170] 00:12:04, localpref 100, from 10.35.2.4
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+                    [BGP/170] 00:12:19, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+                    [BGP/170] 00:12:11, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+                    [BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+202::222/128       *[BGP/170] 00:12:04, localpref 100, from 10.35.2.4
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+                    [BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+
+bgp.l3vpn-inet6.0: 64 destinations, 90 routes (64 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.35.1.1:17:202::/64                
+                   *[BGP/170] 00:12:19, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.0 via ae0.0, Push 29
+                       to 10.35.0.8 via ae1.0, Push 29, Push 901001(top)
+                       to 10.35.0.10 via ae2.0, Push 29, Push 901001(top)
+10.35.1.2:16:202::/64                
+                   *[BGP/170] 00:12:11, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.8 via ae1.0, Push 233
+                       to 10.35.0.0 via ae0.0, Push 233, Push 901002(top)
+                       to 10.35.0.10 via ae2.0, Push 233, Push 901002(top)
+10.35.2.1:17:202::/64                
+                   *[BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.0.10 via ae2.0, Push 221
+                       to 10.35.0.0 via ae0.0, Push 221, Push 902001(top)
+                       to 10.35.22.3 via ae4.0, Push 221, Push 902001(top)
+10.35.2.2:17:202::/64                
+                   *[Aggregate/130] 00:12:04
+                       Reject
+10.35.2.3:14:202::/64                
+                   *[BGP/170] 00:12:04, localpref 100, from 10.35.2.3
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.1 via ae3.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902003(top)
+                    [BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.1 via ae3.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902003(top)
+10.35.2.4:14:202::/64                
+                   *[BGP/170] 00:12:04, localpref 100, from 10.35.2.4
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+                    [BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+10.35.2.4:14:202::222/128               
+                   *[BGP/170] 00:12:04, localpref 100, from 10.35.2.4
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)
+                    [BGP/170] 00:12:06, localpref 100, from 10.35.2.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.22.3 via ae4.0, Push 20
+                       to 10.35.0.10 via ae2.0, Push 20, Push 902004(top)

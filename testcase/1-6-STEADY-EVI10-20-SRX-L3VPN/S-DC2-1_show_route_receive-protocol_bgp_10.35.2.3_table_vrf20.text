@@ -1,0 +1,13 @@
+
+
+vrf20.inet.0: 9 destinations, 26 routes (9 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+@ 10.20.2.0/24            10.35.2.3                    100        I
+
+vrf20.inet6.0: 15 destinations, 37 routes (13 active, 0 holddown, 3 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+  202::/64                ::ffff:10.35.2.3             100        I
+  fe80::d207:ca00:1444:dc84/128
+*                         ::ffff:10.35.2.3             100        I
+  fe80::d207:ca00:1444:dc85/128
+*                         ::ffff:10.35.2.3             100        I

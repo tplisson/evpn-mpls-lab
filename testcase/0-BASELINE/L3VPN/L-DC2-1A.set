@@ -126,11 +126,8 @@ set security authentication-key-chains key-chain KC-ISIS-AUTH key 1 algorithm hm
 set security authentication-key-chains key-chain KC-ISIS-AUTH key 1 options isis-enhanced
 set interfaces xe-0/0/0:0 apply-groups GR-EDGE-INTF-LAG-MEMBER
 set interfaces xe-0/0/0:0 gigether-options 802.3ad ae10
-set interfaces xe-0/0/0:1 vlan-tagging
-set interfaces xe-0/0/0:1 mtu 9000
-set interfaces xe-0/0/0:1 encapsulation flexible-ethernet-services
-set interfaces xe-0/0/0:1 unit 30 encapsulation vlan-bridge
-set interfaces xe-0/0/0:1 unit 30 vlan-id 30
+set interfaces xe-0/0/0:1 apply-groups GR-EDGE-INTF-LAG-MEMBER
+set interfaces xe-0/0/0:1 gigether-options 802.3ad ae11
 set interfaces xe-0/1/0:0 apply-groups GR-CORE-INTF-LAG-MEMBER
 set interfaces xe-0/1/0:0 gigether-options 802.3ad ae0
 set interfaces xe-0/1/1:0 apply-groups GR-CORE-INTF-LAG-MEMBER
@@ -150,11 +147,16 @@ set interfaces ae10 description "L-DC2-1A ---- QFX2"
 set interfaces ae10 aggregated-ether-options lacp system-id dc:02:21:22:ae:10
 set interfaces ae10 unit 20 vlan-id 20
 set interfaces ae10 unit 30 vlan-id 30
-set interfaces ae11 apply-groups GR-EDGE-INTF-L2
 set interfaces ae11 description "L-DC2-1A ---- IXIA-2/1"
-set interfaces ae11 aggregated-ether-options lacp system-id dc:02:44:44:44:44
-set interfaces ae11 unit 20 vlan-id 20
-deactivate interfaces ae11
+set interfaces ae11 vlan-tagging
+set interfaces ae11 mtu 9000
+set interfaces ae11 encapsulation flexible-ethernet-services
+set interfaces ae11 aggregated-ether-options lacp active
+set interfaces ae11 aggregated-ether-options lacp periodic fast
+set interfaces ae11 aggregated-ether-options lacp accept-data
+set interfaces ae11 aggregated-ether-options lacp hold-time up 2
+set interfaces ae11 unit 30 encapsulation vlan-bridge
+set interfaces ae11 unit 30 vlan-id 30
 set interfaces irb unit 20 virtual-gateway-accept-data
 set interfaces irb unit 20 family inet address 10.20.2.21/24 preferred
 set interfaces irb unit 20 family inet address 10.20.2.21/24 virtual-gateway-address 10.20.2.1
@@ -195,16 +197,6 @@ set policy-options prefix-list PL-DNS-SERVERS apply-path "system name-server <*>
 set policy-options prefix-list PL-BGP-NEIGHBORS apply-path "protocols bgp group <*> neighbor <*>"
 set policy-options prefix-list PL-BGP-VRF-NEIGHBORS apply-path "routing-instances <*> protocols bgp group <*> neighbor <*>"
 set policy-options prefix-list PL-TACPLUS-SERVER apply-path "system tacplus-server <*>"
-set policy-options prefix-list PL-EVI10-V4 10.10.0.0/16
-set policy-options prefix-list PL-EVI20-V4 10.20.0.0/16
-set policy-options prefix-list PL-EVI10-V6 101::/64
-set policy-options prefix-list PL-EVI10-V6 102::/64
-set policy-options prefix-list PL-EVI10-V6 110::/64
-set policy-options prefix-list PL-EVI10-V6 210::/64
-set policy-options prefix-list PL-EVI20-V6 120::/64
-set policy-options prefix-list PL-EVI20-V6 201::/64
-set policy-options prefix-list PL-EVI20-V6 202::/64
-set policy-options prefix-list PL-EVI20-V6 220::/64
 set policy-options policy-statement PL-EVI20-DEFAULT-NH-VGA-V4 term DEFAULT-NH-VGA-V4 from prefix-list PL-DEFAULT-V4
 set policy-options policy-statement PL-EVI20-DEFAULT-NH-VGA-V4 term DEFAULT-NH-VGA-V4 then next-hop 10.20.2.1
 set policy-options policy-statement PL-EVI20-DEFAULT-NH-VGA-V4 term DEFAULT-NH-VGA-V4 then accept
@@ -213,14 +205,6 @@ set policy-options policy-statement PL-EVI20-DEFAULT-NH-VGA-V6 term DEFAULT-NH-V
 set policy-options policy-statement PL-EVI20-DEFAULT-NH-VGA-V6 term DEFAULT-NH-VGA-V6 then next-hop 202::1
 set policy-options policy-statement PL-EVI20-DEFAULT-NH-VGA-V6 term DEFAULT-NH-VGA-V6 then accept
 set policy-options policy-statement PL-EVI20-DEFAULT-NH-VGA-V6 term DROP then reject
-set policy-options policy-statement PL-EVI20-T5-V4 term SLASH-32 from prefix-list-filter PL-EVI20-V4 orlonger
-set policy-options policy-statement PL-EVI20-T5-V4 term SLASH-32 then accept
-set policy-options policy-statement PL-EVI20-T5-V6 term SLASH-64 from prefix-list-filter PL-EVI20-V6 orlonger
-set policy-options policy-statement PL-EVI20-T5-V6 term SLASH-64 then accept
-set policy-options policy-statement PL-EVI30-T5-V4 term SLASH-32 from route-filter 10.30.0.0/24 orlonger
-set policy-options policy-statement PL-EVI30-T5-V4 term SLASH-32 then accept
-set policy-options policy-statement PL-EVI30-T5-V6 term SLASH-64 from route-filter 300::0/64 orlonger
-set policy-options policy-statement PL-EVI30-T5-V6 term SLASH-64 then accept
 set policy-options policy-statement PL-LOAD-BALANCE term LB then load-balance per-packet
 set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points be
 set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points cs1
@@ -499,12 +483,12 @@ set routing-instances vlan20 protocols mld-snooping proxy source-address fe80::2
 set routing-instances vlan30 description "EVPN instance for VLAN 30"
 set routing-instances vlan30 instance-type evpn
 set routing-instances vlan30 vlan-id 30
-set routing-instances vlan30 interface xe-0/0/0:1.30
 set routing-instances vlan30 interface ae10.30
+set routing-instances vlan30 interface ae11.30
 set routing-instances vlan30 routing-interface irb.30
 set routing-instances vlan30 vrf-target target:64514:30
 set routing-instances vlan30 protocols evpn default-gateway no-gateway-community
-set routing-instances vlan30 protocols igmp-snooping proxy source-address 10.30.0.21
+set routing-instances vlan30 protocols igmp-snooping proxy
 set routing-instances vlan30 protocols mld-snooping proxy source-address fe80::30:21
 set routing-instances vrf20 description "VRF instance for IRB in VLAN 20"
 set routing-instances vrf20 instance-type vrf
@@ -522,6 +506,7 @@ set routing-instances vrf30 instance-type vrf
 set routing-instances vrf30 interface irb.30
 set routing-instances vrf30 vrf-target target:64514:30
 set routing-instances vrf30 vrf-table-label
+set routing-instances vrf30 routing-options multipath
 set routing-options nonstop-routing
 set routing-options route-distinguisher-id 10.35.2.3
 set routing-options forwarding-table export PL-LOAD-BALANCE

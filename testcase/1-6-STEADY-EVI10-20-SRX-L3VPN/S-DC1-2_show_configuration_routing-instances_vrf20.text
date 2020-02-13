@@ -1,0 +1,37 @@
+
+description "VRF instance for IRB in VLAN 20";
+instance-type vrf;
+interface irb.20;
+vrf-target target:64514:20;
+vrf-table-label;
+routing-options {
+    rib vrf20.inet6.0 {
+        aggregate {
+            route 201::/64;
+            route 202::/64;
+            route 210::/64;
+            route 220::/64;
+        }
+    }
+    autonomous-system 64514;
+    aggregate {
+        route 10.20.0.0/16;
+    }
+    multipath;
+}
+protocols {
+    bgp {
+        group SRX-ANS-3 {
+            multihop {
+                no-nexthop-change;
+            }
+            peer-as 65100;
+            neighbor 10.20.0.100 {
+                export PL-EVI20-V4;
+            }
+            neighbor 200::100 {
+                export PL-EVI20-V6;
+            }
+        }
+    }
+}
