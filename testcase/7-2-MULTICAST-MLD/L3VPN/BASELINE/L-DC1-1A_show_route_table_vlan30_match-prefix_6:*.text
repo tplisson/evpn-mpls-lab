@@ -1,0 +1,36 @@
+
+
+vlan30.evpn.0: 43 destinations, 75 routes (43 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+6:10.35.1.4:16::30::ff03::30:1::10.35.1.4/520               
+                   *[BGP/170] 02:06:22, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.11.0 via ae0.0, Push 901004
+                       to 10.35.12.0 via ae1.0, Push 901004
+                    [BGP/170] 02:06:22, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.11.0 via ae0.0, Push 901004
+                       to 10.35.12.0 via ae1.0, Push 901004
+6:10.35.2.3:16::30::ff03::30:2::10.35.2.3/520               
+                   *[BGP/170] 02:06:13, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.11.0 via ae0.0, Push 902003
+                       to 10.35.12.0 via ae1.0, Push 902003
+                    [BGP/170] 02:06:13, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.11.0 via ae0.0, Push 902003
+                       to 10.35.12.0 via ae1.0, Push 902003
+6:10.35.2.4:16::30::ff03::30:3::10.35.2.4/520               
+                   *[BGP/170] 02:06:13, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.11.0 via ae0.0, Push 902004
+                       to 10.35.12.0 via ae1.0, Push 902004
+                    [BGP/170] 02:06:13, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                    >  to 10.35.11.0 via ae0.0, Push 902004
+                       to 10.35.12.0 via ae1.0, Push 902004
+
+vlan30.evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
+
+vlan30.inet6-evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)

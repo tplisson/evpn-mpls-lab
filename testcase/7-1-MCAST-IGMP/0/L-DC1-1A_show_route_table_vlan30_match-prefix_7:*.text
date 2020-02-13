@@ -1,7 +1,0 @@
-
-
-vlan30.evpn.0: 97 destinations, 180 routes (97 active, 0 holddown, 0 hidden)
-
-vlan30.evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
-
-vlan30.inet6-evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)

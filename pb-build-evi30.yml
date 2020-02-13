@@ -1,5 +1,5 @@
 ---
-  - hosts: localhost:DVT:CE
+  - hosts: localhost:LEAF:CE
     gather_facts: no
     tasks:
     - set_fact: 
@@ -19,8 +19,8 @@
        - config
        - diff
       
-  - name: 2- SPINE & LEAF MX routers
-    hosts: DVT
+  - name: EVI30 on LEAF
+    hosts: LEAF
     roles:
       - Juniper.junos
     connection: local
@@ -50,7 +50,7 @@
         var: config_results.diff_lines
       when: config_results.diff_lines is defined
   
-  - name: 3- CE Devices
+  - name: EVI30 on LEAF CE Devices
     hosts: CE
     roles:
       - Juniper.junos

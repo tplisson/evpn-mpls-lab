@@ -16,7 +16,7 @@
   - name: Deploy EVI 30 configuration
     import_playbook: pb-build-evi30.yml
 
-    - name: Create directories
+  - name: Create directories
     hosts: localhost
     gather_facts: no
     tasks:

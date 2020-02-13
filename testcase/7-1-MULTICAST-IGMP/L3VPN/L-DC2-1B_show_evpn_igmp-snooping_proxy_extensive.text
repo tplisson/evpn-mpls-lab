@@ -1,0 +1,7 @@
+
+Instance: vlan30
+  VN Identifier: 30
+    Group       Source   Local   Remote    Corenh     Flood
+    225.30.0.1  0.0.0.0    0       1         0          0
+    225.30.0.2  0.0.0.0    0       1         0          0
+    225.30.0.3  0.0.0.0    1       0         0          0

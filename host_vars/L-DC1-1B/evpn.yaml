@@ -1,13 +1,13 @@
 ---
 host_name: L-DC1-1B
-#ae_name: ae11
-#ae_members:
-#- xe-0/0/0:1
-#description: IXIA-1/6
 ae_name: ae10
 ae_members:
 - xe-0/0/0:0
 description: QFX1
+ixia_ae_name: ae11
+ixia_ae_members: 
+- xe-0/0/0:1
+ixia_description: IXIA-1/4
 sys_id: dc:01:11:12:ae:10
 local_asn: 64514
 local_ip: 12

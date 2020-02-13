@@ -1,9 +1,0 @@
-
-Instance: vlan30
-    Bridge-Domain: vlan30, VLAN ID: 30
-
-Instance: vlan20
-    Bridge-Domain: vlan20, VLAN ID: 20
-
-Instance: vlan10
-    Bridge-Domain: vlan10, VLAN ID: 10

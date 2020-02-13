@@ -1,0 +1,769 @@
+
+set version 15.1X49-D140.3
+set groups node0 system host-name SRX-ANS-3
+set groups node0 interfaces fxp0 unit 0 family inet address 10.4.252.12/28
+set groups node0 interfaces fxp0 unit 0 family inet address 10.4.252.14/28 master-only
+set groups node0 interfaces fxp0 unit 0 family inet address 192.168.200.79/24
+set groups node0 interfaces fxp0 unit 0 family inet address 192.168.200.80/24 master-only
+set groups node1 system host-name SRX-WDC-3
+set groups node1 interfaces fxp0 unit 0 family inet address 10.4.252.13/28
+set groups node1 interfaces fxp0 unit 0 family inet address 10.4.252.14/28 master-only
+set groups node1 interfaces fxp0 unit 0 family inet address 192.168.200.81/24
+set groups node1 interfaces fxp0 unit 0 family inet address 192.168.200.80/24 master-only
+set apply-groups "${node}"
+set system time-zone Europe/Brussels
+set system authentication-order password
+set system authentication-order tacplus
+set system root-authentication encrypted-password "$5$3TXCb/67$.97B7MQcDOEKTUPnIfIGoMlgu4n2ihQjk4EA1mUVzf."
+set system tacplus-server 10.11.2.29 secret "$9$C1pluORvMXbYohSwgaJDjTzF/pBcSevMXcyYo"
+set system tacplus-server 10.11.2.29 timeout 1
+set system tacplus-server 10.11.2.29 single-connection
+set system tacplus-server 10.11.2.30 secret "$9$R/FSrvdVYZDkWLGiq.5TApu1cl8LNdVY8XDk"
+set system tacplus-server 10.11.2.30 timeout 1
+set system tacplus-server 10.11.2.30 single-connection
+set system accounting events login
+set system accounting events change-log
+set system accounting events interactive-commands
+set system accounting destination tacplus
+set system login class voo-admin idle-timeout 15
+set system login class voo-admin permissions all
+set system login class voo-oper idle-timeout 15
+set system login class voo-oper permissions access
+set system login class voo-oper permissions admin
+set system login class voo-oper permissions clear
+set system login class voo-oper permissions field
+set system login class voo-oper permissions firewall
+set system login class voo-oper permissions floppy
+set system login class voo-oper permissions flow-tap
+set system login class voo-oper permissions flow-tap-operation
+set system login class voo-oper permissions idp-profiler-operation
+set system login class voo-oper permissions interface
+set system login class voo-oper permissions network
+set system login class voo-oper permissions pgcp-session-mirroring
+set system login class voo-oper permissions reset
+set system login class voo-oper permissions rollback
+set system login class voo-oper permissions routing
+set system login class voo-oper permissions secret
+set system login class voo-oper permissions security
+set system login class voo-oper permissions shell
+set system login class voo-oper permissions snmp
+set system login class voo-oper permissions system
+set system login class voo-oper permissions trace
+set system login class voo-oper permissions view
+set system login class voo-oper permissions view-configuration
+set system login user DMA uid 2003
+set system login user DMA class read-only
+set system login user DMA authentication encrypted-password "$5$FaVRkFqD$7Enyuvm/Vq1piBByTShnG8i04jTNQ8t9NW.9zWiAoy8"
+set system login user junosspace uid 2001
+set system login user junosspace class super-user
+set system login user junosspace authentication ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6HnsQpsYpAOrRKiDSiFyWHNH+m7Xqw3Q2B1UlkcFKklaI/q1l6d9cj4aYmIBXmWE/fkENI16w1eVUHLyytewbaPaMbnnt6auUP73XwC4xVvqxsmfDMQFm31RvjSWoMrqYN/TDX/POq71+cqjVnVRYCQLcli4WmshKtg4q55hvHTmx1wtjrdjvgcACi8kGLrtPK1jXriM4ZwbC5d+UbWXaTA1Ai2F/4+32t54bVGlz3WytkCWHlEaVAlDippNLw+DsLcH46Z7aEcEGFLrqR9IxJMG0pYGyyHzcX/TO1iFJ1o/HCHO+VvGcekWiVQYllKO24Sv8/wTJEDpAxsV5Ju1n root@space-005056bd229f"
+set system login user lotusscript uid 2002
+set system login user lotusscript class voo-oper
+set system login user lotusscript authentication ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEApZacP+ue+uUPcZD6PhyeDtR/YAPft+77YvcsogZKSCmgWywBfG4eF1YLLHJtoefX20TUQLGRglMPFQkodMjt5oi2pw5i463oGZFK/vuqXWq3nNKak0Tx1skbg+HHTL4kG4x8RXO3aNIbRph3grAkBmeBAr2sI1nxyUXU6phYNlnRzMZKbtOotZ6RCuvH0om6Tb0jFNvK6IgEgIULIn2+XSGwTvR8BDr/aFWqjSdoMKHcGTJTA84wTjcJtbCnUffwxH9c6Afq2Y/D9X1P8lEwrCeVzcLve8HC0XLitgJqcPmdYHJP8I8apgKMvam0rFhxVWvl1j3+/XiPv3eBSx5D0Q=="
+set system login user superadmin uid 2000
+set system login user superadmin class super-user
+set system login user superadmin authentication encrypted-password "$1$9d7XJjan$LpM0u7EN/gjmGKueOv9Vd1"
+set system login user template-admin uid 2010
+set system login user template-admin class voo-admin
+set system login user template-oper uid 2011
+set system login user template-oper class voo-oper
+set system login user tplisson uid 2004
+set system login user tplisson class super-user
+set system login user tplisson authentication encrypted-password "$6$AKbrfJIU$dwzn92UgTIIJ9yKJtvJBK2aG0Lr/pxRwpdOZRmesKivbfot9YT3TmczmtLqSF1WRiqEMvhYmyydI4PVMZneHM."
+set system services ssh max-sessions-per-connection 32
+set system services netconf ssh
+set system syslog user * any emergency
+set system syslog host 10.11.2.19 any any
+set system syslog host 10.11.2.19 facility-override local1
+set system syslog host 10.11.2.19 explicit-priority
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file messages explicit-priority
+set system syslog file interactive-commands interactive-commands any
+set system syslog file screens any any
+set system syslog file screens match RT_Screen
+deactivate system syslog file screens match
+set system syslog file default-log-messages any info
+set system syslog file default-log-messages match "(FRU Offline)|(FRU Online)|(FRU insertion)|(FRU power)|(FRU removal)|(commit complete)|(copying configuration to juniper.save)|(license add)|(license delete)|(link UP)|(package -X delete)|(package -X update)|(plugged in)|(requested 'commit synchronize' operation)|(requested 'commit' operation)|(unplugged)|Transferred|ifAdminStatus|transfer-file|transitioned|GRES"
+set system syslog file default-log-messages structured-data
+deactivate system syslog file default-log-messages
+set system syslog file kmd-logs daemon info
+set system syslog file kmd-logs match KMD
+set system archival configuration transfer-on-commit
+set system archival configuration archive-sites "ftp://data:dAtra2@10.11.2.23/ARCHIVE/SRX"
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set system ntp boot-server 10.11.2.14
+set system ntp server 10.11.2.14
+set system ntp server 10.11.2.21
+set system ntp source-address 10.11.3.20
+set chassis cluster control-link-recovery
+set chassis cluster reth-count 8
+set chassis cluster redundancy-group 0 node 0 priority 100
+set chassis cluster redundancy-group 0 node 1 priority 1
+set chassis cluster redundancy-group 1 node 0 priority 100
+set chassis cluster redundancy-group 1 node 1 priority 1
+set chassis cluster redundancy-group 1 interface-monitor ge-0/0/0 weight 255
+set chassis cluster redundancy-group 1 interface-monitor ge-0/0/1 weight 255
+set chassis cluster redundancy-group 1 interface-monitor ge-7/0/1 weight 255
+set chassis cluster redundancy-group 1 interface-monitor ge-7/0/0 weight 255
+set chassis cluster redundancy-group 2 node 0 priority 100
+set chassis cluster redundancy-group 2 node 1 priority 1
+set chassis cluster redundancy-group 2 interface-monitor xe-0/0/18 weight 255
+set chassis cluster redundancy-group 2 interface-monitor xe-0/0/19 weight 255
+set chassis cluster redundancy-group 2 interface-monitor xe-7/0/19 weight 255
+set chassis cluster redundancy-group 2 interface-monitor xe-7/0/18 weight 255
+set security log mode stream
+set security log source-address 10.11.3.20
+set security log stream syslog format sd-syslog
+set security log stream syslog host 10.11.2.16
+set security ike proposal g2-aes256-sha1 authentication-method pre-shared-keys
+set security ike proposal g2-aes256-sha1 dh-group group2
+set security ike proposal g2-aes256-sha1 authentication-algorithm sha1
+set security ike proposal g2-aes256-sha1 encryption-algorithm aes-256-cbc
+set security ike proposal g2-aes256-sha1 lifetime-seconds 86400
+set security ike proposal g5-aes256-sha1 authentication-method pre-shared-keys
+set security ike proposal g5-aes256-sha1 dh-group group5
+set security ike proposal g5-aes256-sha1 authentication-algorithm sha1
+set security ike proposal g5-aes256-sha1 encryption-algorithm aes-256-cbc
+set security ike proposal g5-aes256-sha1 lifetime-seconds 28800
+set security ike proposal g14-aes256-sha256 authentication-method pre-shared-keys
+set security ike proposal g14-aes256-sha256 dh-group group14
+set security ike proposal g14-aes256-sha256 authentication-algorithm sha-256
+set security ike proposal g14-aes256-sha256 encryption-algorithm aes-256-cbc
+set security ike proposal g14-aes256-sha256 lifetime-seconds 28800
+set security ike proposal g2-sha1-aes256 authentication-method pre-shared-keys
+set security ike proposal g2-sha1-aes256 dh-group group2
+set security ike proposal g2-sha1-aes256 authentication-algorithm sha1
+set security ike proposal g2-sha1-aes256 encryption-algorithm aes-256-cbc
+set security ike proposal g2-sha1-aes256 lifetime-seconds 28800
+set security ike proposal g5-sha256-aes256 authentication-method pre-shared-keys
+set security ike proposal g5-sha256-aes256 dh-group group5
+set security ike proposal g5-sha256-aes256 authentication-algorithm sha-256
+set security ike proposal g5-sha256-aes256 encryption-algorithm aes-256-cbc
+set security ike proposal g5-sha256-aes256 lifetime-seconds 86400
+set security ike proposal g14-sha1-aes256 authentication-method pre-shared-keys
+set security ike proposal g14-sha1-aes256 dh-group group14
+set security ike proposal g14-sha1-aes256 authentication-algorithm sha1
+set security ike proposal g14-sha1-aes256 encryption-algorithm aes-256-cbc
+set security ike proposal g14-sha1-aes256 lifetime-seconds 28800
+set security ike proposal g5-AES256-SHA256 authentication-method pre-shared-keys
+set security ike proposal g5-AES256-SHA256 dh-group group5
+set security ike proposal g5-AES256-SHA256 authentication-algorithm sha-256
+set security ike proposal g5-AES256-SHA256 encryption-algorithm aes-256-cbc
+set security ike proposal g5-AES256-SHA256 lifetime-seconds 86400
+set security ike proposal g19-aes-gcm-256 authentication-method pre-shared-keys
+set security ike proposal g19-aes-gcm-256 dh-group group19
+set security ike proposal g19-aes-gcm-256 encryption-algorithm aes-256-gcm
+set security ike proposal g19-aes-gcm-256 lifetime-seconds 28800
+set security ike policy 46_31_56_1_Nagra-OTT mode main
+set security ike policy 46_31_56_1_Nagra-OTT proposals g2-aes256-sha1
+set security ike policy 46_31_56_1_Nagra-OTT pre-shared-key ascii-text "$9$uBM60EcXx-s2ox7-wY4DjQz3n/Atu1reWCtSevWx7mf5Tz6u0IRhrRhbs2oGU.P5QF/IEyW8769Lx7dsYZUjkfz9CuOIE6/8X-VY2"
+deactivate security ike policy 46_31_56_1_Nagra-OTT
+set security ike policy CTIF-IP mode main
+set security ike policy CTIF-IP proposals g5-aes256-sha1
+set security ike policy CTIF-IP pre-shared-key ascii-text "$9$fz/ArlMN-wMWjHmPQzylKMXN4aGjH.fT1hclW87NdbgJGDkQ3/k.CuO1yrevW8-b24ZDkmoJkmfT6/RhSylM7-waZDsY5Fn6u0bwYoZjHqPfz6SrKW8xdVTzF3A0cyK8X-aZUHmf3nRhSl8XwY4UDkoat01Ele2goZiqfT3/A03nu1EceKgoJGDkP5F/9pBIMLN-Y2oaZj.fTQ3"
+set security ike policy Ericsson-Stockholm mode main
+set security ike policy Ericsson-Stockholm proposals g14-aes256-sha256
+set security ike policy Ericsson-Stockholm pre-shared-key ascii-text "$9$HqPTpuBESetucrvW7NZGDjP59CuRhyfTrvLX-dbs2gGi5TFApBbsiqfQ9CtuOIhyM8XVb2aZkPQFCA1RhcvWVwYaJDbsZjiqQztuO1IhM8xVsgBIv8"
+set security ike policy Ericsson-Linkoping mode main
+set security ike policy Ericsson-Linkoping proposals g14-aes256-sha256
+set security ike policy Ericsson-Linkoping pre-shared-key ascii-text "$9$Qoosnt0hclWX7rlxdVwg4369tORhcrMLNrlK8XNbw5Qz6CuEhrlvLyrJDikPfzFn6CuhcrKMXhSNVYgZGp0O1SrLx-g4ZtuBEhyvMxNdsaGDi.z3/qmAu"
+set security ike policy Amazon-Memento-2 mode main
+set security ike policy Amazon-Memento-2 proposals g14-aes256-sha256
+set security ike policy Amazon-Memento-2 pre-shared-key ascii-text "$9$tXBSpIh8L7w24vWds2oiH/9AuRhNdwaJD8XgaZjPfTQF/Cu0BReK8wY4ZGjmPp0O1Se-VY2oZIEK8X7sYTQF/u1hSlvLN.P"
+set security ike policy Amazon-Memento-1 mode main
+set security ike policy Amazon-Memento-1 proposals g14-aes256-sha256
+set security ike policy Amazon-Memento-1 pre-shared-key ascii-text "$9$N5-b2aJDmPQKMGDH.F31RhSK8dVYaJD9AM8xNwsQFn901IEyM87Eh4ZGUq.p0B1ylbwYGjHBIlM8LdV5Tz6tuIEceK8uO"
+set security ike policy MVNO-Idemia-Sicap mode main
+set security ike policy MVNO-Idemia-Sicap proposals g2-sha1-aes256
+set security ike policy MVNO-Idemia-Sicap pre-shared-key ascii-text "$9$QUooF/AO1Elv8B1WX-V2giHqfFnEhy8x-.P0BRSKvVwY4ZDQz6p01.P3/9pREx7-VYoq.fTz6LxVsYojiTz36uBhSlW87uO"
+set security ike policy Astrid mode main
+set security ike policy Astrid proposals g5-sha256-aes256
+set security ike policy Astrid pre-shared-key ascii-text "$9$R5whKW7-b4JUN-UiqP3nIEcSeW2gaGi.QFhSrvXxsYgojk5QFCt0-VQ39AIR2goZik3n9tu1s2/tu0RE4aZU.f69t1ESCA"
+set security ike policy MVNO-Idemia-OTA mode main
+set security ike policy MVNO-Idemia-OTA proposals g14-sha1-aes256
+set security ike policy MVNO-Idemia-OTA pre-shared-key ascii-text "$9$dqwgaDjk5TFji/AtuRELxNds4k.fF3/0BvLNbg4GUjHfQ369A01tuWX7Nbw3n/tuBleMWX7ZUORhyMWk.PT3/IEyeWXAp"
+set security ike policy MVNO-E4T mode main
+set security ike policy MVNO-E4T proposals g5-AES256-SHA256
+set security ike policy MVNO-E4T pre-shared-key ascii-text "$9$AfhmuESXxdsYodbH.5Q6/IRhSeWg4JUHm69vWXNsYaJGDjk36ABIhlK-bwYoa5Tzn9pcyeMLxmf1RhrMWZUDi.f6/ABIhCA"
+set security ike policy MVNO-RingRing-DC-1 mode main
+set security ike policy MVNO-RingRing-DC-1 proposals g5-sha256-aes256
+set security ike policy MVNO-RingRing-DC-1 pre-shared-key ascii-text "$9$s62aGHkm3nCQFMLNdY2jik.Tz1IhyK8/CM8xdY2ik.PTFCtuEcrRhVs2aiH/9At1EXx-w249AyKWxVbJGDifQp0IhrKCt"
+set security ike policy MVNO-RingRing-DC-2 mode main
+set security ike policy MVNO-RingRing-DC-2 proposals g5-sha256-aes256
+set security ike policy MVNO-RingRing-DC-2 pre-shared-key ascii-text "$9$MRs87dY2oiHmUj1EylW8ws24GD3n9tORqm1RclW8s24aGjmfT/Cp69eM87sYq.Pf3/hcrv8X.PtOIceKNdbsJU5Qn9pOmf"
+set security ike policy CTIF-ODIN mode main
+set security ike policy CTIF-ODIN proposals g19-aes-gcm-256
+set security ike policy CTIF-ODIN pre-shared-key ascii-text "$9$pqd2uIcLXNY4aevs4oZq.0BIhclVb2oJUVbGik.zF9ApuRhLX-sgaz3ORcyMWJZUjkm5QF6/ATz01EcMWaZGjqfTQ3Ct0SrKWXxVb"
+set security ike policy 91_183_134_68_CTIF-Voice mode main
+set security ike policy 91_183_134_68_CTIF-Voice proposals g5-aes256-sha1
+set security ike policy 91_183_134_68_CTIF-Voice pre-shared-key ascii-text "$9$K148NVji.zF/.mEcleW8Dik.5zp01EcrKM4ZGimPQz36tO1RSWXNSrds24DjHqmPF6ApBRSluOSlKM7NaZUDi.QF/0BR9CvLx7sY6/CuBEcyeK87UjkmPT3nM8LXVYGDkP5F0BIclKXxaZUiP5/CpIRSu0bY4JiHAtuBhyKMXNVYXxs4JGHktuO1RSevLN-wgo.fzFCAu0BErKMWX"
+set security ike gateway 46_31_56_1_Nagra-OTT ike-policy 46_31_56_1_Nagra-OTT
+set security ike gateway 46_31_56_1_Nagra-OTT address 46.31.56.1
+set security ike gateway 46_31_56_1_Nagra-OTT dead-peer-detection interval 30
+set security ike gateway 46_31_56_1_Nagra-OTT dead-peer-detection threshold 3
+set security ike gateway 46_31_56_1_Nagra-OTT local-identity inet 185.3.160.35
+set security ike gateway 46_31_56_1_Nagra-OTT remote-identity inet 46.31.56.1
+set security ike gateway 46_31_56_1_Nagra-OTT external-interface reth0.921
+set security ike gateway 46_31_56_1_Nagra-OTT version v1-only
+deactivate security ike gateway 46_31_56_1_Nagra-OTT
+set security ike gateway 91_183_134_68_CTIF-IP ike-policy CTIF-IP
+set security ike gateway 91_183_134_68_CTIF-IP address 91.183.134.68
+set security ike gateway 91_183_134_68_CTIF-IP dead-peer-detection interval 30
+set security ike gateway 91_183_134_68_CTIF-IP dead-peer-detection threshold 3
+set security ike gateway 91_183_134_68_CTIF-IP local-identity inet 185.3.160.35
+set security ike gateway 91_183_134_68_CTIF-IP remote-identity inet 91.183.134.68
+set security ike gateway 91_183_134_68_CTIF-IP external-interface reth0.921
+set security ike gateway 91_183_134_68_CTIF-IP version v1-only
+set security ike gateway 192_165_183_140_Ericsson-Stockh ike-policy Ericsson-Stockholm
+set security ike gateway 192_165_183_140_Ericsson-Stockh address 192.165.183.140
+set security ike gateway 192_165_183_140_Ericsson-Stockh dead-peer-detection interval 30
+set security ike gateway 192_165_183_140_Ericsson-Stockh dead-peer-detection threshold 3
+set security ike gateway 192_165_183_140_Ericsson-Stockh local-identity inet 185.3.160.35
+set security ike gateway 192_165_183_140_Ericsson-Stockh remote-identity inet 192.165.183.140
+set security ike gateway 192_165_183_140_Ericsson-Stockh external-interface reth0.921
+set security ike gateway 213_159_174_9_Ericsson-Linkopin ike-policy Ericsson-Linkoping
+set security ike gateway 213_159_174_9_Ericsson-Linkopin address 213.159.174.9
+set security ike gateway 213_159_174_9_Ericsson-Linkopin dead-peer-detection interval 30
+set security ike gateway 213_159_174_9_Ericsson-Linkopin dead-peer-detection threshold 3
+set security ike gateway 213_159_174_9_Ericsson-Linkopin local-identity inet 185.3.160.35
+set security ike gateway 213_159_174_9_Ericsson-Linkopin remote-identity inet 213.159.174.9
+set security ike gateway 213_159_174_9_Ericsson-Linkopin external-interface reth0.921
+set security ike gateway 52_19_159_170_Amazon-Memento-2 ike-policy Amazon-Memento-2
+set security ike gateway 52_19_159_170_Amazon-Memento-2 address 52.19.159.170
+set security ike gateway 52_19_159_170_Amazon-Memento-2 dead-peer-detection interval 10
+set security ike gateway 52_19_159_170_Amazon-Memento-2 dead-peer-detection threshold 3
+set security ike gateway 52_19_159_170_Amazon-Memento-2 no-nat-traversal
+set security ike gateway 52_19_159_170_Amazon-Memento-2 external-interface reth0.921
+set security ike gateway 52_18_99_53_Amazon-Memento-1 ike-policy Amazon-Memento-1
+set security ike gateway 52_18_99_53_Amazon-Memento-1 address 52.18.99.53
+set security ike gateway 52_18_99_53_Amazon-Memento-1 dead-peer-detection interval 10
+set security ike gateway 52_18_99_53_Amazon-Memento-1 dead-peer-detection threshold 3
+set security ike gateway 52_18_99_53_Amazon-Memento-1 no-nat-traversal
+set security ike gateway 52_18_99_53_Amazon-Memento-1 external-interface reth0.921
+set security ike gateway 37_59_142_34_MVNO-Idemia-Sicap ike-policy MVNO-Idemia-Sicap
+set security ike gateway 37_59_142_34_MVNO-Idemia-Sicap address 37.59.142.34
+set security ike gateway 37_59_142_34_MVNO-Idemia-Sicap no-nat-traversal
+set security ike gateway 37_59_142_34_MVNO-Idemia-Sicap local-identity inet 185.3.160.35
+set security ike gateway 37_59_142_34_MVNO-Idemia-Sicap remote-identity inet 37.59.142.34
+set security ike gateway 37_59_142_34_MVNO-Idemia-Sicap external-interface reth0.921
+set security ike gateway 37_59_142_34_MVNO-Idemia-Sicap version v1-only
+set security ike gateway 193_190_151_8_Astrid ike-policy Astrid
+set security ike gateway 193_190_151_8_Astrid address 193.190.151.8
+set security ike gateway 193_190_151_8_Astrid dead-peer-detection interval 30
+set security ike gateway 193_190_151_8_Astrid dead-peer-detection threshold 3
+set security ike gateway 193_190_151_8_Astrid local-identity inet 185.3.160.35
+set security ike gateway 193_190_151_8_Astrid remote-identity inet 193.190.151.8
+set security ike gateway 193_190_151_8_Astrid external-interface reth0.921
+set security ike gateway 193_190_151_8_Astrid version v1-only
+set security ike gateway 54_36_23_90_MVNO-Idemia-OTA ike-policy MVNO-Idemia-OTA
+set security ike gateway 54_36_23_90_MVNO-Idemia-OTA address 54.36.23.90
+set security ike gateway 54_36_23_90_MVNO-Idemia-OTA no-nat-traversal
+set security ike gateway 54_36_23_90_MVNO-Idemia-OTA local-identity inet 185.3.160.35
+set security ike gateway 54_36_23_90_MVNO-Idemia-OTA remote-identity inet 54.36.23.90
+set security ike gateway 54_36_23_90_MVNO-Idemia-OTA external-interface reth0.921
+set security ike gateway 54_36_23_90_MVNO-Idemia-OTA version v1-only
+set security ike gateway 212_68_248_98_MVNO-E4T ike-policy MVNO-E4T
+set security ike gateway 212_68_248_98_MVNO-E4T address 212.68.214.98
+set security ike gateway 212_68_248_98_MVNO-E4T local-identity inet 185.3.160.35
+set security ike gateway 212_68_248_98_MVNO-E4T remote-identity inet 212.68.214.98
+set security ike gateway 212_68_248_98_MVNO-E4T external-interface reth0.921
+set security ike gateway 212_68_248_98_MVNO-E4T version v1-only
+set security ike gateway 194_78_45_194_MVNO-RingRing-DC- ike-policy MVNO-RingRing-DC-1
+set security ike gateway 194_78_45_194_MVNO-RingRing-DC- address 194.78.45.194
+set security ike gateway 194_78_45_194_MVNO-RingRing-DC- local-identity inet 185.3.160.35
+set security ike gateway 194_78_45_194_MVNO-RingRing-DC- remote-identity inet 194.78.45.194
+set security ike gateway 194_78_45_194_MVNO-RingRing-DC- external-interface reth0.921
+set security ike gateway 194_78_45_194_MVNO-RingRing-DC- version v1-only
+set security ike gateway 213_246_242_36_MVNO-RingRing-DC ike-policy MVNO-RingRing-DC-2
+set security ike gateway 213_246_242_36_MVNO-RingRing-DC address 213.246.242.36
+set security ike gateway 213_246_242_36_MVNO-RingRing-DC local-identity inet 185.3.160.35
+set security ike gateway 213_246_242_36_MVNO-RingRing-DC remote-identity inet 213.246.242.36
+set security ike gateway 213_246_242_36_MVNO-RingRing-DC external-interface reth0.921
+set security ike gateway 213_246_242_36_MVNO-RingRing-DC version v1-only
+set security ike gateway 194_78_118_126_CTIF-ODIN ike-policy CTIF-ODIN
+set security ike gateway 194_78_118_126_CTIF-ODIN address 194.78.118.126
+set security ike gateway 194_78_118_126_CTIF-ODIN local-identity inet 185.3.160.35
+set security ike gateway 194_78_118_126_CTIF-ODIN remote-identity inet 194.78.118.126
+set security ike gateway 194_78_118_126_CTIF-ODIN external-interface reth0.921
+set security ike gateway 194_78_118_126_CTIF-ODIN version v2-only
+set security ike gateway 194_78_118_126_CTIF-ODIN fragmentation disable
+set security ike gateway 194_78_118_126_CTIF-ODIN fragmentation size 570
+set security ipsec proposal esp-aes128-md5 protocol esp
+set security ipsec proposal esp-aes128-md5 authentication-algorithm hmac-md5-96
+set security ipsec proposal esp-aes128-md5 encryption-algorithm aes-128-cbc
+set security ipsec proposal esp-aes128-md5 lifetime-seconds 3600
+set security ipsec proposal esp-aes256-sha1 protocol esp
+set security ipsec proposal esp-aes256-sha1 authentication-algorithm hmac-sha1-96
+set security ipsec proposal esp-aes256-sha1 encryption-algorithm aes-256-cbc
+set security ipsec proposal esp-aes256-sha1 lifetime-seconds 28800
+set security ipsec proposal esp-aes128-sha256 protocol esp
+set security ipsec proposal esp-aes128-sha256 authentication-algorithm hmac-sha-256-128
+set security ipsec proposal esp-aes128-sha256 encryption-algorithm aes-128-cbc
+set security ipsec proposal esp-aes128-sha256 lifetime-seconds 3600
+set security ipsec proposal esp-aes256-sha256 protocol esp
+set security ipsec proposal esp-aes256-sha256 authentication-algorithm hmac-sha-256-128
+set security ipsec proposal esp-aes256-sha256 encryption-algorithm aes-256-cbc
+set security ipsec proposal esp-aes256-sha256 lifetime-seconds 3600
+set security ipsec proposal g5-sha1-aes256 protocol esp
+set security ipsec proposal g5-sha1-aes256 authentication-algorithm hmac-sha1-96
+set security ipsec proposal g5-sha1-aes256 encryption-algorithm aes-256-cbc
+set security ipsec proposal g5-sha1-aes256 lifetime-seconds 3600
+set security ipsec proposal esp-aes-gcm protocol esp
+set security ipsec proposal esp-aes-gcm encryption-algorithm aes-256-gcm
+set security ipsec proposal esp-aes-gcm lifetime-seconds 3600
+set security ipsec policy Nagra-OTT perfect-forward-secrecy keys group2
+set security ipsec policy Nagra-OTT proposals esp-aes128-md5
+deactivate security ipsec policy Nagra-OTT
+set security ipsec policy CTIF-IP perfect-forward-secrecy keys group5
+set security ipsec policy CTIF-IP proposals esp-aes256-sha1
+set security ipsec policy Ericsson-Stockholm perfect-forward-secrecy keys group14
+set security ipsec policy Ericsson-Stockholm proposals esp-aes128-sha256
+set security ipsec policy Ericsson-Linkoping perfect-forward-secrecy keys group14
+set security ipsec policy Ericsson-Linkoping proposals esp-aes128-sha256
+set security ipsec policy Amazon-Memento-2 perfect-forward-secrecy keys group2
+set security ipsec policy Amazon-Memento-2 proposals esp-aes256-sha256
+set security ipsec policy Amazon-Memento-1 perfect-forward-secrecy keys group2
+set security ipsec policy Amazon-Memento-1 proposals esp-aes256-sha256
+set security ipsec policy MVNO-Idemia-Sicap perfect-forward-secrecy keys group2
+set security ipsec policy MVNO-Idemia-Sicap proposals esp-aes256-sha1
+set security ipsec policy Astrid perfect-forward-secrecy keys group5
+set security ipsec policy Astrid proposals g5-sha1-aes256
+set security ipsec policy MVNO-Idemia-OTA perfect-forward-secrecy keys group2
+set security ipsec policy MVNO-Idemia-OTA proposals esp-aes256-sha1
+set security ipsec policy MVNO-E4T perfect-forward-secrecy keys group5
+set security ipsec policy MVNO-E4T proposals g5-sha1-aes256
+set security ipsec policy MVNO-RingRing-DC-1 perfect-forward-secrecy keys group5
+set security ipsec policy MVNO-RingRing-DC-1 proposals g5-sha1-aes256
+set security ipsec policy MVNO-RingRing-DC-2 perfect-forward-secrecy keys group5
+set security ipsec policy MVNO-RingRing-DC-2 proposals g5-sha1-aes256
+set security ipsec policy CTIF-ODIN perfect-forward-secrecy keys group19
+set security ipsec policy CTIF-ODIN proposals esp-aes-gcm
+set security ipsec vpn 46_31_56_1_Nagra-OTT bind-interface st0.1
+set security ipsec vpn 46_31_56_1_Nagra-OTT ike gateway 46_31_56_1_Nagra-OTT
+set security ipsec vpn 46_31_56_1_Nagra-OTT ike idle-time 60
+deactivate security ipsec vpn 46_31_56_1_Nagra-OTT ike idle-time
+set security ipsec vpn 46_31_56_1_Nagra-OTT ike ipsec-policy Nagra-OTT
+set security ipsec vpn 46_31_56_1_Nagra-OTT ike install-interval 1
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.138_32_10.11.241.1_32 local-ip 185.3.160.138/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.138_32_10.11.241.1_32 remote-ip 10.11.241.1/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.135_32_10.11.241.1_32 local-ip 185.3.160.135/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.135_32_10.11.241.1_32 remote-ip 10.11.241.1/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.134_32_10.11.241.2_32 local-ip 185.3.160.134/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.134_32_10.11.241.2_32 remote-ip 10.11.241.2/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.139_32_10.11.241.3_32 local-ip 185.3.160.139/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.139_32_10.11.241.3_32 remote-ip 10.11.241.3/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.134_32_10.11.241.3_32 local-ip 185.3.160.134/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.134_32_10.11.241.3_32 remote-ip 10.11.241.3/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.138_32_10.11.241.2_32 local-ip 185.3.160.138/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.138_32_10.11.241.2_32 remote-ip 10.11.241.2/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.134_32_10.11.241.1_32 local-ip 185.3.160.134/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.134_32_10.11.241.1_32 remote-ip 10.11.241.1/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.135_32_10.11.241.3_32 local-ip 185.3.160.135/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.135_32_10.11.241.3_32 remote-ip 10.11.241.3/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.139_32_10.11.241.2_32 local-ip 185.3.160.139/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.139_32_10.11.241.2_32 remote-ip 10.11.241.2/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.133_32_10.11.241.2_32 local-ip 185.3.160.133/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.133_32_10.11.241.2_32 remote-ip 10.11.241.2/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.139_32_10.11.241.1_32 local-ip 185.3.160.139/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.139_32_10.11.241.1_32 remote-ip 10.11.241.1/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.133_32_10.11.241.1_32 local-ip 185.3.160.133/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.133_32_10.11.241.1_32 remote-ip 10.11.241.1/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.138_32_10.11.241.3_32 local-ip 185.3.160.138/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.138_32_10.11.241.3_32 remote-ip 10.11.241.3/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.133_32_10.11.241.3_32 local-ip 185.3.160.133/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.133_32_10.11.241.3_32 remote-ip 10.11.241.3/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.135_32_10.11.241.2_32 local-ip 185.3.160.135/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT traffic-selector 185.3.160.135_32_10.11.241.2_32 remote-ip 10.11.241.2/32
+set security ipsec vpn 46_31_56_1_Nagra-OTT establish-tunnels immediately
+deactivate security ipsec vpn 46_31_56_1_Nagra-OTT
+set security ipsec vpn 91_183_134_68_CTIF-IP bind-interface st0.2
+set security ipsec vpn 91_183_134_68_CTIF-IP ike gateway 91_183_134_68_CTIF-IP
+set security ipsec vpn 91_183_134_68_CTIF-IP ike idle-time 60
+set security ipsec vpn 91_183_134_68_CTIF-IP ike ipsec-policy CTIF-IP
+set security ipsec vpn 91_183_134_68_CTIF-IP ike install-interval 1
+set security ipsec vpn 91_183_134_68_CTIF-IP establish-tunnels immediately
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh bind-interface st0.3
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh ike gateway 192_165_183_140_Ericsson-Stockh
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh ike idle-time 60
+deactivate security ipsec vpn 192_165_183_140_Ericsson-Stockh ike idle-time
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh ike ipsec-policy Ericsson-Stockholm
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh ike install-interval 1
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh traffic-selector 10.11.3.2_32_10.11.240.0_29 local-ip 10.11.3.2/32
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh traffic-selector 10.11.3.2_32_10.11.240.0_29 remote-ip 10.11.240.0/29
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh traffic-selector 10.8.3.0_24_10.11.240.0_29 local-ip 10.8.3.0/24
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh traffic-selector 10.8.3.0_24_10.11.240.0_29 remote-ip 10.11.240.0/29
+set security ipsec vpn 192_165_183_140_Ericsson-Stockh establish-tunnels immediately
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin bind-interface st0.4
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin ike gateway 213_159_174_9_Ericsson-Linkopin
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin ike idle-time 60
+deactivate security ipsec vpn 213_159_174_9_Ericsson-Linkopin ike idle-time
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin ike ipsec-policy Ericsson-Linkoping
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin ike install-interval 1
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin traffic-selector 10.8.3.0_24_10.11.240.8_29 local-ip 10.8.3.0/24
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin traffic-selector 10.8.3.0_24_10.11.240.8_29 remote-ip 10.11.240.8/29
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin traffic-selector 10.11.3.2_32_10.11.240.8_29 local-ip 10.11.3.2/32
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin traffic-selector 10.11.3.2_32_10.11.240.8_29 remote-ip 10.11.240.8/29
+set security ipsec vpn 213_159_174_9_Ericsson-Linkopin establish-tunnels immediately
+set security ipsec vpn 52_19_159_170_Amazon-Memento-2 bind-interface st0.6
+set security ipsec vpn 52_19_159_170_Amazon-Memento-2 df-bit clear
+set security ipsec vpn 52_19_159_170_Amazon-Memento-2 ike gateway 52_19_159_170_Amazon-Memento-2
+set security ipsec vpn 52_19_159_170_Amazon-Memento-2 ike idle-time 60
+set security ipsec vpn 52_19_159_170_Amazon-Memento-2 ike ipsec-policy Amazon-Memento-2
+set security ipsec vpn 52_19_159_170_Amazon-Memento-2 ike install-interval 1
+set security ipsec vpn 52_19_159_170_Amazon-Memento-2 establish-tunnels immediately
+set security ipsec vpn 52_18_99_53_Amazon-Memento-1 bind-interface st0.5
+set security ipsec vpn 52_18_99_53_Amazon-Memento-1 df-bit clear
+set security ipsec vpn 52_18_99_53_Amazon-Memento-1 ike gateway 52_18_99_53_Amazon-Memento-1
+set security ipsec vpn 52_18_99_53_Amazon-Memento-1 ike idle-time 60
+set security ipsec vpn 52_18_99_53_Amazon-Memento-1 ike ipsec-policy Amazon-Memento-1
+set security ipsec vpn 52_18_99_53_Amazon-Memento-1 ike install-interval 1
+set security ipsec vpn 52_18_99_53_Amazon-Memento-1 establish-tunnels immediately
+set security ipsec vpn 37_59_142_34_MVNO-Idemia-Sicap bind-interface st0.7
+set security ipsec vpn 37_59_142_34_MVNO-Idemia-Sicap ike gateway 37_59_142_34_MVNO-Idemia-Sicap
+set security ipsec vpn 37_59_142_34_MVNO-Idemia-Sicap ike ipsec-policy MVNO-Idemia-Sicap
+set security ipsec vpn 37_59_142_34_MVNO-Idemia-Sicap traffic-selector 185.3.162.96_32_10.11.240.17_32 local-ip 185.3.162.96/32
+set security ipsec vpn 37_59_142_34_MVNO-Idemia-Sicap traffic-selector 185.3.162.96_32_10.11.240.17_32 remote-ip 10.11.240.17/32
+set security ipsec vpn 37_59_142_34_MVNO-Idemia-Sicap traffic-selector 185.3.163.96_32_10.11.240.17_32 local-ip 185.3.163.96/32
+set security ipsec vpn 37_59_142_34_MVNO-Idemia-Sicap traffic-selector 185.3.163.96_32_10.11.240.17_32 remote-ip 10.11.240.17/32
+set security ipsec vpn 37_59_142_34_MVNO-Idemia-Sicap establish-tunnels immediately
+set security ipsec vpn 193_190_151_8_Astrid bind-interface st0.8
+set security ipsec vpn 193_190_151_8_Astrid ike gateway 193_190_151_8_Astrid
+set security ipsec vpn 193_190_151_8_Astrid ike ipsec-policy Astrid
+set security ipsec vpn 193_190_151_8_Astrid traffic-selector SMSC-ANS-Astrid local-ip 185.3.163.96/32
+set security ipsec vpn 193_190_151_8_Astrid traffic-selector SMSC-ANS-Astrid remote-ip 193.190.151.101/32
+set security ipsec vpn 193_190_151_8_Astrid traffic-selector SMSC-WDC-Astrid local-ip 185.3.162.96/32
+set security ipsec vpn 193_190_151_8_Astrid traffic-selector SMSC-WDC-Astrid remote-ip 193.190.151.101/32
+set security ipsec vpn 193_190_151_8_Astrid establish-tunnels immediately
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA bind-interface st0.9
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA ike gateway 54_36_23_90_MVNO-Idemia-OTA
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA ike ipsec-policy MVNO-Idemia-OTA
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA traffic-selector 185.3.163.96_32_88.2.164.252_32 local-ip 185.3.163.96/32
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA traffic-selector 185.3.163.96_32_88.2.164.252_32 remote-ip 88.2.164.252/32
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA traffic-selector 185.3.162.96_32_88.2.164.252_32 local-ip 185.3.162.96/32
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA traffic-selector 185.3.162.96_32_88.2.164.252_32 remote-ip 88.2.164.252/32
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA traffic-selector 185.3.163.105_88.2.164.252 local-ip 185.3.163.105/32
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA traffic-selector 185.3.163.105_88.2.164.252 remote-ip 88.2.164.252/32
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA traffic-selector 185.3.162.137_88.2.164.252 local-ip 185.3.162.137/32
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA traffic-selector 185.3.162.137_88.2.164.252 remote-ip 88.2.164.252/32
+set security ipsec vpn 54_36_23_90_MVNO-Idemia-OTA establish-tunnels immediately
+set security ipsec vpn 194_78_45_194_MVNO-RingRing-DC- bind-interface st0.11
+set security ipsec vpn 194_78_45_194_MVNO-RingRing-DC- ike gateway 194_78_45_194_MVNO-RingRing-DC-
+set security ipsec vpn 194_78_45_194_MVNO-RingRing-DC- ike ipsec-policy MVNO-RingRing-DC-1
+set security ipsec vpn 194_78_45_194_MVNO-RingRing-DC- traffic-selector 185.3.163.96_194.78.45.195 local-ip 185.3.163.96/32
+set security ipsec vpn 194_78_45_194_MVNO-RingRing-DC- traffic-selector 185.3.163.96_194.78.45.195 remote-ip 194.78.45.195/32
+set security ipsec vpn 194_78_45_194_MVNO-RingRing-DC- traffic-selector 185.3.162.96_194.78.45.195 local-ip 185.3.162.96/32
+set security ipsec vpn 194_78_45_194_MVNO-RingRing-DC- traffic-selector 185.3.162.96_194.78.45.195 remote-ip 194.78.45.195/32
+set security ipsec vpn 194_78_45_194_MVNO-RingRing-DC- establish-tunnels immediately
+set security ipsec vpn 212_68_214_98_MVNO-E4T bind-interface st0.10
+set security ipsec vpn 212_68_214_98_MVNO-E4T ike gateway 212_68_248_98_MVNO-E4T
+set security ipsec vpn 212_68_214_98_MVNO-E4T ike ipsec-policy MVNO-E4T
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.162.96_32_10.11.240.24_29 local-ip 185.3.162.96/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.162.96_32_10.11.240.24_29 remote-ip 10.11.240.24/29
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.163.96_32_10.11.240.24_29 local-ip 185.3.163.96/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.163.96_32_10.11.240.24_29 remote-ip 10.11.240.24/29
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.162.137_10.11.240.24 local-ip 185.3.162.137/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.162.137_10.11.240.24 remote-ip 10.11.240.24/29
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.162.136_10.11.240.24 local-ip 185.3.162.136/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.162.136_10.11.240.24 remote-ip 10.11.240.24/29
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.163.105_10.11.240.24 local-ip 185.3.163.105/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.163.105_10.11.240.24 remote-ip 10.11.240.24/29
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.163.105_10.11.240.28 local-ip 185.3.163.105/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.163.105_10.11.240.28 remote-ip 10.11.240.28/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.163.106_212.68.214.109 local-ip 185.3.163.106/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.163.106_212.68.214.109 remote-ip 212.68.214.109/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.162.138_212.68.214.109 local-ip 185.3.162.138/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T traffic-selector 185.3.162.138_212.68.214.109 remote-ip 212.68.214.109/32
+set security ipsec vpn 212_68_214_98_MVNO-E4T establish-tunnels immediately
+set security ipsec vpn 213_246_242_36_MVNO-RingRing-DC bind-interface st0.12
+set security ipsec vpn 213_246_242_36_MVNO-RingRing-DC ike gateway 213_246_242_36_MVNO-RingRing-DC
+set security ipsec vpn 213_246_242_36_MVNO-RingRing-DC ike ipsec-policy MVNO-RingRing-DC-2
+set security ipsec vpn 213_246_242_36_MVNO-RingRing-DC traffic-selector 185.3.162.96_213.246.242.37 local-ip 185.3.162.96/32
+set security ipsec vpn 213_246_242_36_MVNO-RingRing-DC traffic-selector 185.3.162.96_213.246.242.37 remote-ip 213.246.242.37/32
+set security ipsec vpn 213_246_242_36_MVNO-RingRing-DC traffic-selector 185.3.163.96_213.246.242.37 local-ip 185.3.163.96/32
+set security ipsec vpn 213_246_242_36_MVNO-RingRing-DC traffic-selector 185.3.163.96_213.246.242.37 remote-ip 213.246.242.37/32
+set security ipsec vpn 213_246_242_36_MVNO-RingRing-DC establish-tunnels immediately
+set security ipsec vpn 194_78_118_126_CTIF-ODIN bind-interface st0.13
+set security ipsec vpn 194_78_118_126_CTIF-ODIN ike gateway 194_78_118_126_CTIF-ODIN
+set security ipsec vpn 194_78_118_126_CTIF-ODIN ike ipsec-policy CTIF-ODIN
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.143_194.78.118.116 local-ip 185.3.160.143/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.143_194.78.118.116 remote-ip 194.78.118.116/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.143_194.78.118.117 local-ip 185.3.160.143/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.143_194.78.118.117 remote-ip 194.78.118.117/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.152_194.78.118.116 local-ip 185.3.160.152/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.152_194.78.118.116 remote-ip 194.78.118.116/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.152_194.78.118.117 local-ip 185.3.160.152/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.152_194.78.118.117 remote-ip 194.78.118.117/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.144_194.78.118.116 local-ip 185.3.160.144/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.144_194.78.118.116 remote-ip 194.78.118.116/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.144_194.78.118.117 local-ip 185.3.160.144/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN traffic-selector 185.3.160.144_194.78.118.117 remote-ip 194.78.118.117/32
+set security ipsec vpn 194_78_118_126_CTIF-ODIN establish-tunnels immediately
+set security flow traceoptions file flow-trace1
+set security flow traceoptions file size 10m
+set security flow traceoptions file files 3
+set security flow traceoptions flag basic-datapath
+set security flow traceoptions packet-filter pf1 source-prefix 213.246.242.37/32
+set security flow traceoptions packet-filter pf1 destination-prefix 185.3.162.96/32
+set security flow traceoptions packet-filter pf2 source-prefix 185.3.162.96/32
+set security flow traceoptions packet-filter pf2 destination-prefix 213.246.242.37/32
+set security policies from-zone be-vpn-vsrx to-zone dmz-vpn-vendors policy inside-to-outside match source-address any
+set security policies from-zone be-vpn-vsrx to-zone dmz-vpn-vendors policy inside-to-outside match destination-address any
+set security policies from-zone be-vpn-vsrx to-zone dmz-vpn-vendors policy inside-to-outside match application any
+set security policies from-zone be-vpn-vsrx to-zone dmz-vpn-vendors policy inside-to-outside then permit
+set security policies from-zone be-vpn-vsrx to-zone dmz-vpn-vendors policy inside-to-outside then log session-init
+set security policies from-zone be-vpn-vsrx to-zone dmz-vpn-vendors policy inside-to-outside then log session-close
+set security policies from-zone dmz-vpn-vendors to-zone be-vpn-vsrx policy outside-to-inside match source-address any
+set security policies from-zone dmz-vpn-vendors to-zone be-vpn-vsrx policy outside-to-inside match destination-address any
+set security policies from-zone dmz-vpn-vendors to-zone be-vpn-vsrx policy outside-to-inside match application any
+set security policies from-zone dmz-vpn-vendors to-zone be-vpn-vsrx policy outside-to-inside then permit
+set security policies from-zone dmz-vpn-vendors to-zone be-vpn-vsrx policy outside-to-inside then log session-init
+set security policies from-zone dmz-vpn-vendors to-zone be-vpn-vsrx policy outside-to-inside then log session-close
+set security policies from-zone vr to-zone vr policy permit-all match source-address any
+set security policies from-zone vr to-zone vr policy permit-all match destination-address any
+set security policies from-zone vr to-zone vr policy permit-all match application any
+set security policies from-zone vr to-zone vr policy permit-all then permit
+set security policies from-zone vr to-zone vr policy permit-all then log session-init
+set security policies from-zone vr to-zone vr policy permit-all then log session-close
+set security policies policy-rematch
+set security zones security-zone be-vpn-vsrx tcp-rst
+set security zones security-zone be-vpn-vsrx interfaces reth1.923 host-inbound-traffic system-services ssh
+set security zones security-zone be-vpn-vsrx interfaces reth1.923 host-inbound-traffic system-services snmp
+set security zones security-zone be-vpn-vsrx interfaces reth1.923 host-inbound-traffic system-services ping
+set security zones security-zone dmz-vpn-vendors host-inbound-traffic system-services ike
+set security zones security-zone dmz-vpn-vendors host-inbound-traffic system-services ping
+set security zones security-zone dmz-vpn-vendors host-inbound-traffic protocols bgp
+set security zones security-zone dmz-vpn-vendors interfaces st0.1
+set security zones security-zone dmz-vpn-vendors interfaces st0.2
+set security zones security-zone dmz-vpn-vendors interfaces st0.3
+set security zones security-zone dmz-vpn-vendors interfaces st0.4
+set security zones security-zone dmz-vpn-vendors interfaces st0.6
+set security zones security-zone dmz-vpn-vendors interfaces st0.5
+set security zones security-zone dmz-vpn-vendors interfaces st0.7
+set security zones security-zone dmz-vpn-vendors interfaces st0.8
+set security zones security-zone dmz-vpn-vendors interfaces st0.9
+set security zones security-zone dmz-vpn-vendors interfaces st0.10
+set security zones security-zone dmz-vpn-vendors interfaces st0.11
+set security zones security-zone dmz-vpn-vendors interfaces st0.12
+set security zones security-zone dmz-vpn-vendors interfaces st0.13
+set security zones security-zone dmz-vpn-vendors interfaces reth0.921 host-inbound-traffic system-services ike
+set security zones security-zone vr host-inbound-traffic system-services all
+set security zones security-zone vr host-inbound-traffic protocols all
+set security zones security-zone vr interfaces reth2.10
+set security zones security-zone vr interfaces reth2.20
+set security zones security-zone vr30 host-inbound-traffic system-services all
+set security zones security-zone vr30 host-inbound-traffic protocols all
+set security zones security-zone vr30 interfaces reth2.30
+set interfaces ge-0/0/0 disable
+set interfaces ge-0/0/0 ether-options redundant-parent reth0
+set interfaces ge-0/0/1 disable
+set interfaces ge-0/0/1 ether-options redundant-parent reth1
+set interfaces xe-0/0/18 gigether-options redundant-parent reth2
+set interfaces xe-0/0/19 gigether-options redundant-parent reth2
+set interfaces ge-7/0/0 disable
+set interfaces ge-7/0/0 ether-options redundant-parent reth0
+set interfaces ge-7/0/1 disable
+set interfaces ge-7/0/1 ether-options redundant-parent reth1
+set interfaces xe-7/0/18 gigether-options redundant-parent reth2
+set interfaces xe-7/0/19 gigether-options redundant-parent reth2
+set interfaces fab0 fabric-options member-interfaces ge-0/0/10
+set interfaces fab0 fabric-options member-interfaces ge-0/0/11
+set interfaces fab1 fabric-options member-interfaces ge-7/0/10
+set interfaces fab1 fabric-options member-interfaces ge-7/0/11
+set interfaces reth0 disable
+set interfaces reth0 vlan-tagging
+set interfaces reth0 redundant-ether-options redundancy-group 1
+set interfaces reth0 redundant-ether-options lacp active
+set interfaces reth0 redundant-ether-options lacp periodic fast
+set interfaces reth0 unit 921 description dmz-vpn-vendors--T
+set interfaces reth0 unit 921 vlan-id 921
+set interfaces reth0 unit 921 family inet address 185.3.160.35/32
+set interfaces reth1 description be-vpn-vsrx--M
+set interfaces reth1 disable
+set interfaces reth1 vlan-tagging
+set interfaces reth1 redundant-ether-options redundancy-group 1
+set interfaces reth1 redundant-ether-options lacp active
+set interfaces reth1 redundant-ether-options lacp periodic fast
+set interfaces reth1 unit 923 description be-vpn-vsrx--T
+set interfaces reth1 unit 923 vlan-id 923
+set interfaces reth1 unit 923 family inet address 10.11.3.20/32
+set interfaces reth2 vlan-tagging
+set interfaces reth2 mtu 9000
+set interfaces reth2 redundant-ether-options redundancy-group 2
+set interfaces reth2 redundant-ether-options lacp active
+set interfaces reth2 redundant-ether-options lacp periodic fast
+set interfaces reth2 unit 10 vlan-id 10
+set interfaces reth2 unit 10 family inet address 10.10.0.100/24
+set interfaces reth2 unit 10 family inet6 address 100::100/64
+set interfaces reth2 unit 20 vlan-id 20
+set interfaces reth2 unit 20 family inet address 10.20.0.100/24
+set interfaces reth2 unit 20 family inet6 address 200::100/64
+set interfaces reth2 unit 30 vlan-id 30
+set interfaces reth2 unit 30 family inet address 10.30.0.100/24
+set interfaces reth2 unit 30 family inet6 address 300::100/64
+set interfaces reth2 unit 30 family inet6 address fe80::30:100/64
+set interfaces st0 unit 1 description Nagra-OTT_46_31_56_1
+set interfaces st0 unit 1 family inet
+set interfaces st0 unit 2 description CTIF-IP_91_183_134_68
+set interfaces st0 unit 2 family inet
+set interfaces st0 unit 3 description Ericsson-Stockh_192_165_183_140
+set interfaces st0 unit 3 family inet
+set interfaces st0 unit 4 description Ericsson-Linkopin_213_159_174_9
+set interfaces st0 unit 4 family inet
+set interfaces st0 unit 5 description Amazon-Memento-1_52_18_99_53--T
+set interfaces st0 unit 5 family inet mtu 1436
+set interfaces st0 unit 5 family inet address 169.254.21.114/30
+set interfaces st0 unit 6 description Amazon-Memento-2_52_19_159_170--T
+set interfaces st0 unit 6 family inet mtu 1436
+set interfaces st0 unit 6 family inet address 169.254.21.170/30
+set interfaces st0 unit 7 description MVNO-Idemia-Sicap_37_59_142_34
+set interfaces st0 unit 7 family inet mtu 1500
+set interfaces st0 unit 8 description MVNO-Astrid_193_190_151_8
+set interfaces st0 unit 8 family inet mtu 1500
+set interfaces st0 unit 9 description MVNO-Idemia-OTA_54_36_23_90
+set interfaces st0 unit 9 family inet
+set interfaces st0 unit 10 description MVNO-E4T_212_68_214_98
+set interfaces st0 unit 10 family inet
+set interfaces st0 unit 11 description MVNO-RingRing-DC-1_194_78_45_194
+set interfaces st0 unit 11 family inet
+set interfaces st0 unit 12 description MVNO-RingRing-DC-2_213_246_242_36
+set interfaces st0 unit 12 family inet
+set interfaces st0 unit 13 description CTIF-Odin_194_78_118_126
+set interfaces st0 unit 13 family inet mtu 1500
+set interfaces st0 unit 14 family inet
+set snmp filter-interfaces interfaces st0.
+set snmp view donopollslow oid 1.3.6.1.4.1.2636.3.26 exclude
+set snmp view donopollslow oid 1.3.6.1.4.1.2636.3.30 exclude
+set snmp view donopollslow oid 1.3.6.1.4.1.2636.3.3.1.1.10 exclude
+set snmp view donopollslow oid 1.3.6.1.4.1.2636.3.3 exclude
+set snmp view donopollslow oid 1 include
+set snmp community CADMIUM view donopollslow
+set snmp community CADMIUM authorization read-only
+set snmp trap-group space version v2
+set snmp trap-group space targets 10.11.2.60
+set routing-options static route 10.0.0.0/8 next-hop 10.11.3.17
+set routing-options static route 185.3.160.0/22 next-hop 10.11.3.17
+set routing-options static route 10.11.254.144/29 next-hop 185.3.160.33
+set routing-options static route 10.11.0.0/16 next-hop 10.11.3.17
+set routing-options static route 46.31.56.1/32 next-hop 185.3.160.33
+set routing-options static route 91.183.134.68/32 next-hop 185.3.160.33
+set routing-options static route 192.165.183.140/32 next-hop 185.3.160.33
+set routing-options static route 213.159.174.9/32 next-hop 185.3.160.33
+set routing-options static route 52.18.99.53/32 next-hop 185.3.160.33
+set routing-options static route 52.19.159.170/32 next-hop 185.3.160.33
+set routing-options static route 192.168.231.0/24 next-hop 10.11.3.17
+set routing-options static route 37.59.142.34/32 next-hop 185.3.160.33
+set routing-options static route 54.36.23.90/32 next-hop 185.3.160.33
+set routing-options static route 212.68.214.98/32 next-hop 185.3.160.33
+set routing-options static route 193.190.151.8/32 next-hop 185.3.160.33
+set routing-options static route 194.78.45.194/32 next-hop 185.3.160.33
+set routing-options static route 213.246.242.36/32 next-hop 185.3.160.33
+set routing-options static route 194.78.118.126/32 next-hop 185.3.160.33
+set routing-options static route 194.78.187.138/32 next-hop st0.2
+set routing-options static route 91.183.134.78/32 next-hop st0.2
+set routing-options static route 10.231.140.0/22 next-hop 10.11.3.17
+set routing-options static route 10.231.12.0/22 next-hop 10.11.3.17
+set routing-options static route 10.8.2.0/25 next-hop 10.11.3.17
+set routing-options static route 10.11.240.0/22 discard
+set routing-options static route 10.11.244.0/22 discard
+set routing-options static route 212.3.248.114/32 discard
+set routing-options autonomous-system 65000
+set protocols igmp interface reth2.30 static group 225.30.30.3
+set protocols bgp group Amazon-Memento type external
+set protocols bgp group Amazon-Memento hold-time 30
+set protocols bgp group Amazon-Memento import PO_Accept_from_Amazon-Memento
+set protocols bgp group Amazon-Memento export PO_Announced_to_Amazon-Memento
+set protocols bgp group Amazon-Memento peer-as 9059
+set protocols bgp group Amazon-Memento neighbor 169.254.21.169 description amazon-vgw-2
+set protocols bgp group Amazon-Memento neighbor 169.254.21.113 description amazon-vgw-1
+set protocols bgp group ex-dmz type external
+set protocols bgp group ex-dmz authentication-key "$9$u24lOEy8X-Vb28XmTQ3puO1IhlK8Lx"
+set protocols bgp group ex-dmz peer-as 64514
+set protocols bgp group ex-dmz neighbor 10.11.3.18 description EX-WDC-DMZ-1
+set protocols bgp group ex-dmz neighbor 10.11.3.19 description EX-ANS-DMZ-1
+set protocols lldp port-id-subtype interface-name
+set protocols lldp interface xe-0/0/18
+set protocols lldp interface xe-0/0/19
+set protocols lldp interface xe-7/0/18
+set protocols lldp interface xe-7/0/19
+set policy-options prefix-list PL_to_Amazon-Memento 10.4.0.0/16
+set policy-options prefix-list PL_to_Amazon-Memento 10.5.0.0/16
+set policy-options prefix-list PL_to_Amazon-Memento 10.6.0.0/16
+set policy-options prefix-list PL_to_Amazon-Memento 10.8.2.0/25
+set policy-options prefix-list PL_to_Amazon-Memento 10.11.0.0/16
+set policy-options prefix-list PL_to_Amazon-Memento 10.11.2.0/24
+set policy-options prefix-list PL_to_Amazon-Memento 10.231.12.0/22
+set policy-options prefix-list PL_to_Amazon-Memento 10.231.140.0/22
+set policy-options prefix-list PL_to_Amazon-Memento 192.168.172.0/24
+set policy-options prefix-list PL_to_Amazon-Memento 192.168.231.0/24
+set policy-options prefix-list PL_to_QFX-DMZ 88.2.164.252/32
+set policy-options prefix-list PL_to_QFX-DMZ 91.183.134.78/32
+set policy-options prefix-list PL_to_QFX-DMZ 193.190.151.101/32
+set policy-options prefix-list PL_to_QFX-DMZ 194.78.45.195/32
+set policy-options prefix-list PL_to_QFX-DMZ 194.78.118.116/32
+set policy-options prefix-list PL_to_QFX-DMZ 194.78.187.138/32
+set policy-options prefix-list PL_to_QFX-DMZ 212.68.214.109/32
+set policy-options prefix-list PL_to_QFX-DMZ 213.246.242.37/32
+set policy-options prefix-list IXIAv6 111::/64
+set policy-options prefix-list IXIAv6 122::/64
+set policy-options prefix-list IXIAv4 10.10.11.0/24
+set policy-options prefix-list IXIAv4 10.10.22.0/24
+set policy-options policy-statement PL-AGGREGATE term AGGREGATE from protocol aggregate
+set policy-options policy-statement PL-AGGREGATE term AGGREGATE then accept
+set policy-options policy-statement PL-DIRECT term DIRECT from protocol direct
+set policy-options policy-statement PL-DIRECT term DIRECT then accept
+set policy-options policy-statement PL-STATIC term STATIC from protocol static
+set policy-options policy-statement PL-STATIC term STATIC then accept
+set policy-options policy-statement PO_Accept_from_Amazon-Memento term Accepted from route-filter 10.15.152.0/21 exact
+set policy-options policy-statement PO_Accept_from_Amazon-Memento term Accepted then accept
+set policy-options policy-statement PO_Accept_from_Amazon-Memento term Rejected then reject
+set policy-options policy-statement PO_Announced-to-QFX-MDZ term Tunnel from prefix-list PL_to_QFX-DMZ
+set policy-options policy-statement PO_Announced-to-QFX-MDZ term Tunnel then accept
+set policy-options policy-statement PO_Announced-to-QFX-MDZ term Static-discard from protocol static
+set policy-options policy-statement PO_Announced-to-QFX-MDZ term Static-discard from route-filter 10.11.240.0/22 exact
+set policy-options policy-statement PO_Announced-to-QFX-MDZ term Static-discard from route-filter 10.11.244.0/22 exact
+set policy-options policy-statement PO_Announced-to-QFX-MDZ term Static-discard from route-filter 212.3.248.114/32 exact
+set policy-options policy-statement PO_Announced-to-QFX-MDZ term Static-discard then accept
+set policy-options policy-statement PO_Announced-to-QFX-MDZ term Reject-Other then reject
+set policy-options policy-statement PO_Announced_to_Amazon-Memento term Allowed from prefix-list PL_to_Amazon-Memento
+set policy-options policy-statement PO_Announced_to_Amazon-Memento term Allowed then community add NO-EXPORT
+set policy-options policy-statement PO_Announced_to_Amazon-Memento term Allowed then accept
+set policy-options policy-statement PO_Announced_to_Amazon-Memento term Rejected then reject
+set policy-options policy-statement STATIC term static from protocol static
+set policy-options policy-statement STATIC term static then accept
+set policy-options community NO-EXPORT members 65535:65281
+set routing-instances vr instance-type virtual-router
+set routing-instances vr interface reth2.10
+set routing-instances vr interface reth2.20
+set routing-instances vr routing-options rib vr.inet6.0 static route ::/0 discard
+set routing-instances vr routing-options static route 0.0.0.0/0 discard
+set routing-instances vr routing-options autonomous-system 65100
+set routing-instances vr protocols bgp export PL-DIRECT
+set routing-instances vr protocols bgp group 10-v4 export PL-STATIC
+set routing-instances vr protocols bgp group 10-v4 peer-as 64514
+set routing-instances vr protocols bgp group 10-v4 neighbor 10.10.0.2
+set routing-instances vr protocols bgp group 10-v4 neighbor 10.10.0.3
+set routing-instances vr protocols bgp group 10-v4 neighbor 10.10.0.4
+set routing-instances vr protocols bgp group 10-v4 neighbor 10.10.0.5
+set routing-instances vr protocols bgp group 10-v6 export PL-STATIC
+set routing-instances vr protocols bgp group 10-v6 peer-as 64514
+set routing-instances vr protocols bgp group 10-v6 neighbor 100::2
+set routing-instances vr protocols bgp group 10-v6 neighbor 100::3
+set routing-instances vr protocols bgp group 10-v6 neighbor 100::4
+set routing-instances vr protocols bgp group 10-v6 neighbor 100::5
+set routing-instances vr protocols bgp group 20-v4 export PL-STATIC
+set routing-instances vr protocols bgp group 20-v4 peer-as 64514
+set routing-instances vr protocols bgp group 20-v4 neighbor 10.20.0.2
+set routing-instances vr protocols bgp group 20-v4 neighbor 10.20.0.3
+set routing-instances vr protocols bgp group 20-v4 neighbor 10.20.0.4
+set routing-instances vr protocols bgp group 20-v4 neighbor 10.20.0.5
+set routing-instances vr protocols bgp group 20-v6 export PL-STATIC
+set routing-instances vr protocols bgp group 20-v6 peer-as 64514
+set routing-instances vr protocols bgp group 20-v6 neighbor 200::2
+set routing-instances vr protocols bgp group 20-v6 neighbor 200::3
+set routing-instances vr protocols bgp group 20-v6 neighbor 200::4
+set routing-instances vr protocols bgp group 20-v6 neighbor 200::5
+set routing-instances vr30 instance-type virtual-router
+set routing-instances vr30 interface reth2.30
+set routing-instances vr30 routing-options rib vr30.inet6.0 static route ::/0 next-hop 300::1
+set routing-instances vr30 routing-options static route 0.0.0.0/0 next-hop 10.30.0.1

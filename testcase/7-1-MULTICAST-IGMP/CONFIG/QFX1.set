@@ -1,0 +1,860 @@
+
+set version 18.4R2-S3
+set groups rstp-edge protocols rstp interface <*> mode point-to-point
+set groups rstp-edge protocols rstp interface <*> edge
+set groups rstp-edge protocols rstp interface <*> no-root-port
+set groups CoS-default-scheduler-map class-of-service interfaces <*> scheduler-map smap-high-bw
+set system commit synchronize
+set system login class operator-local idle-timeout 15
+set system login class operator-local permissions network
+set system login class operator-local permissions trace
+set system login class operator-local permissions view
+set system login class operator-local permissions view-configuration
+set system login class voo-admin idle-timeout 15
+set system login class voo-admin permissions all
+set system login class voo-oper idle-timeout 15
+set system login class voo-oper permissions access
+set system login class voo-oper permissions admin
+set system login class voo-oper permissions clear
+set system login class voo-oper permissions field
+set system login class voo-oper permissions firewall
+set system login class voo-oper permissions floppy
+set system login class voo-oper permissions flow-tap
+set system login class voo-oper permissions flow-tap-operation
+set system login class voo-oper permissions idp-profiler-operation
+set system login class voo-oper permissions interface
+set system login class voo-oper permissions network
+set system login class voo-oper permissions pgcp-session-mirroring
+set system login class voo-oper permissions reset
+set system login class voo-oper permissions rollback
+set system login class voo-oper permissions routing
+set system login class voo-oper permissions secret
+set system login class voo-oper permissions security
+set system login class voo-oper permissions shell
+set system login class voo-oper permissions snmp
+set system login class voo-oper permissions system
+set system login class voo-oper permissions trace
+set system login class voo-oper permissions view
+set system login class voo-oper permissions view-configuration
+set system login user DMA uid 2003
+set system login user DMA class read-only
+set system login user DMA authentication encrypted-password "$1$.UBWfr9p$rpzyDrS87I2t8PP.slueK/"
+set system login user automate uid 2006
+set system login user automate class voo-admin
+set system login user automate authentication encrypted-password "$1$bkI.of0P$wfq2wRI8/dWLtDIT1w11t0"
+set system login user junosspace uid 2001
+set system login user junosspace class super-user
+set system login user junosspace authentication ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6HnsQpsYpAOrRKiDSiFyWHNH+m7Xqw3Q2B1UlkcFKklaI/q1l6d9cj4aYmIBXmWE/fkENI16w1eVUHLyytewbaPaMbnnt6auUP73XwC4xVvqxsmfDMQFm31RvjSWoMrqYN/TDX/POq71+cqjVnVRYCQLcli4WmshKtg4q55hvHTmx1wtjrdjvgcACi8kGLrtPK1jXriM4ZwbC5d+UbWXaTA1Ai2F/4+32t54bVGlz3WytkCWHlEaVAlDippNLw+DsLcH46Z7aEcEGFLrqR9IxJMG0pYGyyHzcX/TO1iFJ1o/HCHO+VvGcekWiVQYllKO24Sv8/wTJEDpAxsV5Ju1n root@space-005056bd229f"
+set system login user lotusscript uid 2002
+set system login user lotusscript class operator-local
+set system login user lotusscript authentication ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEApZacP+ue+uUPcZD6PhyeDtR/YAPft+77YvcsogZKSCmgWywBfG4eF1YLLHJtoefX20TUQLGRglMPFQkodMjt5oi2pw5i463oGZFK/vuqXWq3nNKak0Tx1skbg+HHTL4kG4x8RXO3aNIbRph3grAkBmeBAr2sI1nxyUXU6phYNlnRzMZKbtOotZ6RCuvH0om6Tb0jFNvK6IgEgIULIn2+XSGwTvR8BDr/aFWqjSdoMKHcGTJTA84wTjcJtbCnUffwxH9c6Afq2Y/D9X1P8lEwrCeVzcLve8HC0XLitgJqcPmdYHJP8I8apgKMvam0rFhxVWvl1j3+/XiPv3eBSx5D0Q=="
+deactivate system login user lotusscript
+set system login user oper uid 2004
+set system login user oper class operator-local
+set system login user oper authentication ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1rEtcVaQp9JV1qibCAHhPrGRA/h8mUUyvrzW00/XlCX1Mru2t2fvoy9hEBvpyYTFv3Dpm59RglBOtvya838wvgT12C9cIksborb/yV6scUoS7qVjwsFKb8qP4yDPsx3ymNza73tLjFyAqc4jZ3kn4SbisgYJNlV/FxApjgpIOD+guAio+GU0jwa1ecHcOl7flfSTosCfgshEvuGRTmiqkp4G4LLBZvzqPe62eS9hL83/82B7s31kBSO0wh6v+ABGjmBUxgN7+0K5xDM+CD6hNmcf56m3RRti8Rn+WTId1iprbuUX1RlOr9TNKIC866RNVAji5RnR9J0/8LbJ6grboQ== oper@SBVCP-SCRIPT"
+set system login user superadmin uid 2000
+set system login user superadmin class super-user
+set system login user superadmin authentication encrypted-password "$1$RN5rs8D.$0GRC0MyTz7czJhibyx/eX/"
+set system login user template-admin uid 2010
+set system login user template-admin class voo-admin
+set system login user template-oper uid 2011
+set system login user template-oper class voo-oper
+set system login user tplisson uid 2005
+set system login user tplisson class super-user
+set system login user tplisson authentication encrypted-password "$6$bz9R8zad$31t0ed9fF6D8WcD8beavraTvAZOporf8TKLHW.7egu4ABWEUk.upEFrEHVvTloa4tZc5mXfJ32ebrO0RkJbur."
+set system root-authentication encrypted-password "$6$TVl57UA1$9GN1pVKJ0MTfB2Bp6w6OkRKoyJrH7i1lsqR17V995RAieH65GZe7pn3XiIDrK/iUjnEbHr48J3aV59BYplC0r."
+set system services ssh root-login allow
+set system services ssh protocol-version v2
+set system services ssh max-sessions-per-connection 32
+set system services extension-service request-response grpc clear-text port 50051
+set system services extension-service request-response grpc skip-authentication
+set system services extension-service notification allow-clients address 0.0.0.0/0
+set system services netconf ssh port 830
+set system host-name QFX-LAB4-DZ1
+set system time-zone Europe/Brussels
+set system authentication-order password
+set system authentication-order tacplus
+set system tacplus-server 10.11.2.29 secret "$9$3W9S9A0yrv7dsBINbY2aJ.Pfz/t1Icyrv1Rds"
+set system tacplus-server 10.11.2.29 timeout 1
+set system tacplus-server 10.11.2.29 single-connection
+set system tacplus-server 10.11.2.30 secret "$9$qfT30ORlvL69eWXxdVJGUHPQ/9p0OR/CvL"
+set system tacplus-server 10.11.2.30 timeout 1
+set system tacplus-server 10.11.2.30 single-connection
+set system accounting events login
+set system accounting events change-log
+set system accounting events interactive-commands
+set system accounting destination tacplus
+set system scripts commit file igmp-snooping-check.py source "ftp://data:dAtra2@10.11.2.23:/JUNIPER/JUNOS/SCRIPTS/COMMIT/igmp-snooping-check.py"
+set system scripts commit file l2-checks.py source "ftp://data:dAtra2@10.11.2.23:/JUNIPER/JUNOS/SCRIPTS/COMMIT/l2-checks.py"
+set system scripts language python
+set system scripts synchronize
+set system syslog user * any emergency
+set system syslog host 10.11.2.19 any any
+set system syslog host 10.11.2.19 facility-override local1
+set system syslog host 10.11.2.19 explicit-priority
+set system syslog file messages any any
+set system syslog file messages authorization info
+set system syslog file messages match "!(usage requires a license)"
+set system syslog file interactive-commands interactive-commands any
+set system syslog file default-log-messages any any
+set system syslog file default-log-messages match "(FRU Offline)|(FRU Online)|(FRU insertion)|(FRU power)|(FRU removal)|(commit complete)|(copying configuration to juniper.save)|(license add)|(license delete)|(link UP)|(package -X delete)|(package -X update)|(plugged in)|(requested 'commit synchronize' operation)|(requested 'commit' operation)|(unplugged)|Transferred|ifAdminStatus|transfer-file|transitioned|QF_NODE|QF_SERVER_NODE_GROUP|QF_INTERCONNECT|QF_DIRECTOR|QF_NETWORK_NODE_GROUP|(Master Unchanged, Members Changed)|(Master Changed, Members Changed)|(Master Detected, Members Changed)|(vc add)|(vc delete)|(Master detected)|(Master changed)|(Backup detected)|(Backup changed)|(interface vcp-)"
+set system syslog file default-log-messages structured-data
+set system syslog file messages_firewall_any firewall any
+set system syslog file messages_firewall_any archive no-world-readable
+set system archival configuration transfer-on-commit
+set system archival configuration archive-sites "ftp://data:dAtra2@10.11.2.23/ARCHIVE/LAB/DMZ"
+set system ddos-protection traceoptions file ddos-log
+set system ddos-protection traceoptions file size 10m
+set system ddos-protection traceoptions flag all
+set system ntp boot-server 10.11.2.14
+set system ntp server 10.11.2.14
+set system ntp server 10.11.2.21
+set chassis aggregated-devices ethernet device-count 64
+set chassis network-services enhanced-mode
+set services analytics streaming-server my-server remote-address 10.239.0.40
+set services analytics streaming-server my-server remote-port 50000
+set services analytics export-profile my-export-profile local-address 10.239.255.8
+set services analytics export-profile my-export-profile local-port 54321
+set services analytics export-profile my-export-profile reporting-rate 1
+set services analytics export-profile my-export-profile format gpb
+set services analytics export-profile my-export-profile transport udp
+set services analytics sensor qmon-sw server-name my-server
+set services analytics sensor qmon-sw export-name my-export-profile
+set services analytics sensor qmon-sw resource /junos/system/linecard/qmon-sw/
+set services analytics sensor qmon-sw resource-filter .*
+set security authentication-key-chains key-chain ISIS key 1 secret "$9$mfQ39AuO1EVwikqfF36/CpuB1Rh"
+set security authentication-key-chains key-chain ISIS key 1 start-time "2018-12-28.10:00:00 +0100"
+set security authentication-key-chains key-chain ISIS key 1 options isis-enhanced
+set interfaces interface-range l2-access member ge-0/0/23
+set interfaces interface-range l2-access member ge-0/0/1
+set interfaces interface-range l2-access member ge-0/0/25
+set interfaces xe-0/0/0 description MX-LAB4-AG1_xe-8/0/0:1
+set interfaces xe-0/0/0 gigether-options 802.3ad ae2
+set interfaces ge-0/0/1 description Fudgi2_p0
+set interfaces ge-0/0/1 unit 0 family ethernet-switching interface-mode trunk
+set interfaces ge-0/0/1 unit 0 family ethernet-switching vlan members 3-4094
+set interfaces ge-0/0/1 unit 0 family ethernet-switching storm-control default
+set interfaces xe-0/0/7 description Reserved-OV-DWE_DMZ
+set interfaces xe-0/0/12 description Test_SFP-H10GB-ACU7M
+set interfaces xe-0/0/12 mtu 9192
+set interfaces xe-0/0/12 unit 0 family inet address 2.2.2.1/30
+set interfaces ge-0/0/23 description CM_TC7210
+set interfaces ge-0/0/23 unit 0 family ethernet-switching interface-mode access
+set interfaces ge-0/0/25 description Fudgi2_p5
+set interfaces ge-0/0/25 unit 0 family ethernet-switching interface-mode trunk
+set interfaces ge-0/0/25 unit 0 family ethernet-switching vlan members 3-4094
+set interfaces ge-0/0/25 unit 0 family ethernet-switching storm-control default
+set interfaces xe-0/0/34 description ESX-LAB4-01_vmnic3
+set interfaces xe-0/0/34 gigether-options 802.3ad ae10
+set interfaces xe-0/0/35 description ESX-LAB4-01_vmnic4
+set interfaces xe-0/0/35 gigether-options 802.3ad ae10
+set interfaces xe-0/0/40 description L-DC1-1A_xe-0/0/0:0
+set interfaces xe-0/0/40 gigether-options 802.3ad ae40
+set interfaces xe-0/0/43 apply-macro no-stp
+set interfaces xe-0/0/43 description Ixia_E40_P39
+set interfaces xe-0/0/43 unit 0 family ethernet-switching interface-mode access
+set interfaces xe-0/0/43 unit 0 family ethernet-switching vlan members Test-CoS
+set interfaces xe-0/0/43 unit 0 family ethernet-switching storm-control default
+set interfaces xe-0/0/45 description Ixia-Port-2/1
+set interfaces xe-0/0/45 vlan-tagging
+set interfaces xe-0/0/45 unit 10 vlan-id 10
+set interfaces xe-0/0/45 unit 10 family inet address 10.10.11.1/24
+set interfaces xe-0/0/45 unit 10 family inet6 address 111::1/64
+set interfaces xe-0/0/46 description QFX-LAB4-DZ2_xe-0/0/46
+set interfaces xe-0/0/46 gigether-options 802.3ad ae0
+set interfaces xe-1/0/40 description L-DC1-1B_xe-0/0/0:0
+set interfaces xe-1/0/40 gigether-options 802.3ad ae40
+set interfaces xe-1/0/45 description Ixia-Port-2/3
+set interfaces xe-1/0/45 vlan-tagging
+set interfaces xe-1/0/45 mtu 9000
+set interfaces xe-1/0/45 unit 10 vlan-id 10
+set interfaces xe-1/0/45 unit 10 family inet address 10.10.10.1/24
+set interfaces xe-1/0/45 unit 10 family inet6 address 110::1/64
+set interfaces xe-1/0/45 unit 20 vlan-id 20
+set interfaces xe-1/0/45 unit 20 family inet address 10.20.10.1/24
+set interfaces xe-1/0/45 unit 20 family inet6 address 120::1/64
+set interfaces xe-1/0/45 unit 30 vlan-id 30
+set interfaces xe-1/0/45 unit 30 family inet address 10.30.1.1/24
+set interfaces xe-1/0/45 unit 30 family inet6 address 301::1/64
+set interfaces xe-1/0/47 gigether-options 802.3ad ae0
+set interfaces ae0 apply-macro no-stp
+set interfaces ae0 description QFX-LAB4-DZ2
+set interfaces ae0 flexible-vlan-tagging
+set interfaces ae0 mtu 9192
+set interfaces ae0 encapsulation flexible-ethernet-services
+set interfaces ae0 aggregated-ether-options lacp active
+set interfaces ae0 aggregated-ether-options lacp periodic fast
+set interfaces ae0 unit 0 family ethernet-switching interface-mode trunk
+set interfaces ae0 unit 0 family ethernet-switching vlan members 3-2999
+set interfaces ae0 unit 0 family ethernet-switching vlan members 4000-4094
+set interfaces ae0 unit 0 family ethernet-switching storm-control default
+set interfaces ae0 unit 1 vlan-id 1
+set interfaces ae0 unit 1 family inet address 10.239.15.0/31
+set interfaces ae0 unit 1 family iso
+set interfaces ae0 unit 1 family inet6
+set interfaces ae0 unit 1 family mpls
+set interfaces ae1 mtu 9192
+set interfaces ae1 aggregated-ether-options lacp active
+set interfaces ae1 aggregated-ether-options lacp periodic fast
+set interfaces ae1 unit 0 family inet mtu 8192
+set interfaces ae1 unit 0 family inet filter input cbr8-lab4-ac1_inet
+set interfaces ae1 unit 0 family inet address 10.239.15.4/31
+set interfaces ae1 unit 0 family iso
+set interfaces ae1 unit 0 family inet6
+set interfaces ae1 unit 0 family mpls maximum-labels 5
+set interfaces ae2 description MX-LAB4-AG1_ae3
+set interfaces ae2 flexible-vlan-tagging
+set interfaces ae2 mtu 9192
+set interfaces ae2 encapsulation flexible-ethernet-services
+set interfaces ae2 aggregated-ether-options lacp active
+set interfaces ae2 aggregated-ether-options lacp periodic fast
+set interfaces ae2 unit 0 family ethernet-switching interface-mode trunk
+set interfaces ae2 unit 0 family ethernet-switching vlan members 3-999
+set interfaces ae2 unit 0 family ethernet-switching vlan members 1001-1999
+set interfaces ae2 unit 0 family ethernet-switching vlan members 2001-4094
+set interfaces ae2 unit 0 family ethernet-switching storm-control default
+set interfaces ae2 unit 1000 vlan-id 1000
+set interfaces ae2 unit 1000 family inet address 10.239.15.51/29
+set interfaces ae10 apply-macro no-stp
+set interfaces ae10 description ESX-LAB4-01_Lag
+set interfaces ae10 mtu 9000
+set interfaces ae10 aggregated-ether-options lacp active
+set interfaces ae10 unit 0 family ethernet-switching interface-mode trunk
+set interfaces ae10 unit 0 family ethernet-switching vlan members all
+set interfaces ae10 unit 0 family ethernet-switching storm-control default
+set interfaces ae40 description L-DC1-1A/B
+set interfaces ae40 vlan-tagging
+set interfaces ae40 mtu 9000
+set interfaces ae40 aggregated-ether-options lacp active
+set interfaces ae40 aggregated-ether-options lacp periodic fast
+set interfaces ae40 unit 10 vlan-id 10
+set interfaces ae40 unit 10 family inet address 10.10.1.111/24
+set interfaces ae40 unit 10 family inet6 address 101::111/64
+set interfaces ae40 unit 20 vlan-id 20
+set interfaces ae40 unit 20 family inet address 10.20.1.111/24
+set interfaces ae40 unit 20 family inet6 address 201::111/64
+set interfaces ae40 unit 30 vlan-id 30
+set interfaces ae40 unit 30 family inet address 10.30.0.111/24
+set interfaces ae40 unit 30 family inet6 address 300::111/64
+set interfaces ae40 unit 30 family inet6 address fe80::30:111/64
+set interfaces irb unit 100 family inet address 10.239.0.2/27 preferred
+set interfaces irb unit 100 family inet address 10.239.0.2/27 vrrp-group 1 virtual-address 10.239.0.1
+set interfaces irb unit 100 family inet address 10.239.0.2/27 vrrp-group 1 priority 150
+set interfaces irb unit 100 family inet address 10.239.0.2/27 vrrp-group 1 accept-data
+set interfaces irb unit 100 family inet address 10.239.0.67/27 preferred
+set interfaces irb unit 100 family inet address 10.239.0.67/27 vrrp-group 2 virtual-address 10.239.0.65
+set interfaces irb unit 100 family inet address 10.239.0.67/27 vrrp-group 2 priority 150
+set interfaces irb unit 100 family inet address 10.239.0.67/27 vrrp-group 2 accept-data
+set interfaces irb unit 101 family inet address 85.201.61.26/29 preferred
+set interfaces irb unit 101 family inet address 85.201.61.26/29 vrrp-group 1 virtual-address 85.201.61.25
+set interfaces irb unit 101 family inet address 85.201.61.26/29 vrrp-group 1 priority 150
+set interfaces irb unit 101 family inet address 85.201.61.26/29 vrrp-group 1 accept-data
+set interfaces irb unit 101 family inet6 address 2a02:2788:fffe:2::2/64 preferred
+set interfaces irb unit 101 family inet6 address 2a02:2788:fffe:2::2/64 vrrp-inet6-group 1 virtual-inet6-address 2a02:2788:fffe:2::1
+set interfaces irb unit 101 family inet6 address 2a02:2788:fffe:2::2/64 vrrp-inet6-group 1 virtual-link-local-address fe80::2788:fffe:2:1
+set interfaces irb unit 101 family inet6 address 2a02:2788:fffe:2::2/64 vrrp-inet6-group 1 priority 150
+set interfaces irb unit 101 family inet6 address 2a02:2788:fffe:2::2/64 vrrp-inet6-group 1 accept-data
+set interfaces irb unit 101 family inet6 address fe80::2788:fffe:2:2/64 preferred
+deactivate interfaces irb unit 101
+set interfaces irb unit 102 family inet address 10.238.0.34/27 preferred
+set interfaces irb unit 102 family inet address 10.238.0.34/27 vrrp-group 1 virtual-address 10.238.0.33
+set interfaces irb unit 102 family inet address 10.238.0.34/27 vrrp-group 1 priority 150
+set interfaces irb unit 102 family inet address 10.238.0.34/27 vrrp-group 1 accept-data
+set interfaces irb unit 103 family inet address 10.239.0.34/27 preferred
+set interfaces irb unit 103 family inet address 10.239.0.34/27 vrrp-group 1 virtual-address 10.239.0.33
+set interfaces irb unit 103 family inet address 10.239.0.34/27 vrrp-group 1 priority 150
+set interfaces irb unit 103 family inet address 10.239.0.34/27 vrrp-group 1 accept-data
+set interfaces irb unit 1000 family inet address 10.239.15.11/29
+set interfaces irb unit 4084 description Transit-dmz-mgmt-vm
+set interfaces irb unit 4084 family inet address 10.239.15.42/29
+set interfaces irb unit 4085 description Transit-dmz-mgmt-esxi
+set interfaces irb unit 4085 family inet address 10.239.15.34/29
+set interfaces irb unit 4086 description Transit-dmz-voice-prov
+set interfaces irb unit 4086 family inet address 10.239.15.26/29
+set interfaces irb unit 4087 description Transit-dmz-cnr-cpe
+set interfaces irb unit 4087 family inet address 10.239.15.18/29
+set interfaces irb unit 4087 family inet6 address 2a02:2788:fffe:3::2/112
+set interfaces irb unit 4087 family inet6 address fe80::2788:fffe:3:2/64
+deactivate interfaces irb unit 4087
+set interfaces lo0 unit 0 family inet address 10.239.255.8/32
+set interfaces lo0 unit 0 family iso address 49.0000.0102.3925.5008.00
+set interfaces vme unit 0 family inet address 192.168.200.29/24
+set snmp community CADMIUM authorization read-only
+set snmp trap-group space targets 10.11.2.60
+set forwarding-options storm-control-profiles default all
+set forwarding-options storm-control-profiles multicast all no-multicast
+set policy-options prefix-list DMZ_subnets 10.238.0.0/16
+set policy-options prefix-list DMZ_subnets 10.239.0.0/16
+set policy-options prefix-list rfc1918 10.0.0.0/8
+set policy-options prefix-list rfc1918 172.16.0.0/12
+set policy-options prefix-list rfc1918 192.168.0.0/16
+set policy-options prefix-list IXIAv4 10.10.11.0/24
+set policy-options prefix-list IXIAv4 10.10.22.0/24
+set policy-options prefix-list IXIAv6 111::/64
+set policy-options prefix-list IXIAv6 122::/64
+set policy-options policy-statement DIRECT from protocol direct
+set policy-options policy-statement DIRECT then accept
+set policy-options policy-statement EVPN_VRF_IMPORT term switch_options_comm from community switch_options_comm
+set policy-options policy-statement EVPN_VRF_IMPORT term switch_options_comm then accept
+set policy-options policy-statement IXIAv4 term ixia from prefix-list IXIAv4
+set policy-options policy-statement IXIAv4 term ixia then accept
+set policy-options policy-statement IXIAv6 term ixia from prefix-list IXIAv6
+set policy-options policy-statement IXIAv6 term ixia then accept
+set policy-options policy-statement Only-Default-Route term default-route from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement Only-Default-Route term default-route then accept
+set policy-options policy-statement Only-Default-Route term reject-all-other-routes then reject
+set policy-options policy-statement Only-Default-RouteIPV6 term default-route from route-filter ::/0 exact
+set policy-options policy-statement Only-Default-RouteIPV6 term default-route then accept
+set policy-options policy-statement Only-Default-RouteIPV6 term reject-all-other-routes then reject
+set policy-options policy-statement PL-AGGREGATE term AGGREGATE from protocol aggregate
+set policy-options policy-statement PL-AGGREGATE term AGGREGATE then accept
+set policy-options policy-statement PL-DIRECT term DIRECT from protocol direct
+set policy-options policy-statement PL-DIRECT term DIRECT then accept
+set policy-options policy-statement PL-LOAD-BALANCE term LB then load-balance per-packet
+set policy-options policy-statement PL-STATIC term STATIC from protocol static
+set policy-options policy-statement PL-STATIC term STATIC then accept
+set policy-options policy-statement PO-dmz-to-qfx-prod term EVPN from protocol evpn
+set policy-options policy-statement PO-dmz-to-qfx-prod term EVPN then reject
+set policy-options policy-statement PO-dmz-to-qfx-prod from prefix-list-filter DMZ_subnets orlonger
+set policy-options policy-statement PO-dmz-to-qfx-prod then accept
+set policy-options policy-statement PO-dmz-to-srx term no-transit from route-filter 10.11.255.0/24 orlonger
+set policy-options policy-statement PO-dmz-to-srx term no-transit from route-filter 10.11.254.0/24 orlonger
+set policy-options policy-statement PO-dmz-to-srx term no-transit then reject
+set policy-options policy-statement PO-dmz-to-srx term dmz-aggregate from protocol aggregate
+set policy-options policy-statement PO-dmz-to-srx term dmz-aggregate then accept
+set policy-options policy-statement PO-dmz-to-srx term dmz from protocol direct
+set policy-options policy-statement PO-dmz-to-srx term dmz then accept
+set policy-options policy-statement PO-dmz-to-srx term dmz-lb from protocol static
+set policy-options policy-statement PO-dmz-to-srx term dmz-lb then accept
+set policy-options policy-statement PO-dmz-to-srx term reject-all-other then reject
+set policy-options policy-statement PO-dmz-to-srx-ipv6 term no-transit from route-filter 2a02:2788:fffe:3::/64 orlonger
+set policy-options policy-statement PO-dmz-to-srx-ipv6 term no-transit then reject
+set policy-options policy-statement PO-dmz-to-srx-ipv6 term dmz-aggregate from protocol aggregate
+set policy-options policy-statement PO-dmz-to-srx-ipv6 term dmz-aggregate then accept
+set policy-options policy-statement PO-dmz-to-srx-ipv6 term dmz from protocol direct
+set policy-options policy-statement PO-dmz-to-srx-ipv6 term dmz then accept
+set policy-options policy-statement PO-dmz-to-srx-ipv6 term dmz-lb from protocol static
+set policy-options policy-statement PO-dmz-to-srx-ipv6 term dmz-lb then accept
+set policy-options policy-statement PO-dmz-to-srx-ipv6 term reject-all-other then reject
+set policy-options policy-statement QFX1 term DIRECT from protocol direct
+set policy-options policy-statement QFX1 term DIRECT then community add QFX1
+set policy-options policy-statement QFX1 term DIRECT then accept
+set policy-options policy-statement QFX1 term AGGREGATE from protocol aggregate
+set policy-options policy-statement QFX1 term AGGREGATE then community add QFX1
+set policy-options policy-statement QFX1 term AGGREGATE then accept
+set policy-options policy-statement STATIC term static from protocol static
+set policy-options policy-statement STATIC term static then accept
+set policy-options policy-statement load-balancing-policy then load-balance per-packet
+set policy-options policy-statement nh-vga-v4 then next-hop 100.1.1.11
+set policy-options policy-statement nh-vga-v4 then accept
+set policy-options policy-statement rfc1918 term 1 from prefix-list-filter rfc1918 exact
+set policy-options policy-statement rfc1918 term 1 then accept
+set policy-options policy-statement rfc1918 term 2 then reject
+set policy-options policy-statement set-local-pref-150 term set-lp then local-preference 150
+set policy-options policy-statement set-local-pref-150 term set-lp then next policy
+set policy-options policy-statement set-local-pref-200 term set-lp then local-preference 200
+set policy-options policy-statement set-local-pref-200 term set-lp then next policy
+set policy-options policy-statement set-next-hop-self term nhs then next-hop self
+set policy-options policy-statement set-next-hop-self term nhs then next policy
+set policy-options policy-statement static from protocol static
+set policy-options policy-statement static then accept
+set policy-options community QFX1 members 64514:101
+set policy-options community switch_options_comm members target:65514:1000
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points 000000
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points 000001
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points 000010
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points 000011
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points 000100
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points 000101
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points 000110
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority low code-points 000111
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points 001000
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points 001001
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points 001010
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points 001011
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points 001100
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points 001101
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points 001110
+set class-of-service classifiers dscp voo-dscp forwarding-class best-effort loss-priority high code-points 001111
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points 010000
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points 010001
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points 010010
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points 010011
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points 010100
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points 010101
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points 010110
+set class-of-service classifiers dscp voo-dscp forwarding-class business-critical loss-priority low code-points 010111
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points 011000
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points 011001
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points 011010
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points 011011
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points 011100
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points 011101
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points 011110
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority low code-points 011111
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points 100000
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points 100001
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points 100010
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points 100011
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points 100100
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points 100101
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points 100110
+set class-of-service classifiers dscp voo-dscp forwarding-class assured-forwarding loss-priority high code-points 100111
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points 101000
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points 101001
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points 101010
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points 101011
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points 101100
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points 101101
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points 101110
+set class-of-service classifiers dscp voo-dscp forwarding-class expedited-forwarding loss-priority low code-points 101111
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority low code-points 110000
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority low code-points 110001
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority low code-points 110010
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority low code-points 110011
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority low code-points 110100
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority low code-points 110101
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority low code-points 110110
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority low code-points 110111
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority high code-points 111000
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority high code-points 111001
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority high code-points 111010
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority high code-points 111011
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority high code-points 111100
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority high code-points 111101
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority high code-points 111110
+set class-of-service classifiers dscp voo-dscp forwarding-class network-control loss-priority high code-points 111111
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority low code-points 000000
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority low code-points 000001
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority low code-points 000010
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority low code-points 000011
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority low code-points 000100
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority low code-points 000101
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority low code-points 000110
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority low code-points 000111
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points 001000
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points 001001
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points 001010
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points 001011
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points 001100
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points 001101
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points 001110
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class best-effort loss-priority high code-points 001111
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points 010000
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points 010001
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points 010010
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points 010011
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points 010100
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points 010101
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points 010110
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class business-critical loss-priority low code-points 010111
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points 011000
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points 011001
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points 011010
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points 011011
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points 011100
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points 011101
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points 011110
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority low code-points 011111
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points 100000
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points 100001
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points 100010
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points 100011
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points 100100
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points 100101
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points 100110
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class assured-forwarding loss-priority high code-points 100111
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points 101000
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points 101001
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points 101010
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points 101011
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points 101100
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points 101101
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points 101110
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class expedited-forwarding loss-priority low code-points 101111
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority low code-points 110000
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority low code-points 110001
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority low code-points 110010
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority low code-points 110011
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority low code-points 110100
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority low code-points 110101
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority low code-points 110110
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority low code-points 110111
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority high code-points 111000
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority high code-points 111001
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority high code-points 111010
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority high code-points 111011
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority high code-points 111100
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority high code-points 111101
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority high code-points 111110
+set class-of-service classifiers dscp-ipv6 voo-dscp-ipv6 forwarding-class network-control loss-priority high code-points 111111
+set class-of-service classifiers exp voo-exp forwarding-class best-effort loss-priority low code-points 000
+set class-of-service classifiers exp voo-exp forwarding-class best-effort loss-priority high code-points 001
+set class-of-service classifiers exp voo-exp forwarding-class business-critical loss-priority low code-points 010
+set class-of-service classifiers exp voo-exp forwarding-class assured-forwarding loss-priority low code-points 011
+set class-of-service classifiers exp voo-exp forwarding-class assured-forwarding loss-priority high code-points 100
+set class-of-service classifiers exp voo-exp forwarding-class expedited-forwarding loss-priority low code-points 101
+set class-of-service classifiers exp voo-exp forwarding-class network-control loss-priority low code-points 110
+set class-of-service classifiers exp voo-exp forwarding-class network-control loss-priority high code-points 111
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class best-effort loss-priority low code-points 000
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class best-effort loss-priority high code-points 001
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class business-critical loss-priority low code-points 010
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class assured-forwarding loss-priority low code-points 011
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class assured-forwarding loss-priority high code-points 100
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class expedited-forwarding loss-priority low code-points 101
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class network-control loss-priority low code-points 110
+set class-of-service classifiers ieee-802.1 voo-802.1p forwarding-class network-control loss-priority high code-points 111
+set class-of-service drop-profiles dp-be-high interpolate fill-level 75
+set class-of-service drop-profiles dp-be-high interpolate fill-level 100
+set class-of-service drop-profiles dp-be-high interpolate drop-probability 0
+set class-of-service drop-profiles dp-be-high interpolate drop-probability 100
+set class-of-service forwarding-classes class best-effort queue-num 0
+set class-of-service forwarding-classes class business-critical queue-num 4
+set class-of-service forwarding-classes class assured-forwarding queue-num 2
+set class-of-service forwarding-classes class expedited-forwarding queue-num 3
+set class-of-service forwarding-classes class expedited-forwarding no-loss
+set class-of-service forwarding-classes class network-control queue-num 7
+set class-of-service interfaces apply-groups CoS-default-scheduler-map
+set class-of-service interfaces et-* apply-groups CoS-default-scheduler-map
+set class-of-service interfaces et-* unit * classifiers dscp voo-dscp
+set class-of-service interfaces et-* unit * classifiers dscp-ipv6 voo-dscp-ipv6
+set class-of-service interfaces et-* unit * classifiers exp voo-exp
+set class-of-service interfaces et-* unit * classifiers ieee-802.1 voo-802.1p
+set class-of-service interfaces ge-* apply-groups CoS-default-scheduler-map
+set class-of-service interfaces ge-* unit * classifiers dscp voo-dscp
+set class-of-service interfaces ge-* unit * classifiers dscp-ipv6 voo-dscp-ipv6
+set class-of-service interfaces ge-* unit * classifiers exp voo-exp
+set class-of-service interfaces ge-* unit * classifiers ieee-802.1 voo-802.1p
+set class-of-service interfaces xe-* apply-groups CoS-default-scheduler-map
+set class-of-service interfaces xe-* unit * classifiers dscp voo-dscp
+set class-of-service interfaces xe-* unit * classifiers dscp-ipv6 voo-dscp-ipv6
+set class-of-service interfaces xe-* unit * classifiers exp voo-exp
+set class-of-service interfaces xe-* unit * classifiers ieee-802.1 voo-802.1p
+set class-of-service interfaces ae* apply-groups CoS-default-scheduler-map
+set class-of-service interfaces ae* unit * classifiers dscp voo-dscp
+set class-of-service interfaces ae* unit * classifiers dscp-ipv6 voo-dscp-ipv6
+set class-of-service interfaces ae* unit * classifiers exp voo-exp
+set class-of-service interfaces ae* unit * classifiers ieee-802.1 voo-802.1p
+set class-of-service scheduler-maps smap-high-bw forwarding-class best-effort scheduler sched-high-bw-be
+set class-of-service scheduler-maps smap-high-bw forwarding-class assured-forwarding scheduler sched-high-bw-af
+set class-of-service scheduler-maps smap-high-bw forwarding-class business-critical scheduler sched-high-bw-bc
+set class-of-service scheduler-maps smap-high-bw forwarding-class expedited-forwarding scheduler sched-high-bw-ef
+set class-of-service scheduler-maps smap-high-bw forwarding-class network-control scheduler sched-high-bw-nc
+set class-of-service scheduler-maps smap-high-bw forwarding-class mcast scheduler sched-high-bw-mcast
+set class-of-service schedulers sched-high-bw-be transmit-rate percent 45
+set class-of-service schedulers sched-high-bw-be buffer-size percent 60
+set class-of-service schedulers sched-high-bw-be priority low
+set class-of-service schedulers sched-high-bw-be drop-profile-map loss-priority high protocol any drop-profile dp-be-high
+set class-of-service schedulers sched-high-bw-bc transmit-rate percent 25
+set class-of-service schedulers sched-high-bw-bc buffer-size percent 15
+set class-of-service schedulers sched-high-bw-bc priority low
+set class-of-service schedulers sched-high-bw-af transmit-rate percent 15
+set class-of-service schedulers sched-high-bw-af buffer-size percent 10
+set class-of-service schedulers sched-high-bw-af priority low
+set class-of-service schedulers sched-high-bw-ef shaping-rate percent 5
+set class-of-service schedulers sched-high-bw-ef buffer-size percent 5
+set class-of-service schedulers sched-high-bw-ef priority strict-high
+set class-of-service schedulers sched-high-bw-nc shaping-rate percent 5
+set class-of-service schedulers sched-high-bw-nc buffer-size percent 9
+set class-of-service schedulers sched-high-bw-nc priority strict-high
+set class-of-service schedulers sched-high-bw-mcast transmit-rate percent 5
+set class-of-service schedulers sched-high-bw-mcast buffer-size percent 1
+set class-of-service schedulers sched-high-bw-mcast priority low
+set firewall family inet filter cbr8-lab4-ac1_inet interface-specific
+set firewall family inet filter cbr8-lab4-ac1_inet term from_bu1.1 from source-address 10.238.1.1/32
+set firewall family inet filter cbr8-lab4-ac1_inet term from_bu1.1 then count from_bu1.1
+set firewall family inet filter cbr8-lab4-ac1_inet term from_bu1.1 then accept
+set firewall family inet filter cbr8-lab4-ac1_inet term from_bu1.5 from source-address 10.238.2.1/32
+set firewall family inet filter cbr8-lab4-ac1_inet term from_bu1.5 then count from_bu1.5
+set firewall family inet filter cbr8-lab4-ac1_inet term from_bu1.5 then accept
+set firewall family inet filter cbr8-lab4-ac1_inet term to_bu1.1 from destination-address 10.238.1.1/32
+set firewall family inet filter cbr8-lab4-ac1_inet term to_bu1.1 then count to_bu1.1
+set firewall family inet filter cbr8-lab4-ac1_inet term to_bu1.1 then accept
+set firewall family inet filter cbr8-lab4-ac1_inet term to_bu1.5 from destination-address 10.238.2.1/32
+set firewall family inet filter cbr8-lab4-ac1_inet term to_bu1.5 then count to_bu1.5
+set firewall family inet filter cbr8-lab4-ac1_inet term to_bu1.5 then accept
+set firewall family inet filter cbr8-lab4-ac1_inet term all then accept
+set firewall family ethernet-switching filter ospf-troubleshooting term from_vrr from ip-source-address 10.239.252.99/32
+set firewall family ethernet-switching filter ospf-troubleshooting term from_vrr from ip-destination-address 224.0.0.5/32
+set firewall family ethernet-switching filter ospf-troubleshooting term from_vrr then accept
+set firewall family ethernet-switching filter ospf-troubleshooting term from_vrr then count from_vrr
+set firewall family ethernet-switching filter ospf-troubleshooting term accept then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 interface-specific
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan4086 from ip-source-address 10.238.1.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan4086 from user-vlan-id 4086
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan4086 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan4086 then count from_bu1.1_vlan4086
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan4086 from ip-source-address 10.238.2.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan4086 from user-vlan-id 4086
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan4086 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan4086 then count from_bu1.5_vlan4086
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan4086 from ip-destination-address 10.238.1.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan4086 from user-vlan-id 4086
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan4086 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan4086 then count to_bu1.1_vlan4086
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan4086 from ip-destination-address 10.238.2.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan4086 from user-vlan-id 4086
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan4086 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan4086 then count to_bu1.5_vlan4086
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan102 from ip-source-address 10.238.1.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan102 from user-vlan-id 102
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan102 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan102 then count from_bu1.1_vlan102
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan102 from ip-source-address 10.238.2.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan102 from user-vlan-id 102
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan102 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan102 then count from_bu1.5_vlan102
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan102 from ip-destination-address 10.238.1.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan102 from user-vlan-id 102
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan102 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan102 then count to_bu1.1_vlan102
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan102 from ip-destination-address 10.238.2.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan102 from user-vlan-id 102
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan102 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan102 then count to_bu1.5_vlan102
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan101 from ip-source-address 10.238.1.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan101 from user-vlan-id 101
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan101 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.1_vlan101 then count from_bu1.1_vlan101
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan101 from ip-source-address 10.238.2.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan101 from user-vlan-id 101
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan101 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term from_bu1.5_vlan101 then count from_bu1.5_vlan101
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan101 from ip-destination-address 10.238.1.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan101 from user-vlan-id 101
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan101 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.1_vlan101 then count to_bu1.1_vlan101
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan101 from ip-destination-address 10.238.2.1/32
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan101 from user-vlan-id 101
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan101 then accept
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term to_bu1.5_vlan101 then count to_bu1.5_vlan101
+set firewall family ethernet-switching filter cbr8-lab4-ac1 term all then accept
+set routing-instances PROD-LAB instance-type vrf
+set routing-instances PROD-LAB interface ae2.1000
+set routing-instances PROD-LAB interface irb.1000
+set routing-instances PROD-LAB vrf-target target:65514:1000
+set routing-instances PROD-LAB vrf-table-label
+set routing-instances PROD-LAB routing-options autonomous-system 65514
+set routing-instances PROD-LAB protocols bgp group DMZ_PROD-LAB type external
+set routing-instances PROD-LAB protocols bgp group DMZ_PROD-LAB family inet unicast
+set routing-instances PROD-LAB protocols bgp group DMZ_PROD-LAB family inet6 unicast
+set routing-instances PROD-LAB protocols bgp group DMZ_PROD-LAB export PO-dmz-to-qfx-prod
+set routing-instances PROD-LAB protocols bgp group DMZ_PROD-LAB peer-as 64514
+set routing-instances PROD-LAB protocols bgp group DMZ_PROD-LAB neighbor 10.239.15.50 description QFX-ANS-DMZ-1
+set routing-instances PROD-LAB protocols bgp group SRX type external
+set routing-instances PROD-LAB protocols bgp group SRX family inet unicast
+set routing-instances PROD-LAB protocols bgp group SRX family inet6 unicast
+set routing-instances PROD-LAB protocols bgp group SRX export rfc1918
+set routing-instances PROD-LAB protocols bgp group SRX peer-as 65513
+set routing-instances PROD-LAB protocols bgp group SRX neighbor 10.239.15.10 description SRX-LAB4-1
+set routing-instances dmz-cnr-cpe instance-type vrf
+set routing-instances dmz-cnr-cpe interface irb.101
+set routing-instances dmz-cnr-cpe interface irb.4087
+set routing-instances dmz-cnr-cpe vrf-target target:65514:4087
+set routing-instances dmz-cnr-cpe vrf-table-label
+set routing-instances dmz-cnr-cpe routing-options autonomous-system 65514
+set routing-instances dmz-cnr-cpe protocols bgp group srx type external
+set routing-instances dmz-cnr-cpe protocols bgp group srx authentication-key "$9$u24lOEy8X-Vb28XmTQ3puO1IhlK8Lx"
+set routing-instances dmz-cnr-cpe protocols bgp group srx export PO-dmz-to-srx
+set routing-instances dmz-cnr-cpe protocols bgp group srx peer-as 65513
+set routing-instances dmz-cnr-cpe protocols bgp group srx neighbor 10.239.15.17 import Only-Default-Route
+set routing-instances dmz-cnr-cpe protocols bgp group srx neighbor 10.239.15.17 bfd-liveness-detection minimum-interval 1000
+set routing-instances dmz-cnr-cpe protocols bgp group srx neighbor 10.239.15.17 bfd-liveness-detection minimum-receive-interval 1000
+set routing-instances dmz-cnr-cpe protocols bgp group srx neighbor 10.239.15.17 bfd-liveness-detection multiplier 5
+set routing-instances dmz-cnr-cpe protocols bgp group srx-ipv6 type external
+set routing-instances dmz-cnr-cpe protocols bgp group srx-ipv6 authentication-key "$9$u24lOEy8X-Vb28XmTQ3puO1IhlK8Lx"
+set routing-instances dmz-cnr-cpe protocols bgp group srx-ipv6 export PO-dmz-to-srx-ipv6
+set routing-instances dmz-cnr-cpe protocols bgp group srx-ipv6 peer-as 65513
+set routing-instances dmz-cnr-cpe protocols bgp group srx-ipv6 neighbor 2a02:2788:fffe:3::1 import Only-Default-RouteIPV6
+set routing-instances dmz-cnr-cpe protocols bgp group srx-ipv6 neighbor 2a02:2788:fffe:3::1 bfd-liveness-detection minimum-interval 1000
+set routing-instances dmz-cnr-cpe protocols bgp group srx-ipv6 neighbor 2a02:2788:fffe:3::1 bfd-liveness-detection minimum-receive-interval 1000
+set routing-instances dmz-cnr-cpe protocols bgp group srx-ipv6 neighbor 2a02:2788:fffe:3::1 bfd-liveness-detection multiplier 5
+deactivate routing-instances dmz-cnr-cpe
+set routing-instances dmz-mgmt-esxi instance-type vrf
+set routing-instances dmz-mgmt-esxi interface irb.100
+set routing-instances dmz-mgmt-esxi interface irb.4085
+set routing-instances dmz-mgmt-esxi vrf-target target:65514:4085
+set routing-instances dmz-mgmt-esxi vrf-table-label
+set routing-instances dmz-mgmt-esxi routing-options autonomous-system 65514
+set routing-instances dmz-mgmt-esxi protocols bgp graceful-restart
+set routing-instances dmz-mgmt-esxi protocols bgp group srx type external
+set routing-instances dmz-mgmt-esxi protocols bgp group srx authentication-key "$9$u24lOEy8X-Vb28XmTQ3puO1IhlK8Lx"
+set routing-instances dmz-mgmt-esxi protocols bgp group srx export PO-dmz-to-srx
+set routing-instances dmz-mgmt-esxi protocols bgp group srx peer-as 65513
+set routing-instances dmz-mgmt-esxi protocols bgp group srx neighbor 10.239.15.33 bfd-liveness-detection minimum-interval 1000
+set routing-instances dmz-mgmt-esxi protocols bgp group srx neighbor 10.239.15.33 bfd-liveness-detection minimum-receive-interval 1000
+set routing-instances dmz-mgmt-esxi protocols bgp group srx neighbor 10.239.15.33 bfd-liveness-detection multiplier 5
+set routing-instances dmz-mgmt-vm instance-type vrf
+set routing-instances dmz-mgmt-vm interface irb.103
+set routing-instances dmz-mgmt-vm interface irb.4084
+set routing-instances dmz-mgmt-vm vrf-target target:65514:4084
+set routing-instances dmz-mgmt-vm vrf-table-label
+set routing-instances dmz-mgmt-vm routing-options autonomous-system 65514
+set routing-instances dmz-mgmt-vm protocols bgp graceful-restart
+set routing-instances dmz-mgmt-vm protocols bgp group srx type external
+set routing-instances dmz-mgmt-vm protocols bgp group srx authentication-key "$9$u24lOEy8X-Vb28XmTQ3puO1IhlK8Lx"
+set routing-instances dmz-mgmt-vm protocols bgp group srx export PO-dmz-to-srx
+set routing-instances dmz-mgmt-vm protocols bgp group srx peer-as 65513
+set routing-instances dmz-mgmt-vm protocols bgp group srx neighbor 10.239.15.41 bfd-liveness-detection minimum-interval 1000
+set routing-instances dmz-mgmt-vm protocols bgp group srx neighbor 10.239.15.41 bfd-liveness-detection minimum-receive-interval 1000
+set routing-instances dmz-mgmt-vm protocols bgp group srx neighbor 10.239.15.41 bfd-liveness-detection multiplier 5
+set routing-instances dmz-voice-prov instance-type vrf
+set routing-instances dmz-voice-prov interface irb.102
+set routing-instances dmz-voice-prov interface irb.4086
+set routing-instances dmz-voice-prov vrf-target target:65514:4086
+set routing-instances dmz-voice-prov vrf-table-label
+set routing-instances dmz-voice-prov routing-options autonomous-system 65514
+set routing-instances dmz-voice-prov protocols bgp graceful-restart
+set routing-instances dmz-voice-prov protocols bgp group srx type external
+set routing-instances dmz-voice-prov protocols bgp group srx authentication-key "$9$u24lOEy8X-Vb28XmTQ3puO1IhlK8Lx"
+set routing-instances dmz-voice-prov protocols bgp group srx export PO-dmz-to-srx
+set routing-instances dmz-voice-prov protocols bgp group srx peer-as 65513
+set routing-instances dmz-voice-prov protocols bgp group srx neighbor 10.239.15.25 import Only-Default-Route
+set routing-instances dmz-voice-prov protocols bgp group srx neighbor 10.239.15.25 bfd-liveness-detection minimum-interval 1000
+set routing-instances dmz-voice-prov protocols bgp group srx neighbor 10.239.15.25 bfd-liveness-detection minimum-receive-interval 1000
+set routing-instances dmz-voice-prov protocols bgp group srx neighbor 10.239.15.25 bfd-liveness-detection multiplier 5
+set routing-instances vr10 instance-type virtual-router
+set routing-instances vr10 interface xe-1/0/45.10
+set routing-instances vr10 interface ae40.10
+set routing-instances vr10 routing-options autonomous-system 65111
+set routing-instances vr10 protocols bgp export PL-DIRECT
+set routing-instances vr10 protocols bgp group 10-v4 peer-as 64514
+set routing-instances vr10 protocols bgp group 10-v4 neighbor 10.10.1.11
+set routing-instances vr10 protocols bgp group 10-v4 neighbor 10.10.1.12
+set routing-instances vr10 protocols bgp group 10-v6 peer-as 64514
+set routing-instances vr10 protocols bgp group 10-v6 neighbor 101::11
+set routing-instances vr10 protocols bgp group 10-v6 neighbor 101::12
+set routing-instances vr20 instance-type virtual-router
+set routing-instances vr20 interface xe-1/0/45.20
+set routing-instances vr20 interface ae40.20
+set routing-instances vr20 routing-options rib vr20.inet6.0 static route ::/0 next-hop 201::1
+set routing-instances vr20 routing-options static route 0.0.0.0/0 next-hop 10.20.1.1
+set routing-instances vr20 routing-options autonomous-system 65111
+set routing-instances vr30 instance-type virtual-router
+set routing-instances vr30 interface xe-1/0/45.30
+set routing-instances vr30 interface ae40.30
+set routing-instances vr30 routing-options rib vr30.inet6.0 static route ::/0 next-hop 300::1
+set routing-instances vr30 routing-options static route 0.0.0.0/0 next-hop 10.30.0.1
+set routing-instances vr30 protocols ospf area 0.0.0.0 interface all
+set routing-instances vr30 protocols ospf3 area 0.0.0.0 interface all
+set routing-options static route 10.11.2.0/24 next-hop 192.168.200.1
+set routing-options static route 10.11.2.0/24 no-readvertise
+set routing-options static route 10.239.0.40/32 next-table dmz-mgmt-vm.inet.0
+set routing-options router-id 10.239.255.8
+set routing-options route-distinguisher-id 10.239.255.8
+set routing-options autonomous-system 65514
+set routing-options forwarding-table export load-balancing-policy
+set routing-options forwarding-table export PL-LOAD-BALANCE
+set routing-options forwarding-table chained-composite-next-hop ingress evpn
+set protocols bgp group ibgp type internal
+set protocols bgp group ibgp local-address 10.239.255.8
+set protocols bgp group ibgp family inet-vpn unicast
+set protocols bgp group ibgp family inet6-vpn unicast
+set protocols bgp group ibgp family evpn signaling
+set protocols bgp group ibgp export set-next-hop-self
+set protocols bgp group ibgp vpn-apply-export
+set protocols bgp group ibgp multipath
+set protocols bgp group ibgp neighbor 10.239.255.9
+set protocols isis no-adjacency-holddown
+set protocols isis backup-spf-options use-post-convergence-lfa
+set protocols isis backup-spf-options use-source-packet-routing
+set protocols isis source-packet-routing srgb start-label 800000
+set protocols isis source-packet-routing srgb index-range 4094
+set protocols isis source-packet-routing node-segment ipv4-index 401
+set protocols isis source-packet-routing node-segment ipv6-index 601
+set protocols isis level 2 authentication-key-chain ISIS
+set protocols isis level 2 wide-metrics-only
+set protocols isis level 2 source-packet-routing
+set protocols isis level 1 disable
+set protocols isis interface ae0.1 hello-padding adaptive
+set protocols isis interface ae0.1 point-to-point
+set protocols isis interface ae0.1 family inet bfd-liveness-detection minimum-interval 300
+set protocols isis interface ae0.1 family inet bfd-liveness-detection minimum-receive-interval 300
+set protocols isis interface ae0.1 family inet bfd-liveness-detection multiplier 3
+set protocols isis interface ae1.0 hello-padding adaptive
+set protocols isis interface ae1.0 point-to-point
+set protocols isis interface ae1.0 family inet bfd-liveness-detection minimum-interval 300
+set protocols isis interface ae1.0 family inet bfd-liveness-detection minimum-receive-interval 300
+set protocols isis interface ae1.0 family inet bfd-liveness-detection multiplier 3
+set protocols isis interface lo0.0 passive
+set protocols igmp interface ae40.101 static group 233.0.0.111 source 101.0.0.10
+set protocols igmp interface ae40.101 static group 225.0.101.111
+set protocols igmp interface ae40.102 static group 225.0.102.111
+set protocols igmp interface ae40.105 static group 225.105.2.111
+set protocols igmp interface ae40.30 static group 225.30.30.30
+set protocols igmp interface ae40.30 static group 225.30.0.101 exclude
+set protocols igmp interface ae40.30 static group 225.30.0.102 exclude
+set protocols igmp interface ae40.30 static group 225.30.0.103 exclude
+set protocols igmp interface ae40.30 static group 225.30.0.104 exclude
+set protocols igmp interface ae40.30 static group 225.30.0.105 exclude
+set protocols igmp interface ae40.30 immediate-leave
+set protocols mpls explicit-null
+set protocols mpls ipv6-tunneling
+set protocols mpls interface ae1.0
+set protocols mpls interface ae0.1
+set protocols lldp port-id-subtype interface-name
+set protocols lldp interface all
+set protocols lldp-med interface all
+set protocols igmp-snooping vlan MGMT_ESX
+set protocols igmp-snooping vlan P2P-VM-DHCP
+set protocols igmp-snooping vlan PublicIP_VM_JumpHost
+set protocols igmp-snooping vlan BB-VRR
+set protocols igmp-snooping vlan Clean
+set protocols igmp-snooping vlan DMZ_PROD-LAB
+set protocols igmp-snooping vlan Dirty
+set protocols igmp-snooping vlan IXIA-P13-TO-BRUONE
+set protocols igmp-snooping vlan TEST_SKYLANE
+set protocols igmp-snooping vlan TRANSIT-dmz-cnr-cpe
+set protocols igmp-snooping vlan TRANSIT-dmz-mgmt-esxi
+set protocols igmp-snooping vlan TRANSIT-dmz-mgmt-vm
+set protocols igmp-snooping vlan TRANSIT-dmz-voice-prov
+set protocols igmp-snooping vlan UNTRUST-INTERNET
+set protocols igmp-snooping vlan UNTRUST-VRF-VOICE
+set protocols igmp-snooping vlan dmz-cnr-cpe
+set protocols igmp-snooping vlan dmz-mgmt-esxi
+set protocols igmp-snooping vlan dmz-mgmt-vm
+set protocols igmp-snooping vlan dmz-voice-prov
+set protocols igmp-snooping vlan dhcpv6
+set protocols igmp-snooping vlan UNTRUST-PON-PROV
+set protocols igmp-snooping vlan Test-CoS
+set protocols igmp-snooping vlan MCAST-EVPN
+set protocols igmp-snooping vlan UNTRUST-SELFPROVISIONING
+set protocols rstp interface ae2 mode point-to-point
+set protocols rstp interface ae2 edge
+set protocols rstp interface ae2 no-root-port
+set protocols rstp interface l2-access apply-groups rstp-edge
+set protocols rstp bpdu-block-on-edge
+set vlans BB-VRR vlan-id 500
+set vlans Clean vlan-id 667
+set vlans DMZ_PROD-LAB vlan-id 1000
+set vlans DMZ_PROD-LAB l3-interface irb.1000
+set vlans Dirty vlan-id 666
+set vlans IXIA-P13-TO-BRUONE vlan-id 2000
+set vlans MCAST-EVPN vlan-id 1234
+set vlans TEST_SKYLANE vlan-id 10
+set vlans TRANSIT-dmz-cnr-cpe vlan-id 4087
+set vlans TRANSIT-dmz-cnr-cpe l3-interface irb.4087
+deactivate vlans TRANSIT-dmz-cnr-cpe l3-interface
+set vlans TRANSIT-dmz-mgmt-esxi vlan-id 4085
+set vlans TRANSIT-dmz-mgmt-esxi l3-interface irb.4085
+set vlans TRANSIT-dmz-mgmt-vm vlan-id 4084
+set vlans TRANSIT-dmz-mgmt-vm l3-interface irb.4084
+set vlans TRANSIT-dmz-voice-prov vlan-id 4086
+set vlans TRANSIT-dmz-voice-prov l3-interface irb.4086
+set vlans Test-CoS vlan-id 777
+set vlans UNTRUST-INTERNET vlan-id 4094
+set vlans UNTRUST-PON-PROV vlan-id 4092
+set vlans UNTRUST-SELFPROVISIONING vlan-id 4064
+set vlans UNTRUST-VRF-VOICE vlan-id 4093
+set vlans dhcpv6 vlan-id 547
+set vlans dmz-cnr-cpe vlan-id 101
+set vlans dmz-cnr-cpe l3-interface irb.101
+deactivate vlans dmz-cnr-cpe l3-interface
+set vlans dmz-mgmt-esxi vlan-id 100
+set vlans dmz-mgmt-esxi l3-interface irb.100
+set vlans dmz-mgmt-vm vlan-id 103
+set vlans dmz-mgmt-vm l3-interface irb.103
+set vlans dmz-voice-prov vlan-id 102
+set vlans dmz-voice-prov l3-interface irb.102
+set vlans ovroonen apply-macro no-igmp-snooping
+set vlans ovroonen vlan-id 333

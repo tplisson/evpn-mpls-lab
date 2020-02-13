@@ -1,0 +1,49 @@
+
+Instance: vlan30
+  Route Distinguisher: 10.35.2.3:16
+  VLAN ID: 30
+  Per-instance MAC route label: 81
+  Duplicate MAC detection threshold: 5
+  Duplicate MAC detection window: 180
+  MAC database status                     Local  Remote
+    MAC advertisements:                       2       6
+    MAC+IP advertisements:                    6      15
+    Default gateway MAC advertisements:       1       0
+  Number of local interfaces: 3 (3 up)
+    Interface name  ESI                            Mode             Status     AC-Role
+    .local..16      00:00:00:00:00:00:00:00:00:00  single-homed     Up         Root 
+    ae10.30         01:dc:02:21:22:ae:10:00:1e:00  all-active       Up         Root 
+    ae11.30         00:00:00:00:00:00:00:00:00:00  single-homed     Up         Root 
+  Number of IRB interfaces: 1 (1 up)
+    Interface name  VLAN   VNI    Status  L3 context
+    irb.30          30             Up     vrf30                            
+  Number of protect interfaces: 0
+  Number of bridge domains: 1
+    VLAN  Domain ID   Intfs / up    IRB intf   Mode      MAC sync  IM route label  IPv4 SG sync  IPv4 IM core nexthop  IPv6 SG sync  IPv6 IM core nexthop
+    30                   2    2     irb.30     Extended         Enabled   109             Enabled   1048650           Disabled
+  Number of neighbors: 3
+    Address               MAC    MAC+IP        AD        IM        ES Leaf-label
+    10.35.1.3               3         6         2         1         0
+    10.35.1.4               1         3         2         1         0
+    10.35.2.4               2         6         2         1         0
+  Number of ethernet segments: 2
+    ESI: 01:dc:01:11:12:ae:10:00:1e:00
+      Status: Resolved by NH 1048649
+      Number of remote PEs connected: 2
+        Remote PE        MAC label  Aliasing label  Mode
+        10.35.1.4        279        279             all-active   
+        10.35.1.3        207        207             all-active   
+    ESI: 01:dc:02:21:22:ae:10:00:1e:00
+      Status: Resolved by IFL ae10.30
+      Local interface: ae10.30, Status: Up/Forwarding
+      Number of remote PEs connected: 1
+        Remote PE        MAC label  Aliasing label  Mode
+        10.35.2.4        85         85              all-active   
+      DF Election Algorithm: MOD based
+      Designated forwarder: 10.35.2.3
+      Backup forwarder: 10.35.2.4
+      Last designated forwarder update: Feb 12 11:55:13
+      Advertised MAC label: 85
+      Advertised aliasing label: 85
+      Advertised split horizon label: 86
+  SMET Forwarding: Disabled

@@ -1,4 +1,22 @@
-{# ###### SPINE / LEAF MXs ##### #}
+{# ###### SPINE MXs ##### #}
+
+{% if "S-DC" in host_name %}
+protocols {
+    bgp {
+        group BG-IBGP-SPINE {
+            active: family inet-vpn {
+                unicast;
+            }
+            active: family inet6-vpn {
+                unicast;
+            }
+        }
+    }
+}
+{% endif %}
+
+
+{# ###### LEAF MXs ##### #}
 
 groups {
     GR-EDGE-INTF-LAG-MEMBER {
@@ -45,17 +63,32 @@ groups {
     }
 }
 interfaces {
-{% if "L-DC" in host_name %}
-    xe-0/0/0:1 {
+{% for ae_member in ixia_ae_members %}
+    replace: {{ae_member}} {
+        apply-groups GR-EDGE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad {{ixia_ae_name}};
+        }
+    }
+{% endfor %}
+    replace: {{ixia_ae_name}} {
+        description "{{host_name}} ---- {{ixia_description}}";
         vlan-tagging;
         mtu 9000;
         encapsulation flexible-ethernet-services;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+                accept-data;
+                hold-time up 2;
+            }
+        }
         unit {{evi30.id}} {
             encapsulation vlan-bridge;
             vlan-id {{evi30.id}};
         }
     }
-{% endif %}
 {% for ae_member in ae_members %}
     replace: {{ae_member}} {
         apply-groups GR-EDGE-INTF-LAG-MEMBER;
@@ -106,9 +139,7 @@ routing-instances {
         instance-type evpn;
         vlan-id {{evi30.id}};
         interface {{ae_name}}.{{evi30.id}};
-{% if "L-DC" in host_name %}
-        interface xe-0/0/0:1.{{evi30.id}};
-{% endif %}
+        interface {{ixia_ae_name}}.{{evi30.id}};
         routing-interface irb.{{evi30.id}};
         vrf-target target:64514:{{evi30.id}};
         protocols {
@@ -116,9 +147,7 @@ routing-instances {
                 default-gateway no-gateway-community;
             }
             igmp-snooping {
-                proxy {
-                    source-address {{evi30.ipv4_subnet}}.{{local_ip}};
-                }
+                proxy;
             }
             mld-snooping {
                 proxy {
@@ -133,10 +162,23 @@ routing-instances {
         interface irb.{{evi30.id}};
         vrf-target target:64514:{{evi30.id}};
         vrf-table-label;
+        routing-options {
+            multipath;
+        }
     }
 }
 protocols {
     lldp {
         interface {{ae_name}};
+    }
+    bgp {
+        group BG-IBGP-LEAF {
+            active: family inet-vpn {
+                unicast;
+            }
+            active: family inet6-vpn {
+                unicast;
+            }
+        }
     }
 }

@@ -1,0 +1,88 @@
+
+show configuration routing-instances vlan30
+show interfaces ae10 | match rate
+show interfaces ae11 | match rate
+show evpn mld-snooping proxy extensive
+show mld snooping evpn database instance vlan30 detail
+show mld snooping evpn membership instance vlan30
+show mld snooping evpn proxy instance vlan30
+show route table vlan30 match-prefix 6:* | no-more
+show evpn instance vlan30 extensive
+
+show route advertising-protocol bgp 10.35.1.1 table vlan30 match-prefix 6:*
+show route advertising-protocol bgp 10.35.2.2 table vlan30 match-prefix 6:*
+
+show evpn mld-snooping database
+show evpn multicast-snooping next-hops
+show mld snooping evpn database
+show mld snooping evpn membership
+
+
+# 1- DISABLE MLD snooping for EVI 30 on all LEAF routers
+################# LEAF
+set cli timestamp
+configure
+deactivate routing-instances vlan30 protocols mld-snooping
+commit and-quit
+
+# 2- Verify that multicast traffic in EVI 30 is forwarded to ALL EVI 30 interfaces 
+#    even where no interested receiver is registered
+################# LEAF
+show configuration routing-instances vlan30
+set cli timestamp
+show route table vlan30 match-prefix 6:*
+show evpn igmp-snooping proxy extensive
+show igmp snooping evpn database instance vlan30
+show interfaces ae10 | match rate
+show interfaces ae11 | match rate
+
+### Check traffic replication on SPINE routers
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+show interfaces ae2 | match rate
+show interfaces ae3 | match rate
+show interfaces ae4 | match rate
+show interfaces ae10 | match rate
+
+# 2- ENABLE IGMP snooping for EVI 30 on all LEAF routers
+################# LEAF
+set cli timestamp
+activate routing-instances vlan30 protocols igmp-snooping
+commit
+
+# 3- Verify that multicast traffic in EVI 30 is forwarded from the connected source on L-DC1-1A to ONLY toward interested receivers on L-DC2-1B’s EVI 30 interface
+################# LEAF
+set cli timestamp
+show route table vlan30 match-prefix 6:*
+show evpn igmp-snooping proxy extensive
+show igmp snooping evpn database instance vlan30 detail
+show interfaces ae10 | match rate
+show interfaces ae11 | match rate
+show interfaces xe-0/0/0:1 | match rate
+
+show isis adjacency
+show bgp summary | no-more
+show route table vlan30 match-prefix 6:* | no-more
+show evpn igmp-snooping proxy extensive
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+show interfaces ae2 | match rate
+show interfaces ae3 | match rate
+show interfaces ae4 | match rate
+show interfaces ae10 | match rate
+show interfaces ae11 | match rate
+
+
+configure
+deactivate routing-instances vlan30
+
+deactivate routing-instances vrf30
+
+commit and-quit
+
+show configuration routing-instances vlan30
+show interfaces ae10 | match rate
+show interfaces ae11 | match rate
+show evpn igmp-snooping proxy extensive
+show igmp snooping evpn database instance vlan30 detail
+show route table vlan30 match-prefix 6:* | no-more

@@ -1,0 +1,26 @@
+
+description "VRF instance for IRB in VLAN 30";
+instance-type vrf;
+interface irb.30;
+vrf-target target:64514:30;
+vrf-table-label;
+routing-options {
+    rib vrf30.inet6.0 {
+        static {
+            route 302::/64 next-hop 300::222;
+        }
+    }
+    static {
+        route 10.30.2.0/24 next-hop 10.30.0.222;
+    }
+    multipath;
+}
+protocols {
+    evpn {
+        ip-prefix-routes {
+            advertise direct-nexthop;
+            encapsulation mpls;
+            export [ PL-EVI30-T5-V4 PL-EVI30-T5-V6 ];
+        }
+    }
+}

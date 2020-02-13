@@ -1,0 +1,6 @@
+
+
+vlan30.evpn.0: 43 destinations, 77 routes (43 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+  6:10.35.2.3:16::30::ff03::30:2::10.35.2.3/520                   
+*                         Self                         100        I

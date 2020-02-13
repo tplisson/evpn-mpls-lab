@@ -1,5 +1,5 @@
 ---
-  - hosts: localhost:DVT:CE
+  - hosts: localhost:LEAF
     gather_facts: no
     tasks:
     - set_fact: 
@@ -19,8 +19,8 @@
        - config
        - diff
       
-  - name: 2- SPINE & LEAF MX routers
-    hosts: DVT
+  - name: EVI30 with Pure EVPN Type 5 routing
+    hosts: LEAF
     roles:
       - Juniper.junos
     connection: local
