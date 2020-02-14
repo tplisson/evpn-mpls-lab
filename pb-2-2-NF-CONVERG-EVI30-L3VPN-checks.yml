@@ -1,32 +1,60 @@
 ---
-  - hosts: localhost:LEAF
+  - hosts: localhost:DVT
     gather_facts: no
     tasks:
     - set_fact: 
         testcase: 2-2-NF-CONVERG-EVI30-L3VPN
-        test_dir: "testcase/2-2-NF-CONVERG-EVI30-L3VPN/1/DOWN"
+        test_dir: "testcase/2-2-NF-CONVERG-EVI30-L3VPN/1"
         cacheable: yes
-  
-  - hosts: localhost
+      
+  - name: Create directories
+    hosts: localhost
     gather_facts: no
     tasks:
-    - file: 
+    - name: Create directories      
+      file: 
         path: "{{playbook_dir}}/{{test_dir}}" 
         state: directory
   
-  - name: Checking status during Node Failure
+  - name: Verification for EVI 30
+    hosts: SPINE
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Gathering regular output for {{testcase}}
+      juniper_junos_command:
+        command:
+          - 'set cli timestamp'
+          - "show configuration routing-instances vlan30"
+          - "show configuration routing-instances vrf30"
+          - 'show bfd session'
+          - 'show isis interface'
+          - 'show isis adjacency'
+          - 'show bgp summary'
+          - "show interfaces ae10 statistics"
+          - "show interfaces ae0 statistics"
+          - "show interfaces ae1 statistics"
+          - "show interfaces ae2 statistics"
+          - "show interfaces ae3 statistics"
+          - "show interfaces ae4 statistics"
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+        return_output: false
+  
+  - name: Verification for EVI 30
     hosts: LEAF
     roles:
       - Juniper.junos
     connection: local
     gather_facts: no
     tasks:
-    - name: Verification
+    - name: Gathering regular output for {{testcase}}
       juniper_junos_command:
         command:
           - 'set cli timestamp'
-          - 'show interfaces ae0 terse'
-          - 'show interfaces ae1 terse'
+          - "show configuration routing-instances vlan30"
+          - "show configuration routing-instances vrf30"
           - 'show bfd session'
           - 'show isis interface'
           - 'show isis adjacency'
@@ -36,3 +64,4 @@
           - "show interfaces ae1 statistics"
         dest_dir: "{{playbook_dir}}/{{test_dir}}/"
         return_output: false
+
