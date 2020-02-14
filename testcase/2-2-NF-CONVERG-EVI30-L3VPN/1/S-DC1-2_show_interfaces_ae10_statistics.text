@@ -1,0 +1,60 @@
+
+Physical interface: ae10, Enabled, Physical link is Up
+  Interface index: 133, SNMP ifIndex: 626
+  Description: S-DC1-2 ---- SRX-ANS-3
+  Link-level type: Flexible-Ethernet, MTU: 9000, Speed: 10Gbps,
+  BPDU Error: None, MAC-REWRITE Error: None, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Disabled
+  Pad to minimum frame size: Disabled
+  Minimum links needed: 1, Minimum bandwidth needed: 1bps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Current address: 80:7f:f8:74:5c:a7, Hardware address: 80:7f:f8:74:5c:a7
+  Last flapped   : 2020-02-14 17:04:19 CET (01:59:31 ago)
+  Statistics last cleared: Never
+  Input rate     : 984 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+  Input errors: 0, Output errors: 0
+
+  Logical interface ae10.10 (Index 77) (SNMP ifIndex 611)
+    Flags: Up SNMP-Traps 0x20004000 VLAN-Tag [ 0x8100.10 ] 
+    Encapsulation: VLAN-Bridge
+    Ethernet segment value: 01:dc:01:00:00:ae:10:00:0a:00, Mode: all-active, 
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :           149          0         12291            0
+        Output:            86          0          7156            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol bridge, MTU: 9000
+      Flags: Is-Primary
+
+  Logical interface ae10.20 (Index 78) (SNMP ifIndex 662)
+    Flags: Up SNMP-Traps 0x20004000 VLAN-Tag [ 0x8100.20 ] 
+    Encapsulation: VLAN-Bridge
+    Ethernet segment value: 01:dc:01:00:00:ae:10:00:14:00, Mode: all-active, 
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :            94          0          7270            0
+        Output:            86          0          6676            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol bridge, MTU: 9000
+      Flags: Is-Primary
+
+  Logical interface ae10.32767 (Index 70) (SNMP ifIndex 630)
+    Flags: Up SNMP-Traps 0x4004000 VLAN-Tag [ 0x0000.0 ]  Encapsulation: ENET2
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :          7244          0        898256          984
+        Output:             0          0             0            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol multiservice, MTU: Unlimited
+      Flags: None

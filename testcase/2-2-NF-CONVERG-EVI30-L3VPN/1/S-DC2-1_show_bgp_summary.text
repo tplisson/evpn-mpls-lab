@@ -1,0 +1,20 @@
+
+Threading mode: BGP I/O
+Groups: 6 Peers: 9 Down peers: 9
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+bgp.l3vpn.0          
+                       0          0          0          0          0          0
+bgp.l3vpn-inet6.0    
+                       0          0          0          0          0          0
+bgp.evpn.0           
+                       0          0          0          0          0          0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+10.10.0.100           65100          0          0       0       0          25 Active
+10.20.0.100           65100          0          0       0       0          25 Active
+10.35.1.1             64514          0          0       0       0          25 Active
+10.35.1.2             64514          0          0       0       0          25 Active
+10.35.2.2             64514          0          0       0       0          25 Active
+10.35.2.3             64514          0          0       0       0          25 Active
+10.35.2.4             64514          0          0       0       0          25 Active
+100::100              65100          0          0       0       0          25 Active
+200::100              65100          0          0       0       0          25 Active

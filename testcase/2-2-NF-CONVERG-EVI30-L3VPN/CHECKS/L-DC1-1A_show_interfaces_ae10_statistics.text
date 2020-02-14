@@ -1,0 +1,60 @@
+
+Physical interface: ae10, Enabled, Physical link is Down
+  Interface index: 232, SNMP ifIndex: 625
+  Description: L-DC1-1A ---- QFX1
+  Link-level type: Flexible-Ethernet, MTU: 9000, Speed: Unspecified,
+  BPDU Error: None, MAC-REWRITE Error: None, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Disabled
+  Pad to minimum frame size: Disabled
+  Minimum links needed: 1, Minimum bandwidth needed: 1bps
+  Device flags   : Present Running
+  Interface flags: Hardware-Down SNMP-Traps Internal: 0x4000
+  Current address: 80:7f:f8:74:7c:97, Hardware address: 80:7f:f8:74:7c:97
+  Last flapped   : 2020-02-14 18:26:40 CET (00:26:48 ago)
+  Statistics last cleared: Never
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+  Input errors: 0, Output errors: 0
+
+  Logical interface ae10.10 (Index 82) (SNMP ifIndex 648)
+    Flags: Device-Down SNMP-Traps 0x20004000 VLAN-Tag [ 0x8100.10 ] 
+    Encapsulation: VLAN-Bridge
+    Ethernet segment value: 01:dc:01:11:12:ae:10:00:0a:00, Mode: all-active, 
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :     989070314          0 1347773061954            0
+        Output:         25110          0       2830496            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol bridge, MTU: 9000
+      Flags: Is-Primary
+
+  Logical interface ae10.30 (Index 100) (SNMP ifIndex 666)
+    Flags: Device-Down SNMP-Traps 0x20004000 VLAN-Tag [ 0x8100.30 ] 
+    Encapsulation: VLAN-Bridge
+    Ethernet segment value: 01:dc:01:11:12:ae:10:00:1e:00, Mode: all-active, 
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :     813561216          0 1107811701690            0
+        Output:     139311733          0  120106967078            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol bridge, MTU: 9000
+
+  Logical interface ae10.32767 (Index 78) (SNMP ifIndex 627)
+    Flags: Device-Down SNMP-Traps 0x4004000 VLAN-Tag [ 0x0000.0 ] 
+    Encapsulation: ENET2
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :        119769          0      14851356            0
+        Output:             0          0             0            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol multiservice, MTU: Unlimited
+      Flags: None

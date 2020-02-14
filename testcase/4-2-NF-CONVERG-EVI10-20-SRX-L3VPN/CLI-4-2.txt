@@ -1,11 +1,30 @@
-################# LEAF
-show interfaces ae10 | match rate
-show interfaces ae0 | match rate
-show interfaces ae1 | match rate
+########## SPINE
+set cli timestamp
+show configuration routing-instances vlan10
+show configuration routing-instances vrf10
+show configuration routing-instances vlan20
+show configuration routing-instances vrf20
+show bfd session
+show isis interface
+show isis adjacency
+show bgp summary
+show interfaces ae10 statistics
+show interfaces ae0 statistics
+show interfaces ae1 statistics
+show interfaces ae2 statistics
+show interfaces ae3 statistics
+show interfaces ae4 statistics
 
-################# SPINE
-show interfaces ae3 | match rate
-show interfaces ae4 | match rate
-show interfaces ae0 | match rate
-show interfaces ae1 | match rate
-show interfaces ae2 | match rate
+########## LEAF 
+set cli timestamp
+show configuration routing-instances vlan10
+show configuration routing-instances vlan20
+show configuration routing-instances vrf10
+show configuration routing-instances vrf20
+show bfd session
+show isis interface
+show isis adjacency
+show bgp summary
+show interfaces ae10 statistics
+show interfaces ae0 statistics
+show interfaces ae1 statistics

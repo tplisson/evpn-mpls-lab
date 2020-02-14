@@ -1,0 +1,9 @@
+
+                                                  Detect   Transmit
+Address                  State     Interface      Time     Interval  Multiplier
+10.35.2.1                Down                     6.000     2.000        3   
+10.35.2.2                Up                       0.900     0.300        3   
+10.35.22.2               Up        xe-0/1/1:0     0.150     0.050        3   
+
+3 sessions, 3 clients
+Cumulative transmit rate 23.8 pps, cumulative receive rate 23.8 pps

@@ -4,7 +4,7 @@
     tasks:
     - set_fact: 
         testcase: 2-2-NF-CONVERG-EVI30-L3VPN
-        test_dir: "testcase/2-2-NF-CONVERG-EVI30-L3VPN/1"
+        test_dir: "testcase/2-2-NF-CONVERG-EVI30-L3VPN/2"
         cacheable: yes
       
   - name: Create directories

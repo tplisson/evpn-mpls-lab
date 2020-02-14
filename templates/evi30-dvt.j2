@@ -163,6 +163,7 @@ routing-instances {
         vrf-target target:64514:{{evi30.id}};
         vrf-table-label;
         routing-options {
+            {#
             rib vrf30.inet6.0 {
                 static {
                     route {{evi30.ixiav6}}::/{{evi30.ipv6_mask}} next-hop {{evi30.ipv6_subnet}}::{{ce_ip}};
@@ -171,6 +172,7 @@ routing-instances {
             static {
                 route {{evi30.ixiav4}}/{{evi30.ipv4_mask}} next-hop {{evi30.ipv4_subnet}}.{{ce_ip}};
             }
+            #}
             multipath;
         }
     }
