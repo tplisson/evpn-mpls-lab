@@ -1,0 +1,51 @@
+
+
+vlan30.evpn.0: 28 destinations, 46 routes (28 active, 0 holddown, 0 hidden)
+1:10.35.1.3:16::01dc011112ae10001e00::0/192 AD/EVI (1 entry, 1 announced)
+        *EVPN   Preference: 170
+                Next hop type: Indirect, Next hop index: 0
+                Address: 0x65a62fc
+                Next-hop reference count: 51
+                Protocol next hop: 10.35.1.3
+                Indirect next hop: 0x0 - INH Session ID: 0x0
+                State: <Active Int Ext>
+                Age: 5:48 
+                Validation State: unverified 
+                Task: vlan30-evpn
+                Announcement bits (1): 1-rt-export 
+                AS path: I 
+                Route Label: 39
+
+1:10.35.1.4:0::01dc011112ae10001e00::FFFF:FFFF/192 AD/ESI (2 entries, 1 announced)
+        *BGP    Preference: 170/-101
+                Route Distinguisher: 10.35.1.4:0
+                Next hop type: Indirect, Next hop index: 0
+                Address: 0x65ac05c
+                Next-hop reference count: 64
+                Source: 10.35.1.1
+                Protocol next hop: 10.35.1.4
+                Indirect next hop: 0x2 no-forward INH Session ID: 0x0
+                State: <Secondary Active Int Ext>
+                Local AS: 64514 Peer AS: 64514
+                Age: 1:22 	Metric2: 200 
+                Validation State: unverified 
+                ORR Generation-ID: 0 
+                Task: BGP_64514.10.35.1.1
+                Announcement bits (1): 0-vlan30-evpn 
+                AS path: I  (Originator)
+                Cluster list:  10.35.1.1
+                Originator ID: 10.35.1.4
+                Communities: target:64514:30 esi-label:0x0:all-active (label 42)
+                Import Accepted
+                Localpref: 100
+                Router ID: 10.35.1.1
+                Primary Routing Table bgp.evpn.0
+                Indirect next hops: 1
+                        Protocol next hop: 10.35.1.4 Metric: 200
+                        Indirect next hop: 0x2 no-forward INH Session ID: 0x0
+                        Indirect path forwarding next hops: 2
+                                Next hop type: Router
+                                Next hop: 10.35.11.0 via ae0.0 weight 0x1
+                                Session Id: 0x0
+                                Next hop: 10.35.12.0 via ae1.0 weight 0x1
+                                Session Id: 0x0

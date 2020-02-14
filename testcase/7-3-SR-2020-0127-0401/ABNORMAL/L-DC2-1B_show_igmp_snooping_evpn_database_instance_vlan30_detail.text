@@ -1,0 +1,8 @@
+
+Instance: vlan30
+  Bridge-Domain: vlan30, VLAN ID: 30
+        Group IP: 225.30.0.3, Source IP: 0.0.0.0
+            Core NH: 1048615
+            Access OIF Count: 1
+                  Interface    Local    Remote
+                ae11.30          1        0

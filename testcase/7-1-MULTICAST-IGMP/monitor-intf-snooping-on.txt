@@ -1,0 +1,209 @@
+-----------------------------------------------------------------------------
+L-DC1-1A                          Seconds: 1530                Time: 09:53:24
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+ ae0           Up        2506993         (27)      15190407767     (600022)
+ ae1           Up        2536479         (26)       7659993516     (300013)
+ ae10          Up      417260562          (3)        139291068          (3)
+ ae11          Up     9202911338     (300008)           105863          (2)
+
+-----------------------------------------------------------------------------
+L-DC1-1B                          Seconds: 4255                Time: 09:53:36
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+ ae0           Up     5872375029     (200029)           399403          (3)
+ ae1           Up     2959061937     (100028)           398613          (3)
+ ae10          Up      417124809          (0)            42358          (0)
+ ae11          Up          85282          (0)        144630778     (100003)
+
+-----------------------------------------------------------------------------
+S-DC1-1                           Seconds: 4267                Time: 09:53:48
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+ ae0           Up        2503432         (25)       3499455507     (300004)
+ ae1           Up        2528630         (26)       5833317989     (100004)
+ ae2           Up        2490816         (25)           392643          (3)
+ ae3           Up    15206640236     (600025)           409383          (3)
+ ae4           Up        2496973         (26)       5872572069     (200002)
+ ae10          Up          96134          (0)             4236          (0)
+
+-----------------------------------------------------------------------------
+S-DC2-1                           Seconds: 9                   Time: 11:10:18
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+ ae0           Up     2331754412     (200034)           428079          (5)
+ ae1           Up     6294652630     (100030)           451366          (3)
+ ae2           Up        2794298         (24)           611352          (3)
+ ae3           Up        2670608         (25)       6219291578     (200014)
+ ae4           Up        2641171         (26)       2402676403     (100005)
+ ae10          Up         167489          (0)           112913          (0)
+
+-----------------------------------------------------------------------------
+S-DC2-2                           Seconds: 8                   Time: 11:11:22
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+ ae0           Up     4897691657     (300027)           425005          (3)
+ ae1           Up     3300754642         (27)           565080          (8)
+ ae2           Up        2810785         (24)           596925          (3)
+ ae3           Up        2801382         (32)       3406689619     (100004)
+ ae4           Up        2607027         (25)       4787396317     (200007)
+ ae10          Up         177572          (0)            33152          (0)
+
+-----------------------------------------------------------------------------
+L-DC2-1A                          Seconds: 4271                Time: 09:53:52
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+ ae0           Up     5304029241     (200035)           452041          (3)
+ ae1           Up     2943875320     (100029)           573298          (5)
+ ae10          Up         242799          (0)        130655690          (0)
+ ae11          Up          85123          (0)        147078014     (100005)
+
+-----------------------------------------------------------------------------
+L-DC2-1B                          Seconds: 4280                Time: 09:54:01
+
+Interface    Link  Input packets        (pps)     Output packets        (pps)
+ ae0           Up     1946288316     (100029)           436962          (3)
+ ae1           Up     3861051213     (200034)           403353          (3)
+ ae10          Up         161831          (0)            78871          (0)
+ ae11          Up          85409          (0)       2229345728     (100005)
+
+-----------------------------------------------------------------------------
+
+{master}
+tplisson@L-DC1-1A> show route table vlan30 match-prefix 6:*
+
+vlan30.evpn.0: 45 destinations, 80 routes (45 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+6:10.35.1.4:16::30::225.30.0.1::10.35.1.4/520
+                   *[BGP/170] 00:38:39, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                       to 10.35.11.0 via ae0.0, Push 901004
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+                    [BGP/170] 00:38:39, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                       to 10.35.11.0 via ae0.0, Push 901004
+                    >  to 10.35.12.0 via ae1.0, Push 901004
+6:10.35.2.3:18::30::225.30.0.2::10.35.2.3/520
+                   *[BGP/170] 00:38:38, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                       to 10.35.11.0 via ae0.0, Push 902003
+                    >  to 10.35.12.0 via ae1.0, Push 902003
+                    [BGP/170] 00:38:38, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                       to 10.35.11.0 via ae0.0, Push 902003
+                    >  to 10.35.12.0 via ae1.0, Push 902003
+6:10.35.2.4:18::30::225.30.0.3::10.35.2.4/520
+                   *[BGP/170] 00:41:56, localpref 100, from 10.35.1.1
+                      AS path: I, validation-state: unverified
+                       to 10.35.11.0 via ae0.0, Push 902004
+                    >  to 10.35.12.0 via ae1.0, Push 902004
+                    [BGP/170] 00:41:56, localpref 100, from 10.35.1.2
+                      AS path: I, validation-state: unverified
+                       to 10.35.11.0 via ae0.0, Push 902004
+                    >  to 10.35.12.0 via ae1.0, Push 902004
+
+vlan30.evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
+
+vlan30.inet6-evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
+
+{master}
+tplisson@L-DC1-1A> show evpn igmp-snooping proxy extensive
+Instance: vlan30
+  VN Identifier: 30
+    Group       Source   Local   Remote    Corenh     Flood
+    225.30.0.1  0.0.0.0    0       1         0          0
+    225.30.0.2  0.0.0.0    0       1         0          0
+    225.30.0.3  0.0.0.0    0       1         0          0
+
+
+-----------------------------------------------------------------------------
+
+{master}
+tplisson@L-DC1-1B> show evpn igmp-snooping proxy extensive
+Instance: vlan30
+  VN Identifier: 30
+    Group       Source   Local   Remote    Corenh     Flood
+    225.30.0.1  0.0.0.0    1       0         0          0
+    225.30.0.2  0.0.0.0    0       1         0          0
+    225.30.0.3  0.0.0.0    0       1         0          0
+
+{master}
+tplisson@L-DC1-1B> show igmp snooping evpn database instance vlan30 detail
+Instance: vlan30
+  Bridge-Domain: vlan30, VLAN ID: 30
+        Group IP: 225.30.0.1, Source IP: 0.0.0.0
+            Core NH: 1048681
+            Access OIF Count: 1
+                  Interface    Local    Remote
+                ae11.30          1        0
+
+{master}
+tplisson@L-DC1-1B> show route advertising-protocol bgp 10.35.1.1 table vlan30 match-prefix 6:*
+
+vlan30.evpn.0: 45 destinations, 82 routes (45 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+  6:10.35.1.4:16::30::225.30.0.1::10.35.1.4/520
+*                         Self                         100        I
+
+-----------------------------------------------------------------------------
+
+{master}
+tplisson@L-DC2-1A> show evpn igmp-snooping proxy extensive
+Instance: vlan30
+  VN Identifier: 30
+    Group       Source   Local   Remote    Corenh     Flood
+    225.30.0.1  0.0.0.0    0       1         0          0
+    225.30.0.2  0.0.0.0    1       0         0          0
+    225.30.0.3  0.0.0.0    0       1         0          0
+
+{master}
+tplisson@L-DC2-1A> show route advertising-protocol bgp 10.35.2.1 table vlan30 match-prefix 6:*
+
+vlan30.evpn.0: 45 destinations, 78 routes (45 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+  6:10.35.2.3:18::30::225.30.0.2::10.35.2.3/520
+*                         Self                         100        I
+
+{master}
+tplisson@L-DC2-1A> show igmp snooping evpn database instance vlan30 detail
+Instance: vlan30
+  Bridge-Domain: vlan30, VLAN ID: 30
+        Group IP: 225.30.0.2, Source IP: 0.0.0.0
+            Core NH: 1048654
+            Access OIF Count: 1
+                  Interface    Local    Remote
+                ae11.30          1        0
+
+
+
+-----------------------------------------------------------------------------
+
+{master}
+tplisson@L-DC2-1B> show evpn igmp-snooping proxy extensive
+Instance: vlan30
+  VN Identifier: 30
+    Group       Source   Local   Remote    Corenh     Flood
+    225.30.0.1  0.0.0.0    0       1         0          0
+    225.30.0.2  0.0.0.0    0       1         0          0
+    225.30.0.3  0.0.0.0    1       0         0          0
+
+{master}
+tplisson@L-DC2-1B> show route advertising-protocol bgp 10.35.2.1 table vlan30 match-prefix 6:*
+
+vlan30.evpn.0: 45 destinations, 78 routes (45 active, 0 holddown, 0 hidden)
+  Prefix		  Nexthop	       MED     Lclpref    AS path
+  6:10.35.2.4:18::30::225.30.0.3::10.35.2.4/520
+*                         Self                         100        I
+
+{master}
+tplisson@L-DC2-1B> show igmp snooping evpn database instance vlan30 detail
+Instance: vlan30
+  Bridge-Domain: vlan30, VLAN ID: 30
+        Group IP: 225.30.0.3, Source IP: 0.0.0.0
+            Core NH: 1048660
+            Access OIF Count: 1
+                  Interface    Local    Remote
+                ae11.30          1        0
+
+-----------------------------------------------------------------------------

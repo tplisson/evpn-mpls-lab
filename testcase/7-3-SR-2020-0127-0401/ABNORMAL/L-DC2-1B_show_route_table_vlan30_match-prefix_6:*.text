@@ -1,0 +1,12 @@
+
+
+vlan30.evpn.0: 38 destinations, 66 routes (38 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+6:10.35.2.4:18::30::225.30.0.3::10.35.2.4/520               
+                   *[EVPN/170] 00:01:39
+                       Indirect
+
+vlan30.evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
+
+vlan30.inet6-evpn-mcsn.1: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)

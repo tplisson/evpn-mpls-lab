@@ -1,0 +1,135 @@
+
+Name: vlan20
+CEs: 1
+VEs: 1
+  Flood route prefix: 0x30005/51
+  Flood route type: FLOOD_GRP_COMP_NH
+  Flood route owner: __ves__
+  Flood group name: __ves__
+  Flood group index: 0
+  Nexthop type: comp
+  Nexthop index: 787
+    Flooding to:
+    Name             Type          NhType          Index
+    __all_ces__      Group          comp            756     
+        Composition: split-horizon
+        Flooding to:
+        Name             Type          NhType          Index
+        ae10.20          MH-CE          ucst            562      
+                         ESI: 01:dc:02:21:22:ae:10:00:14:00
+
+  Flood route prefix: 0x30003/51
+  Flood route type: FLOOD_GRP_COMP_NH
+  Flood route owner: __all_ces__
+  Flood group name: __all_ces__
+  Flood group index: 1
+  Nexthop type: comp
+  Nexthop index: 760
+    Flooding to:
+    Name             Type          NhType          Index
+    __all_ces__      Group          comp            756     
+        Composition: split-horizon
+        Flooding to:
+        Name             Type          NhType          Index
+        ae10.20          MH-CE          ucst            562      
+                         ESI: 01:dc:02:21:22:ae:10:00:14:00
+    Flooding to:
+    Name             Type          NhType          Index
+    __ves__          Group          comp            786     
+        Composition: flood-to-all
+    Component flood-nh(s) (for flooding to EVPN core):
+    Index         Peer             NH-Type
+    785           10.35.2.4        comp (IM/SH) 
+
+  Flood route prefix: 0x30001/51
+  Flood route type: FLOOD_GRP_COMP_NH
+  Flood route owner: __re_flood__
+  Flood group name: __re_flood__
+  Flood group index: 65534
+  Nexthop type: comp
+  Nexthop index: 759
+    Flooding to:
+    Name             Type          NhType          Index
+    __all_ces__      Group          comp            756     
+        Composition: split-horizon
+        Flooding to:
+        Name             Type          NhType          Index
+        ae10.20          MH-CE          ucst            562      
+                         ESI: 01:dc:02:21:22:ae:10:00:14:00
+    Flooding to:
+    Name             Type          NhType          Index
+    __ves__          Group          comp            786     
+        Composition: flood-to-all
+    Component flood-nh(s) (for flooding to EVPN core):
+    Index         Peer             NH-Type
+    785           10.35.2.4        comp (IM/SH) 
+Name: vlan30
+CEs: 2
+VEs: 2
+
+  Flood route prefix: 0x30006/51
+  Flood route type: FLOOD_GRP_COMP_NH
+  Flood route owner: __ves__
+  Flood group name: __ves__
+  Flood group index: 0
+  Nexthop type: comp
+  Nexthop index: 805
+    Flooding to:
+    Name             Type          NhType          Index
+    __all_ces__      Group          comp            802     
+        Composition: split-horizon
+        Flooding to:
+        Name             Type          NhType          Index
+        ae10.30          MH-CE          ucst            725      
+                         ESI: 01:dc:02:21:22:ae:10:00:1e:00
+        ae11.30          CE             ucst            724      
+
+  Flood route prefix: 0x30004/51
+  Flood route type: FLOOD_GRP_COMP_NH
+  Flood route owner: __all_ces__
+  Flood group name: __all_ces__
+  Flood group index: 1
+  Nexthop type: comp
+  Nexthop index: 804
+    Flooding to:
+    Name             Type          NhType          Index
+    __ves__          Group          comp            801     
+        Composition: flood-to-all
+    Component flood-nh(s) (for flooding to EVPN core):
+    Index         Peer             NH-Type
+    789           10.35.1.4        comp (IM/SH) 
+    815           10.35.1.3        comp (IM/SH) 
+    Flooding to:
+    Name             Type          NhType          Index
+    __all_ces__      Group          comp            802     
+        Composition: split-horizon
+        Flooding to:
+        Name             Type          NhType          Index
+        ae10.30          MH-CE          ucst            725      
+                         ESI: 01:dc:02:21:22:ae:10:00:1e:00
+        ae11.30          CE             ucst            724      
+
+  Flood route prefix: 0x30002/51
+  Flood route type: FLOOD_GRP_COMP_NH
+  Flood route owner: __re_flood__
+  Flood group name: __re_flood__
+  Flood group index: 65534
+  Nexthop type: comp
+  Nexthop index: 803
+    Flooding to:
+    Name             Type          NhType          Index
+    __ves__          Group          comp            801     
+        Composition: flood-to-all
+    Component flood-nh(s) (for flooding to EVPN core):
+    Index         Peer             NH-Type
+    789           10.35.1.4        comp (IM/SH) 
+    815           10.35.1.3        comp (IM/SH) 
+    Flooding to:
+    Name             Type          NhType          Index
+    __all_ces__      Group          comp            802     
+        Composition: split-horizon
+        Flooding to:
+        Name             Type          NhType          Index
+        ae10.30          MH-CE          ucst            725      
+                         ESI: 01:dc:02:21:22:ae:10:00:1e:00
+        ae11.30          CE             ucst            724      

@@ -1,0 +1,42 @@
+
+Physical interface: ae11, Enabled, Physical link is Up
+  Interface index: 233, SNMP ifIndex: 649
+  Description: L-DC2-1B ---- IXIA-1/6
+  Link-level type: Flexible-Ethernet, MTU: 9000, Speed: 10Gbps,
+  BPDU Error: None, MAC-REWRITE Error: None, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Disabled
+  Pad to minimum frame size: Disabled
+  Minimum links needed: 1, Minimum bandwidth needed: 1bps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Current address: 80:7f:f8:74:dc:96, Hardware address: 80:7f:f8:74:dc:96
+  Last flapped   : 2020-02-13 16:07:37 CET (16:45:08 ago)
+  Statistics last cleared: Never
+  Input rate     : 984 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+  Input errors: 0, Output errors: 0
+
+  Logical interface ae11.30 (Index 103) (SNMP ifIndex 650)
+    Flags: Up SNMP-Traps 0x20004000 VLAN-Tag [ 0x8100.30 ] 
+    Encapsulation: VLAN-Bridge
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :           483          0         28980            0
+        Output:      83603288          0   72066446510            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+
+  Logical interface ae11.32767 (Index 77) (SNMP ifIndex 651)
+    Flags: Up SNMP-Traps 0x4004000 VLAN-Tag [ 0x0000.0 ]  Encapsulation: ENET2
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :         64131          0       7952244          984
+        Output:             0          0             0            0
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol multiservice, MTU: Unlimited
+      Flags: None

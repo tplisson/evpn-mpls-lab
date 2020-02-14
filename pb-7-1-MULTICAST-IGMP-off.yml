@@ -4,7 +4,7 @@
     tasks:
     - set_fact: 
         testcase: 7-1-MULTICAST-IGMP
-        test_dir: "testcase/7-1-MULTICAST-IGMP/L3VPN/SNOOPING-OFF"
+        test_dir: "testcase/7-1-MULTICAST-IGMP/SNOOPING-OFF"
         cacheable: yes
   
   - hosts: localhost

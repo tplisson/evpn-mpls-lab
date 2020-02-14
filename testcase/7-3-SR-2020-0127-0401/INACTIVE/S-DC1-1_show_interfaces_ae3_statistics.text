@@ -1,0 +1,37 @@
+
+Physical interface: ae3, Enabled, Physical link is Up
+  Interface index: 233, SNMP ifIndex: 609
+  Description: S-DC1-1 ---- L-DC1-1A
+  Link-level type: Ethernet, MTU: 16000, Speed: 10Gbps, BPDU Error: None,
+  MAC-REWRITE Error: None, Loopback: Disabled, Source filtering: Disabled,
+  Flow control: Disabled
+  Pad to minimum frame size: Disabled
+  Minimum links needed: 1, Minimum bandwidth needed: 1bps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Current address: 80:7f:f8:74:1c:8d, Hardware address: 80:7f:f8:74:1c:8d
+  Last flapped   : 2020-02-13 07:05:41 CET (1d 01:47 ago)
+  Statistics last cleared: Never
+  Input rate     : 2781189536 bps (400032 pps)
+  Output rate    : 1448 bps (3 pps)
+  Input errors: 0, Output errors: 0
+
+  Logical interface ae3.0 (Index 79) (SNMP ifIndex 619)
+    Flags: Up SNMP-Traps 0x4004000 Encapsulation: ENET2
+    Statistics        Packets        pps         Bytes          bps
+    Bundle:
+        Input :   13363520813     400024 11633322822276   2786543816
+        Output:        390341          3      22859352         1656
+    Adaptive Statistics:
+        Adaptive Adjusts:          0
+        Adaptive Scans  :          0
+        Adaptive Updates:          0
+    Protocol inet, MTU: 15986
+    Max nh cache: 100000, New hold nh limit: 100000, Curr nh cnt: 1,
+    Curr new hold cnt: 0, NH drop cnt: 0
+      Flags: Sendbcast-pkt-to-re
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 10.35.11.0/31, Local: 10.35.11.0
+    Protocol iso, MTU: 15983
+    Protocol mpls, MTU: 15922, Maximum labels: 16
+    Protocol multiservice, MTU: Unlimited

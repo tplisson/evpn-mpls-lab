@@ -1,0 +1,4052 @@
+
+Routing table: default.inet [Index 0] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 51       Reference: 1    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 49       Reference: 1    
+    
+Destination:  10.35.0.0/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0        
+    
+Destination:  10.35.0.2/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0        
+    
+Destination:  10.35.0.4/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.0.6/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0        
+    
+Destination:  10.35.0.8/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0        
+    
+Destination:  10.35.0.10/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.1.1/32
+  Route type: user                  
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048581  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0xf000
+    
+Destination:  10.35.1.1/32
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: unilist               Index: 1048581  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0xf000
+    
+Destination:  10.35.1.2/32
+  Route type: user                  
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048582  Reference: 3    
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0xf000
+    
+Destination:  10.35.1.2/32
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: unilist               Index: 1048582  Reference: 3    
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0xf000
+    
+Destination:  10.35.1.3/32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.1.4/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.35.1.4
+  Next-hop type: local                 Index: 512      Reference: 1    
+    
+Destination:  10.35.2.1/32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.2.2/32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.2.3/32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.2.4/32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.11.0/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0        
+    
+Destination:  10.35.11.2/31
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 70  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: resolve               Index: 528      Reference: 1    
+  Next-hop interface: ae0.0        
+    
+Destination:  10.35.11.2/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 70  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:74:1c:8e
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0        
+    
+Destination:  10.35.11.3/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.35.11.3
+  Next-hop type: local                 Index: 527      Reference: 2    
+    
+Destination:  10.35.11.3/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 70  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.35.11.3
+  Next-hop type: local                 Index: 527      Reference: 2    
+    
+Destination:  10.35.12.0/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0        
+    
+Destination:  10.35.12.2/31
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 73  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: resolve               Index: 530      Reference: 1    
+  Next-hop interface: ae1.0        
+    
+Destination:  10.35.12.2/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 73  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:74:5c:a6
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0        
+    
+Destination:  10.35.12.3/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.35.12.3
+  Next-hop type: local                 Index: 529      Reference: 2    
+    
+Destination:  10.35.12.3/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 73  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.35.12.3
+  Next-hop type: local                 Index: 529      Reference: 2    
+    
+Destination:  10.35.21.0/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.21.2/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.22.0/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.35.22.2/31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048580  Reference: 12   
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 532      Reference: 40   
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 531      Reference: 40   
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  224.0.0.0/4
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 50       Reference: 1    
+    
+Destination:  224.0.0.1/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 224.0.0.1
+  Next-hop type: multicast             Index: 46       Reference: 1    
+    
+Destination:  255.255.255.255/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: broadcast             Index: 47       Reference: 1    
+
+Routing table: __juniper_services__.inet [Index 3] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 514      Reference: 2    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 514      Reference: 2    
+    
+Destination:  128.0.0.0/2
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 67  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: resolve               Index: 526      Reference: 1    
+  Next-hop interface: jsrv.1       
+    
+Destination:  128.0.0.0/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 67  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 128.0.0.0
+  Next-hop type: receive               Index: 524      Reference: 1    
+  Next-hop interface: jsrv.1       
+    
+Destination:  128.0.0.127/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 128.0.0.127
+  Next-hop type: local                 Index: 525      Reference: 2    
+    
+Destination:  128.0.0.127/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 67  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 128.0.0.127
+  Next-hop type: local                 Index: 525      Reference: 2    
+    
+Destination:  191.255.255.255/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 67  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 191.255.255.255
+  Next-hop type: broadcast             Index: 523      Reference: 1    
+  Next-hop interface: jsrv.1       
+    
+Destination:  224.0.0.0/4
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 515      Reference: 1    
+    
+Destination:  224.0.0.1/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 224.0.0.1
+  Next-hop type: multicast             Index: 518      Reference: 1    
+    
+Destination:  255.255.255.255/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: broadcast             Index: 519      Reference: 1    
+
+Routing table: __master.anon__.inet [Index 8] 
+Internet:
+Enabled protocols: Bridging, Dual VLAN, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 575      Reference: 1    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 573      Reference: 1    
+    
+Destination:  224.0.0.0/4
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 574      Reference: 1    
+    
+Destination:  224.0.0.1/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 224.0.0.1
+  Next-hop type: multicast             Index: 577      Reference: 1    
+    
+Destination:  255.255.255.255/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: broadcast             Index: 578      Reference: 1    
+
+Routing table: __pfe_private__.inet [Index 13] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 666      Reference: 2    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 666      Reference: 2    
+    
+Destination:  224.0.0.0/4
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 667      Reference: 1    
+    
+Destination:  224.0.0.1/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 224.0.0.1
+  Next-hop type: multicast             Index: 670      Reference: 1    
+    
+Destination:  255.255.255.255/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: broadcast             Index: 671      Reference: 1    
+
+Routing table: vrf10.inet [Index 14] 
+Internet:
+Enabled protocols: Bridging, All VLANs, 
+    
+Destination:  default
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048678  Reference: 4    
+  Next-hop type: composite             Index: 1048677  Reference: 2    
+  Load Balance Label: Push 25, None     
+  Next-hop type: indirect              Index: 1048676  Reference: 2    
+                                    Weight: 0x0  
+  Next-hop type: unilist               Index: 1048675  Reference: 3    
+  Nexthop: 80:7f:f8:74:1c:8e
+  Next-hop type: unicast               Index: 836      Reference: 2    
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 80:7f:f8:74:5c:a6
+  Next-hop type: Push 901001           Index: 838      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0xf000
+  Next-hop type: composite             Index: 1048610  Reference: 2    
+  Load Balance Label: Push 238, None    
+  Next-hop type: indirect              Index: 1048605  Reference: 2    
+                                    Weight: 0x0  
+  Next-hop type: unilist               Index: 1048604  Reference: 3    
+  Nexthop: 80:7f:f8:74:5c:a6
+  Next-hop type: unicast               Index: 728      Reference: 2    
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Nexthop: 80:7f:f8:74:1c:8e
+  Next-hop type: Push 901002           Index: 729      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0xf000
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 535      Reference: 1    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 533      Reference: 1    
+    
+Destination:  10.10.0.0/16
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048678  Reference: 4    
+  Nexthop:  
+  Next-hop type: composite             Index: 1048677  Reference: 2    
+  Load Balance Label: Push 25, None     
+  Next-hop type: indirect              Index: 1048676  Reference: 2    
+                                    Weight: 0x0  
+  Next-hop type: unilist               Index: 1048675  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 836      Reference: 2    
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 901001           Index: 838      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0xf000
+  Next-hop type: composite             Index: 1048610  Reference: 2    
+  Load Balance Label: Push 238, None    
+  Next-hop type: indirect              Index: 1048605  Reference: 2    
+                                    Weight: 0x0  
+  Next-hop type: unilist               Index: 1048604  Reference: 3    
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 728      Reference: 2    
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 901002           Index: 729      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0xf000
+    
+Destination:  10.10.0.0/24
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048678  Reference: 4    
+  Next-hop type: composite             Index: 1048677  Reference: 2    
+  Load Balance Label: Push 25, None     
+  Next-hop type: indirect              Index: 1048676  Reference: 2    
+                                    Weight: 0x0  
+  Next-hop type: unilist               Index: 1048675  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 836      Reference: 2    
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 901001           Index: 838      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0xf000
+  Next-hop type: composite             Index: 1048610  Reference: 2    
+  Load Balance Label: Push 238, None    
+  Next-hop type: indirect              Index: 1048605  Reference: 2    
+                                    Weight: 0x0  
+  Next-hop type: unilist               Index: 1048604  Reference: 3    
+  Nexthop: 10.35.12.2
+  Next-hop type: unicast               Index: 728      Reference: 2    
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 901002           Index: 729      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0xf000
+    
+Destination:  10.10.0.100/32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048667  Reference: 2    
+  Next-hop type: composite             Index: 1048630  Reference: 2    
+  Load Balance Label: Push 20, None     
+  Next-hop type: indirect              Index: 1048626  Reference: 2    
+                                    Weight: 0x0  
+  Next-hop type: unilist               Index: 1048612  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 902001           Index: 615      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 902001           Index: 616      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Next-hop type: composite             Index: 1048661  Reference: 2    
+  Load Balance Label: Push 234, None    
+  Next-hop type: indirect              Index: 1048660  Reference: 2    
+                                    Weight: 0x0  
+  Next-hop type: unilist               Index: 1048620  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 902002           Index: 827      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 902002           Index: 829      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.10.1.0/24
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: resolve               Index: 549      Reference: 1    
+  Next-hop interface: irb.10       
+    
+Destination:  10.10.1.0/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.10.1.0
+  Next-hop type: receive               Index: 547      Reference: 1    
+  Next-hop interface: irb.10       
+    
+Destination:  10.10.1.1/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.10.1.1
+  Next-hop type: local                 Index: 548      Reference: 2    
+    
+Destination:  10.10.1.1/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.10.1.1
+  Next-hop type: local                 Index: 548      Reference: 2    
+    
+Destination:  10.10.1.11/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:74:7c:b4
+  Next-hop type: unicast               Index: 783      Reference: 1    
+    
+Destination:  10.10.1.12/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.10.1.12
+  Next-hop type: local                 Index: 550      Reference: 2    
+    
+Destination:  10.10.1.12/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.10.1.12
+  Next-hop type: local                 Index: 550      Reference: 2    
+    
+Destination:  10.10.1.111/32
+  Route type: destination           
+  Route reference: 1                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: c0:42:d0:4a:97:e3
+  Next-hop type: unicast               Index: 823      Reference: 4    
+  Next-hop interface: ae10.10      
+    
+Destination:  10.10.1.111/32
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: c0:42:d0:4a:97:e3
+  Next-hop type: unicast               Index: 823      Reference: 4    
+  Next-hop interface: ae10.10      
+    
+Destination:  10.10.1.255/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.10.1.255
+  Next-hop type: broadcast             Index: 546      Reference: 1    
+  Next-hop interface: irb.10       
+    
+Destination:  10.10.10.0/24
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048643  Reference: 2    
+  Nexthop: 10.10.1.111
+  Next-hop type: unicast               Index: 823      Reference: 4    
+  Next-hop interface: ae10.10      
+    
+Destination:  224.0.0.0/4
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 534      Reference: 1    
+    
+Destination:  224.0.0.1/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 224.0.0.1
+  Next-hop type: multicast             Index: 537      Reference: 1    
+    
+Destination:  255.255.255.255/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: broadcast             Index: 538      Reference: 1    
+
+Routing table: vrf30.inet [Index 17] 
+Internet:
+Enabled protocols: Bridging, All VLANs, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 663      Reference: 1    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 661      Reference: 1    
+    
+Destination:  10.30.0.0/24
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: resolve               Index: 718      Reference: 1    
+  Next-hop interface: irb.30       
+    
+Destination:  10.30.0.0/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.30.0.0
+  Next-hop type: receive               Index: 716      Reference: 1    
+  Next-hop interface: irb.30       
+    
+Destination:  10.30.0.1/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.30.0.1
+  Next-hop type: local                 Index: 717      Reference: 2    
+    
+Destination:  10.30.0.1/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.30.0.1
+  Next-hop type: local                 Index: 717      Reference: 2    
+    
+Destination:  10.30.0.11/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:74:7c:b4
+  Next-hop type: unicast               Index: 778      Reference: 1    
+    
+Destination:  10.30.0.12/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.30.0.12
+  Next-hop type: local                 Index: 719      Reference: 2    
+    
+Destination:  10.30.0.12/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 10.30.0.12
+  Next-hop type: local                 Index: 719      Reference: 2    
+    
+Destination:  10.30.0.21/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:75:2c:b4
+  Next-hop type: unicast               Index: 810      Reference: 1    
+    
+Destination:  10.30.0.111/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: c0:42:d0:4a:97:e3
+  Next-hop type: unicast               Index: 762      Reference: 1    
+  Next-hop interface: ae10.30      
+    
+Destination:  10.30.0.222/32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 1048690  Reference: 2    
+  Load Balance Label: Push 28, None     
+  Next-hop type: indirect              Index: 1048664  Reference: 2    
+  Next-hop type: unilist               Index: 1048621  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 902003           Index: 788      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 902003           Index: 790      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  10.30.0.222/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: d0:7:ca:44:af:85
+  Next-hop type: unicast               Index: 855      Reference: 1    
+    
+Destination:  10.30.0.255/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 10.30.0.255
+  Next-hop type: broadcast             Index: 703      Reference: 1    
+  Next-hop interface: irb.30       
+    
+Destination:  224.0.0.0/4
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 662      Reference: 1    
+    
+Destination:  224.0.0.1/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 224.0.0.1
+  Next-hop type: multicast             Index: 665      Reference: 1    
+    
+Destination:  255.255.255.255/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: broadcast             Index: 675      Reference: 1    
+
+Routing table: mgmt_junos.inet [Index 36738] 
+Internet:
+Enabled protocols: Bridging, 
+    
+Destination:  default
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: rt nh decoupled  
+  Nexthop: 0:10:db:ff:10:2
+  Next-hop type: unicast               Index: 387      Reference: 4    
+  Next-hop interface: fxp0.0       
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 322      Reference: 1    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 320      Reference: 1    
+    
+Destination:  192.168.200.0/24
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: resolve               Index: 349      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.0/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 192.168.200.0
+  Next-hop type: receive               Index: 347      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.1/32
+  Route type: destination           
+  Route reference: 1                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 0:10:db:ff:10:2
+  Next-hop type: unicast               Index: 387      Reference: 4    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.1/32
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 0:10:db:ff:10:2
+  Next-hop type: unicast               Index: 387      Reference: 4    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.3/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: f4:a7:39:94:73:e2
+  Next-hop type: unicast               Index: 396      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.8/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 40:b4:f0:7c:42:c2
+  Next-hop type: unicast               Index: 373      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.19/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 20:d8:b:f9:b5:1a
+  Next-hop type: unicast               Index: 367      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.29/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: c0:42:d0:4a:97:21
+  Next-hop type: unicast               Index: 399      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.30/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: d0:7:ca:44:db:c1
+  Next-hop type: unicast               Index: 398      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.31/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:b6:a5:9a
+  Next-hop type: unicast               Index: 397      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.33/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:b1:33:9e
+  Next-hop type: unicast               Index: 401      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.34/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 0:80:16:92:e2:9f
+  Next-hop type: unicast               Index: 406      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.39/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 3c:8b:cd:ea:ab:2b
+  Next-hop type: unicast               Index: 372      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.40/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 0:a:19:cd:65:13
+  Next-hop type: unicast               Index: 403      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.49/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 5c:5e:ab:74:ec:2
+  Next-hop type: unicast               Index: 362      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.53/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 0:80:16:93:94:ac
+  Next-hop type: unicast               Index: 407      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.54/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 0:80:16:93:57:99
+  Next-hop type: unicast               Index: 408      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.55/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:4d:61:9e
+  Next-hop type: unicast               Index: 354      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.56/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:4d:60:76
+  Next-hop type: unicast               Index: 360      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.57/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:4d:61:9e
+  Next-hop type: unicast               Index: 383      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.58/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:53:10:16
+  Next-hop type: unicast               Index: 350      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.59/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:53:10:a
+  Next-hop type: unicast               Index: 371      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.60/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:53:10:16
+  Next-hop type: unicast               Index: 393      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.61/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: cc:e1:94:63:18:56
+  Next-hop type: unicast               Index: 385      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.62/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: e4:5d:37:8d:de:5e
+  Next-hop type: unicast               Index: 366      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.63/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: cc:e1:94:63:18:56
+  Next-hop type: unicast               Index: 389      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.64/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 78:4f:9b:a3:64:56
+  Next-hop type: unicast               Index: 351      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.65/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:53:18:5e
+  Next-hop type: unicast               Index: 363      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.66/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 78:4f:9b:a3:64:56
+  Next-hop type: unicast               Index: 391      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.67/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:4d:60:52
+  Next-hop type: unicast               Index: 352      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.68/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:4d:60:4e
+  Next-hop type: unicast               Index: 361      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.69/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:4d:60:52
+  Next-hop type: unicast               Index: 388      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.70/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 192.168.200.70
+  Next-hop type: local                 Index: 348      Reference: 2    
+    
+Destination:  192.168.200.70/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 192.168.200.70
+  Next-hop type: local                 Index: 348      Reference: 2    
+    
+Destination:  192.168.200.71/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 78:4f:9b:a3:64:6e
+  Next-hop type: unicast               Index: 370      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.72/32
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 192.168.200.72
+  Next-hop type: local                 Index: 392      Reference: 2    
+    
+Destination:  192.168.200.72/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 192.168.200.72
+  Next-hop type: local                 Index: 392      Reference: 2    
+    
+Destination:  192.168.200.73/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 78:4f:9b:a3:64:82
+  Next-hop type: unicast               Index: 353      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.74/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 78:4f:9b:a3:67:a6
+  Next-hop type: unicast               Index: 365      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.75/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 78:4f:9b:a3:64:82
+  Next-hop type: unicast               Index: 394      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.76/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 78:4f:9b:a3:64:76
+  Next-hop type: unicast               Index: 386      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.77/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 80:7f:f8:53:18:82
+  Next-hop type: unicast               Index: 364      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.78/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 78:4f:9b:a3:64:76
+  Next-hop type: unicast               Index: 390      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.79/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 44:f4:77:41:c1:ba
+  Next-hop type: unicast               Index: 400      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.81/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 44:f4:77:41:c1:a
+  Next-hop type: unicast               Index: 402      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.84/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 2c:f8:9b:4d:4f:a0
+  Next-hop type: unicast               Index: 404      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.86/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 0:c0:ff:50:d4:a1
+  Next-hop type: unicast               Index: 405      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  192.168.200.255/32
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 5   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 192.168.200.255
+  Next-hop type: broadcast             Index: 346      Reference: 1    
+  Next-hop interface: fxp0.0       
+    
+Destination:  224.0.0.0/4
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: multicast discard     Index: 321      Reference: 1    
+    
+Destination:  224.0.0.1/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 224.0.0.1
+  Next-hop type: multicast             Index: 324      Reference: 1    
+    
+Destination:  255.255.255.255/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: broadcast             Index: 325      Reference: 1    
+
+Routing table: default.iso [Index 0] 
+ISO:
+Enabled protocols: Bridging, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 75       Reference: 1    
+    
+Destination:  49.0001.0100.3500.1004/72
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: local                 Index: 513      Reference: 1    
+
+Routing table: __master.anon__.iso [Index 8] 
+ISO:
+Enabled protocols: Bridging, Dual VLAN, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 611      Reference: 1    
+
+Routing table: vrf10.iso [Index 14] 
+ISO:
+Enabled protocols: Bridging, All VLANs, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 544      Reference: 1    
+
+Routing table: vrf30.iso [Index 17] 
+ISO:
+Enabled protocols: Bridging, All VLANs, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 682      Reference: 1    
+
+Routing table: default.inet6 [Index 0] 
+Internet6:
+Enabled protocols: Bridging, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 59       Reference: 1    
+    
+Destination:  ::/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 57       Reference: 2    
+    
+Destination:  ::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: local                 Index: 60       Reference: 1    
+    
+Destination:  fe80::/10
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 57       Reference: 2    
+    
+Destination:  ff00::/8
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 58       Reference: 1    
+    
+Destination:  ff02::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1
+  Next-hop type: multicast             Index: 54       Reference: 2    
+    
+Destination:  ff02::2/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::2
+  Next-hop type: multicast             Index: 54       Reference: 2    
+
+Routing table: __master.anon__.inet6 [Index 8] 
+Internet6:
+Enabled protocols: Bridging, Dual VLAN, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 630      Reference: 1    
+    
+Destination:  ::/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 628      Reference: 2    
+    
+Destination:  ::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: local                 Index: 631      Reference: 1    
+    
+Destination:  fe80::/10
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 628      Reference: 2    
+    
+Destination:  ff00::/8
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 629      Reference: 1    
+    
+Destination:  ff02::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1
+  Next-hop type: multicast             Index: 632      Reference: 1    
+
+Routing table: vrf10.inet6 [Index 14] 
+Internet6:
+Enabled protocols: Bridging, All VLANs, 
+    
+Destination:  default
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 1048680  Reference: 3    
+  Load Balance Label: Push 25, None     
+  Next-hop type: indirect              Index: 1048679  Reference: 2    
+  Next-hop type: unilist               Index: 1048675  Reference: 3    
+  Nexthop: 80:7f:f8:74:1c:8e
+  Next-hop type: unicast               Index: 836      Reference: 2    
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 80:7f:f8:74:5c:a6
+  Next-hop type: Push 901001           Index: 838      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0xf000
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 592      Reference: 1    
+    
+Destination:  ::/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 590      Reference: 2    
+    
+Destination:  ::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: local                 Index: 593      Reference: 1    
+    
+Destination:  100::/64
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 1048680  Reference: 3    
+  Load Balance Label: Push 25, None     
+  Next-hop type: indirect              Index: 1048679  Reference: 2    
+  Next-hop type: unilist               Index: 1048675  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: unicast               Index: 836      Reference: 2    
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 901001           Index: 838      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0xf000
+    
+Destination:  100::100/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop:  
+  Next-hop type: composite             Index: 1048629  Reference: 3    
+  Load Balance Label: Push 20, None     
+  Next-hop type: indirect              Index: 1048625  Reference: 2    
+  Next-hop type: unilist               Index: 1048612  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 902001           Index: 615      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 902001           Index: 616      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  101::/64
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: resolve               Index: 601      Reference: 1    
+  Next-hop interface: irb.10       
+    
+Destination:  101::/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 101::
+  Next-hop type: receive               Index: 600      Reference: 1    
+  Next-hop interface: irb.10       
+    
+Destination:  101::1/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 101::1
+  Next-hop type: local                 Index: 598      Reference: 2    
+    
+Destination:  101::1/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 101::1
+  Next-hop type: local                 Index: 598      Reference: 2    
+    
+Destination:  101::11/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:74:7c:b4
+  Next-hop type: unicast               Index: 784      Reference: 1    
+    
+Destination:  101::12/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 101::12
+  Next-hop type: local                 Index: 602      Reference: 2    
+    
+Destination:  101::12/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 101::12
+  Next-hop type: local                 Index: 602      Reference: 2    
+    
+Destination:  101::111/128
+  Route type: destination           
+  Route reference: 1                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: c0:42:d0:4a:97:e3
+  Next-hop type: unicast               Index: 812      Reference: 4    
+  Next-hop interface: ae10.10      
+    
+Destination:  101::111/128
+  Route type: cloned                
+  Route reference: 1                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: c0:42:d0:4a:97:e3
+  Next-hop type: unicast               Index: 812      Reference: 4    
+  Next-hop interface: ae10.10      
+    
+Destination:  110::/64
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048669  Reference: 2    
+  Nexthop: 101::111
+  Next-hop type: unicast               Index: 812      Reference: 4    
+  Next-hop interface: ae10.10      
+    
+Destination:  fe80::/10
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 590      Reference: 2    
+    
+Destination:  fe80::/64
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: resolve               Index: 608      Reference: 1    
+  Next-hop interface: irb.10       
+    
+Destination:  fe80::/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: fe80::
+  Next-hop type: receive               Index: 606      Reference: 1    
+  Next-hop interface: irb.10       
+    
+Destination:  fe80::10:11/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:74:7c:b4
+  Next-hop type: unicast               Index: 797      Reference: 1    
+    
+Destination:  fe80::10:12/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: fe80::10:12
+  Next-hop type: local                 Index: 604      Reference: 2    
+    
+Destination:  fe80::10:12/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: fe80::10:12
+  Next-hop type: local                 Index: 604      Reference: 2    
+    
+Destination:  fe80::210:db00:aff:1002/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 1048629  Reference: 3    
+  Load Balance Label: Push 20, None     
+  Next-hop type: indirect              Index: 1048625  Reference: 2    
+  Next-hop type: unilist               Index: 1048612  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 902001           Index: 615      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 902001           Index: 616      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  fe80::c242:d000:a4a:97e3/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: c0:42:d0:4a:97:e3
+  Next-hop type: unicast               Index: 617      Reference: 1    
+  Next-hop interface: ae10.10      
+    
+Destination:  ff00::/8
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 591      Reference: 1    
+    
+Destination:  ff02::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1
+  Next-hop type: multicast             Index: 594      Reference: 2    
+    
+Destination:  ff02::2/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::2
+  Next-hop type: multicast             Index: 594      Reference: 2    
+    
+Destination:  ff02::1:ff00:1/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1:ff00:1
+  Next-hop type: receive               Index: 599      Reference: 1    
+  Next-hop interface: irb.10       
+    
+Destination:  ff02::1:ff00:12/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1:ff00:12
+  Next-hop type: receive               Index: 603      Reference: 1    
+  Next-hop interface: irb.10       
+    
+Destination:  ff02::1:ff10:12/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 79  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1:ff10:12
+  Next-hop type: receive               Index: 605      Reference: 1    
+  Next-hop interface: irb.10       
+
+Routing table: vrf30.inet6 [Index 17] 
+Internet6:
+Enabled protocols: Bridging, All VLANs, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: reject                Index: 741      Reference: 1    
+    
+Destination:  ::/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 739      Reference: 2    
+    
+Destination:  ::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: local                 Index: 742      Reference: 1    
+    
+Destination:  300::/64
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: resolve               Index: 752      Reference: 1    
+  Next-hop interface: irb.30       
+    
+Destination:  300::/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 300::
+  Next-hop type: receive               Index: 751      Reference: 1    
+  Next-hop interface: irb.30       
+    
+Destination:  300::1/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 300::1
+  Next-hop type: local                 Index: 749      Reference: 2    
+    
+Destination:  300::1/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 300::1
+  Next-hop type: local                 Index: 749      Reference: 2    
+    
+Destination:  300::11/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:74:7c:b4
+  Next-hop type: unicast               Index: 779      Reference: 1    
+    
+Destination:  300::12/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 300::12
+  Next-hop type: local                 Index: 753      Reference: 2    
+    
+Destination:  300::12/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: 300::12
+  Next-hop type: local                 Index: 753      Reference: 2    
+    
+Destination:  300::21/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:75:2c:b4
+  Next-hop type: unicast               Index: 813      Reference: 1    
+    
+Destination:  300::222/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 1048628  Reference: 3    
+  Load Balance Label: Push 28, None     
+  Next-hop type: indirect              Index: 1048627  Reference: 2    
+  Next-hop type: unilist               Index: 1048621  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 902003           Index: 788      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 902003           Index: 790      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  300::222/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: d0:7:ca:44:af:85
+  Next-hop type: unicast               Index: 856      Reference: 1    
+    
+Destination:  fe80::/10
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 739      Reference: 2    
+    
+Destination:  fe80::/64
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: resolve               Index: 758      Reference: 1    
+  Next-hop interface: irb.30       
+    
+Destination:  fe80::/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: fe80::
+  Next-hop type: receive               Index: 757      Reference: 1    
+  Next-hop interface: irb.30       
+    
+Destination:  fe80::30:11/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:74:7c:b4
+  Next-hop type: unicast               Index: 782      Reference: 1    
+    
+Destination:  fe80::30:12/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: fe80::30:12
+  Next-hop type: local                 Index: 755      Reference: 2    
+    
+Destination:  fe80::30:12/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: fe80::30:12
+  Next-hop type: local                 Index: 755      Reference: 2    
+    
+Destination:  fe80::30:21/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: 80:7f:f8:75:2c:b4
+  Next-hop type: unicast               Index: 825      Reference: 1    
+    
+Destination:  fe80::30:111/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: c0:42:d0:4a:97:e3
+  Next-hop type: unicast               Index: 618      Reference: 1    
+  Next-hop interface: ae10.30      
+    
+Destination:  fe80::30:222/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 1048628  Reference: 3    
+  Load Balance Label: Push 28, None     
+  Next-hop type: indirect              Index: 1048627  Reference: 2    
+  Next-hop type: unilist               Index: 1048621  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 902003           Index: 788      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 902003           Index: 790      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  fe80::30:222/128
+  Route type: destination           
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: d0:7:ca:44:af:85
+  Next-hop type: unicast               Index: 857      Reference: 1    
+    
+Destination:  ff00::/8
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: multicast discard     Index: 740      Reference: 1    
+    
+Destination:  ff02::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1
+  Next-hop type: multicast             Index: 743      Reference: 2    
+    
+Destination:  ff02::2/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::2
+  Next-hop type: multicast             Index: 743      Reference: 2    
+    
+Destination:  ff02::1:ff00:1/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1:ff00:1
+  Next-hop type: receive               Index: 750      Reference: 1    
+  Next-hop interface: irb.30       
+    
+Destination:  ff02::1:ff00:12/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1:ff00:12
+  Next-hop type: receive               Index: 754      Reference: 1    
+  Next-hop interface: irb.30       
+    
+Destination:  ff02::1:ff30:12/128
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 98  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Nexthop: ff02::1:ff30:12
+  Next-hop type: receive               Index: 756      Reference: 1    
+  Next-hop interface: irb.30       
+
+Routing table: mgmt_junos.inet6 [Index 36738] 
+Internet6:
+Enabled protocols: Bridging, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 331      Reference: 1    
+    
+Destination:  ::/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 329      Reference: 2    
+    
+Destination:  ::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: local                 Index: 332      Reference: 1    
+    
+Destination:  fe80::/10
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 329      Reference: 2    
+    
+Destination:  ff00::/8
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: multicast discard     Index: 330      Reference: 1    
+    
+Destination:  ff02::1/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Nexthop: ff02::1
+  Next-hop type: multicast             Index: 333      Reference: 1    
+
+Routing table: default.mpls [Index 0] 
+MPLS:
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 65       Reference: 1    
+    
+Destination:  0
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 1        Reference: 3    
+    
+Destination:  0(S=0)
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 3        Reference: 4    
+    
+Destination:  1
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: receive               Index: 64       Reference: 2    
+    
+Destination:  2
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 2        Reference: 3    
+    
+Destination:  2(S=0)
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 3        Reference: 4    
+    
+Destination:  13
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: receive               Index: 64       Reference: 2    
+    
+Destination:  27
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 554      Reference: 5    
+    
+Destination:  31
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: Pop                   Index: 614      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: lsi.15       
+    
+Destination:  32
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048688  Reference: 3    
+  Next-hop type: unilist               Index: 1048700  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 37, Push 901003(top) Index: 811  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 37, Push 901003(top) Index: 808  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  33
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 554      Reference: 5    
+    
+Destination:  35
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048583  Reference: 3    
+  Nexthop: 10.35.12.2
+  Next-hop type: Pop                   Index: 619      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 901002           Index: 637      Reference: 3    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0xf000
+    
+Destination:  35(S=0)
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048584  Reference: 3    
+  Nexthop: 10.35.12.2
+  Next-hop type: Pop                   Index: 620      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 901002           Index: 637      Reference: 3    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0xf000
+    
+Destination:  36
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048578  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Pop                   Index: 624      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 901001           Index: 622      Reference: 3    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0xf000
+    
+Destination:  36(S=0)
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048579  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Pop                   Index: 636      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 901001           Index: 622      Reference: 3    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0xf000
+    
+Destination:  37
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 687      Reference: 5    
+    
+Destination:  39
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: Pop                   Index: 748      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: lsi.16       
+    
+Destination:  40
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048691  Reference: 3    
+  Next-hop type: unilist               Index: 1048699  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 39, Push 901003(top) Index: 826  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 39, Push 901003(top) Index: 816  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  41
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 687      Reference: 5    
+    
+Destination:  47
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 554      Reference: 5    
+    
+Destination:  48
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 687      Reference: 5    
+    
+Destination:  92
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048645  Reference: 10   
+  Next-hop type: unilist               Index: 1048642  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 118, Push 902003(top) Index: 795 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 118, Push 902003(top) Index: 796 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  109
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048645  Reference: 10   
+  Next-hop type: unilist               Index: 1048642  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 118, Push 902003(top) Index: 795 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 118, Push 902003(top) Index: 796 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  110
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048658  Reference: 7    
+  Next-hop type: unilist               Index: 1048655  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 130, Push 902003(top) Index: 837 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 130, Push 902003(top) Index: 839 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  135
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048644  Reference: 7    
+  Next-hop type: unilist               Index: 1048705  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 31, Push 901003(top) Index: 645  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 31, Push 901003(top) Index: 644  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  136
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048671  Reference: 7    
+  Next-hop type: unilist               Index: 1048704  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 41, Push 901003(top) Index: 726  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 41, Push 901003(top) Index: 723  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  137
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048683  Reference: 6    
+  Next-hop type: unilist               Index: 1048702  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 29, Push 901003(top) Index: 777  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 29, Push 901003(top) Index: 768  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  138
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048686  Reference: 7    
+  Next-hop type: unilist               Index: 1048701  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 58, Push 901003(top) Index: 807  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 58, Push 901003(top) Index: 798  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  139
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048688  Reference: 3    
+  Next-hop type: unilist               Index: 1048700  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 37, Push 901003(top) Index: 811  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 37, Push 901003(top) Index: 808  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  140
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048691  Reference: 3    
+  Next-hop type: unilist               Index: 1048699  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 39, Push 901003(top) Index: 826  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 39, Push 901003(top) Index: 816  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  141
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048693  Reference: 2    
+  Next-hop type: unilist               Index: 1048698  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 38, Push 58, Push 901003(top) Index: 831 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 38, Push 58, Push 901003(top) Index: 828 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  142
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: indirect              Index: 1048695  Reference: 2    
+  Next-hop type: unilist               Index: 1048697  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 40, Push 41, Push 901003(top) Index: 842 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 40, Push 41, Push 901003(top) Index: 833 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  901001
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048578  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Pop                   Index: 624      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 901001           Index: 622      Reference: 3    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0xf000
+    
+Destination:  901001(S=0)
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048579  Reference: 3    
+  Nexthop: 10.35.11.2
+  Next-hop type: Pop                   Index: 636      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 901001           Index: 622      Reference: 3    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0xf000
+    
+Destination:  901002
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048583  Reference: 3    
+  Nexthop: 10.35.12.2
+  Next-hop type: Pop                   Index: 619      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 901002           Index: 637      Reference: 3    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0xf000
+    
+Destination:  901002(S=0)
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048584  Reference: 3    
+  Nexthop: 10.35.12.2
+  Next-hop type: Pop                   Index: 620      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 901002           Index: 637      Reference: 3    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0xf000
+    
+Destination:  901003
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048696  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 901003           Index: 639      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 901003           Index: 621      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  902001
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048585  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 902001           Index: 638      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 902001           Index: 623      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  902002
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048586  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 902002           Index: 640      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 902002           Index: 641      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  902003
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048587  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 902003           Index: 642      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 902003           Index: 643      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  902004
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE, rt nh decoupled  
+  Next-hop type: unilist               Index: 1048599  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Swap 902004           Index: 701      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Swap 902004           Index: 702      Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+
+Routing table: __mpls-oam__.mpls [Index 12] 
+MPLS:
+Enabled protocols: Bridging, Single VLAN, Dual VLAN, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 625      Reference: 1    
+
+Routing table: default-switch.bridge [Index 7] 
+VPLS:
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 557      Reference: 1    
+
+Routing table: vlan10.evpn [Index 15] 
+EVPN:
+Enabled protocols: Single VLAN, ACKed by all peers, EVPN, ARP/NDP suppression, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 551      Reference: 1    
+    
+Destination:  0x30005/51
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 824      Reference: 2    
+  Next-hop type: composite             Index: 688      Reference: 4    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+    
+Destination:  0x30005/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 564      Reference: 4    
+    
+Destination:  0x30005/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 569      Reference: 4    
+    
+Destination:  80:7f:f8:74:7c:b4/48
+  Learn VLAN: 0                        Route type: user                  
+  Route reference: 0                   Route interface-index: 81  
+  Multicast RPF nh index: 0         
+  P2mpidx: 0              
+  IFL generation: 0                    Epoch: 0   
+  Sequence Number: 0                   Learn Mask: 0x00000000            
+  L2 Flags: control, control_dyn
+  Flags: sent to PFE
+  Next-hop type: indirect              Index: 1048683  Reference: 6    
+  Next-hop type: unilist               Index: 1048702  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 29, Push 901003(top) Index: 777  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0            Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 29, Push 901003(top) Index: 768  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0            Weight: 0x1  
+    
+Destination:  c0:42:d0:4a:97:e3/48
+  Learn VLAN: 0                        Route type: user                  
+  Route reference: 0                   Route interface-index: 82  
+  Multicast RPF nh index: 0         
+  P2mpidx: 0              
+  IFL generation: 581                  Epoch: 0   
+  Sequence Number: 1                   Learn Mask: 0x00000000            
+  L2 Flags: control_dyn, peer_control
+  Flags: sent to PFE
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+    
+Destination:  ae10.10
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 82  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+    
+Destination:  0x30002/51
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 690      Reference: 2    
+  Next-hop type: composite             Index: 688      Reference: 4    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+  Next-hop type: composite             Index: 822      Reference: 3    
+  Next-hop type: composite             Index: 821      Reference: 2    
+  Next-hop type: indirect              Index: 1048686  Reference: 7    
+  Next-hop type: unilist               Index: 1048701  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 58, Push 901003(top) Index: 807  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 58, Push 901003(top) Index: 798  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  0x30002/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 564      Reference: 4    
+    
+Destination:  0x30002/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 569      Reference: 4    
+    
+Destination:  0x30001/51
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 689      Reference: 2    
+  Next-hop type: composite             Index: 688      Reference: 4    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+  Next-hop type: composite             Index: 822      Reference: 3    
+  Next-hop type: composite             Index: 821      Reference: 2    
+  Next-hop type: indirect              Index: 1048686  Reference: 7    
+  Next-hop type: unilist               Index: 1048701  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 58, Push 901003(top) Index: 807  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 58, Push 901003(top) Index: 798  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+
+Routing table: vlan30.evpn [Index 16] 
+EVPN:
+Enabled protocols: Single VLAN, ACKed by all peers, EVPN, ARP/NDP suppression, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 684      Reference: 1    
+    
+Destination:  00:00:ee:ee:02:05/48
+  Learn VLAN: 0                        Route type: user                  
+  Route reference: 0                   Route interface-index: 84  
+  Multicast RPF nh index: 0         
+  P2mpidx: 0              
+  IFL generation: 0                    Epoch: 0   
+  Sequence Number: 0                   Learn Mask: 0x00000000            
+  L2 Flags: control, control_dyn
+  Flags: sent to PFE
+  Next-hop type: indirect              Index: 1048644  Reference: 7    
+  Next-hop type: unilist               Index: 1048705  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 31, Push 901003(top) Index: 645  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0            Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 31, Push 901003(top) Index: 644  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0            Weight: 0x1  
+    
+Destination:  0x30006/51
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 809      Reference: 2    
+  Next-hop type: composite             Index: 732      Reference: 4    
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+    
+Destination:  0x30006/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 655      Reference: 4    
+    
+Destination:  0x30006/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 660      Reference: 4    
+    
+Destination:  80:7f:f8:74:7c:b4/48
+  Learn VLAN: 0                        Route type: user                  
+  Route reference: 0                   Route interface-index: 84  
+  Multicast RPF nh index: 0         
+  P2mpidx: 0              
+  IFL generation: 0                    Epoch: 0   
+  Sequence Number: 0                   Learn Mask: 0x00000000            
+  L2 Flags: control, control_dyn
+  Flags: sent to PFE
+  Next-hop type: indirect              Index: 1048644  Reference: 7    
+  Next-hop type: unilist               Index: 1048705  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 31, Push 901003(top) Index: 645  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0            Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 31, Push 901003(top) Index: 644  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0            Weight: 0x1  
+    
+Destination:  80:7f:f8:75:2c:b4/48
+  Learn VLAN: 0                        Route type: user                  
+  Route reference: 0                   Route interface-index: 84  
+  Multicast RPF nh index: 0         
+  P2mpidx: 0              
+  IFL generation: 0                    Epoch: 0   
+  Sequence Number: 0                   Learn Mask: 0x00000000            
+  L2 Flags: control, control_dyn
+  Flags: sent to PFE
+  Next-hop type: indirect              Index: 1048619  Reference: 5    
+  Next-hop type: unilist               Index: 1048618  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 115, Push 902003(top) Index: 765 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0            Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 115, Push 902003(top) Index: 781 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0            Weight: 0x1  
+    
+Destination:  c0:42:d0:4a:97:e3/48
+  Learn VLAN: 0                        Route type: user                  
+  Route reference: 0                   Route interface-index: 100 
+  Multicast RPF nh index: 0         
+  P2mpidx: 0              
+  IFL generation: 605                  Epoch: 0   
+  Sequence Number: 0                   Learn Mask: 0x00000000            
+  L2 Flags: control_dyn, peer_control
+  Flags: sent to PFE
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+    
+Destination:  d0:07:ca:44:af:85/48
+  Learn VLAN: 0                        Route type: user                  
+  Route reference: 0                   Route interface-index: 84  
+  Multicast RPF nh index: 0         
+  P2mpidx: 0              
+  IFL generation: 0                    Epoch: 0   
+  Sequence Number: 0                   Learn Mask: 0x00000000            
+  L2 Flags: control, control_dyn
+  Flags: sent to PFE
+  Next-hop type: indirect              Index: 1048645  Reference: 10   
+  Next-hop type: unilist               Index: 1048642  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 118, Push 902003(top) Index: 795 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0            Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 118, Push 902003(top) Index: 796 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0            Weight: 0x1  
+    
+Destination:  ae11.30
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 99  
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+    
+Destination:  ae10.30
+  Route type: interface             
+  Route reference: 0                   Route interface-index: 100 
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+    
+Destination:  0x30004/51
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 735      Reference: 2    
+  Next-hop type: composite             Index: 732      Reference: 4    
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: composite             Index: 806      Reference: 3    
+  Next-hop type: composite             Index: 850      Reference: 2    
+  Next-hop type: indirect              Index: 1048658  Reference: 7    
+  Next-hop type: unilist               Index: 1048655  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 130, Push 902003(top) Index: 837 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 130, Push 902003(top) Index: 839 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Next-hop type: composite             Index: 766      Reference: 2    
+  Next-hop type: indirect              Index: 1048671  Reference: 7    
+  Next-hop type: unilist               Index: 1048704  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 41, Push 901003(top) Index: 726  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 41, Push 901003(top) Index: 723  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  0x30004/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 655      Reference: 4    
+    
+Destination:  0x30004/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: table lookup          Index: 660      Reference: 4    
+    
+Destination:  0x30003/51
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: composite             Index: 733      Reference: 2    
+  Next-hop type: composite             Index: 732      Reference: 4    
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: composite             Index: 806      Reference: 3    
+  Next-hop type: composite             Index: 850      Reference: 2    
+  Next-hop type: indirect              Index: 1048658  Reference: 7    
+  Next-hop type: unilist               Index: 1048655  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 130, Push 902003(top) Index: 837 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 130, Push 902003(top) Index: 839 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Next-hop type: composite             Index: 766      Reference: 2    
+  Next-hop type: indirect              Index: 1048671  Reference: 7    
+  Next-hop type: unilist               Index: 1048704  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 41, Push 901003(top) Index: 726  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 41, Push 901003(top) Index: 723  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+
+Routing table: default.dhcp-snooping [Index 0] 
+DHCP Snooping:
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: sent to PFE 
+  Next-hop type: discard               Index: 98       Reference: 1    
+
+Routing table: vlan10.mcsnoop-inet [Index 15] 
+Multicast Snooping INET:
+Enabled protocols: No VLAN, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 562      Reference: 1    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 556      Reference: 1    
+    
+Destination:  0.2.0.0.0.0.0.0.0.0.0.0.0.0.2/120
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048592  Reference: 5    
+  Next-hop type: composite             Index: 646      Reference: 1    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+  Next-hop type: local                 Index: 563      Reference: 2    
+    
+Destination:  0.2.0.0.0.0.0.0.0.0.0.0.0.0.2.17/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048592  Reference: 5    
+  Next-hop type: composite             Index: 646      Reference: 1    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+  Next-hop type: local                 Index: 563      Reference: 2    
+    
+Destination:  0.2.0.0.0.0.0.0.0.0.0.0.0.0.2.240/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048593  Reference: 3    
+  Next-hop type: composite             Index: 647      Reference: 1    
+  Next-hop type: local                 Index: 563      Reference: 2    
+    
+Destination:  0.2.0.0.0.0.224/52
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE 
+  Next-hop type: multicast discard     Index: 561      Reference: 2    
+    
+Destination:  0.2.0.0.0.0.224.0.0/72
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048594  Reference: 3    
+  Next-hop type: composite             Index: 648      Reference: 1    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+    
+Destination:  0.2.0.1.0.0.0.0.0.0.0.0.0.0.2/120
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048592  Reference: 5    
+  Next-hop type: composite             Index: 646      Reference: 1    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+  Next-hop type: local                 Index: 563      Reference: 2    
+    
+Destination:  0.2.0.1.0.0.0.0.0.0.0.0.0.0.2.17/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048592  Reference: 5    
+  Next-hop type: composite             Index: 646      Reference: 1    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+  Next-hop type: local                 Index: 563      Reference: 2    
+    
+Destination:  0.2.0.1.0.0.0.0.0.0.0.0.0.0.2.240/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048593  Reference: 3    
+  Next-hop type: composite             Index: 647      Reference: 1    
+  Next-hop type: local                 Index: 563      Reference: 2    
+    
+Destination:  0.2.0.1.0.0.224/52
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE 
+  Next-hop type: multicast discard     Index: 561      Reference: 2    
+    
+Destination:  0.2.0.1.0.0.224.0.0/72
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048594  Reference: 3    
+  Next-hop type: composite             Index: 648      Reference: 1    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+
+Routing table: vlan30.mcsnoop-inet [Index 16] 
+Multicast Snooping INET:
+Enabled protocols: No VLAN, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 653      Reference: 1    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 651      Reference: 1    
+    
+Destination:  0.3.0.0.0.0.0.0.0.0.0.0.0.0.2/120
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048673  Reference: 5    
+  Next-hop type: composite             Index: 780      Reference: 1    
+  Next-hop type: local                 Index: 654      Reference: 2    
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+    
+Destination:  0.3.0.0.0.0.0.0.0.0.0.0.0.0.2.17/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048673  Reference: 5    
+  Next-hop type: composite             Index: 780      Reference: 1    
+  Next-hop type: local                 Index: 654      Reference: 2    
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+    
+Destination:  0.3.0.0.0.0.0.0.0.0.0.0.0.0.2.240/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048600  Reference: 3    
+  Next-hop type: composite             Index: 724      Reference: 1    
+  Next-hop type: local                 Index: 654      Reference: 2    
+    
+Destination:  0.3.0.0.0.0.224/52
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE 
+  Next-hop type: multicast discard     Index: 652      Reference: 2    
+    
+Destination:  0.3.0.0.0.0.224.0.0/72
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048681  Reference: 3    
+  Next-hop type: composite             Index: 840      Reference: 1    
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+    
+Destination:  0.3.0.1.0.0.0.0.0.0.0.0.0.0.2/120
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048673  Reference: 5    
+  Next-hop type: composite             Index: 780      Reference: 1    
+  Next-hop type: local                 Index: 654      Reference: 2    
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+    
+Destination:  0.3.0.1.0.0.0.0.0.0.0.0.0.0.2.17/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048673  Reference: 5    
+  Next-hop type: composite             Index: 780      Reference: 1    
+  Next-hop type: local                 Index: 654      Reference: 2    
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+    
+Destination:  0.3.0.1.0.0.0.0.0.0.0.0.0.0.2.240/128
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048600  Reference: 3    
+  Next-hop type: composite             Index: 724      Reference: 1    
+  Next-hop type: local                 Index: 654      Reference: 2    
+    
+Destination:  0.3.0.1.0.0.224/52
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE 
+  Next-hop type: multicast discard     Index: 652      Reference: 2    
+    
+Destination:  0.3.0.1.0.0.224.0.0/72
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048681  Reference: 3    
+  Next-hop type: composite             Index: 840      Reference: 1    
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+
+Routing table: vlan10.mcsnoop-inet6 [Index 15] 
+Multicast Snooping INET6:
+Enabled protocols: No VLAN, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 567      Reference: 1    
+    
+Destination:  ::/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 565      Reference: 1    
+    
+Destination:  2::3a82/320
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048595  Reference: 3    
+  Next-hop type: composite             Index: 649      Reference: 1    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+  Next-hop type: local                 Index: 568      Reference: 2    
+    
+Destination:  2::3af0/320
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048596  Reference: 3    
+  Next-hop type: composite             Index: 650      Reference: 1    
+  Next-hop type: local                 Index: 568      Reference: 2    
+    
+Destination:  2:0:0:ff00::/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE 
+  Next-hop type: multicast discard     Index: 566      Reference: 2    
+    
+Destination:  2:1::3a82/320
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048595  Reference: 3    
+  Next-hop type: composite             Index: 649      Reference: 1    
+  Next-hop type: unicast               Index: 555      Reference: 10   
+  Next-hop interface: ae10.10      
+  Next-hop type: local                 Index: 568      Reference: 2    
+    
+Destination:  2:1::3af0/320
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048596  Reference: 3    
+  Next-hop type: composite             Index: 650      Reference: 1    
+  Next-hop type: local                 Index: 568      Reference: 2    
+    
+Destination:  2:1:0:ff00::/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE 
+  Next-hop type: multicast discard     Index: 566      Reference: 2    
+
+Routing table: vlan30.mcsnoop-inet6 [Index 16] 
+Multicast Snooping INET6:
+Enabled protocols: No VLAN, 
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 658      Reference: 1    
+    
+Destination:  ::/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 656      Reference: 1    
+    
+Destination:  3::3a82/320
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048674  Reference: 3    
+  Next-hop type: composite             Index: 834      Reference: 1    
+  Next-hop type: local                 Index: 659      Reference: 2    
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+    
+Destination:  3::3af0/320
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048603  Reference: 3    
+  Next-hop type: composite             Index: 727      Reference: 1    
+  Next-hop type: local                 Index: 659      Reference: 2    
+    
+Destination:  3:0:0:ff00::/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE 
+  Next-hop type: multicast discard     Index: 657      Reference: 2    
+    
+Destination:  3:1::3a82/320
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048674  Reference: 3    
+  Next-hop type: composite             Index: 834      Reference: 1    
+  Next-hop type: local                 Index: 659      Reference: 2    
+  Next-hop type: unicast               Index: 720      Reference: 6    
+  Next-hop interface: ae11.30      
+  Next-hop type: unicast               Index: 721      Reference: 9    
+  Next-hop interface: ae10.30      
+    
+Destination:  3:1::3af0/320
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048603  Reference: 3    
+  Next-hop type: composite             Index: 727      Reference: 1    
+  Next-hop type: local                 Index: 659      Reference: 2    
+    
+Destination:  3:1:0:ff00::/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, accounting, sent to PFE 
+  Next-hop type: multicast discard     Index: 657      Reference: 2    
+
+Routing table: vlan10.evpn-mcsnoop [Index 15] 
+EVPN Multicast Snooping:
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 572      Reference: 1    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 570      Reference: 1    
+    
+Destination:  0.2.0.0.0.0/48
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, check incoming interface , accounting, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048574  Reference: 2    
+  Next-hop type: composite             Index: 843      Reference: 1    
+  Next-hop type: indirect              Index: 1048686  Reference: 7    
+  Next-hop type: unilist               Index: 1048701  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 58, Push 901003(top) Index: 807  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 58, Push 901003(top) Index: 798  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  0.2.0.0.0.0.224/52
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, check incoming interface , accounting, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048576  Reference: 2    
+  Next-hop type: composite             Index: 848      Reference: 1    
+  Next-hop type: indirect              Index: 1048686  Reference: 7    
+  Next-hop type: unilist               Index: 1048701  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 58, Push 901003(top) Index: 807  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 58, Push 901003(top) Index: 798  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+
+Routing table: vlan30.evpn-mcsnoop [Index 16] 
+EVPN Multicast Snooping:
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 693      Reference: 1    
+    
+Destination:  0.0.0.0/32
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 691      Reference: 1    
+    
+Destination:  0.3.0.0.0.0/48
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, check incoming interface , accounting, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048614  Reference: 2    
+  Next-hop type: composite             Index: 818      Reference: 1    
+  Next-hop type: indirect              Index: 1048658  Reference: 7    
+  Next-hop type: unilist               Index: 1048655  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 130, Push 902003(top) Index: 837 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 130, Push 902003(top) Index: 839 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Next-hop type: indirect              Index: 1048671  Reference: 7    
+  Next-hop type: unilist               Index: 1048704  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 41, Push 901003(top) Index: 726  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 41, Push 901003(top) Index: 723  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  0.3.0.0.0.0.224/52
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, check incoming interface , accounting, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048597  Reference: 2    
+  Next-hop type: composite             Index: 819      Reference: 1    
+  Next-hop type: indirect              Index: 1048658  Reference: 7    
+  Next-hop type: unilist               Index: 1048655  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 130, Push 902003(top) Index: 837 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 130, Push 902003(top) Index: 839 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Next-hop type: indirect              Index: 1048671  Reference: 7    
+  Next-hop type: unilist               Index: 1048704  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 41, Push 901003(top) Index: 726  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 41, Push 901003(top) Index: 723  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+
+Routing table: vlan10.evpn-mcsnoop-v6 [Index 15] 
+EVPN Multicast Snooping INET6:
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 586      Reference: 1    
+    
+Destination:  ::/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 584      Reference: 1    
+    
+Destination:  2::/48
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, check incoming interface , accounting, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048575  Reference: 2    
+  Next-hop type: composite             Index: 845      Reference: 1    
+  Next-hop type: indirect              Index: 1048686  Reference: 7    
+  Next-hop type: unilist               Index: 1048701  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 58, Push 901003(top) Index: 807  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 58, Push 901003(top) Index: 798  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  2:0:0:ff00::/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, check incoming interface , accounting, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048577  Reference: 2    
+  Next-hop type: composite             Index: 846      Reference: 1    
+  Next-hop type: indirect              Index: 1048686  Reference: 7    
+  Next-hop type: unilist               Index: 1048701  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 58, Push 901003(top) Index: 807  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 58, Push 901003(top) Index: 798  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+
+Routing table: vlan30.evpn-mcsnoop-v6 [Index 16] 
+EVPN Multicast Snooping INET6:
+    
+Destination:  default
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: reject                Index: 698      Reference: 1    
+    
+Destination:  ::/128
+  Route type: permanent             
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: none 
+  Next-hop type: discard               Index: 696      Reference: 1    
+    
+Destination:  3::/48
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, check incoming interface , accounting, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048615  Reference: 2    
+  Next-hop type: composite             Index: 820      Reference: 1    
+  Next-hop type: indirect              Index: 1048658  Reference: 7    
+  Next-hop type: unilist               Index: 1048655  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 130, Push 902003(top) Index: 837 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 130, Push 902003(top) Index: 839 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Next-hop type: indirect              Index: 1048671  Reference: 7    
+  Next-hop type: unilist               Index: 1048704  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 41, Push 901003(top) Index: 726  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 41, Push 901003(top) Index: 723  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+    
+Destination:  3:0:0:ff00::/56
+  Route type: user                  
+  Route reference: 0                   Route interface-index: 0   
+  Multicast RPF nh index: 0             
+  P2mpidx: 0              
+  Flags: cached, check incoming interface , accounting, rt nh decoupled  
+  Next-hop type: indirect              Index: 1048598  Reference: 2    
+  Next-hop type: composite             Index: 844      Reference: 1    
+  Next-hop type: indirect              Index: 1048658  Reference: 7    
+  Next-hop type: unilist               Index: 1048655  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 130, Push 902003(top) Index: 837 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 130, Push 902003(top) Index: 839 Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  
+  Next-hop type: indirect              Index: 1048671  Reference: 7    
+  Next-hop type: unilist               Index: 1048704  Reference: 2    
+  Nexthop: 10.35.11.2
+  Next-hop type: Push 41, Push 901003(top) Index: 726  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae0.0         Weight: 0x1  
+  Nexthop: 10.35.12.2
+  Next-hop type: Push 41, Push 901003(top) Index: 723  Reference: 2    
+  Load Balance Label: None              
+  Next-hop interface: ae1.0         Weight: 0x1  

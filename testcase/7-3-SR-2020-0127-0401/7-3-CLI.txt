@@ -1,0 +1,92 @@
+
+################# PRE CHECKS
+set cli timestamp
+show evpn igmp-snooping proxy extensive
+show route advertising-protocol bgp 10.35.2.1 table vlan30 match-prefix 6:*
+show configuration
+show evpn flood instance vlan30 extensive
+show evpn igmp-snooping proxy extensive
+show igmp snooping evpn database instance vlan30 detail
+show route snooping extensive
+show route forwarding-table extensive
+show evpn flood extensive
+show evpn instance vlan30 extensive
+show interfaces ae0 statistics
+show interfaces ae1 statistics
+show interfaces ae10 statistics
+show interfaces ae11 statistics
+
+###### Ingress PE: L-DC1-1A
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+show interfaces ae2 | match rate
+show interfaces ae3 | match rate
+show interfaces ae4 | match rate
+show interfaces ae10 | match rate
+show interfaces ae11 | match rate
+show route table vlan30 match-prefix 6:*
+show route table vlan30.evpn-mcsn.1
+show evpn flood instance vlan30 extensive 
+
+
+###### Egress PE: L-DC2-1B
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+show interfaces ae10 | match rate
+show interfaces ae11 | match rate
+show evpn igmp-snooping proxy extensive
+show route advertising-protocol bgp 10.35.2.1 table vlan30 match-prefix 6:*
+show evpn flood instance vlan30 extensive 
+
+
+################# DEACTIVATE RI
+set cli timestamp
+configure
+deactivate routing-instances vlan30
+commit and-quit
+
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+show interfaces ae10 | match rate
+show interfaces ae11 | match rate
+show evpn igmp-snooping proxy extensive
+show route advertising-protocol bgp 10.35.2.1 table vlan30 match-prefix 6:*
+show evpn flood instance vlan30 extensive 
+
+
+################# REACTIVATE RI
+set cli timestamp
+configure
+activate routing-instances vlan30
+commit and-quit
+
+show interfaces ae0 | match rate
+show interfaces ae1 | match rate
+show interfaces ae10 | match rate
+show interfaces ae11 | match rate
+show evpn igmp-snooping proxy extensive
+show route advertising-protocol bgp 10.35.2.1 table vlan30 match-prefix 6:*
+show evpn flood instance vlan30 extensive 
+
+
+################# POST CHECKS
+set cli timestamp
+show evpn igmp-snooping proxy extensive
+show route advertising-protocol bgp 10.35.2.1 table vlan30 match-prefix 6:*
+show configuration
+show evpn flood instance vlan30 extensive
+show route table vlan30 extensive
+show evpn igmp-snooping proxy extensive
+show igmp snooping evpn database instance vlan30 detail
+show route snooping extensive
+show route forwarding-table extensive
+show evpn flood extensive
+show evpn instance vlan30 extensive
+show interfaces ae0 statistics
+show interfaces ae1 statistics
+show interfaces ae10 statistics
+show interfaces ae11 statistics
+
+
+
+

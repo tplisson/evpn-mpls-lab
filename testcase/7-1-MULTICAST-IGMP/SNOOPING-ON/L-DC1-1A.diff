@@ -1,0 +1,3 @@
+
+[edit routing-instances vlan30 protocols]
+!      active: igmp-snooping { ... }

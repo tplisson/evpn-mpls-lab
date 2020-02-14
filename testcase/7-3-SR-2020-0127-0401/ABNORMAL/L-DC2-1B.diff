@@ -1,0 +1,3 @@
+
+[edit routing-instances]
+!    active: vlan30 { ... }

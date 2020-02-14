@@ -1,0 +1,1365 @@
+
+## Last commit: 2020-02-13 07:06:59 CET by tplisson
+version 20191026.124700_builder.r1063854;
+groups {
+    re0 {
+        interfaces {
+            fxp0 {
+                unit 0 {
+                    family inet {
+                        address 192.168.200.70/24;
+                        address 192.168.200.72/24 {
+                            master-only;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    re1 {
+        interfaces {
+            fxp0 {
+                unit 0 {
+                    family inet {
+                        address 192.168.200.71/24;
+                        address 192.168.200.72/24 {
+                            master-only;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    GR-CORE-INTF-L3 {
+        interfaces {
+            <ae*> {
+                traps;
+                mtu 16000;
+                aggregated-ether-options {
+                    bfd-liveness-detection {
+                        minimum-interval 50;
+                        multiplier 3;
+                        no-adaptation;
+                    }
+                    minimum-links 1;
+                    lacp {
+                        active;
+                        periodic slow;
+                        accept-data;
+                        hold-time up 2;
+                    }
+                }
+                unit 0 {
+                    traps;
+                    family iso;
+                    family mpls {
+                        maximum-labels 16;
+                    }
+                }
+            }
+        }
+    }
+    GR-CORE-INTF-LAG-MEMBER {
+        interfaces {
+            <*> {
+                hold-time up 2000 down 0;
+                optics-options {
+                    alarm low-light-alarm {
+                        syslog;
+                    }
+                    warning low-light-warning {
+                        syslog;
+                    }
+                }
+            }
+        }
+    }
+    GR-EDGE-INTF-LAG-MEMBER {
+        interfaces {
+            <*> {
+                hold-time up 2000 down 0;
+                optics-options {
+                    alarm low-light-alarm {
+                        syslog;
+                    }
+                    warning low-light-warning {
+                        syslog;
+                    }
+                }
+            }
+        }
+    }
+    GR-EDGE-INTF-L2 {
+        interfaces {
+            <ae*> {
+                flexible-vlan-tagging;
+                mtu 9000;
+                encapsulation flexible-ethernet-services;
+                aggregated-ether-options {
+                    minimum-links 1;
+                    lacp {
+                        active;
+                        periodic fast;
+                        accept-data;
+                        hold-time up 2;
+                    }
+                }
+                unit <*> {
+                    encapsulation vlan-bridge;
+                    esi {
+                        auto-derive {
+                            lacp;
+                        }
+                        all-active;
+                    }
+                }
+            }
+        }
+    }
+    GR-CORE-ISIS {
+        protocols {
+            isis {
+                backup-spf-options {
+                    use-post-convergence-lfa maximum-backup-paths 2;
+                    use-source-packet-routing;
+                }
+                level 1 disable;
+                level 2 {
+                    authentication-key-chain KC-ISIS-AUTH;
+                    wide-metrics-only;
+                }
+                interface <ae*> {
+                    lsp-interval 5;
+                    point-to-point;
+                    level 2 {
+                        hello-authentication-key-chain KC-ISIS-AUTH;
+                        post-convergence-lfa {
+                            node-protection cost 16777214;
+                        }
+                    }
+                }
+                reference-bandwidth 1000g;
+                lsp-lifetime 65535;
+                spf-options {
+                    delay 50;
+                    holddown 2000;
+                    rapid-runs 5;
+                }
+                overload {
+                    timeout 300;
+                    advertise-high-metrics;
+                }
+            }
+        }
+    }
+}
+apply-groups [ re0 re1 ];
+system {
+    commit {
+        persist-groups-inheritance;
+        fast-synchronize;
+        synchronize;
+    }
+    inactive: configuration-database {
+        inactive: extend-size;
+    }
+    login {
+        idle-timeout 5;
+        user tplisson {
+            uid 2000;
+            class super-user;
+            authentication {
+                encrypted-password "$6$HQkMZ5k8$57vP5i/zuhnA5IBH2Eb5N4hJcxkMmbXD3Nyjs4fdJkeqcHe4uUdwKHERig0saqOtsjeuNqhgpmI8TNEnNIwqv1"; ## SECRET-DATA
+            }
+        }
+        message "************************************************************************\n************************************************************************\n** *                                                                * **\n** *                                                                * **\n** *                            WARNING                             * **\n** *                                                                * **\n** *              You have accessed a private network.              * **\n** *      You are required to have personal authorisation from      * **\n** *    the system administrator before you use this device and     * **\n** *      you are strictly limited to the use set out in that       * **\n** *                     written authorisation.                     * **\n** *    Unauthorised access or use of this device is prohibited.    * **\n** *                                                                * **\n** *    Unauthorised access or misuse of a computer constitutes     * **\n** *       an offence under the Computer Misuse Act of 1990.        * **\n** *                                                                * **\n** *                                                                * **\n************************************************************************\n************************************************************************\n";
+    }
+    root-authentication {
+        encrypted-password "$6$fW49Ikqe$W/kg0J4QUJ7J.2gZdWJZ1cFZv.z..VfGYbf8baalT.UYbKhnZq2Fln44NOb/oxbSl5ktS4oDWGfZFogkKo.dN."; ## SECRET-DATA
+    }
+    services {
+        ssh {
+            root-login allow;
+        }
+        netconf {
+            ssh {
+                port 22;
+            }
+        }
+    }
+    host-name L-DC1-1B;
+    time-zone Europe/Brussels;
+    switchover-on-routing-crash;
+    no-redirects;
+    no-redirects-ipv6;
+    no-ping-record-route;
+    no-ping-time-stamp;
+    dump-on-panic;
+    arp {
+        passive-learning;
+        purging;
+        gratuitous-arp-on-ifup;
+    }
+    management-instance;
+    internet-options {
+        icmpv4-rate-limit packet-rate 3000 bucket-size 3;
+        path-mtu-discovery;
+        no-source-quench;
+        tcp-reset-syn-acknowledge;
+        tcp-drop-synfin-set;
+        no-tcp-reset drop-all-tcp;
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    archival {
+        configuration {
+            transfer-on-commit;
+            routing-instance mgmt_junos;
+            archive-sites {
+                "ftp://data:dAtra2@10.11.2.23/ARCHIVE/MX/DMZ";
+            }
+        }
+    }
+    processes {
+        routing enable failover other-routing-engine;
+    }
+    ntp {
+        boot-server 10.11.2.21;
+        server 10.11.2.14 routing-instance mgmt_junos;
+        server 10.11.2.21 routing-instance mgmt_junos;
+    }
+}
+chassis {
+    inactive: craft-lockout;
+    dump-on-panic;
+    redundancy {
+        routing-engine 0 master;
+        routing-engine 1 backup;
+        failover {
+            on-loss-of-keepalives;
+            on-re-to-fpc-stale;
+            on-disk-failure;
+            on-loss-of-vm-host-connection;
+        }
+        graceful-switchover;
+    }
+    routing-engine {
+        on-disk-failure disk-failure-action reboot;
+    }
+    aggregated-devices {
+        ethernet {
+            device-count 32;
+        }
+    }
+    mic-aware-power-management;
+}
+security {
+    authentication-key-chains {
+        key-chain BGP-AUTH {
+            key 1 {
+                secret "$9$G1jkPpu1IhrtuWL7NbwP5TzFn"; ## SECRET-DATA
+                start-time "2020-1-1.00:00:00 +0100";
+            }
+        }
+        key-chain ISIS-AUTH {
+            key 1 {
+                secret "$9$7adwgmPQznC.PO1EhrlgoaZGD"; ## SECRET-DATA
+                start-time "2020-1-1.00:00:00 +0100";
+                algorithm hmac-sha-1;
+                options isis-enhanced;
+            }
+        }
+        key-chain KC-BGP-AUTH {
+            key 1 {
+                secret "$9$G1jkPpu1IhrtuWL7NbwP5TzFn"; ## SECRET-DATA
+                start-time "2020-1-1.00:00:00 +0100";
+            }
+        }
+        key-chain KC-ISIS-AUTH {
+            key 1 {
+                secret "$9$7adwgmPQznC.PO1EhrlgoaZGD"; ## SECRET-DATA
+                start-time "2020-1-1.00:00:00 +0100";
+                algorithm hmac-sha-1;
+                options isis-enhanced;
+            }
+        }
+    }
+}
+interfaces {
+    xe-0/0/0:0 {
+        apply-groups GR-EDGE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad ae10;
+        }
+    }
+    xe-0/0/0:1 {
+        apply-groups GR-EDGE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad ae11;
+        }
+    }
+    xe-0/1/0:0 {
+        apply-groups GR-CORE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad ae0;
+        }
+    }
+    xe-0/1/1:0 {
+        apply-groups GR-CORE-INTF-LAG-MEMBER;
+        gigether-options {
+            802.3ad ae1;
+        }
+    }
+    ae0 {
+        apply-groups GR-CORE-INTF-L3;
+        description "L-DC1-1B ---- S-DC1-1";
+        aggregated-ether-options {
+            bfd-liveness-detection {
+                neighbor 10.35.11.2;
+                local-address 10.35.11.3;
+            }
+        }
+        unit 0 {
+            family inet {
+                address 10.35.11.3/31;
+            }
+        }
+    }
+    ae1 {
+        apply-groups GR-CORE-INTF-L3;
+        description "L-DC1-1B ---- S-DC1-2";
+        aggregated-ether-options {
+            bfd-liveness-detection {
+                neighbor 10.35.12.2;
+                local-address 10.35.12.3;
+            }
+        }
+        unit 0 {
+            family inet {
+                address 10.35.12.3/31;
+            }
+        }
+    }
+    ae10 {
+        apply-groups GR-EDGE-INTF-L2;
+        description "L-DC1-1B ---- QFX1";
+        aggregated-ether-options {
+            lacp {
+                system-id dc:01:11:12:ae:10;
+            }
+        }
+        unit 10 {
+            vlan-id 10;
+        }
+        unit 30 {
+            vlan-id 30;
+        }
+    }
+    ae11 {
+        description "L-DC1-1B ---- IXIA-1/4";
+        vlan-tagging;
+        mtu 9000;
+        encapsulation flexible-ethernet-services;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+                accept-data;
+                hold-time up 2;
+            }
+        }
+        unit 30 {
+            encapsulation vlan-bridge;
+            vlan-id 30;
+        }
+    }
+    irb {
+        unit 10 {
+            virtual-gateway-accept-data;
+            family inet {
+                address 10.10.1.12/24 {
+                    preferred;
+                    virtual-gateway-address 10.10.1.1;
+                }
+            }
+            family inet6 {
+                address 101::12/64 {
+                    preferred;
+                    virtual-gateway-address 101::1;
+                }
+                address fe80::10:12/64;
+            }
+            virtual-gateway-v4-mac 04:d1:10:10:01:01;
+            virtual-gateway-v6-mac 06:d1:01:01:00:01;
+        }
+        unit 30 {
+            virtual-gateway-accept-data;
+            family inet {
+                address 10.30.0.12/24 {
+                    preferred;
+                    virtual-gateway-address 10.30.0.1;
+                }
+            }
+            family inet6 {
+                address 300::12/64 {
+                    preferred;
+                    virtual-gateway-address 300::1;
+                }
+                address fe80::30:12/64;
+            }
+            virtual-gateway-v4-mac 04:ff:30:00:00:00;
+            virtual-gateway-v6-mac 06:ff:30:00:00:00;
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                filter {
+                    inactive: input FF-RE-PROTECT-V4;
+                    output FF-COS-RE-FILTER-V4;
+                }
+                address 10.35.1.4/32;
+            }
+            family iso {
+                address 49.0001.0100.3500.1004.00;
+            }
+        }
+    }
+}
+policy-options {
+    prefix-list PL-DEFAULT-V4 {
+        0.0.0.0/0;
+    }
+    prefix-list PL-DEFAULT-V6 {
+        ::/0;
+    }
+    prefix-list PL-NETCONF-CLIENTS {
+        192.168.200.0/24;
+    }
+    prefix-list PL-SSH-CLIENTS {
+        192.168.200.0/24;
+    }
+    prefix-list PL-CORE-LINKS-LOOPBACKS {
+        10.35.1.0/24;
+        10.35.2.0/24;
+    }
+    prefix-list PL-CORE-LINKS-P2P {
+        10.35.0.0/24;
+        10.35.11.0/24;
+        10.35.12.0/24;
+        10.35.21.0/24;
+        10.35.22.0/24;
+    }
+    prefix-list PL-SNMPV3-POLLING-HOSTS {
+        apply-path "snmp v3 target-address <*> address <*>";
+    }
+    prefix-list PL-NTP-SOURCE {
+        127.0.0.1/32;
+        apply-path "system ntp source-address <*>";
+    }
+    prefix-list PL-NTP-SERVERS {
+        apply-path "system ntp server <*>";
+    }
+    prefix-list PL-DNS-SERVERS {
+        apply-path "system name-server <*>";
+    }
+    prefix-list PL-BGP-NEIGHBORS {
+        apply-path "protocols bgp group <*> neighbor <*>";
+    }
+    prefix-list PL-BGP-VRF-NEIGHBORS {
+        apply-path "routing-instances <*> protocols bgp group <*> neighbor <*>";
+    }
+    prefix-list PL-TACPLUS-SERVER {
+        apply-path "system tacplus-server <*>";
+    }
+    policy-statement PL-EVI10-DEFAULT-NH-VGA-V4 {
+        term DEFAULT-NH-VGA-V4 {
+            from {
+                prefix-list PL-DEFAULT-V4;
+            }
+            then {
+                next-hop 10.10.1.1;
+                accept;
+            }
+        }
+        term DROP {
+            then reject;
+        }
+    }
+    policy-statement PL-EVI10-DEFAULT-NH-VGA-V6 {
+        term DEFAULT-NH-VGA-V6 {
+            from {
+                prefix-list PL-DEFAULT-V6;
+            }
+            then {
+                next-hop 101::1;
+                accept;
+            }
+        }
+        term DROP {
+            then reject;
+        }
+    }
+    policy-statement PL-LOAD-BALANCE {
+        term LB {
+            then {
+                load-balance per-packet;
+            }
+        }
+    }
+}
+class-of-service {
+    classifiers {
+        dscp voo-dscp {
+            forwarding-class best-effort {
+                loss-priority low code-points be;
+                loss-priority high code-points [ cs1 af11 af12 af13 ];
+            }
+            forwarding-class business-critical {
+                loss-priority low code-points [ cs2 af21 af22 af23 ];
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-points [ cs3 af31 af32 af33 ];
+                loss-priority high code-points [ cs4 af41 af42 af43 ];
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-points [ ef cs5 ];
+            }
+            forwarding-class network-control {
+                loss-priority low code-points cs6;
+                loss-priority high code-points cs7;
+            }
+        }
+        dscp-ipv6 voo-dscp-ipv6 {
+            forwarding-class best-effort {
+                loss-priority low code-points be;
+                loss-priority high code-points [ cs1 af11 af12 af13 ];
+            }
+            forwarding-class business-critical {
+                loss-priority low code-points [ cs2 af21 af22 af23 ];
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-points [ cs3 af31 af32 af33 ];
+                loss-priority high code-points [ cs4 af41 af42 af43 ];
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-points [ ef cs5 ];
+            }
+            forwarding-class network-control {
+                loss-priority low code-points cs6;
+                loss-priority high code-points cs7;
+            }
+        }
+        exp voo-exp {
+            forwarding-class best-effort {
+                loss-priority low code-points 000;
+                loss-priority high code-points 001;
+            }
+            forwarding-class business-critical {
+                loss-priority low code-points 010;
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-points 011;
+                loss-priority high code-points 100;
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-points 101;
+            }
+            forwarding-class network-control {
+                loss-priority low code-points 110;
+                loss-priority high code-points 111;
+            }
+        }
+        ieee-802.1 voo-802.1p {
+            forwarding-class best-effort {
+                loss-priority low code-points 000;
+                loss-priority high code-points 001;
+            }
+            forwarding-class business-critical {
+                loss-priority low code-points 010;
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-points 011;
+                loss-priority high code-points 100;
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-points 101;
+            }
+            forwarding-class network-control {
+                loss-priority low code-points 110;
+                loss-priority high code-points 111;
+            }
+        }
+    }
+    host-outbound-traffic {
+        forwarding-class network-control;
+        dscp-code-point cs6;
+    }
+    drop-profiles {
+        dp-be-high {
+            interpolate {
+                fill-level [ 75 100 ];
+                drop-probability [ 0 100 ];
+            }
+        }
+    }
+    forwarding-classes {
+        class best-effort queue-num 0;
+        class business-critical queue-num 4;
+        class assured-forwarding queue-num 2;
+        class expedited-forwarding queue-num 1;
+        class network-control queue-num 3;
+    }
+    interfaces {
+        et-* {
+            scheduler-map smap-high-bw;
+            unit * {
+                classifiers {
+                    dscp voo-dscp;
+                    dscp-ipv6 voo-dscp-ipv6;
+                    exp voo-exp;
+                    ieee-802.1 voo-802.1p;
+                }
+            }
+        }
+        ge-* {
+            scheduler-map smap-high-bw;
+            unit * {
+                classifiers {
+                    dscp voo-dscp;
+                    dscp-ipv6 voo-dscp-ipv6;
+                    exp voo-exp;
+                    ieee-802.1 voo-802.1p;
+                }
+            }
+        }
+        xe-* {
+            scheduler-map smap-high-bw;
+            unit * {
+                classifiers {
+                    dscp voo-dscp;
+                    dscp-ipv6 voo-dscp-ipv6;
+                    exp voo-exp;
+                    ieee-802.1 voo-802.1p;
+                }
+            }
+        }
+        ae* {
+            scheduler-map smap-high-bw;
+            unit * {
+                classifiers {
+                    dscp voo-dscp;
+                    dscp-ipv6 voo-dscp-ipv6;
+                    exp voo-exp;
+                    ieee-802.1 voo-802.1p;
+                }
+            }
+        }
+        ae10 {
+            forwarding-class expedited-forwarding;
+        }
+    }
+    rewrite-rules {
+        exp voo-exp {
+            forwarding-class best-effort {
+                loss-priority low code-point 000;
+                loss-priority high code-point 001;
+            }
+            forwarding-class business-critical {
+                loss-priority low code-point 010;
+                loss-priority high code-point 010;
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-point 011;
+                loss-priority high code-point 100;
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-point 101;
+                loss-priority high code-point 101;
+            }
+            forwarding-class network-control {
+                loss-priority low code-point 110;
+                loss-priority high code-point 111;
+            }
+        }
+        ieee-802.1 voo-802.1p {
+            forwarding-class best-effort {
+                loss-priority low code-point 000;
+                loss-priority high code-point 001;
+            }
+            forwarding-class business-critical {
+                loss-priority low code-point 010;
+                loss-priority high code-point 010;
+            }
+            forwarding-class assured-forwarding {
+                loss-priority low code-point 011;
+                loss-priority high code-point 100;
+            }
+            forwarding-class expedited-forwarding {
+                loss-priority low code-point 101;
+                loss-priority high code-point 101;
+            }
+            forwarding-class network-control {
+                loss-priority low code-point 110;
+                loss-priority high code-point 111;
+            }
+        }
+    }
+    scheduler-maps {
+        smap-high-bw {
+            forwarding-class best-effort scheduler sched-high-bw-be;
+            forwarding-class assured-forwarding scheduler sched-high-bw-af;
+            forwarding-class business-critical scheduler sched-high-bw-bc;
+            forwarding-class expedited-forwarding scheduler sched-high-bw-ef;
+            forwarding-class network-control scheduler sched-high-bw-nc;
+        }
+    }
+    schedulers {
+        sched-high-bw-be {
+            transmit-rate percent 50;
+            buffer-size percent 65;
+            priority low;
+            drop-profile-map loss-priority high protocol any drop-profile dp-be-high;
+        }
+        sched-high-bw-bc {
+            transmit-rate percent 25;
+            buffer-size percent 15;
+            priority medium-low;
+        }
+        sched-high-bw-af {
+            transmit-rate percent 15;
+            buffer-size percent 10;
+            priority high;
+        }
+        sched-high-bw-ef {
+            shaping-rate percent 5;
+            buffer-size percent 5;
+            priority strict-high;
+        }
+        sched-high-bw-nc {
+            transmit-rate percent 5;
+            shaping-rate percent 15;
+            buffer-size percent 5;
+            priority high;
+        }
+    }
+}
+firewall {
+    family inet {
+        filter FF-COS-RE-FILTER-V4 {
+            term TR-ICMP {
+                from {
+                    protocol icmp;
+                }
+                then {
+                    count CNT-ICMP;
+                    loss-priority low;
+                    forwarding-class best-effort;
+                    accept;
+                }
+            }
+            term TR-DEFAULT {
+                then {
+                    loss-priority low;
+                    accept;
+                }
+            }
+        }
+        filter FF-RE-PROTECT-V4 {
+            term TR-FIRST-FRAG-DROP {
+                from {
+                    fragment-offset 0;
+                    fragment-flags more-fragments;
+                }
+                then {
+                    count CNT-RE-FIRST-FRAG-DROP;
+                    discard;
+                }
+            }
+            term TR-NEXT-FRAG-DROP {
+                from {
+                    fragment-offset-except 0;
+                }
+                then {
+                    count CNT-RE-NEXT-FRAG-DROP;
+                    discard;
+                }
+            }
+            /* TCP session DOS - SYN, FIN, RST Flood - prevention */
+            term TR-TCP-DOS-PREVENTION-DSC {
+                from {
+                    source-prefix-list {
+                        PL-DEFAULT-V4;
+                        PL-DEFAULT-V6;
+                        PL-BGP-NEIGHBORS except;
+                        PL-BGP-VRF-NEIGHBORS except;
+                        PL-CORE-LINKS-LOOPBACKS except;
+                        PL-SSH-CLIENTS except;
+                        PL-TACPLUS-SERVER except;
+                    }
+                    protocol tcp;
+                    tcp-flags "(syn & !ack) | fin | rst";
+                }
+                then {
+                    count CNT-RE-TCP-DOS-DSC;
+                    discard;
+                }
+            }
+            term TR-TCP-DOS-PREVENTION-ACC {
+                from {
+                    protocol tcp;
+                    tcp-flags "(syn & !ack) | fin | rst";
+                }
+                then {
+                    policer PC-TCP-DOS;
+                    count CNT-RE-TCP-DOS-ACC;
+                    next term;
+                }
+            }
+            term TR-ICMP-POLICE-ACC {
+                from {
+                    protocol icmp;
+                    icmp-type [ echo-request echo-reply unreachable time-exceeded ];
+                }
+                then {
+                    policer PC-ICMP;
+                    count CNT-RE-ICMP-POLICE;
+                    accept;
+                }
+            }
+            term TR-BFD-ACC {
+                from {
+                    protocol udp;
+                    ttl 255;
+                    port [ 6784 7784 ];
+                }
+                then {
+                    count CNT-RE-BFD-ACC;
+                    accept;
+                }
+            }
+            term TR-BGP-ACC {
+                from {
+                    source-prefix-list {
+                        PL-BGP-NEIGHBORS;
+                        PL-BGP-VRF-NEIGHBORS;
+                    }
+                    protocol tcp;
+                    port bgp;
+                }
+                then {
+                    count CNT-RE-BGP-ACC;
+                    accept;
+                }
+            }
+            term TR-SNMP-ACC {
+                from {
+                    source-prefix-list {
+                        PL-SNMPV3-POLLING-HOSTS;
+                    }
+                    protocol udp;
+                    destination-port snmp;
+                }
+                then {
+                    policer PC-SNMP;
+                    count CNT-RE-SNMP-ACC;
+                    accept;
+                }
+            }
+            term TR-LDP-ACC {
+                from {
+                    source-prefix-list {
+                        PL-CORE-LINKS-LOOPBACKS;
+                        PL-CORE-LINKS-P2P;
+                    }
+                    protocol [ tcp udp ];
+                    port ldp;
+                }
+                then {
+                    count CNT-RE-LDP-ACC;
+                    accept;
+                }
+            }
+            term TR-LSPPING-ACC {
+                from {
+                    source-prefix-list {
+                        PL-CORE-LINKS-LOOPBACKS;
+                    }
+                    protocol udp;
+                    port 3503;
+                }
+                then {
+                    count LSPPING-ACC;
+                    accept;
+                }
+            }
+            term TR-NTP-ACC {
+                from {
+                    source-prefix-list {
+                        PL-NTP-SERVERS;
+                        PL-NTP-SOURCE;
+                    }
+                    protocol udp;
+                    port ntp;
+                }
+                then {
+                    policer PC-NTP;
+                    count CNT-RE-NTP-ACC;
+                    accept;
+                }
+            }
+            term TR-NETCONF-ACC {
+                from {
+                    source-prefix-list {
+                        PL-NETCONF-CLIENTS;
+                    }
+                    protocol tcp;
+                    destination-port 830;
+                }
+                then {
+                    policer PC-NETCONF;
+                    count CNT-RE-NETCONF-ACC;
+                    accept;
+                }
+            }
+            term TR-SSH-ACC {
+                from {
+                    source-prefix-list {
+                        PL-SSH-CLIENTS;
+                    }
+                    protocol tcp;
+                    destination-port ssh;
+                }
+                then {
+                    policer PC-SSH;
+                    count CNT-RE-SSH-ACC;
+                    accept;
+                }
+            }
+            term TR-TACPLUS-ACC {
+                from {
+                    source-prefix-list {
+                        PL-TACPLUS-SERVER;
+                    }
+                    protocol tcp;
+                    port 49;
+                }
+                then {
+                    policer PC-TACPLUS;
+                    count CNT-RE-TACPLUS-ACC;
+                    accept;
+                }
+            }
+            term TR-TRACEROUTE-ACC {
+                from {
+                    protocol udp;
+                    destination-port 33434-33523;
+                }
+                then {
+                    policer PC-TRACEROUTE;
+                    count CNT-RE-TRACEROUTE-ACC;
+                    accept;
+                }
+            }
+            term TR-DNS-ACP {
+                from {
+                    source-prefix-list {
+                        PL-DNS-SERVERS;
+                    }
+                    protocol udp;
+                    port domain;
+                }
+                then {
+                    policer PC-DNS;
+                    count CNT-RE-DNS-ACP;
+                    accept;
+                }
+            }
+            term TR-ALL-DSC {
+                then {
+                    count CNT-RE-DSC;
+                    discard;
+                }
+            }
+        }
+    }
+    policer PC-NTP {
+        if-exceeding {
+            bandwidth-limit 500k;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+    policer PC-DNS {
+        if-exceeding {
+            bandwidth-limit 500k;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+    policer PC-NETCONF {
+        if-exceeding {
+            bandwidth-limit 4m;
+            burst-size-limit 60k;
+        }
+        then discard;
+    }
+    policer PC-SSH {
+        if-exceeding {
+            bandwidth-limit 4m;
+            burst-size-limit 60k;
+        }
+        then discard;
+    }
+    policer PC-SNMP {
+        if-exceeding {
+            bandwidth-limit 10m;
+            burst-size-limit 150k;
+        }
+        then discard;
+    }
+    policer PC-TACPLUS {
+        if-exceeding {
+            bandwidth-limit 1m;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+    policer PC-TCP-DOS {
+        if-exceeding {
+            bandwidth-limit 1m;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+    policer PC-ICMP {
+        if-exceeding {
+            bandwidth-limit 5m;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+    policer PC-TRACEROUTE {
+        if-exceeding {
+            bandwidth-limit 1m;
+            burst-size-limit 15k;
+        }
+        then discard;
+    }
+}
+routing-instances {
+    mgmt_junos {
+        routing-options {
+            static {
+                route 0.0.0.0/0 next-hop 192.168.200.1;
+            }
+        }
+    }
+    vlan10 {
+        description "EVPN instance for VLAN 10";
+        instance-type evpn;
+        vlan-id 10;
+        interface ae10.10;
+        routing-interface irb.10;
+        vrf-target target:64514:101;
+        protocols {
+            evpn {
+                default-gateway no-gateway-community;
+            }
+            igmp-snooping {
+                proxy;
+            }
+            mld-snooping {
+                proxy {
+                    source-address fe80::10:12;
+                }
+            }
+        }
+    }
+    inactive: vlan1000 {
+        instance-type evpn;
+        vlan-id 1000;
+        interface ae10.1000;
+        routing-interface irb.1000;
+        vrf-target target:64514:1000;
+        protocols {
+            evpn {
+                interface ae10.1000;
+                proxy-mac {
+                    irb;
+                }
+                default-gateway do-not-advertise;
+            }
+        }
+    }
+    vlan30 {
+        description "EVPN instance for VLAN 30";
+        instance-type evpn;
+        vlan-id 30;
+        interface ae10.30;
+        interface ae11.30;
+        routing-interface irb.30;
+        vrf-target target:64514:30;
+        protocols {
+            evpn {
+                default-gateway no-gateway-community;
+            }
+            igmp-snooping {
+                proxy;
+            }
+            mld-snooping {
+                proxy {
+                    source-address fe80::30:12;
+                }
+            }
+        }
+    }
+    vrf10 {
+        description "VRF instance for IRB in VLAN 10";
+        instance-type vrf;
+        interface irb.10;
+        vrf-target target:64514:10;
+        vrf-table-label;
+        routing-options {
+            autonomous-system 64514;
+            multipath;
+        }
+        protocols {
+            bgp {
+                group QFX1 {
+                    multihop {
+                        no-nexthop-change;
+                    }
+                    peer-as 65111;
+                    neighbor 10.10.1.111 {
+                        export PL-EVI10-DEFAULT-NH-VGA-V4;
+                    }
+                    neighbor 101::111 {
+                        export PL-EVI10-DEFAULT-NH-VGA-V6;
+                    }
+                }
+            }
+        }
+    }
+    inactive: vrf1000 {
+        instance-type vrf;
+        interface irb.1000;
+        vrf-target target:64514:1000;
+        vrf-table-label;
+        routing-options {
+            autonomous-system 64514;
+            multipath;
+        }
+        protocols {
+            evpn {
+                default-gateway do-not-advertise;
+            }
+            bgp {
+                group QFX1 {
+                    preference 100;
+                    peer-as 65102;
+                    neighbor 100.0.0.102;
+                    neighbor 1000::102;
+                }
+            }
+        }
+    }
+    inactive: vrf101 {
+        instance-type vrf;
+        interface irb.101;
+        route-distinguisher 10.35.1.4:101;
+        vrf-target target:64514:101;
+        vrf-table-label;
+        routing-options {
+            autonomous-system 64514;
+            multipath;
+        }
+        protocols {
+            pim {
+                interface irb.101 {
+                    distributed-dr;
+                }
+            }
+            bgp {
+                group QFX1 {
+                    multihop {
+                        no-nexthop-change;
+                    }
+                    peer-as 65111;
+                    neighbor 101.0.0.111 {
+                        export PL-NH-VGA-101-v4;
+                    }
+                    neighbor 101::111 {
+                        export PL-NH-VGA-101-v6;
+                    }
+                }
+            }
+        }
+    }
+    inactive: vrf102 {
+        instance-type vrf;
+        interface irb.102;
+        route-distinguisher 10.35.1.4:65102;
+        vrf-target target:64514:102;
+        vrf-table-label;
+        routing-options {
+            autonomous-system 64514;
+            multipath;
+        }
+        protocols {
+            pim {
+                interface irb.102 {
+                    distributed-dr;
+                }
+            }
+            bgp {
+                group QFX1 {
+                    multihop {
+                        no-nexthop-change;
+                    }
+                    peer-as 65111;
+                    neighbor 102.0.0.111 {
+                        export PL-NH-VGA-102-v4;
+                    }
+                    neighbor 102::111 {
+                        export PL-NH-VGA-102-v6;
+                    }
+                }
+            }
+        }
+    }
+    inactive: vrf105 {
+        instance-type vrf;
+        interface irb.105;
+        route-distinguisher 10.35.1.4:105;
+        vrf-target target:64514:105;
+        vrf-table-label;
+        routing-options {
+            autonomous-system 64514;
+            multipath;
+        }
+        protocols {
+            pim {
+                interface irb.105 {
+                    distributed-dr;
+                }
+            }
+            bgp {
+                group QFX1 {
+                    multihop {
+                        no-nexthop-change;
+                    }
+                    peer-as 65111;
+                    neighbor 105.2.2.111 {
+                        export PL-NH-VGA-105-v4;
+                    }
+                    neighbor 105::2:111 {
+                        export PL-NH-VGA-105-v6;
+                    }
+                }
+            }
+        }
+    }
+    vrf30 {
+        description "VRF instance for IRB in VLAN 30";
+        instance-type vrf;
+        interface irb.30;
+        vrf-target target:64514:30;
+        vrf-table-label;
+        routing-options {
+            multipath;
+        }
+    }
+}
+routing-options {
+    nonstop-routing;
+    route-distinguisher-id 10.35.1.4;
+    forwarding-table {
+        export PL-LOAD-BALANCE;
+        chained-composite-next-hop {
+            ingress {
+                evpn;
+                l3vpn extended-space;
+            }
+        }
+    }
+    router-id 10.35.1.4;
+    autonomous-system 64514;
+}
+protocols {
+    bgp {
+        path-selection external-router-id;
+        group BG-IBGP-LEAF {
+            type internal;
+            local-address 10.35.1.4;
+            family inet-vpn {
+                unicast;
+            }
+            family inet6-vpn {
+                unicast;
+            }
+            family evpn {
+                signaling;
+            }
+            authentication-algorithm aes-128-cmac-96;
+            authentication-key-chain KC-BGP-AUTH;
+            multipath;
+            bfd-liveness-detection {
+                minimum-interval 300;
+                multiplier 3;
+                no-adaptation;
+            }
+            neighbor 10.35.1.1 {
+                description S-DC1-1;
+            }
+            neighbor 10.35.1.2 {
+                description S-DC1-2;
+            }
+        }
+        precision-timers;
+        log-updown;
+        tcp-mss 4096;
+    }
+    isis {
+        apply-groups GR-CORE-ISIS;
+        source-packet-routing {
+            srgb start-label 900000 index-range 100000;
+            node-segment ipv4-index 1004;
+        }
+        interface ae0.0;
+        interface ae1.0;
+        interface lo0.0 {
+            passive;
+        }
+    }
+    mpls {
+        ipv6-tunneling;
+        interface ae0.0;
+        interface ae1.0;
+    }
+    lldp {
+        management-address 192.168.200.72;
+        ptopo-configuration-trap-interval 60;
+        lldp-configuration-notification-interval 60;
+        port-id-subtype interface-name;
+        interface all {
+            disable;
+        }
+        interface xe-0/1/0:0;
+        interface xe-0/1/1:0;
+        interface ae10;
+    }
+    layer2-control {
+        nonstop-bridging;
+    }
+}

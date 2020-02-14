@@ -21,7 +21,7 @@
     connection: local
     gather_facts: no
     tasks:
-    - name: Bringing down interface
+    - name: Bringing down interface - {{testcase|upper}} 
       juniper_junos_command:
         command:
           - 'set cli timestamp'
