@@ -1,0 +1,60 @@
+---
+  - hosts: localhost:DVT
+    gather_facts: no
+    tasks:
+    - set_fact: 
+        testcase: 7-1-MULTICAST-IGMP
+        test_dir: "testcase/7-1-MULTICAST-IGMP/SNOOPING-OFF"
+        cacheable: yes
+  
+  - hosts: localhost
+    gather_facts: no
+    tasks:
+    - file: 
+        path: "{{playbook_dir}}/{{test_dir}}" 
+        state: directory
+  
+  - name: Checking IGMP Snooping operation
+    hosts: LEAF
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Verification on LEAF routers
+      juniper_junos_command:
+        command:
+          - "set cli timestamp"
+          - "show configuration routing-instances vlan30"
+          - "show configuration routing-instances vrf30"
+          - "show route table vlan30 match-prefix 6:*"
+          - "show route advertising-protocol bgp 10.35.2.1 table vlan30 match-prefix 6:*"
+          - "show evpn igmp-snooping proxy extensive"
+          - "show igmp snooping evpn database instance vlan30"
+          - "show igmp snooping evpn database instance vlan30 detail"
+          - "show interfaces ae0 statistics"
+          - "show interfaces ae1 statistics"
+          - "show interfaces ae10 statistics"
+          - "show interfaces ae11 statistics"
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+        return_output: false
+
+  - name: Checking traffic statistics
+    hosts: SPINE
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Verification on SPINE
+      juniper_junos_command:
+        command:
+          - "set cli timestamp"
+          - "show interfaces ae0 statistics"
+          - "show interfaces ae1 statistics"
+          - "show interfaces ae2 statistics"
+          - "show interfaces ae3 statistics"
+          - "show interfaces ae4 statistics"
+          - "show interfaces ae10 statistics"
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+        return_output: false

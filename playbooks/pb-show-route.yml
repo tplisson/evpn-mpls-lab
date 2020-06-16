@@ -1,0 +1,37 @@
+---
+  - name: Gathering command output for "show route"
+    hosts: DVT
+    roles:
+     - Juniper.junos
+    connection: local
+    gather_facts: no
+    vars:
+      credentials:
+        host: "{{ inventory_hostname }}"
+        user: "{{ ansible_ssh_user }}"
+        passwd: "{{ ansible_ssh_pass }}"
+  
+    tasks:
+
+    - name: Checking NETCONF connectivity
+      wait_for: 
+        host: "{{ inventory_hostname }}"
+        port: "{{ ansible_port }}"
+        timeout: 2
+      register: netconf_result
+
+    - name: Gathering command output for "show route" 
+      when: netconf_result|success
+      juniper_junos_command:
+        command:
+          - 'show route summary'
+          - 'show route table inet.0'
+          - 'show route table inet.3'
+          - 'show route table inet6.0'
+          - 'show route table inet6.3'
+        dest: "{{playbook_dir}}/output/{{ inventory_hostname }}.route.txt"
+      #register: response
+      
+    #- name: Print the output.
+    #  debug:
+    #    var: response

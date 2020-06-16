@@ -1,0 +1,38 @@
+---
+  - hosts: localhost:LEAF
+    gather_facts: no
+    tasks:
+    - set_fact: 
+        testcase: 3-2-NF-CONVERG-EVI30-TYPE5
+        test_dir: "testcase/3-2-NF-CONVERG-EVI30-TYPE5/3/DOWN"
+        cacheable: yes
+  
+  - hosts: localhost
+    gather_facts: no
+    tasks:
+    - file: 
+        path: "{{playbook_dir}}/{{test_dir}}" 
+        state: directory
+  
+  - name: Checking status during Node Failure
+    hosts: LEAF
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Verification
+      juniper_junos_command:
+        command:
+          - 'set cli timestamp'
+          - 'show interfaces ae0 terse'
+          - 'show interfaces ae1 terse'
+          - 'show bfd session'
+          - 'show isis interface'
+          - 'show isis adjacency'
+          - 'show bgp summary'
+          - "show interfaces ae10 statistics"
+          - "show interfaces ae0 statistics"
+          - "show interfaces ae1 statistics"
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+        return_output: false

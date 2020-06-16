@@ -1,0 +1,38 @@
+---
+    - name: Rollback to the previous configuration.
+      hosts: [ DC1, S-DC2 ]
+      roles:
+       - Juniper.junos
+      connection: local
+      gather_facts: no
+      vars:
+        credentials:
+            host: "{{ inventory_hostname }}"
+            user: "{{ ansible_ssh_user }}"
+            passwd: "{{ ansible_ssh_pass }}"
+  
+      tasks:
+  
+      - name: Checking NETCONF connectivity
+        wait_for: 
+          host: "{{ inventory_hostname }}"
+          port: "{{ ansible_port }}"
+          timeout: 2
+        register: netconf_result
+
+      - name: Retrieve information from devices running Junos OS
+        when: netconf_result|success
+        junos_get_facts:
+        register: junos
+  
+      - name: Rollback to the previous configuration.
+        when: netconf_result|success
+        juniper_junos_config:
+          config_mode: 'private'
+          rollback: 1
+          comment: "Rollback to the previous config"
+        register: response
+
+      - name: Print the {{config|upper}} configuration changes.
+        debug:
+          var: response.diff_lines

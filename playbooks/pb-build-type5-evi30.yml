@@ -1,0 +1,51 @@
+---
+  - hosts: localhost:LEAF
+    gather_facts: no
+    tasks:
+    - set_fact: 
+        config: type5-evi30
+        cacheable: yes
+
+  - hosts: localhost
+    gather_facts: no
+  
+    tasks:
+  
+    - name: Create directories
+      file: 
+        path: "{{playbook_dir}}/{{ item }}" 
+        state: directory
+      with_items: 
+       - config
+       - diff
+      
+  - name: EVI30 with Pure EVPN Type 5 routing
+    hosts: LEAF
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+  
+    tasks:
+  
+    - name: Building {{config|upper}} configurations for SPINE & LEAF MX routers
+      template: 
+        src: "{{playbook_dir}}/templates/{{config}}-dvt.j2"
+        dest: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.conf"
+      register: dvt
+  
+    - name: Install Generated {{config|upper}} Configurations
+      #when: dvt.changed
+      juniper_junos_config:
+        config_mode: 'private'
+        load: 'replace'
+        src: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.conf"
+        comment: "Deploying {{config|upper}} configuration"
+        diff: yes
+        diffs_file: "{{playbook_dir}}/diff/{{ inventory_hostname }}.{{config}}.log"
+      register: config_results
+    
+    - name: Print the config changes.
+      debug:
+        var: config_results.diff_lines
+      when: config_results.diff_lines is defined

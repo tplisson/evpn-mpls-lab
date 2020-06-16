@@ -1,0 +1,70 @@
+---
+- hosts: localhost:DVT
+  gather_facts: no
+  tasks:
+  - set_fact: 
+      testcase: 1-7-STEADY-EVI10-20-SRX-TYPE5
+      cacheable: yes
+
+
+- name: STEADY STATE
+  hosts: [ L-DC1, SPINE ]
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  vars:
+    config: type5-evi10
+  tasks:
+
+  - name: Building {{config|upper}} configurations for SPINE & LEAF MX routers
+    template: 
+      src: "{{playbook_dir}}/templates/{{config}}-dvt.j2"
+      dest: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.conf"
+    register: dvt
+
+  - name: Install Generated {{config|upper}} Configurations
+    juniper_junos_config:
+      config_mode: 'private'
+      load: 'replace'
+      src: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.conf"
+      comment: "Deploying {{config|upper}} configuration"
+      diff: yes
+      diffs_file: "{{playbook_dir}}/diff/{{ inventory_hostname }}.{{config}}.log"
+    register: config_results
+  
+  - name: Print the config changes.
+    debug:
+      var: config_results.diff_lines
+    when: config_results.diff_lines is defined
+
+- name: Deploy EVPN {{config|upper}}
+  hosts: [ L-DC2, SPINE ]
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  vars:
+    config: type5-evi20
+  tasks:
+  
+  - name: Building {{config|upper}} configurations for SPINE & LEAF MX routers
+    template: 
+      src: "{{playbook_dir}}/templates/{{config}}-dvt.j2"
+      dest: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.conf"
+    register: dvt
+
+  - name: Install Generated {{config|upper}} Configurations
+    juniper_junos_config:
+      config_mode: 'private'
+      load: 'replace'
+      src: "{{playbook_dir}}/config/{{ inventory_hostname }}.{{config}}.conf"
+      comment: "Deploying {{config|upper}} configuration"
+      diff: yes
+      diffs_file: "{{playbook_dir}}/diff/{{ inventory_hostname }}.{{config}}.log"
+    register: config_results
+
+  - name: Print the config changes.
+    debug:
+      var: config_results.diff_lines
+    when: config_results.diff_lines is defined

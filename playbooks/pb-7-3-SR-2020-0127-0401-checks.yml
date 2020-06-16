@@ -1,0 +1,63 @@
+---
+  - hosts: localhost:DVT
+    gather_facts: no
+    tasks:
+    - set_fact: 
+        test_dir: "testcase/7-3-SR-2020-0127-0401/ABNORMAL"
+        cacheable: yes
+  
+  - hosts: localhost
+    gather_facts: no
+    tasks:
+    - file: 
+        path: "{{playbook_dir}}/{{test_dir}}" 
+        state: directory
+  
+  - name: MLD Snooping checks
+    hosts: LEAF
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Checks on LEAF
+      juniper_junos_command:
+        command:
+          - "set cli timestamp"
+          - "show configuration"
+          - "show igmp snooping evpn database instance vlan30 detail"
+          - "show evpn instance vlan30 extensive"
+          - "show evpn igmp-snooping proxy extensive"
+          - "show evpn flood instance vlan30 extensive"
+          - "show route table vlan30 extensive"
+          - "show route table vlan30 match-prefix 6:*"
+          - "show route advertising-protocol bgp 10.35.1.1 table vlan30 match-prefix 6:*"
+          - "show route advertising-protocol bgp 10.35.2.2 table vlan30 match-prefix 6:*"
+          - "show route forwarding-table extensive"
+          - "show evpn flood extensive"
+          - "show interfaces ae0 statistics"
+          - "show interfaces ae1 statistics"
+          - "show interfaces ae10 statistics"
+          - "show interfaces ae11 statistics"
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+        return_output: false
+
+  - name: MLD Snooping checks
+    hosts: SPINE
+    roles:
+      - Juniper.junos
+    connection: local
+    gather_facts: no
+    tasks:
+    - name: Checks on SPINE
+      juniper_junos_command:
+        command:
+          - "set cli timestamp"
+          - "show interfaces ae0 statistics"
+          - "show interfaces ae1 statistics"
+          - "show interfaces ae2 statistics"
+          - "show interfaces ae3 statistics"
+          - "show interfaces ae4 statistics"
+          - "show interfaces ae10 statistics"
+        dest_dir: "{{playbook_dir}}/{{test_dir}}/"
+        return_output: false

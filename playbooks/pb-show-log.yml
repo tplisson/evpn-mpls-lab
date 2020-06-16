@@ -1,0 +1,43 @@
+---
+  - name: Gathering command output
+    hosts: DVT
+    roles:
+     - Juniper.junos
+    connection: local
+    gather_facts: no
+    vars:
+      credentials:
+        host: "{{ inventory_hostname }}"
+        user: "{{ ansible_ssh_user }}"
+        passwd: "{{ ansible_ssh_pass }}"
+  
+    tasks:
+
+    #- name: Checking NETCONF connectivity
+    #  wait_for: 
+    #    host: "{{ inventory_hostname }}"
+    #    port: "{{ ansible_port }}"
+    #    timeout: 2
+    #  register: netconf_result
+
+    - name: Gathering command output 
+      #when: netconf_result|success
+      juniper_junos_command:
+        command:
+          - 'show log messages'
+          - 'show log messages.0.gz'
+          - 'show log messages.1.gz'
+          - 'show log messages.2.gz'
+          - 'show log messages.3.gz'
+          - 'show log messages.4.gz'
+          - 'show log messages.5.gz'
+          - 'show log messages.6.gz'
+          - 'show log messages.7.gz'
+          - 'show log messages.8.gz'
+          - 'show log messages.9.gz'
+        dest: "{{playbook_dir}}/output/{{ inventory_hostname }}.log"
+      #register: response
+      
+    #- name: Print the output.
+    #  debug:
+    #    var: response
