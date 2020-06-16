@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tplisson/evpn-mpls-lab.svg?branch=master)](https://travis-ci.org/tplisson/evpn-mpls-lab)
+
 # EVPN-MPLS LAB
 Ansible playbook repo for an EVPN-MPLS lab using Juniper MX routers (MX10003).
 
