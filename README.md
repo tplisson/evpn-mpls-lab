@@ -4,7 +4,7 @@
 Ansible playbook repository for an EVPN-MPLS lab using Juniper MX routers (MX10003).
 
 ## Structure
-All Ansible playbooks are located under the `playbooks` directory.
+All Ansible playbooks are located under the `playbooks` directory.\
 Most of these Ansible playbooks use Jinja2 templates located under the `templates` directory.\
 Global variables are defined under the `group_vars` directory.\
 Host unique variables are defined within the `host_vars` directory.
@@ -15,12 +15,12 @@ Docker image for Juniper Ansible roles for Junos
 docker pull juniper/pyez-ansible
 docker run -it --rm -v $(pwd):/project juniper/pyez-ansible
 ```
-Ansible Galaxy modules for Junos version 2.3.0
+Ansible Galaxy modules for Junos version 2.3.0\
 https://hub.docker.com/r/juniper/pyez-ansible/
 
-This repository has been tested using:
-Ansible 2.9.5
-Ansible Galaxy "Juniper.junos" role  version 2.4.1
+This repository has been tested using:\
+Ansible 2.9.5\
+Ansible Galaxy "Juniper.junos" role  version 2.4.1\
 
 
 ## Lab Topology
