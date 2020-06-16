@@ -18,6 +18,40 @@ install:
 
 script:
   - ansible-playbook playbooks/pb-build-fabric.yml --syntax-check
+  - ansible-playbook playbooks/pb-build-evi10.yml --syntax-check
+  - ansible-playbook playbooks/pb-build-evi20.yml --syntax-check
+  - ansible-playbook playbooks/pb-build-evi30.yml --syntax-check
+  - ansible-playbook playbooks/pb-build-evi40.yml --syntax-check
+  - ansible-playbook playbooks/pb-build-mcast-evi30.yml --syntax-check
+  - ansible-playbook playbooks/pb-build-type5-evi10.yml --syntax-check
+  - ansible-playbook playbooks/pb-build-type5-evi20.yml --syntax-check
+  - ansible-playbook playbooks/pb-build-type5-evi30.yml --syntax-check
+  - ansible-playbook playbooks/pb-cli-check-files.yml --syntax-check
+  - ansible-playbook playbooks/pb-cli-get-version.yml --syntax-check
+  - ansible-playbook playbooks/pb-cli-junos-version.yml --syntax-check
+  - ansible-playbook playbooks/pb-deploy-spring.yml --syntax-check
+  - ansible-playbook playbooks/pb-deploy-ti-lfa.yml --syntax-check
+  - ansible-playbook playbooks/pb-jsnapy-test1.yaml --syntax-check
+  - ansible-playbook playbooks/pb-re-switchover.yml --syntax-check
+  - ansible-playbook playbooks/pb-rollback1.yml --syntax-check
+  - ansible-playbook playbooks/pb-show-log.yml --syntax-check
+  - ansible-playbook playbooks/pb-show-route.yml --syntax-check
+  - ansible-playbook playbooks/pb-test-evi10.yml --syntax-check
+  - ansible-playbook playbooks/pb-test-evi20.yml --syntax-check
+  - ansible-playbook playbooks/pb-test-evi30.yml --syntax-check
+  - ansible-playbook playbooks/pb-test-fabric.yml --syntax-check
+  - ansible-playbook playbooks/pb-test-ti-lfa-off.yml --syntax-check
+  - ansible-playbook playbooks/pb-test-ti-lfa-on.yml --syntax-check
+  - ansible-playbook playbooks/pb-test-type5-evi10.yml --syntax-check
+  - ansible-playbook playbooks/pb-test-type5-evi20.yml --syntax-check
+  - ansible-playbook playbooks/pb-test-type5-evi30.yml --syntax-check
+  - ansible-playbook playbooks/pb-ti-lfa-off.yml --syntax-check
+  - ansible-playbook playbooks/pb-ti-lfa-on.yml --syntax-check
+  - ansible-playbook playbooks/pb-wipe-all.yml --syntax-check
+  - ansible-playbook playbooks/pb-wipe-evi10.yml --syntax-check
+  - ansible-playbook playbooks/pb-wipe-evi20.yml --syntax-check
+  - ansible-playbook playbooks/pb-wipe-evi30.yml --syntax-check
+
 
 branches:
   only:
