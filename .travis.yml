@@ -27,7 +27,6 @@ script:
   - ansible-playbook playbooks/pb-build-type5-evi20.yml --syntax-check
   - ansible-playbook playbooks/pb-build-type5-evi30.yml --syntax-check
   - ansible-playbook playbooks/pb-cli-check-files.yml --syntax-check
-  - ansible-playbook playbooks/pb-cli-get-version.yml --syntax-check
   - ansible-playbook playbooks/pb-cli-junos-version.yml --syntax-check
   - ansible-playbook playbooks/pb-deploy-spring.yml --syntax-check
   - ansible-playbook playbooks/pb-deploy-ti-lfa.yml --syntax-check

@@ -1,64 +1,64 @@
 ---
-    - name: Create Directories
-      hosts: localhost
-      gather_facts: no
-  
-      tasks:
-  
-      - name: Create directories
-        file: 
-          path: "{{playbook_dir}}/{{ item }}" 
-          state: directory
-        with_items: 
-         - config
-         - diff
-  
-  
-    - name: Build & Load complete EVPN1 Configs from Jinja2 Templates
-      hosts: DVT
-      roles:
-       - Juniper.junos
-      connection: local
-      gather_facts: no
-      vars:
-        junos_jinja_template: "{{playbook_dir}}/templates/spring-deploy.j2"
-        credentials:
-            host: "{{ inventory_hostname }}"
-            user: "{{ ansible_ssh_user }}"
-            passwd: "{{ ansible_ssh_pass }}"
-  
-      tasks:
-  
-      - name: Checking NETCONF connectivity
-        wait_for: 
-          host: "{{ inventory_hostname }}"
-          port: "{{ ansible_port }}"
-          timeout: 2
-        register: netconf_result
+- name: Create Directories
+  hosts: localhost
+  gather_facts: no
 
-      - name: Retrieve information from devices running Junos OS
-        when: netconf_result|success
-        junos_get_facts:
-        register: junos
-  
-      - name: Build Junos configurations from Jinja2 template
-        template: 
-          src: "{{ junos_jinja_template }}" 
-          dest: "{{playbook_dir}}/config/{{ junos.hostname }}.spring.conf"
+  tasks:
 
-      - name: Install Generated SPRING Configurations
-        when: netconf_result|success
-        juniper_junos_config:
-          config_mode: 'private'
-          load: 'replace'
-          src: "{{playbook_dir}}/config/{{ junos.hostname }}.spring.conf"
-          comment: "Deploying SPRING configuration"
-          diff: yes
-          diffs_file: "{{playbook_dir}}/diff/{{ junos.hostname }}.log"
-        register: config_results
-  
-      - name: Print the config changes.
-        debug:
-          var: response.diff_lines
-          register: config_results
-        when: config_results.diff_lines is defined
+  - name: Create directories
+    file: 
+      path: "{{playbook_dir}}/{{ item }}" 
+      state: directory
+    with_items: 
+      - config
+      - diff
+
+
+- name: Build & Load complete EVPN1 Configs from Jinja2 Templates
+  hosts: DVT
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  vars:
+    junos_jinja_template: "{{playbook_dir}}/templates/spring-deploy.j2"
+    credentials:
+        host: "{{ inventory_hostname }}"
+        user: "{{ ansible_ssh_user }}"
+        passwd: "{{ ansible_ssh_pass }}"
+
+  tasks:
+
+  - name: Checking NETCONF connectivity
+    wait_for: 
+      host: "{{ inventory_hostname }}"
+      port: "{{ ansible_port }}"
+      timeout: 2
+    register: netconf_result
+
+  - name: Retrieve information from devices running Junos OS
+    when: netconf_result|success
+    juniper_junos_facts:
+    register: junos
+
+  - name: Build Junos configurations from Jinja2 template
+    template: 
+      src: "{{ junos_jinja_template }}" 
+      dest: "{{playbook_dir}}/config/{{ junos.hostname }}.spring.conf"
+
+  - name: Install Generated SPRING Configurations
+    when: netconf_result|success
+    juniper_junos_config:
+      config_mode: 'private'
+      load: 'replace'
+      src: "{{playbook_dir}}/config/{{ junos.hostname }}.spring.conf"
+      comment: "Deploying SPRING configuration"
+      diff: yes
+      diffs_file: "{{playbook_dir}}/diff/{{ junos.hostname }}.log"
+    register: config_results
+
+  - name: Print the config changes.
+    debug:
+      var: response.diff_lines
+      register: config_results
+    when: config_results.diff_lines is defined
