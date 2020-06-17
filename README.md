@@ -13,7 +13,7 @@ Host unique variables are defined within the `host_vars` directory.
 Docker image for Juniper Ansible roles for Junos
 ```
 docker pull juniper/pyez-ansible
-docker run -it --rm -v $(pwd):/project juniper/pyez-ansible
+docker run -it --rm -v $(pwd):/playbooks juniper/pyez-ansible
 ```
 Ansible Galaxy modules for Junos version 2.3.0\
 https://hub.docker.com/r/juniper/pyez-ansible/
