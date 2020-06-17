@@ -20,7 +20,7 @@ https://hub.docker.com/r/juniper/pyez-ansible/
 
 This repository has been tested using:\
 Ansible 2.9.5\
-Ansible Galaxy "Juniper.junos" role  version 2.4.1\
+Ansible Galaxy "Juniper.junos" role  version 2.4.1
 
 
 ## Lab Topology
